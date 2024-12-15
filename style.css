@@ -1,10 +1,11 @@
 
 /* Карусель */
+.custom-carousel-div { 
+    border-radius: 30px;
+}
 .custom-carousel-item {
     height: 32rem;
-    background: #777;
 }
-
 .custom-carousel-img {
     height: 100%;
     object-fit: cover;
