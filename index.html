@@ -6,7 +6,7 @@
         <!-- Import SASS Bootstrap -->
         <link href="/css/main.css" rel="stylesheet">       
         <!-- Import custom css -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/css/style.css">
     <title>Galereya</title>
 </head>
 <body>
@@ -22,51 +22,79 @@
         <symbol id="twitter" viewBox="0 0 16 16">
           <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
         </symbol>
+
+        <symbol id="language-icon" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd"
+            d="M12 2.6c2.511 0 4.872.977 6.647 2.753A9.338 9.338 0 0 1 21.401 12a9.34 9.34 0 0 1-2.754 6.647A9.34 9.34 0 0 1 12 21.401a9.339 9.339 0 0 1-6.647-2.754A9.34 9.34 0 0 1 2.599 12a9.34 9.34 0 0 1 2.754-6.647A9.339 9.339 0 0 1 12 2.599Zm4.586 13.178h2.777a8.222 8.222 0 0 0 .887-3.154h-3.24a15.81 15.81 0 0 1-.424 3.154Zm3.664-4.402a8.22 8.22 0 0 0-.926-3.228h-2.756c.248.995.401 2.085.443 3.228h3.24Zm-16.5 0a8.222 8.222 0 0 1 .926-3.228h2.756a15.762 15.762 0 0 0-.443 3.228H3.75Zm4.365 0a14.42 14.42 0 0 1 .48-3.228h2.794v3.228H8.115Zm4.496 0V8.148h2.794c.265.97.435 2.062.48 3.228H12.61Zm2.814 4.402c.254-.95.416-2.017.46-3.154H12.61v3.154h2.814Zm-4.036 0H8.575a14.473 14.473 0 0 1-.46-3.154h3.274v3.154Zm-3.975 0H4.637a8.222 8.222 0 0 1-.887-3.154h3.24c.04 1.115.187 2.179.424 3.154Zm7.223-11.622a8.29 8.29 0 0 1 3.918 2.795h-2.347c-.164-.46-.35-.89-.555-1.287a7.244 7.244 0 0 0-.957-1.43 6.103 6.103 0 0 0-.059-.078Zm.058 15.61a7.21 7.21 0 0 0 .958-1.43c.205-.396.391-.826.555-1.285h2.346a8.29 8.29 0 0 1-3.917 2.794l.058-.078Zm-5.33.079a8.29 8.29 0 0 1-3.919-2.794h2.346c.164.459.35.889.555 1.285.278.535.6 1.023.965 1.438l.053.071ZM9.31 4.227a7.236 7.236 0 0 0-.963 1.437c-.205.396-.391.827-.555 1.287H5.445a8.29 8.29 0 0 1 3.92-2.796 6.304 6.304 0 0 0-.055.072Zm3.3 2.724V4.074c.722.252 1.442.948 2.044 2.108.125.24.242.497.351.769h-2.394Zm2.395 10.1h-2.394v2.875c.721-.252 1.441-.948 2.043-2.108.125-.24.242-.497.351-.768Zm-5.659.767c.602 1.16 1.322 1.856 2.043 2.108V17.05H8.995c.11.27.226.527.351.767ZM8.995 6.951h2.394V4.074c-.721.252-1.441.948-2.043 2.108-.125.24-.242.497-.351.769Z"
+            clip-rule="evenodd"></path>
+        </symbol>
       </svg>
 
 
+      <!-- <span class="button-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+          class="lang-button-icon">
+          <path fill="currentColor" fill-rule="evenodd"
+            d="M12 2.6c2.511 0 4.872.977 6.647 2.753A9.338 9.338 0 0 1 21.401 12a9.34 9.34 0 0 1-2.754 6.647A9.34 9.34 0 0 1 12 21.401a9.339 9.339 0 0 1-6.647-2.754A9.34 9.34 0 0 1 2.599 12a9.34 9.34 0 0 1 2.754-6.647A9.339 9.339 0 0 1 12 2.599Zm4.586 13.178h2.777a8.222 8.222 0 0 0 .887-3.154h-3.24a15.81 15.81 0 0 1-.424 3.154Zm3.664-4.402a8.22 8.22 0 0 0-.926-3.228h-2.756c.248.995.401 2.085.443 3.228h3.24Zm-16.5 0a8.222 8.222 0 0 1 .926-3.228h2.756a15.762 15.762 0 0 0-.443 3.228H3.75Zm4.365 0a14.42 14.42 0 0 1 .48-3.228h2.794v3.228H8.115Zm4.496 0V8.148h2.794c.265.97.435 2.062.48 3.228H12.61Zm2.814 4.402c.254-.95.416-2.017.46-3.154H12.61v3.154h2.814Zm-4.036 0H8.575a14.473 14.473 0 0 1-.46-3.154h3.274v3.154Zm-3.975 0H4.637a8.222 8.222 0 0 1-.887-3.154h3.24c.04 1.115.187 2.179.424 3.154Zm7.223-11.622a8.29 8.29 0 0 1 3.918 2.795h-2.347c-.164-.46-.35-.89-.555-1.287a7.244 7.244 0 0 0-.957-1.43 6.103 6.103 0 0 0-.059-.078Zm.058 15.61a7.21 7.21 0 0 0 .958-1.43c.205-.396.391-.826.555-1.285h2.346a8.29 8.29 0 0 1-3.917 2.794l.058-.078Zm-5.33.079a8.29 8.29 0 0 1-3.919-2.794h2.346c.164.459.35.889.555 1.285.278.535.6 1.023.965 1.438l.053.071ZM9.31 4.227a7.236 7.236 0 0 0-.963 1.437c-.205.396-.391.827-.555 1.287H5.445a8.29 8.29 0 0 1 3.92-2.796 6.304 6.304 0 0 0-.055.072Zm3.3 2.724V4.074c.722.252 1.442.948 2.044 2.108.125.24.242.497.351.769h-2.394Zm2.395 10.1h-2.394v2.875c.721-.252 1.441-.948 2.043-2.108.125-.24.242-.497.351-.768Zm-5.659.767c.602 1.16 1.322 1.856 2.043 2.108V17.05H8.995c.11.27.226.527.351.767ZM8.995 6.951h2.394V4.074c-.721.252-1.441.948-2.043 2.108-.125.24-.242.497-.351.769Z"
+            clip-rule="evenodd">
+          </path>
+        </svg>
+      </span> -->
+
+
     <!-- Navbar -->
-    <nav class="navbar navbar-lg-expand bg-back-primary fixed-top">
-      
+    <nav class="navbar navbar-lg-expand bg-nav-bg fixed-top custom-nav py-0">     
         <div class="container-fluid">
           <div class="collapse navbar-collapse d-flex">
-            <!-- Кнопка меню -->
-            <div class="col-3">
-              <button class="navbar-toggler bg-primary d-block" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </div>
+            <!-- Начала строки (навбара) -->
+            <!-- <div class="col-2"> -->
+              <!-- <button class="navbar-toggler d-block" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <svg width="24" height="24"><use xlink:href="#menu_icon"/>
+                  <span class="navbar-toggler-icon"></span>
+              </button> -->
+              <!-- <a class="navicon-button x">
+                <div class="navicon"></div>
+              </a> -->
+            <!-- </div> -->
 
-            <!-- Логотип -->
-            <div class="col-6 d-flex justify-content-lg-center">
-                <a href="#" class="navbar-brand text-primary">ГАЛЕРЕЯ</a>
+            <!-- Основа нава -->
+            <div class="col-12 col-md-8 d-flex mx-auto justify-content-between">
+              <!-- Кнопка меню -->
+              <div class="menu-btn me-lg-3" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <div class="menu-btn__burger"></div>
+              </div>
+              <!-- Логотип -->
+              <a href="#" class="text-primary ms-md-5 me-4 me-md-0 auto-resize-navbar-brand mt-1 mt-md-0" style="text-decoration:none">ГАЛЕРЕЯ</a>
+              <!-- Кнопка -->
+              <div><button class="btn btn-outline-primary lang-button d-none d-md-block mt-2 ">
+                <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
+                <span>English</span>
+              </button></div>
             </div>
-            
-            <!-- кнопка -->
-            <div class="d-flex col-3 justify-content-end">
-              <button class="btn btn-primary">Button</button>
-            </div>
-            </div>
+          </div>
 
             <!-- Раскрытый меню -->
-            <div class="collapse navbar-collapse " id="navmenu">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#learn" class="nav-link text-primary">Learn</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#questions" class="nav-link text-primary">Questions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#instructors" class="nav-link text-primary">Instructors</a>
-                    </li>
+            <div class="collapse navbar-collapse custom-collapsed-nav" id="navmenu">
+              <div class="row">
+                <div class="col-2"></div>
+                <ul class="col-8 navbar-nav">
+                  <li class="nav-item">
+                      <a href="#learn" class="nav-link text-primary">Learn</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#questions" class="nav-link text-primary">Questions</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#instructors" class="nav-link text-primary">Instructors</a>
+                  </li>
                 </ul>
+              </div>
             </div>
         </div>
     </nav>
 
     <!-- Карусель -->
-    <section class="p-5 bg-light">
+    <section class="p-5 bg-back-primary">
         <div class="container pt-5">
             <div id="hero-carousel" class="carousel slide">
                 <!-- Индикаторы -->
@@ -145,5 +173,7 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
