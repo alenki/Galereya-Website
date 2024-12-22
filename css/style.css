@@ -31,26 +31,6 @@
 	cursor: pointer;
 	touch-action: manipulation; 
 } 
-
-/* End of Navbar */
-
-/* Карусель */
-
-.custom-carousel-div { 
-    border-radius: 30px;
-}
-.custom-carousel-item {
-    height: 32rem;
-}
-.custom-carousel-img {
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-
-/* End of Карусель*/
-
-
 /* Navbar Menu Button */
 
 .menu-btn {
@@ -103,6 +83,32 @@
 }
 
 /* End of Navbar Menu Button */
+/* End of Navbar */
+
+
+
+/* Карусель */
+
+.custom-carousel-div { 
+    border-radius: 30px;
+}
+.custom-carousel-item {
+    height: 32rem;
+}
+.custom-carousel-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+/* End of Карусель*/
+
+
+/* Верхние кнопки страницы */
+.custom-top-buttons {
+    width: 170px;
+}
+/* End of Верхние кнопки страницы*/
 
 /* Footer */
 .custom-footer {
