@@ -1,4 +1,17 @@
 
+/* Fonts */
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.eot');
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('Inter-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Inter-Regular.woff2') format('woff2'),
+        url('Inter-Regular.woff') format('woff'),
+        url('Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* End of Fonts */
 
 /* Navbar */
 .custom-nav {
@@ -25,9 +38,9 @@
 .lang-button {
     color: #517E5D;
 	align-items: center;
-    font-family: Inter Thin;
-	font-size: 0.9rem;
-	font-weight: bold;
+    font-size: 11.81px;
+    line-height: 16px;
+    font-family: Inter;
 	cursor: pointer;
 	touch-action: manipulation; 
 } 
@@ -107,6 +120,10 @@
 /* Верхние кнопки страницы */
 .custom-top-buttons {
     width: 170px;
+    height: 48px;
+    font-size: 14.65px;
+    line-height: 22px;
+    font-family: Inter;
 }
 /* End of Верхние кнопки страницы*/
 
@@ -114,6 +131,9 @@
 .custom-main-bottom-buttons {
     width: 30%;
     height: 55px;
+    font-size: 14.65px;
+    line-height: 22px;
+    font-family: Inter;
 }
 /* End of 6 кнопок под карусели */
 
