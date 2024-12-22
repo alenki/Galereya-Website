@@ -44,8 +44,10 @@
 	cursor: pointer;
 	touch-action: manipulation; 
 } 
-/* Navbar Menu Button */
+/* End of Language button */
 
+
+/* Navbar Menu Button */
 .menu-btn {
     position: relative;
     display: flex;
@@ -136,6 +138,39 @@
     font-family: Inter;
 }
 /* End of 6 кнопок под карусели */
+
+/* Кнопки услуг */
+.service {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EDE5D7;
+}
+.service-box {
+    display: flex;
+    width: 198px;
+    height: 130px;
+    background-color: #5F8A6D;
+    border-radius: 1rem;
+    padding: 20px 20px 12px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column 
+}
+.service-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #4F545F;
+}
+.service-name {
+    display: flex;
+    font-size: 14.41px;
+    line-height: 22px;
+    font-family: Inter;
+    color:#EDE5D7;
+    align-items: center;
+    padding: 10px 0 0 0
+}
+/* End of кнопки услуг */
 
 /* Footer */
 .custom-footer {
