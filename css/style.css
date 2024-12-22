@@ -110,8 +110,15 @@
 }
 /* End of Верхние кнопки страницы*/
 
+/* 6 кнопок под карусели */
+.custom-main-bottom-buttons {
+    width: 30%;
+    height: 55px;
+}
+/* End of 6 кнопок под карусели */
+
 /* Footer */
 .custom-footer {
-    box-shadow: 0px 15px 50px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px -15px 39px -30px rgba(34, 60, 80, 0.2);
 }
 /* End of Footer */
