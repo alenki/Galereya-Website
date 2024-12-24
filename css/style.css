@@ -1,7 +1,7 @@
 
 /* Fonts */
 @font-face {
-    font-family: 'Inter';
+    font-family: 'Inter Regular';
     src: url('Inter-Regular.eot');
     src: local('Inter Regular'), local('Inter-Regular'),
         url('Inter-Regular.eot?#iefix') format('embedded-opentype'),
@@ -11,18 +11,29 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Inter Light';
+    src: url('Inter-LightBETA.eot');
+    src: local('Inter Light BETA'), local('Inter-LightBETA'),
+        url('Inter-LightBETA.eot?#iefix') format('embedded-opentype'),
+        url('Inter-LightBETA.woff2') format('woff2'),
+        url('Inter-LightBETA.woff') format('woff'),
+        url('Inter-LightBETA.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
 /* End of Fonts */
 
 /* Body - Тело */
 .section-names {
     font-size: 25.19px;
     line-height: 34px;
-    font-family: Inter;
+    font-family: Inter Regular;
 }
 .section-links {
     font-size: 14.41px;
     line-height: 22px;
-    font-family: Inter;
+    font-family: Inter Regular;
 }
 /* End of Body - Тело */
 
@@ -66,8 +77,8 @@
 	align-items: center;
     font-size: 11.81px;
     line-height: 16px;
-    font-family: Inter;
-	cursor: pointer;
+    font-family: Inter Regular;
+	cursor: poInter Regular;
 	touch-action: manipulation; 
 } 
 /* End of Language button */
@@ -81,7 +92,7 @@
     align-items: center;
     width: 50px;
     height: 50px;
-    cursor: pointer;
+    cursor: poInter Regular;
     transition: all .5s ease-in-out;
     /* border: 3px solid #fff; */
 }
@@ -151,7 +162,7 @@
     height: 48px;
     font-size: 14.65px;
     line-height: 22px;
-    font-family: Inter;
+    font-family: Inter Regular;
 }
 /* End of Верхние кнопки страницы*/
 
@@ -161,7 +172,7 @@
     height: 55px;
     font-size: 14.65px;
     line-height: 22px;
-    font-family: Inter;
+    font-family: Inter Regular;
 }
 /* End of 6 кнопок под карусели */
 
@@ -191,12 +202,61 @@
     display: flex;
     font-size: 14.41px;
     line-height: 22px;
-    font-family: Inter;
+    font-family: Inter Regular;
     color:#EDE5D7;
     align-items: center;
     padding: 10px 0 0 0
 }
 /* End of кнопки услуг */
+
+/* Кнопки акций */
+.promotion {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EDE5D7;
+}
+.promotion-box {
+    display: flex;
+    width: 200px;
+    height: 353px;
+    background-color: #5F8A6D;
+    border-radius: 1rem;
+    padding: 20px 20px 12px;
+    flex-flow: column 
+}
+.promotion-icon {
+    width: 126px;
+    height: 126px;
+    background-color: #4F545F;
+}
+.promotion-name {
+    display: flex;
+    font-size: 21px;
+    line-height: 29px;
+    font-family: Inter Regular;
+    color:#EDE5D7;
+    padding: 10px 0 0 0
+}
+.promotion-details {
+    display: flex;
+    font-size: 14.77px;
+    line-height: 22px;
+    font-family: Inter Regular;
+    color: #4F545F;
+    padding: 10px 0 0 0
+}
+.promotion-date {
+    display: flex;
+    font-size: 11.25px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    font-family: Inter Light;
+    color: #EDE5D7;
+    opacity: 0.7;
+    flex-direction: column; 
+    justify-content: flex-end;
+}
+/* End of кнопки акций */
 
 /* Footer */
 .custom-footer {
@@ -205,12 +265,12 @@
 .footer-address {
     font-size: 14.41px;
     line-height: 22px;
-    font-family: Inter;
+    font-family: Inter Regular;
 }
 .footer-phone-number {
     font-size: 13.71px;
     line-height: 22px;
-    font-family: Inter;
+    font-family: Inter Regular;
 }
 .footer-outlinedBoxes {
     border: 2px solid #848CA3;
