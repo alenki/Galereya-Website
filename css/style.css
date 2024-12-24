@@ -189,4 +189,20 @@
 .custom-footer {
     box-shadow: 0px -15px 39px -30px rgba(34, 60, 80, 0.2);
 }
+.footer-address {
+    font-size: 14.41px;
+    line-height: 22px;
+    font-family: Inter;
+}
+.footer-phone-number {
+    font-size: 13.71px;
+    line-height: 22px;
+    font-family: Inter;
+}
+.footer-outlinedBoxes {
+    border: 2px solid #848CA3;
+    border-radius: 7px;
+    width: 36px;
+    height: 36px;
+}
 /* End of Footer */
