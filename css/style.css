@@ -1,26 +1,18 @@
 
 /* Fonts */
 @font-face {
-    font-family: 'Inter Regular';
-    src: url('Inter-Regular.eot');
-    src: local('Inter Regular'), local('Inter-Regular'),
-        url('Inter-Regular.eot?#iefix') format('embedded-opentype'),
-        url('Inter-Regular.woff2') format('woff2'),
-        url('Inter-Regular.woff') format('woff'),
-        url('Inter-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-family: Navigo Regular;
+    src: url(./Fonts/Navigo-Regular.woff2);
+    font-weight: 400, 300, 200, 100;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: 'Inter Light';
-    src: url('Inter-LightBETA.eot');
-    src: local('Inter Light BETA'), local('Inter-LightBETA'),
-        url('Inter-LightBETA.eot?#iefix') format('embedded-opentype'),
-        url('Inter-LightBETA.woff2') format('woff2'),
-        url('Inter-LightBETA.woff') format('woff'),
-        url('Inter-LightBETA.ttf') format('truetype');
-    font-weight: 300;
+    font-family: Navigo Light;
+    src: url(./Fonts/Navigo-Light.woff2);
+    font-weight: 400, 300, 200, 100;
     font-style: normal;
+    font-display: swap;
 }
 /* End of Fonts */
 
@@ -28,12 +20,12 @@
 .section-names {
     font-size: 25.19px;
     line-height: 34px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
 }
 .section-links {
     font-size: 14.41px;
     line-height: 22px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
 }
 /* End of Body - Тело */
 
@@ -77,8 +69,8 @@
 	align-items: center;
     font-size: 11.81px;
     line-height: 16px;
-    font-family: Inter Regular;
-	cursor: poInter Regular;
+    font-family: Navigo Regular;
+	cursor: pointer;
 	touch-action: manipulation; 
 } 
 /* End of Language button */
@@ -92,7 +84,7 @@
     align-items: center;
     width: 50px;
     height: 50px;
-    cursor: poInter Regular;
+    cursor: pointer;
     transition: all .5s ease-in-out;
     /* border: 3px solid #fff; */
 }
@@ -162,7 +154,7 @@
     height: 48px;
     font-size: 14.65px;
     line-height: 22px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
 }
 /* End of Верхние кнопки страницы*/
 
@@ -172,7 +164,7 @@
     height: 55px;
     font-size: 14.65px;
     line-height: 22px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
 }
 /* End of 6 кнопок под карусели */
 
@@ -202,7 +194,7 @@
     display: flex;
     font-size: 14.41px;
     line-height: 22px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
     color:#EDE5D7;
     align-items: center;
     padding: 10px 0 0 0
@@ -233,7 +225,7 @@
     display: flex;
     font-size: 21px;
     line-height: 29px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
     color:#EDE5D7;
     padding: 10px 0 0 0
 }
@@ -241,7 +233,7 @@
     display: flex;
     font-size: 14.77px;
     line-height: 22px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
     color: #4F545F;
     padding: 10px 0 0 0
 }
@@ -250,7 +242,7 @@
     font-size: 11.25px;
     line-height: 16px;
     letter-spacing: 0.5px;
-    font-family: Inter Light;
+    font-family: Navigo Light;
     color: #EDE5D7;
     opacity: 0.7;
     flex-direction: column; 
@@ -265,12 +257,12 @@
 .footer-address {
     font-size: 14.41px;
     line-height: 22px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
 }
 .footer-phone-number {
     font-size: 13.71px;
     line-height: 22px;
-    font-family: Inter Regular;
+    font-family: Navigo Regular;
 }
 .footer-outlinedBoxes {
     border: 2px solid #848CA3;
