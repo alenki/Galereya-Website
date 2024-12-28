@@ -41,10 +41,11 @@ function backToTop() {
 
 // 2 main buttons on top
 var worktimes_btn = document.getElementById("worktimesUnlock");
-var worktimes_modal = document.getElementById("worktimesDiv");
+var worktimes_modal = document.getElementById('worktimesHidden');
 var worktimes_isopen = false;
 document.onclick = function(e) {
-    if ((e.target.id !== 'worktimesDiv') && ((e.target.id !== 'worktimesUnlock')) && (worktimes_isopen===true)) {
+    console.log(e.target);
+    if ((e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
         worktimes_modal.style.display = "none";
         worktimes_isopen = false;
     }
@@ -58,5 +59,4 @@ worktimes_btn.onclick = function() {
         worktimes_isopen = false;
     }
 };
-
 // End of 2 main buttons on top
