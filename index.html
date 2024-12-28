@@ -80,18 +80,58 @@
 
     <!-- Главные начальные кнопки -->
     <section class="pt-4 pb-2 bg-secondary">
-      <div class="container pt-5 d-flex justify-content-between">
-          <div class="">
-            <button type="button" class="btn btn-primary custom-top-buttons text-secondary">Режим работы</button>
-          </div>
-          <div class="">
+      <div class="container pt-5">
+        <div class="d-flex justify-content-between">
+            <button type="button" id="worktimesUnlock" class="btn btn-primary custom-top-buttons text-secondary">Режим работы</button>
             <button type="button" class="btn btn-primary custom-top-buttons text-secondary">Как добраться</button>
+        </div>
+        <div class="worktimesUnlocked mt-2" id="worktimesDiv">
+          <div class="p-4 py-3">
+            <h6>Время работы</h6>
+            <div class="row">
+              <div class="col">
+                <span class="worktime-day">Пн</span>
+                <span class="worktime-time">10:00</span>
+                <span class="worktime-time">23:00</span>
+              </div>
+              <div class="col">
+                <span class="worktime-day">Вт</span>
+                <span class="worktime-time">10:00</span>
+                <span class="worktime-time">23:00</span>
+              </div>
+              <div class="col">
+                <span class="worktime-day">Ср</span>
+                <span class="worktime-time">10:00</span>
+                <span class="worktime-time">23:00</span>
+              </div>
+              <div class="col">
+                <span class="worktime-day">Чт</span>
+                <span class="worktime-time">10:00</span>
+                <span class="worktime-time">23:00</span>
+              </div>
+              <div class="col">
+                <span class="worktime-day">Пт</span>
+                <span class="worktime-time">10:00</span>
+                <span class="worktime-time">23:00</span>
+              </div>
+              <div class="col">
+                <span class="worktime-day">Сб</span>
+                <span class="worktime-time">10:00</span>
+                <span class="worktime-time">23:00</span>
+              </div>
+              <div class="col">
+                <span class="worktime-day">Вс</span>
+                <span class="worktime-time">10:00</span>
+                <span class="worktime-time">23:00</span>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
     </section>
 
     <!-- Карусель -->
-    <section class="p-5 pt-2 bg-secondary">
+    <section class="p-5 pt-2 bg-secondary customCarouselSection">
         <div class="px-5 mx-5">
           <div class="px-3">
             <div id="hero-carousel" class="carousel slide px-5 mx-5">

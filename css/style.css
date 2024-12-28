@@ -129,10 +129,33 @@
 /* End of Navbar Menu Button */
 /* End of Navbar */
 
-
+/* 2 Главные кнопки наверху */
+.worktimesUnlocked {
+    width: 370px;
+    height: 143px;
+    background-color: #EDE5D5;
+    position: absolute;
+    z-index: 2;
+    border-radius: 17px;
+    display: none;
+}
+.worktime-day {
+    font-size: 11.65px;
+    font-family: Navigo Light;
+    color: #848CA3;
+}
+.worktime-time {
+    font-size: 9.65px;
+    font-family: Navigo Light;
+    color: black;
+}
+/* End of 2 Главные кнопка наверху */
 
 /* Карусель */
-
+.customCarouselSection {
+    position: relative;
+    z-index: 1;
+}
 .custom-carousel-div { 
     border-radius: 30px;
 }
