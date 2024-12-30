@@ -44,7 +44,6 @@ var worktimes_btn = document.getElementById("worktimesUnlock");
 var worktimes_modal = document.getElementById('worktimesHidden');
 var worktimes_isopen = false;
 document.onclick = function(e) {
-    console.log(e.target);
     if ((e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
         worktimes_modal.style.display = "none";
         worktimes_isopen = false;
