@@ -41,12 +41,20 @@ function backToTop() {
 
 // 2 main buttons on top
 var worktimes_btn = document.getElementById("worktimesUnlock");
-var worktimes_modal = document.getElementById('worktimesHidden');
+var worktimes_modal = document.getElementById("worktimesHidden");
 var worktimes_isopen = false;
+var location_btn = document.getElementById("locationUnlock");
+var location_modal = document.getElementById("locationHidden");
+var location_isopen = false;
+
 document.onclick = function(e) {
-    if ((e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
+    if ((worktimes_isopen) && (e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
         worktimes_modal.style.display = "none";
         worktimes_isopen = false;
+    }
+    if ((location_isopen) && (e.target.id !== 'locationHidden') && (e.target.id !== 'locationUnlock')) {
+        location_modal.style.display = "none";
+        location_isopen = false;
     }
 };
 worktimes_btn.onclick = function() {
@@ -56,6 +64,15 @@ worktimes_btn.onclick = function() {
     } else {
         worktimes_modal.style.display = "none";
         worktimes_isopen = false;
+    }
+};
+location_btn.onclick = function() {
+    if (location_isopen === false) {
+        location_modal.style.display = "block";
+        location_isopen = true;
+    } else {
+        location_modal.style.display = "none";
+        location_isopen = false;
     }
 };
 // End of 2 main buttons on top

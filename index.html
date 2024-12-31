@@ -52,7 +52,7 @@
               <!-- Логотип -->
               <a href="#" class="text-primary ms-md-5 me-4 me-md-0 auto-resize-navbar-brand mt-1 mt-md-0" style="text-decoration:none">ГАЛЕРЕЯ</a>
               <!-- Кнопка -->
-              <div><button class="btn btn-outline-border-button-color lang-button d-none d-md-block">
+              <div><button class="btn lang-button d-none d-md-block">
                 <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
                 <span class="pt-1">English</span>
               </button></div>
@@ -83,8 +83,10 @@
       <div class="container pt-5">
         <div class="d-flex justify-content-between">
             <button type="button" id="worktimesUnlock" class="btn btn-primary custom-top-buttons text-secondary">Режим работы</button>
-            <button type="button" class="btn btn-primary custom-top-buttons text-secondary">Как добраться</button>
+            <button type="button" id="locationUnlock" class="btn btn-primary custom-top-buttons text-secondary">Как добраться</button>
         </div>
+        
+        <!-- Раскрытый меню режим работы -->
         <div class="worktimesUnlocked mt-2" id="worktimesHidden">
           <div class="p-4 py-3" id="worktimesHidden">
             <h6 id="worktimesHidden">Время работы</h6>
@@ -127,6 +129,36 @@
             </div>
           </div>
         </div>
+
+        <!-- Раскрытый меню Как добраться -->
+        <div class="d-flex flex-row-reverse">
+          <div class="locationUnlocked mt-2" id="locationHidden">
+            <!-- Адрес -->
+            <div class="ps-4 pt-4 footer-address d-flex align-items-center">
+              <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
+              <div class="ps-3">
+                г. Нальчик, <br>
+                ул. Кирова, 1Д
+              </div>
+            </div>
+
+            <!-- Яндекс карта -->
+            <div class="ps-4 pt-2">
+              <a href="https://yandex.ru/maps/30/nalchik/?azimuth=0.03992659559746224&ll=43.573782%2C43.475360&mode=routes&rtext=~43.476351%2C43.573495&rtt=comparison&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1077655466&tilt=0.1598391881703235&z=16.37" 
+              class="btn yandexMapButton" target="_blank">
+                <img src="Media\Logos\orig.svg" class="d-block locationMapButtonIMG" alt="Yandex Logo">
+              </a>
+            </div>
+            <!-- Гугл карта -->
+            <div class="ps-4 pt-2">
+              <a href="https://www.google.com/maps/dir//Галерея,+улица+Кирова,+Нальчик/@43.476242,43.5326028,13z/data=!3m1!5s0x405a06a799ebc2eb:0xd90eb4de88dded4!4m9!4m8!1m0!1m5!1m1!1s0x405a041d7767e057:0x5fbcc72ce3653594!2m2!1d43.573888!2d43.4762494!3e0!5m1!1e1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
+              class="btn googleMapButton" target="_blank">
+                <img src="Media\Logos\Google_Maps_Logo.svg" class="d-block locationMapButtonIMG" alt="Yandex Logo">
+              </a>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
@@ -144,13 +176,13 @@
               <!-- Основа -->
               <div class="carousel-inner custom-carousel-div">
                   <div class="carousel-item active custom-carousel-item">
-                      <img src="image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
+                      <img src="Media\Carousel\image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
                   </div>
                   <div class="carousel-item custom-carousel-item">
-                      <img src="image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
+                      <img src="Media\Carousel\image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
                   </div>
                   <div class="carousel-item custom-carousel-item">
-                      <img src="..." class="d-block w-100 custom-carousel-img" alt="...">
+                      <img src="Media\Carousel\image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
                   </div>
               </div>
               <!-- Кнопки перехода к следующему/предыдущему -->
@@ -263,13 +295,13 @@
       <div class="container">
         <footer class="py-5">
           <div class="row">
-            <div class="col-6 col-md-3 mb-3 footer-address d-flex align-items-center">
-              <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
-              <div class="ps-3">
-                г. Нальчик, <br>
-                ул. Кирова, 1Д
+              <div class="col-6 col-md-3 mb-3 footer-address d-flex align-items-center">
+                <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
+                <div class="ps-3">
+                  г. Нальчик, <br>
+                  ул. Кирова, 1Д
+                </div>
               </div>
-            </div>
             <div class="col-6 col-md-3 mb-3 footer-phone-number d-flex align-items-center">
               <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
               <div class="ps-3">+7 (8662) 40-46-84</div>
