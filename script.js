@@ -76,3 +76,10 @@ location_btn.onclick = function() {
     }
 };
 // End of 2 main buttons on top
+
+// 6 Buttons below carousel
+// Магазины
+document.getElementById("storeButton-1").onclick = function () { 
+    window.location.href = "stores.html"; 
+};
+// End of 6 Buttons below carousel

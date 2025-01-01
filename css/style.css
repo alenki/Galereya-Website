@@ -201,6 +201,9 @@
     position: relative;
     z-index: 1;
 }
+.customCarouselSize {
+    width: 61.8%;
+}
 .custom-carousel-div { 
     border-radius: 30px;
 }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Import SASS Bootstrap -->
+        <link href="/css/main.css" rel="stylesheet">       
+        <!-- Import custom css -->
+        <link rel="stylesheet" href="/css/style.css">
+    <title>Galereya</title>
+</head>
+<body class="bg-nav-bg">
+
+    <!-- Icons --> 
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="vkontakte" viewBox="0 0 576 512">
+            <path d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2 .1-.1 72-101.3 79.4-135.6z"/>
+        </symbol>
+        <symbol id="telegram" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+        </symbol>
+        <symbol id="language-icon" viewBox="0 0 24 24">
+            <path fill="currentColor" fill-rule="evenodd"
+            d="M12 2.6c2.511 0 4.872.977 6.647 2.753A9.338 9.338 0 0 1 21.401 12a9.34 9.34 0 0 1-2.754 6.647A9.34 9.34 0 0 1 12 21.401a9.339 9.339 0 0 1-6.647-2.754A9.34 9.34 0 0 1 2.599 12a9.34 9.34 0 0 1 2.754-6.647A9.339 9.339 0 0 1 12 2.599Zm4.586 13.178h2.777a8.222 8.222 0 0 0 .887-3.154h-3.24a15.81 15.81 0 0 1-.424 3.154Zm3.664-4.402a8.22 8.22 0 0 0-.926-3.228h-2.756c.248.995.401 2.085.443 3.228h3.24Zm-16.5 0a8.222 8.222 0 0 1 .926-3.228h2.756a15.762 15.762 0 0 0-.443 3.228H3.75Zm4.365 0a14.42 14.42 0 0 1 .48-3.228h2.794v3.228H8.115Zm4.496 0V8.148h2.794c.265.97.435 2.062.48 3.228H12.61Zm2.814 4.402c.254-.95.416-2.017.46-3.154H12.61v3.154h2.814Zm-4.036 0H8.575a14.473 14.473 0 0 1-.46-3.154h3.274v3.154Zm-3.975 0H4.637a8.222 8.222 0 0 1-.887-3.154h3.24c.04 1.115.187 2.179.424 3.154Zm7.223-11.622a8.29 8.29 0 0 1 3.918 2.795h-2.347c-.164-.46-.35-.89-.555-1.287a7.244 7.244 0 0 0-.957-1.43 6.103 6.103 0 0 0-.059-.078Zm.058 15.61a7.21 7.21 0 0 0 .958-1.43c.205-.396.391-.826.555-1.285h2.346a8.29 8.29 0 0 1-3.917 2.794l.058-.078Zm-5.33.079a8.29 8.29 0 0 1-3.919-2.794h2.346c.164.459.35.889.555 1.285.278.535.6 1.023.965 1.438l.053.071ZM9.31 4.227a7.236 7.236 0 0 0-.963 1.437c-.205.396-.391.827-.555 1.287H5.445a8.29 8.29 0 0 1 3.92-2.796 6.304 6.304 0 0 0-.055.072Zm3.3 2.724V4.074c.722.252 1.442.948 2.044 2.108.125.24.242.497.351.769h-2.394Zm2.395 10.1h-2.394v2.875c.721-.252 1.441-.948 2.043-2.108.125-.24.242-.497.351-.768Zm-5.659.767c.602 1.16 1.322 1.856 2.043 2.108V17.05H8.995c.11.27.226.527.351.767ZM8.995 6.951h2.394V4.074c-.721.252-1.441.948-2.043 2.108-.125.24-.242.497-.351.769Z"
+            clip-rule="evenodd"></path>
+        </symbol>
+        <symbol id="footer-address-icon-svg" viewbox="0 0 24 24">
+            <path fill="currentColor" fill-rule="evenodd" d="M18.494 8.864c0 3.29-2.447 6.01-5.62 6.436v6.33h-1.747V15.3A6.495 6.495 0 0 1 12 2.37a6.494 6.494 0 0 1 6.494 6.494ZM12 13.832a4.968 4.968 0 0 0 4.585-6.885C15.94 5.76 15.437 5.26 14.392 4.51A4.968 4.968 0 1 0 12 13.832Z" clip-rule="evenodd"></path>
+        </symbol>
+        <symbol id="footer-phone-number-icon-svg" viewbox="0 0 24 24">
+            <path fill="currentColor" fill-rule="evenodd" d="M6.347 3.736a1.8 1.8 0 0 1 2.589.413l1.97 2.877a1.812 1.812 0 0 1-.335 2.415l-1.579 1.316c.102 2.248 1.907 4.098 4.184 4.267a.09.09 0 0 0 .074-.03l1.411-1.707a1.661 1.661 0 0 1 2.27-.277l2.97 2.2a1.82 1.82 0 0 1 .252 2.696c-.396.428-.881.952-1.71 1.828-.517.548-1.278.812-2.093.885-.824.073-1.773-.042-2.766-.324-1.987-.564-4.24-1.82-6.177-3.779-1.942-1.964-3.145-4.272-3.693-6.26-.273-.993-.389-1.929-.338-2.718.049-.762.263-1.511.784-1.974a41.506 41.506 0 0 1 2.187-1.828ZM7.853 4.89a.488.488 0 0 0-.7-.118 40.2 40.2 0 0 0-2.121 1.773c-.136.12-.306.443-.347 1.077-.039.608.05 1.394.295 2.286.49 1.78 1.582 3.888 3.36 5.686 1.784 1.803 3.841 2.94 5.603 3.439.881.25 1.666.334 2.29.279.635-.056 1.039-.248 1.257-.48.824-.87 1.306-1.39 1.699-1.816a.508.508 0 0 0-.07-.752l-2.97-2.2a.35.35 0 0 0-.477.059l-1.41 1.707c-.29.35-.735.535-1.183.502-3.016-.223-5.403-2.738-5.403-5.776 0-.26.115-.506.315-.673l1.74-1.45a.5.5 0 0 0 .092-.666L7.853 4.89Z" clip-rule="evenodd"></path>
+        </symbol>
+        <symbol id="arrow-up" viewBox="0 0 448 512">
+            <path d="M241 130.5l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9l-22.7 22.7c-9.4 9.4-24.5 9.4-33.9 0L224 227.5 69.3 381.5c-9.4 9.3-24.5 9.3-33.9 0l-22.7-22.7c-9.4-9.4-9.4-24.6 0-33.9L207 130.5c9.4-9.4 24.6-9.4 33.9 0z"/>
+        </symbol>
+    </svg>
+
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-primary btn-floating btn-lg rounded-5" id="btn-back-to-top">
+        <svg width="35" height="45" class="back-to-top-svg"><use xlink:href="#arrow-up"/>
+    </button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-lg-expand bg-nav-bg fixed-top custom-nav py-0">     
+        <div class="container">
+            <div class="collapse navbar-collapse d-flex justify-content-between">
+                <!-- Основа нава -->
+                <!-- Кнопка меню -->
+                <div class="menu-btn me-lg-3" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <div class="menu-btn__burger"></div>
+                </div>
+                <!-- Логотип -->
+                <a href="index.html" class="text-primary ms-md-5 me-4 me-md-0 auto-resize-navbar-brand mt-1 mt-md-0" style="text-decoration:none">ГАЛЕРЕЯ</a>
+                <!-- Кнопка -->
+                <div><button class="btn lang-button d-none d-md-block">
+                    <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
+                    <span class="pt-1">English</span>
+                </button></div>
+            </div>
+            <!-- Раскрытый меню -->
+            <div class="collapse navbar-collapse custom-collapsed-nav" id="navmenu">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <ul class="col-8 navbar-nav">
+                    <li class="nav-item">
+                        <a href="#learn" class="nav-link text-primary">Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#questions" class="nav-link text-primary">Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#instructors" class="nav-link text-primary">Instructors</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <!-- Footer -->
+    <section class="bg-nav-bg custom-footer">
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-6 col-md-3 mb-3 footer-address d-flex align-items-center">
+                        <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
+                        <div class="ps-3">
+                            г. Нальчик, <br>
+                            ул. Кирова, 1Д
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3 footer-phone-number d-flex align-items-center">
+                        <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
+                        <div class="ps-3">+7 (8662) 40-46-84</div>
+                    </div>
+                    <div class="col-md-5 offset-md-1 list-unstyled d-flex flex-row-reverse mb-3 ">
+                        <div class="align-content-center">
+                            <li class="ms-3"><a class="link-body-emphasis " href="#"><svg width="24" height="24"><use xlink:href="#vkontakte"/></svg></a></li>
+                        </div>
+                        <div class="align-content-center">
+                            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi bi-telegram" width="24" height="24"><use xlink:href="#telegram"/></svg></a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p>&copy; 2024 KARAF Company, Inc. All rights reserved.</p>
+                    <ul class="nav col-md-6 justify-content-end">
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-primary">Контакты</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-primary">Обратная связь</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-primary">О ГАЛЕРЕИ</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-primary">Правила ГАЛЕРЕИ</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
