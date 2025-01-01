@@ -1,0 +1,27 @@
+// custom variables
+$primary: #5E916F;
+$secondary: #EDE5D7;
+$container-max-widths: (
+    sm: 500px,
+    md: 540px,
+    lg: 720px,
+    xl: 960px,
+    xxl: 1377px
+);
+
+// import the functions and the variables
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+
+// A map of new color values you want to add
+$custom-theme-colors: (
+    "nav-bg": #EDE5D5,
+    "border-button-color": #848CA3
+);
+
+// This is gonna merge our custom theme map with the bootstrap theme map
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+//import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+

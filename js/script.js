@@ -78,8 +78,31 @@ location_btn.onclick = function() {
 // End of 2 main buttons on top
 
 // 6 Buttons below carousel
+const categoryHeading = document.getElementById("categoryHeading");
+
 // Магазины
 document.getElementById("storeButton-1").onclick = function () { 
+    localStorage.setItem("category", "Магазины");
+    window.location.href = "stores.html"; 
+};
+// Еда
+document.getElementById("storeButton-2").onclick = function () { 
+    localStorage.setItem("category", "Еда");
+    window.location.href = "stores.html"; 
+};
+// Развлечения
+document.getElementById("storeButton-3").onclick = function () { 
+    localStorage.setItem("category", "Развлечения");
+    window.location.href = "stores.html"; 
+};
+// Детям
+document.getElementById("storeButton-4").onclick = function () { 
+    localStorage.setItem("category", "Детям");
+    window.location.href = "stores.html"; 
+};
+// Услуги
+document.getElementById("storeButton-5").onclick = function () { 
+    localStorage.setItem("category", "Услуги");
     window.location.href = "stores.html"; 
 };
 // End of 6 Buttons below carousel

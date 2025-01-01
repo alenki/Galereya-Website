@@ -1,0 +1,42 @@
+/* Fonts */
+@font-face {
+    font-family: Navigo Regular;
+    src: url(./Fonts/Navigo-Regular.woff2);
+    font-weight: 400, 300, 200, 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Navigo Light;
+    src: url(./Fonts/Navigo-Light.woff2);
+    font-weight: 400, 300, 200, 100;
+    font-style: normal;
+    font-display: swap;
+}
+/* End of Fonts */
+
+/* Фильтры (меню слева) */
+.customFiltersSection {
+    width: 284px; 
+}
+.customFilterCatalogButton {
+    width: 100%;
+    height: 50px;
+    text-align: left;
+}
+.customFilterCatalogTitle {
+    font-family: Navigo Regular;
+    font-weight: 400;
+    font-size: 1.07rem;
+    line-height: 2.2rem;
+}
+/* End of Фильтры (меню слева) */
+
+/* Каталог */
+.customCategoryHeadingTitle{
+    font-family: Navigo Regular;
+    font-weight: 400;
+    font-size: 1.97rem;
+    line-height: 2.2rem;
+}
+/* End of Каталог */
