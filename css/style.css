@@ -15,6 +15,19 @@
 }
 /* End of Fonts */
 
+/* Loading screen / Экран загрузки */
+.loadingScreen {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* End of Loading screen / Экран загрузки */
+
 /* Body - Тело */
 .section-names {
     font-size: 25.19px;
@@ -43,6 +56,7 @@
 
 /* Navbar */
 .custom-nav {
+    z-index: 4;
     box-shadow: 0px -15px 50px 0px rgba(34, 60, 80, 0.2);
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;

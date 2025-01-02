@@ -1,3 +1,9 @@
+// Loading screen / Экран загрузки
+var loadingScreen = document.querySelector(".loadingScreen");
+window.addEventListener('load', function() {
+    loadingScreen.style.display = 'none';
+})
+// End of Loading screen / Экран загрузки
 
 // Navbar Menu Button
 const menuBtn = document.querySelector('.menu-btn');
