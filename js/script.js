@@ -139,3 +139,32 @@ document.getElementById("serviceButton-5").addEventListener("click", function() 
     window.location.href = "stores.html"; 
 });
 // End of Service buttons
+
+
+// Promotion buttons
+// Магазины
+document.getElementById("promotionButton-1").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-1')); 
+    promotionModal.show(); 
+});
+// Еда
+document.getElementById("promotionButton-2").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-2')); 
+    promotionModal.show(); 
+});
+// Развлечения
+document.getElementById("promotionButton-3").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-3')); 
+    promotionModal.show(); 
+});
+// Детям
+document.getElementById("promotionButton-4").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-4')); 
+    promotionModal.show(); 
+});
+// Услуги
+document.getElementById("promotionButton-5").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-5')); 
+    promotionModal.show(); 
+});
+// End of Promotion buttons
