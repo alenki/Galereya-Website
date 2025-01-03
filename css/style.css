@@ -274,7 +274,12 @@
     padding: 20px 20px 12px;
     justify-content: center;
     align-items: center;
-    flex-flow: column 
+    flex-flow: column;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.service-box:hover {
+    transform: scale(1.037); 
 }
 .service-icon {
     width: 48px;
@@ -305,7 +310,12 @@
     background-color: #5F8A6D;
     border-radius: 1rem;
     padding: 20px 20px 12px;
-    flex-flow: column 
+    flex-flow: column;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.promotion-box:hover {
+    transform: scale(1.037); 
 }
 .promotion-icon {
     width: 126px;
