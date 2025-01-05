@@ -10,28 +10,28 @@ function url(){
 }
 
 if($_POST) {
-
    $name = trim(stripslashes($_POST['name']));
    $email = trim(stripslashes($_POST['email']));
    $subject = trim(stripslashes($_POST['subject']));
    $contact_message = trim(stripslashes($_POST['message']));
 
-   $phone = trim(stripslashes($_POST['phone']));
-   $company = trim(stripslashes($_POST['company']));
+   // $phone = trim(stripslashes($_POST['phone']));
+   // $company = trim(stripslashes($_POST['company']));
 
-   if ($phone == '') { $phone = "N/A"; }
-   if ($company == '') { $company = "N/A"; }
+   // if ($phone == '') { $phone = "N/A"; }
+   // if ($company == '') { $company = "N/A"; }
 
    
 	if ($subject == '') { $subject = "Отправка контактной формы"; }
 
    // Set Message
+   $message = "";
    $message .= "Почта от: " . $name . "<br />";
 	$message .= "Почта: " . $email . "<br />";
-   $message .= "Телефон: " . $phone . "<br />";
-   $message .= "Компания: " . $company . "<br />";
+   // $message .= "Телефон: " . $phone . "<br />";
+   // $message .= "Компания: " . $company . "<br />";
    $message .= "Сообщение: <br />";
-   $message .= nl2br($contact_message);
+   // $message .= nl2br($contact_message);
    $message .= "<br /> ----- <br /> Это письмо было отправлено из контактной формы вашего сайта: " . url() . "<br />";
 
    // Set From: header
@@ -46,8 +46,8 @@ if($_POST) {
    ini_set("sendmail_from", $to); // for windows server
    $mail = mail($to, $subject, $message, $headers);
 
-	if ($mail) { echo "OK"; }
-   else { echo "Что-то пошло не так. Пожалуйста, попробуйте еще раз."; }
+	if ($mail) {echo "OK"; }
+   else {echo "Not OK"; }
 }
 
 ?>
