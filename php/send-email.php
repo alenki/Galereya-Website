@@ -31,7 +31,7 @@ if($_POST) {
    // $message .= "Телефон: " . $phone . "<br />";
    // $message .= "Компания: " . $company . "<br />";
    $message .= "Сообщение: <br />";
-   // $message .= nl2br($contact_message);
+   $message .= nl2br($contact_message);
    $message .= "<br /> ----- <br /> Это письмо было отправлено из контактной формы вашего сайта: " . url() . "<br />";
 
    // Set From: header
