@@ -38,6 +38,7 @@
     font-size: 14.41px;
     line-height: 22px;
     font-family: Navigo Regular;
+    align-content: center;
 }
 /* End of Body - Тело */
 
@@ -372,3 +373,44 @@
     height: 36px;
 }
 /* End of Footer */
+
+/* Feedback form */
+.feedback-form-control {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    background: none; 
+}
+.form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; 
+}
+#form-message-warning, #form-message-success {
+    display: none; 
+}
+#form-message-warning {
+    color: #B90B0B; 
+}
+#form-message-success {
+    color: #55A44E;
+    font-size: 18px;
+    font-weight: bold; 
+}
+.submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000; 
+}
+label.error {
+    font-size: 12px;
+    color: red; 
+}
+/* End of Feedback form */
