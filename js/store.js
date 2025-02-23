@@ -1,34 +1,52 @@
 // Categories
 const categoryHeading = document.getElementById("categoryHeading");
-var category = localStorage.getItem("category")
 
 window.onload = function() {
-    categoryHeading.innerHTML = category;
+    Load();
 };
+
+// Загрузить все в зависимости от фильтра
+function Load() {
+    var category = localStorage.getItem("category")
+    categoryHeading.innerHTML = category;
+
+    // Загрузить все магазины
+    const ui = new UI();
+    const stores = new Stores();
+    // get all stores
+    stores.getStores().then(stores => {
+        ui.displayStores(stores);
+    })//.then(()=>{});
+}
 
 // Магазины
 document.getElementById("categoryButton-1").onclick = function () { 
-    categoryHeading.innerHTML = 'Магазины';
+    localStorage.setItem("category", "Магазины");
+    Load();
 };
 
-// Магазины
+// Еда
 document.getElementById("categoryButton-2").onclick = function () { 
-    categoryHeading.innerHTML = 'Еда';
+    localStorage.setItem("category", "Еда");
+    Load();
 };
 
-// Магазины
+// Развлечения
 document.getElementById("categoryButton-3").onclick = function () { 
-    categoryHeading.innerHTML = 'Развлечения';
+    localStorage.setItem("category", "Развлечения");
+    Load();
 };
 
-// Магазины
+// Детям
 document.getElementById("categoryButton-4").onclick = function () { 
-    categoryHeading.innerHTML = 'Детям';
+    localStorage.setItem("category", "Детям");
+    Load();
 };
 
-// Магазины
+// Услуги
 document.getElementById("categoryButton-5").onclick = function () { 
-    categoryHeading.innerHTML = 'Услуги';
+    localStorage.setItem("category", "Услуги");
+    Load();
 };
 // End of Categories
 
@@ -48,9 +66,9 @@ class Stores{
             let stores = data.items;
             // let stores = contentful.items;
             stores = stores.map(item =>{
-                const {title} = item.fields;
+                const {title, category} = item.fields;
                 const image = item.fields.image.fields.file.url;
-                return {title, image}
+                return {title, category, image}
             })
             return stores
         } catch(error) {
@@ -64,33 +82,35 @@ const storesDOM = document.querySelector('.stores-center');
 class UI {
     displayStores(stores){
         let result = '';
+        var category = localStorage.getItem("category");
         stores.forEach(stores => {
-            result += `                            
-      <!-- single stores -->
-      <article class="store_block">
-        <div class="img-container">
-          <img 
-            src=${stores.image}
-            alt="store" 
-            class="store-img"
-          />
-        </div>
-        <h3>${stores.title}</h3>
-       </article>
-      <!-- end single stores -->
-            `;
-        });
+            if(stores.category == category){
+                result += `                            
+        <!-- single stores -->
+        <article class="store_block">
+            <div class="img-container">
+            <img 
+                src=${stores.image}
+                alt="store" 
+                class="store-img"
+            />
+            </div>
+            <h3>${stores.title}</h3>
+        </article>
+        <!-- end single stores -->
+                `;
+            }});
         storesDOM.innerHTML = result;
     }
 }
 
 
 // Loading stores
-document.addEventListener("DOMContentLoaded", ()=>{
-    const ui = new UI();
-    const stores = new Stores();
-    // get all stores
-    stores.getStores().then(stores => {
-        ui.displayStores(stores);
-    })//.then(()=>{});
-});
+// document.addEventListener("DOMContentLoaded", ()=>{
+//     const ui = new UI();
+//     const stores = new Stores();
+//     // get all stores
+//     stores.getStores().then(stores => {
+//         ui.displayStores(stores);
+//     })//.then(()=>{});
+// });
