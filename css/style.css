@@ -1,4 +1,4 @@
-/* Fonts */
+/* --------------- Fonts ---------------- */
 @font-face {
     font-family: Navigo Regular;
     src: url(./Fonts/Navigo-Regular.woff2);
@@ -13,9 +13,9 @@
     font-style: normal;
     font-display: swap;
 }
-/* End of Fonts */
+/* --------------- End of Fonts ---------------- */
 
-/* Loading screen / Экран загрузки */
+/* --------------- End of Loading screen / Экран загрузки ---------------- */
 .loadingScreen {
     position: absolute;
     z-index: 5;
@@ -26,9 +26,9 @@
     align-items: center;
     justify-content: center;
 }
-/* End of Loading screen / Экран загрузки */
+/* --------------- End of Loading screen / Экран загрузки ---------------- */
 
-/* Body - Тело */
+/* --------------- Body - Тело ---------------- */
 .section-names {
     font-size: 25.19px;
     line-height: 34px;
@@ -40,9 +40,9 @@
     font-family: Navigo Regular;
     align-content: center;
 }
-/* End of Body - Тело */
+/* --------------- End of Body - Тело ---------------- */
 
-/* Back to top button */
+/* --------------- Back to top button ---------------- */
 #btn-back-to-top {
     position: fixed;
     bottom: 20px;
@@ -53,9 +53,9 @@
 .back-to-top-svg {
     fill: #EDE5D5;
 }
-/* End of Back to top button */
+/* --------------- End of Back to top button ---------------- */
 
-/* Navbar */
+/* --------------- Navbar ---------------- */
 .custom-nav {
     z-index: 4;
     box-shadow: 0px -15px 50px 0px rgba(34, 60, 80, 0.2);
@@ -154,9 +154,10 @@
 }
 
 /* End of Navbar Menu Button */
-/* End of Navbar */
 
-/* 2 Главные кнопки наверху */
+/* --------------- End of Navbar ---------------- */
+
+/* --------------- 2 Главные кнопка наверху ---------------- */
 .worktimesUnlocked {
     width: 370px;
     height: 143px;
@@ -215,9 +216,9 @@
     height: 100%;
     object-fit: cover;
 }
-/* End of 2 Главные кнопка наверху */
+/* --------------- End of 2 Главные кнопка наверху ---------------- */
 
-/* Карусель */
+/* --------------- Карусель ---------------- */
 .customCarouselSection {
     position: relative;
     z-index: 1;
@@ -236,11 +237,9 @@
     object-fit: cover;
     filter: brightness(0.6);
 }
+/* --------------- End of Карусель ---------------- */
 
-/* End of Карусель*/
-
-
-/* Верхние кнопки страницы */
+/* --------------- Верхние кнопки страницы ---------------- */
 .custom-top-buttons {
     width: 170px;
     height: 48px;
@@ -248,9 +247,9 @@
     line-height: 22px;
     font-family: Navigo Regular;
 }
-/* End of Верхние кнопки страницы*/
+/* --------------- End of Верхние кнопки страницы ---------------- */
 
-/* 6 кнопок под карусели */
+/* --------------- 6 кнопок под карусели ---------------- */
 .custom-main-bottom-buttons {
     width: 30%;
     height: 55px;
@@ -258,9 +257,9 @@
     line-height: 22px;
     font-family: Navigo Regular;
 }
-/* End of 6 кнопок под карусели */
+/* --------------- End of 6 кнопок под карусели ---------------- */
 
-/* Кнопки услуг */
+/* --------------- кнопки услуг ---------------- */
 .service {
     display: flex;
     justify-content: space-between;
@@ -296,9 +295,9 @@
     align-items: center;
     padding: 10px 0 0 0
 }
-/* End of кнопки услуг */
+/* --------------- End of кнопки услуг ---------------- */
 
-/* Кнопки акций */
+/* --------------- кнопки акций ---------------- */
 .promotion {
     display: flex;
     justify-content: space-between;
@@ -350,9 +349,9 @@
     flex-direction: column; 
     justify-content: flex-end;
 }
-/* End of кнопки акций */
+/* --------------- End of кнопки акций ---------------- */
 
-/* Footer */
+/* --------------- Footer ---------------- */
 .custom-footer {
     box-shadow: 0px -15px 39px -30px rgba(34, 60, 80, 0.2);
 }
@@ -372,9 +371,9 @@
     width: 36px;
     height: 36px;
 }
-/* End of Footer */
+/* --------------- End of Footer ---------------- */
 
-/* Feedback form */
+/* --------------- Feedback form ---------------- */
 .feedback-form-control {
     border: none;
     border-bottom: 1px solid #ccc;
@@ -413,4 +412,4 @@ label.error {
     font-size: 12px;
     color: red; 
 }
-/* End of Feedback form */
+/* --------------- End of Feedback form ---------------- */
