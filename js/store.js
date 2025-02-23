@@ -31,3 +31,66 @@ document.getElementById("categoryButton-5").onclick = function () {
     categoryHeading.innerHTML = 'Услуги';
 };
 // End of Categories
+
+
+// getting the stores
+class Stores{
+    async getStores(){
+        try{
+
+            // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+            // let contentful = await client.getEntries({
+            //     content_type: "alenkiStoreContent"
+            // });
+
+            let result = await fetch('stores.json');
+            let data = await result.json();
+            let stores = data.items;
+            // let stores = contentful.items;
+            stores = stores.map(item =>{
+                const {title} = item.fields;
+                const image = item.fields.image.fields.file.url;
+                return {title, image}
+            })
+            return stores
+        } catch(error) {
+            console.log(error);
+        }
+    }
+}
+
+//display stores
+const storesDOM = document.querySelector('.stores-center');
+class UI {
+    displayStores(stores){
+        let result = '';
+        stores.forEach(stores => {
+            result += `                            
+      <!-- single stores -->
+      <article class="store_block">
+        <div class="img-container">
+          <img 
+            src=${stores.image}
+            alt="store" 
+            class="store-img"
+          />
+        </div>
+        <h3>${stores.title}</h3>
+       </article>
+      <!-- end single stores -->
+            `;
+        });
+        storesDOM.innerHTML = result;
+    }
+}
+
+
+// Loading stores
+document.addEventListener("DOMContentLoaded", ()=>{
+    const ui = new UI();
+    const stores = new Stores();
+    // get all stores
+    stores.getStores().then(stores => {
+        ui.displayStores(stores);
+    })//.then(()=>{});
+});
