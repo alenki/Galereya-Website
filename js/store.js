@@ -87,15 +87,15 @@ class UI {
             if(stores.category == category){
                 result += `                            
         <!-- single stores -->
-        <article class="store_block">
-            <div class="img-container">
+        <article class="store_block me-4 storeButton">
+            <div class="img-container storeButton">
             <img 
                 src=${stores.image}
                 alt="store" 
-                class="store-img"
+                class="store-img storeButton"
             />
             </div>
-            <h3>${stores.title}</h3>
+            <h3 class="storeButton">${stores.title}</h3>
         </article>
         <!-- end single stores -->
                 `;
@@ -103,6 +103,27 @@ class UI {
         storesDOM.innerHTML = result;
     }
 }
+
+
+// Detailed store info
+// document.querySelector('.store_block').addEventListener("click", function() { 
+//     var promotionModal = new bootstrap.Modal(document.getElementById('storeModal')); 
+//     promotionModal.show(); 
+// });
+document.onclick = function(e) {
+    if(e.target.classList.contains("storeButton")){
+        var storeModal = new bootstrap.Modal(document.getElementById('storeModal')); 
+        storeModal.show(); 
+    }
+    // if ((worktimes_isopen) && (e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
+    //     worktimes_modal.style.display = "none";
+    //     worktimes_isopen = false;
+    // }
+    // if ((location_isopen) && (e.target.id !== 'locationHidden') && (e.target.id !== 'locationUnlock')) {
+    //     location_modal.style.display = "none";
+    //     location_isopen = false;
+    // }
+};
 
 
 // Loading stores

@@ -41,15 +41,25 @@
     line-height: 2.2rem;
 }
 .stores-center {
-    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    /* width: 90vw;
     margin: 0 auto;
     max-width: 1170px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-column-gap: 1.5rem;
-    grid-row-gap: 2rem;
+    grid-row-gap: 2rem; */
 }
 .store_block {
+    display: flex;
+    width: 250px;
+    height: 353px;
+    background-color: #5F8A6D;
+    border-radius: 1rem;
+    padding: 20px 20px 12px;
+    flex-flow: column;
+    transition: all .2s ease-in-out;
     cursor: pointer;
 }
 .store_block:hover {
