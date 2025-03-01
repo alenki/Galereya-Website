@@ -1,0 +1,269 @@
+/* --------------- Fonts ---------------- */
+@font-face {
+    font-family: Navigo Regular;
+    src: url(./Fonts/Navigo-Regular.woff2);
+    font-weight: 400, 300, 200, 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Navigo Light;
+    src: url(./Fonts/Navigo-Light.woff2);
+    font-weight: 400, 300, 200, 100;
+    font-style: normal;
+    font-display: swap;
+}
+/* --------------- End of Fonts ---------------- */
+
+/* --------------- Body - Тело ---------------- */
+.section-names {
+    font-size: 25.19px;
+    line-height: 34px;
+    font-family: Navigo Regular;
+}
+.section-links {
+    font-size: 14.41px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    align-content: center;
+}
+/* --------------- End of Body - Тело ---------------- */
+
+/* --------------- 2 Главные кнопка наверху ---------------- */
+.worktimesUnlocked {
+    width: 370px;
+    height: 143px;
+    background-color: #EDE5D5;
+    position: absolute;
+    z-index: 2;
+    border-radius: 17px;
+    display: none;
+}
+.worktime-day {
+    font-size: 11.65px;
+    font-family: Navigo Light;
+    color: #848CA3;
+}
+.worktime-time {
+    font-size: 9.65px;
+    font-family: Navigo Light;
+    color: black;
+}
+.locationUnlocked {
+    width: 239px;
+    height: 191px;
+    background-color: #EDE5D5;
+    position: absolute;
+    z-index: 2;
+    border-radius: 17px;
+    display: none;
+}
+.yandexMapButton {
+    border: 2px solid #848CA3;
+    border-radius: 7px;
+	align-items: center;
+    font-size: 11.81px;
+    line-height: 16px;
+    font-family: Navigo Regular;
+	cursor: pointer;
+	touch-action: manipulation; 
+    height: 2.55rem;
+}
+.googleMapButton {
+    border: 2px solid #848CA3;
+    border-radius: 7px;
+	align-items: center;
+    font-size: 11.81px;
+    line-height: 16px;
+    font-family: Navigo Regular;
+	cursor: pointer;
+	touch-action: manipulation; 
+    height: 2.75rem;
+}
+.yandexMapButton:hover, .yandexMapButton:active, .googleMapButton:hover, .googleMapButton:active {
+    border: 2px solid #848CA3;
+    background-color: #848CA326;
+}
+.locationMapButtonIMG {
+    height: 100%;
+    object-fit: cover;
+}
+/* --------------- End of 2 Главные кнопка наверху ---------------- */
+
+/* --------------- Карусель ---------------- */
+.customCarouselSection {
+    position: relative;
+    z-index: 1;
+}
+.customCarouselSize {
+    width: 61.8%;
+}
+.custom-carousel-div { 
+    border-radius: 30px;
+}
+.custom-carousel-item {
+    height: 32rem;
+}
+.custom-carousel-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+/* --------------- End of Карусель ---------------- */
+
+/* --------------- Верхние кнопки страницы ---------------- */
+.custom-top-buttons {
+    width: 170px;
+    height: 48px;
+    font-size: 14.65px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+}
+/* --------------- End of Верхние кнопки страницы ---------------- */
+
+/* --------------- 6 кнопок под карусели ---------------- */
+.custom-main-bottom-buttons {
+    width: 30%;
+    height: 55px;
+    font-size: 14.65px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+}
+/* --------------- End of 6 кнопок под карусели ---------------- */
+
+/* --------------- кнопки услуг ---------------- */
+.service {
+    background-color: #EDE5D7;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    gap: 16px;
+}
+.service-box {
+    display: flex;
+    width: 100%;
+    height: 130px;
+    background-color: #5F8A6D;
+    border-radius: 1rem;
+    padding: 20px 20px 12px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.service-box:hover {
+    transform: scale(1.037); 
+}
+.service-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #4F545F;
+}
+.service-name {
+    display: flex;
+    font-size: 14.41px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    color:#EDE5D7;
+    align-items: center;
+    padding: 10px 0 0 0
+}
+/* --------------- End of кнопки услуг ---------------- */
+
+/* --------------- кнопки акций ---------------- */
+.promotion {
+    background-color: #EDE5D7;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    gap: 16px;
+}
+.promotion-box {
+    display: flex;
+    width: 100%;
+    height: 353px;
+    background-color: #5F8A6D;
+    border-radius: 1rem;
+    padding: 20px 20px 12px;
+    flex-flow: column;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.promotion-box:hover {
+    transform: scale(1.037); 
+}
+.promotion-icon {
+    width: 126px;
+    height: 126px;
+    background-color: #4F545F;
+}
+.promotion-name {
+    display: flex;
+    font-size: 21px;
+    line-height: 29px;
+    font-family: Navigo Regular;
+    color:#EDE5D7;
+    padding: 10px 0 0 0
+}
+.promotion-details {
+    display: flex;
+    font-size: 14.77px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    color: #4F545F;
+    padding: 10px 0 0 0
+}
+.promotion-date {
+    display: flex;
+    font-size: 11.25px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    font-family: Navigo Light;
+    color: #EDE5D7;
+    opacity: 0.7;
+    flex-direction: column; 
+    justify-content: flex-end;
+}
+/* --------------- End of кнопки акций ---------------- */
+
+/* --------------- Feedback form ---------------- */
+.feedback-form-control {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    background: none; 
+}
+.form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; 
+}
+#form-message-warning, #form-message-success {
+    display: none; 
+}
+#form-message-warning {
+    color: #B90B0B; 
+}
+#form-message-success {
+    color: #55A44E;
+    font-size: 18px;
+    font-weight: bold; 
+}
+.submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000; 
+}
+label.error {
+    font-size: 12px;
+    color: red; 
+}
+/* --------------- End of Feedback form ---------------- */
