@@ -260,10 +260,68 @@
 /* --------------- End of 6 кнопок под карусели ---------------- */
 
 /* --------------- кнопки услуг ---------------- */
+.service-wrapper {
+    width: 100%;
+    position: relative;
+}
+.service-wrapper i {
+    height: 50px;
+    width: 50px;
+    background: #517E5D;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25 rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+
+}
+.service-wrapper i:first-child {
+    left: -22px;
+}
+.service-wrapper i:last-child {
+    right: -22px;
+}
+.service-wrapper .service {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
 .service {
     display: flex;
     justify-content: space-between;
     background-color: #EDE5D7;
+}
+.service::-webkit-scrollbar {
+    display: none;
+}
+
+.service :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.service.no-transition {
+    scroll-behavior: auto;
+}
+
+.service.dragging .card {
+    cursor: grab;
+    user-select: none;
 }
 .service-box {
     display: flex;
