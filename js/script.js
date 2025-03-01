@@ -19,6 +19,17 @@ menuBtn.addEventListener('click', () => {
 });
 // End of Navbar Menu Button
 
+// Mobile Nav
+/* Set the width of the side navigation to 250px */
+function open_sidenav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+/* Set the width of the side navigation to 0 */
+function close_sidenav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+// End of Mobile Nav
+
 // Back to top button
 //Get the button
 let toTop_button = document.getElementById("btn-back-to-top");

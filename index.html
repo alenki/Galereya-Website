@@ -50,10 +50,15 @@
         <div class="container">
           <div class="collapse navbar-collapse d-flex justify-content-between">
             <!-- Основа нава -->
-              <!-- Кнопка меню -->
-              <div class="menu-btn d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+              <!-- Кнопка меню для больших экранов -->
+              <div class="menu-btn d-md-flex d-none justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <div class=""><div class="menu-btn__burger"></div></div>
                 <span class="pe-3 menu-btn-title text-primary">Меню</span>
+              </div>
+              <!-- Кнопка меню для маленьких экранов-->
+              <div class="menu-btn d-md-none justify-content-between" type="button">
+                <div class=""><div class="menu-btn__burger"></div></div>
+                <span class="pe-3 menu-btn-title text-primary" onclick="open_sidenav()">Меню</span>
               </div>
               <!-- Логотип -->
               <a href="index.html" class="text-primary auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
@@ -82,6 +87,14 @@
             </div>
         </div>
     </nav>
+    <!-- Мобильная навигация -->
+    <div id="sidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="close_sidenav()">&times;</a>
+      <a href="#">Магазины</a>
+      <a href="#">Еда</a>
+      <a href="#">Развлечения</a>
+      <a href="#">Услуги</a>
+    </div>
 
     <!-- Главные начальные кнопки -->
     <section class="pt-4 pb-2 bg-secondary">
