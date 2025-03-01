@@ -261,13 +261,15 @@
 
 /* --------------- кнопки услуг ---------------- */
 .service {
-    display: flex;
-    justify-content: space-between;
     background-color: #EDE5D7;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    gap: 16px;
 }
 .service-box {
     display: flex;
-    width: 195px;
+    width: 100%;
     height: 130px;
     background-color: #5F8A6D;
     border-radius: 1rem;
@@ -299,13 +301,15 @@
 
 /* --------------- кнопки акций ---------------- */
 .promotion {
-    display: flex;
-    justify-content: space-between;
     background-color: #EDE5D7;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    gap: 16px;
 }
 .promotion-box {
     display: flex;
-    width: 11rem;
+    width: 100%;
     height: 353px;
     background-color: #5F8A6D;
     border-radius: 1rem;
