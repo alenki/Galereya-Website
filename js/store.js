@@ -67,8 +67,9 @@ class Stores{
             // let stores = contentful.items;
             stores = stores.map(item =>{
                 const {title, category} = item.fields;
+                const {id} = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return {title, category, image}
+                return {title, category, id, image}
             })
             return stores
         } catch(error) {
@@ -87,15 +88,16 @@ class UI {
             if(stores.category == category){
                 result += `                            
         <!-- single stores -->
-        <article class="store_block me-4 storeButton">
-            <div class="img-container storeButton">
+        <article class="store_block me-4 storeButton id="${stores.id}">
+            <div class="img-container storeButton" id="${stores.id}">
             <img 
                 src=${stores.image}
                 alt="store" 
                 class="store-img storeButton"
+                id="${stores.id}"
             />
             </div>
-            <h3 class="storeButton">${stores.title}</h3>
+            <h3 class="storeButton" id="${stores.id}">${stores.title}</h3>
         </article>
         <!-- end single stores -->
                 `;
@@ -106,23 +108,23 @@ class UI {
 
 
 // Detailed store info
-// document.querySelector('.store_block').addEventListener("click", function() { 
-//     var promotionModal = new bootstrap.Modal(document.getElementById('storeModal')); 
-//     promotionModal.show(); 
-// });
 document.onclick = function(e) {
     if(e.target.classList.contains("storeButton")){
+        const storeModalLabel = document.getElementById("storeModalLabel");
+        const storeModalInfo = document.getElementById("storeModalInfo");
+
         var storeModal = new bootstrap.Modal(document.getElementById('storeModal')); 
         storeModal.show(); 
+
+        // get all stores
+        const stores = new Stores();
+        stores.getStores().then(stores => {
+            stores.forEach(stores => {
+                console.log(e.target.id);
+                if(stores.id == e.target.id) storeModalLabel.innerHTML = stores.title;
+            });
+        })
     }
-    // if ((worktimes_isopen) && (e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
-    //     worktimes_modal.style.display = "none";
-    //     worktimes_isopen = false;
-    // }
-    // if ((location_isopen) && (e.target.id !== 'locationHidden') && (e.target.id !== 'locationUnlock')) {
-    //     location_modal.style.display = "none";
-    //     location_isopen = false;
-    // }
 };
 
 

@@ -267,7 +267,7 @@
 }
 .service-box {
     display: flex;
-    width: 198px;
+    width: 195px;
     height: 130px;
     background-color: #5F8A6D;
     border-radius: 1rem;
@@ -305,7 +305,7 @@
 }
 .promotion-box {
     display: flex;
-    width: 200px;
+    width: 11rem;
     height: 353px;
     background-color: #5F8A6D;
     border-radius: 1rem;
