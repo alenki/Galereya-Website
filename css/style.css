@@ -54,6 +54,12 @@
     font-weight: bold;
     font-size: 1.2rem;
 }
+.menu_column {
+    flex-direction: column;
+}
+.menu_text {
+    text-decoration: none;
+}
 /* Navbar Brand (Галерея) */
 
 /* If the screen size is 768px wide or less, set the font-size of <div> to 30px */
