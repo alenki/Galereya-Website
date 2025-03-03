@@ -27,29 +27,13 @@
 
 /* --------------- Фильтры (меню слева) ---------------- */
 .customFiltersSection {
-    padding-top: 12vh;
-    width: 10rem; 
+    width: 284px; 
 }
 .customFilterCatalogButton {
     width: 100%;
     height: 50px;
     text-align: left;
-    background-color: #80c295a9;
-    /* border-color: #5f8a6d00; */
-    border-width: 0;
-    transition: background-color 0.5s;
 }
-
-.customFilterCatalogButton:hover {
-    width: 100%;
-    height: 50px;
-    text-align: left;
-    background-color: #bcddc7b6;
-    /* border-color: #5f8a6d00; */
-    border-width: 0;
-    
-}
-
 .customFilterCatalogTitle {
     font-family: Navigo Regular;
     font-weight: 400;
@@ -87,8 +71,7 @@
 }
 .stores-center {
     display: flex;
-    /* width: 50vw; */
-    /* justify-content: space-around; */
+    justify-content: space-between;
     /* width: 90vw;
     margin: 0 auto;
     max-width: 1170px;
@@ -99,12 +82,11 @@
 }
 .store_block {
     display: flex;
-    width: 17vw;
-    height: 22vh;
-    background-color: #589c6f;
+    width: 250px;
+    height: 353px;
+    background-color: #5F8A6D;
     border-radius: 1rem;
-    /* padding: 20px 20px 12px; */
-    overflow: hidden;
+    padding: 20px 20px 12px;
     flex-flow: column;
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -112,20 +94,6 @@
 .store_block:hover {
     transform: scale(1.037); 
 }
-
-.store-button-box{
-    padding-top: 1vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.storeButton {
-    font-size: 1.8vw;
-    font-weight: 100;
-    color: #EDE5D5;
-}
-
 .img-container {
     position: relative;
     overflow: hidden;
@@ -133,11 +101,10 @@
 .img-container:hover .bag-btn {
     transform: translateX(0);
 }
-
 .store-img {
     display: block;
     width: 100%;
-    min-height: 10%;
+    min-height: 12rem;
     transition: var(--mainTransition);
 }
 .img-container:hover .store-img {

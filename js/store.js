@@ -66,10 +66,10 @@ class Stores{
             let stores = data.items;
             // let stores = contentful.items;
             stores = stores.map(item =>{
-                const {title, category} = item.fields;
+                const {title, description, category} = item.fields;
                 const {id} = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return {title, category, id, image}
+                return {title, description, category, id, image}
             })
             return stores
         } catch(error) {
@@ -90,16 +90,14 @@ class UI {
         <!-- single stores -->
         <article class="store_block me-4 storeButton id="${stores.id}">
             <div class="img-container storeButton" id="${stores.id}">
-                <img 
-                    src=${stores.image}
-                    alt="store" 
-                    class="store-img storeButton"
-                    id="${stores.id}"
-                />
+            <img 
+                src=${stores.image}
+                alt="store" 
+                class="store-img storeButton"
+                id="${stores.id}"
+            />
             </div>
-            <div class="store-button-box">
-                <span class="storeButton" id="${stores.id}">${stores.title}</span>
-            </div>
+            <h3 class="storeButton" id="${stores.id}">${stores.title}</h3>
         </article>
         <!-- end single stores -->
                 `;
@@ -122,8 +120,10 @@ document.onclick = function(e) {
         const stores = new Stores();
         stores.getStores().then(stores => {
             stores.forEach(stores => {
-                console.log(e.target.id);
-                if(stores.id == e.target.id) storeModalLabel.innerHTML = stores.title;
+                if(stores.id == e.target.id) {
+                    storeModalLabel.innerHTML = stores.title;
+                    storeModalInfo.innerHTML = stores.description;
+                }
             });
         })
     }
