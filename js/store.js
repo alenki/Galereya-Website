@@ -90,14 +90,16 @@ class UI {
         <!-- single stores -->
         <article class="store_block me-4 storeButton id="${stores.id}">
             <div class="img-container storeButton" id="${stores.id}">
-            <img 
-                src=${stores.image}
-                alt="store" 
-                class="store-img storeButton"
-                id="${stores.id}"
-            />
+                <img 
+                    src=${stores.image}
+                    alt="store" 
+                    class="store-img storeButton"
+                    id="${stores.id}"
+                />
             </div>
-            <h3 class="storeButton" id="${stores.id}">${stores.title}</h3>
+            <div class="store-button-box">
+                <span class="storeButton" id="${stores.id}">${stores.title}</span>
+            </div>
         </article>
         <!-- end single stores -->
                 `;
