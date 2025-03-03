@@ -88,7 +88,7 @@ class UI {
             if(stores.category == category){
                 result += `                            
         <!-- single stores -->
-        <article class="store_block me-4 storeButton id="${stores.id}">
+        <article class="store_block storeButton id="${stores.id}">
             <div class="img-container storeButton" id="${stores.id}">
                 <img 
                     src=${stores.image}

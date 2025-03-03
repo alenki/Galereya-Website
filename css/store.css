@@ -87,20 +87,17 @@
 }
 .stores-center {
     display: flex;
-    /* width: 50vw; */
-    /* justify-content: space-around; */
-    /* width: 90vw;
-    margin: 0 auto;
-    max-width: 1170px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 2rem; */
+    flex-wrap: wrap;
+    position: relative;
+    overflow: auto;
+    height: 50vh;
+    width: 70vw;
 }
+    
 .store_block {
     display: flex;
-    width: 17vw;
-    height: 22vh;
+    width: 200px;
+    height: 150px;
     background-color: #589c6f;
     border-radius: 1rem;
     /* padding: 20px 20px 12px; */
