@@ -66,10 +66,10 @@ class Stores{
             let stores = data.items;
             // let stores = contentful.items;
             stores = stores.map(item =>{
-                const {title, category} = item.fields;
+                const {title, description, category} = item.fields;
                 const {id} = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return {title, category, id, image}
+                return {title, description, category, id, image}
             })
             return stores
         } catch(error) {
@@ -120,8 +120,10 @@ document.onclick = function(e) {
         const stores = new Stores();
         stores.getStores().then(stores => {
             stores.forEach(stores => {
-                console.log(e.target.id);
-                if(stores.id == e.target.id) storeModalLabel.innerHTML = stores.title;
+                if(stores.id == e.target.id) {
+                    storeModalLabel.innerHTML = stores.title;
+                    storeModalInfo.innerHTML = stores.description;
+                }
             });
         })
     }
