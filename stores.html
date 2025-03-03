@@ -84,33 +84,21 @@
     </nav>
 
     <!-- Основная часть -->
-    <section class="catalog-section d-flex">
-        <!-- lavalamp gradient -->
-        <div class="gradient-bg py-5">
-
-          <svg xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-              </filter>
-            </defs>
-          </svg>
-
-          <div class="catalog-box container d-flex">
-             <!-- Часть фильтров -->
-             <div class="customFiltersSection catalog-inner">
+    <section class="pt-5">
+        <div class="container d-flex py-5">
+            <!-- Часть фильтров -->
+            <div class="customFiltersSection">
+                <!-- Каталог -->
                 <div class="">
-                  <button type="button" class="btn btn-primary text-secondary customFilterCatalogButton" id="categoryButton-1"><span class="ps-3 customFilterCatalogTitle">Магазины</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-2"><span class="ps-3 customFilterCatalogTitle">Еда</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-3"><span class="ps-3 customFilterCatalogTitle">Развлечения</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-4"><span class="ps-3 customFilterCatalogTitle">Детям</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-5"><span class="ps-3 customFilterCatalogTitle">Услуги</span></button>
+                    <button type="button" class="btn btn-primary text-secondary customFilterCatalogButton" id="categoryButton-1"><span class="ps-3 customFilterCatalogTitle">Магазины</span></button>
+                    <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-2"><span class="ps-3 customFilterCatalogTitle">Еда</span></button>
+                    <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-3"><span class="ps-3 customFilterCatalogTitle">Развлечения</span></button>
+                    <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-4"><span class="ps-3 customFilterCatalogTitle">Детям</span></button>
+                    <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-5"><span class="ps-3 customFilterCatalogTitle">Услуги</span></button>
                 </div>
-              </div>
+            </div>
             <!-- Часть элементов (магазинов) -->
-            <div class="ps-5 card-place catalog-inner">
+            <div class="ps-5">
                 <div class="">
                     <h2 class="customCategoryHeadingTitle text-primary" id="categoryHeading">Магазины</h2>
                     <div class="pt-3 stores-center">
@@ -118,17 +106,7 @@
                     </div>
                 </div>
             </div>
-          </div>
-          <div class="gradients-container">
-            <div class="g1"></div>
-            <div class="g2"></div>
-            <div class="g3"></div>
-            <div class="g4"></div>
-            <div class="g5"></div>
-            <div class="interactive"></div>
-          </div>
         </div>
-
     </section>
 
   <!-- Store Modal -->
@@ -151,6 +129,5 @@
     <!-- Custom JavaScript -->
     <script src="js\script.js"></script>
     <script src="js\store.js"></script>
-    <script type="module" src="catalog_bg/cursor_chase.ts"></script>
 </body>
 </html>
