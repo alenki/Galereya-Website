@@ -5,9 +5,9 @@ html, body {
   }
   
   :root {
-    --color-bg1: rgb(255, 255, 255);
-    --color-bg2: rgb(177, 239, 181);
-    --color1: 166, 229, 255;
+    --color-bg1: #EDE5D7;
+    --color-bg2: #EDE5D7;
+    --color1: #EDE5D7;
     --color2: 166, 169, 255;
     --color3: 160, 100, 255;
     --color4: 200, 50, 50;
@@ -55,14 +55,14 @@ html, body {
   
   
   .gradient-bg {
-    width: 90vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     
     overflow: hidden;
     background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
     top: 0;
     left: 0;
-    border-radius: 30px;
+    // border-radius: 30px;
   
     svg {
       position: fixed;

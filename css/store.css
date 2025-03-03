@@ -16,6 +16,15 @@
 /* --------------- End of Fonts ---------------- */
 
 
+/* --------------------- Navbar --------------------------- */
+
+.catalog-navbar {
+    background-color: #ede5d76e;;
+}
+
+/* --------------------- End of navbar -------------------- */
+
+
 /* --------------- Фильтры (меню слева) ---------------- */
 .customFiltersSection {
     padding-top: 12vh;
@@ -53,11 +62,12 @@
 
 .catalog-section{
     justify-content: center;
-    padding-top: 5%;
+    /* padding-top: 5%; */
 }
 
 .catalog-box{
     width: 90%;
+    padding-top: 20vh;
 }
 
 .catalog-inner {
