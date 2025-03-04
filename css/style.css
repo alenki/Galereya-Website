@@ -182,7 +182,7 @@
 
 /* --------------- Mobile Navigation / Sidenav ---------------- */
 /* The side navigation menu */
-.sidenav {
+.sidemenu {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
@@ -192,18 +192,18 @@
     background-color: #EDE5D5; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidemenu */
 }
 /* The navigation menu links */
-.sidenav a {
+.sidemenu a {
     text-decoration: none;
 }
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidemenu a:hover {
     color: #f1f1f1;
 }
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.sidemenu .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -215,10 +215,10 @@
     transition: margin-left .5s;
     padding: 20px;
 } */
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* On smaller screens, where height is less than 450px, change the style of the sidemenu (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidemenu {padding-top: 15px;}
+    .sidemenu a {font-size: 18px;}
 }
 .menuButton_separator {
     box-sizing: content-box;

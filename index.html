@@ -59,7 +59,7 @@
               <!-- Кнопка меню для маленьких экранов-->
               <div class="menu-btn d-md-none justify-content-between" type="button">
                 <div class=""><div class="menu-btn__burger"></div></div>
-                <span class="pe-3 menu-btn-title text-primary" onclick="open_sidenav()">Меню</span>
+                <span class="pe-3 menu-btn-title text-primary" onclick="open_sidemenu()">Меню</span>
               </div>
               <!-- Логотип -->
               <a href="index.html" class="text-primary auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
@@ -109,20 +109,20 @@
     </nav>
 
     <!-- Мобильная навигация -->
-    <div id="sidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="close_sidenav()">&times;</a>
+    <div id="sidemenu" class="sidemenu">
+      <a href="javascript:void(0)" class="closebtn" onclick="close_sidemenu()">&times;</a>
       <div class="first_sidemenu_box">
-        <a class="sidemenu_text" href="#">Магазины</a>
-        <a class="sidemenu_text" href="#">Еда</a>
-        <a class="sidemenu_text" href="#">Развлечения</a>
-        <a class="sidemenu_text" href="#">Услуги</a>
+        <a class="sidemenu_text" id="sidemenuButton-1">Магазины</a>
+        <a class="sidemenu_text" id="sidemenuButton-2">Еда</a>
+        <a class="sidemenu_text" id="sidemenuButton-3">Развлечения</a>
+        <a class="sidemenu_text" id="sidemenuButton-4">Детям</a>
       </div>
       <hr class="menuButton_separator">
       <div class="second_sidemenu_box">
-        <a class="sidemenu_text" href="#">Магазины</a>
-        <a class="sidemenu_text" href="#">Еда</a>
-        <a class="sidemenu_text" href="#">Развлечения</a>
-        <a class="sidemenu_text" href="#">Услуги</a>
+        <a class="sidemenu_text" id="sidemenuButton-5">Контакты</a>
+        <a class="sidemenu_text" id="sidemenuButton-6">Обратная связь</a>
+        <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕИ</a>
+        <a class="sidemenu_text" id="sidemenuButton-8">Правила ГАЛЕРЕИ</a>
       </div>
     </div>
 

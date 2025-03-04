@@ -48,21 +48,21 @@ document.getElementById("menuButton-5").onclick = function () {
     })
     modal.toggle()
 };
-// Контакты
+// Обратная связь
 document.getElementById("menuButton-6").onclick = function () { 
     var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
         keyboard: false
     })
     modal.toggle()
 };
-// Контакты
+// О ГАЛЕРЕИ
 document.getElementById("menuButton-7").onclick = function () { 
     var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
         keyboard: false
     })
     modal.toggle()
 };
-// Контакты
+// Правила ГАЛЕРЕИ
 document.getElementById("menuButton-8").onclick = function () { 
     var modal = new bootstrap.Modal(document.getElementById('rulesModal'), {
         keyboard: false
@@ -74,13 +74,64 @@ document.getElementById("menuButton-8").onclick = function () {
 
 // Mobile Nav
 /* Set the width of the side navigation to 250px */
-function open_sidenav() {
-    document.getElementById("sidenav").style.width = "250px";
+function open_sidemenu() {
+    document.getElementById("sidemenu").style.width = "250px";
 }
 /* Set the width of the side navigation to 0 */
-function close_sidenav() {
-    document.getElementById("sidenav").style.width = "0";
+function close_sidemenu() {
+    document.getElementById("sidemenu").style.width = "0";
 }
+
+// Mobile Nav Buttons
+// Магазины
+document.getElementById("sidemenuButton-1").onclick = function () { 
+    localStorage.setItem("category", "Магазины");
+    window.location.href = "stores.html"; 
+};
+// Еда
+document.getElementById("sidemenuButton-2").onclick = function () { 
+    localStorage.setItem("category", "Еда");
+    window.location.href = "stores.html"; 
+};
+// Развлечения
+document.getElementById("sidemenuButton-3").onclick = function () { 
+    localStorage.setItem("category", "Развлечения");
+    window.location.href = "stores.html"; 
+};
+// Детям
+document.getElementById("sidemenuButton-4").onclick = function () { 
+    localStorage.setItem("category", "Детям");
+    window.location.href = "stores.html"; 
+};
+// Контакты
+document.getElementById("sidemenuButton-5").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
+// Обратная связь
+document.getElementById("sidemenuButton-6").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
+// О ГАЛЕРЕИ
+document.getElementById("sidemenuButton-7").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
+// Правила ГАЛЕРЕИ
+document.getElementById("sidemenuButton-8").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('rulesModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
+
 // End of Mobile Nav
 
 // Back to top button
