@@ -26,14 +26,14 @@ document.getElementById("menuButton-1").onclick = function () {
     localStorage.setItem("category", "Магазины");
     window.location.href = "stores.html"; 
 };
-// Еда
+// Развлечения
 document.getElementById("menuButton-2").onclick = function () { 
-    localStorage.setItem("category", "Еда");
+    localStorage.setItem("category", "Развлечения");
     window.location.href = "stores.html"; 
 };
-// Развлечения
+// Еда
 document.getElementById("menuButton-3").onclick = function () { 
-    localStorage.setItem("category", "Развлечения");
+    localStorage.setItem("category", "Еда");
     window.location.href = "stores.html"; 
 };
 // Детям
