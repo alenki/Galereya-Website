@@ -59,7 +59,7 @@
               <!-- Кнопка меню для маленьких экранов-->
               <div class="menu-btn d-md-none justify-content-between" type="button">
                 <div class=""><div class="menu-btn__burger"></div></div>
-                <span class="pe-3 menu-btn-title text-primary" onclick="open_sidenav()">Меню</span>
+                <span class="pe-3 menu-btn-title text-primary" onclick="open_sidemenu()">Меню</span>
               </div>
               <!-- Логотип -->
               <a href="index.html" class="text-primary auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
@@ -71,30 +71,59 @@
           </div>
             <!-- Раскрытый меню -->
             <div class="collapse navbar-collapse custom-collapsed-nav" id="navmenu">
-              <div class="row">
-                <div class="col-2"></div>
-                <ul class="col-8 navbar-nav">
-                  <li class="nav-item">
-                      <a href="#learn" class="nav-link text-primary">Learn</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#questions" class="nav-link text-primary">Questions</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#instructors" class="nav-link text-primary">Instructors</a>
-                  </li>
-                </ul>
+              <div style="height: 270px;" class="row d-flex align-items-start">
+                <!-- 1 -->
+                <div class="col-1"></div>
+                <!-- 2 -->
+                <div class="menu_column col-4 pt-4 d-flex justify-content-center">
+                  <div class="pb-4"><a class="menu_text" id="menuButton-1">Магазины</a></div>
+                  <div class="pb-4"><a class="menu_text" id="menuButton-2">Развлечения</a></div>
+                  <div class="pb-4"><a class="menu_text" id="menuButton-3">Еда</a></div>
+                  <div class="pb-4"><a class="menu_text" id="menuButton-4">Детям</a></div>
+                </div>
+                <!-- 3 -->
+                <div class="menu_column col-4 pt-4 d-flex justify-content-center">
+                  <div class="pb-4"><a class="menu_text" id="menuButton-5">Контакты</a></div>
+                  <div class="pb-4"><a class="menu_text" id="menuButton-6">Обратная связь</a></div>
+                  <div class="pb-4"><a class="menu_text" id="menuButton-7">О ГАЛЕРЕИ</a></div>
+                  <div class="pb-4"><a class="menu_text" id="menuButton-8">Правила ГАЛЕРЕИ</a></div>
+                </div>
+                <!-- 4 -->
+                <div class="menu_column col-3 pt-4 d-flex justify-content-center">
+                  <!-- адрес -->
+                  <div class="address_text pt-3 d-flex align-items-center">
+                    <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
+                    <span class="ps-3">
+                      г. Нальчик, <br>
+                      ул. Кирова, 1Д
+                    </span>
+                  </div>
+                  <!-- Номер телефона -->
+                  <div class="phone-number_text pt-4 d-flex align-items-center">
+                    <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
+                    <span class="ps-3">+7 (8662) 40-46-84</span>
+                  </div>
+                </div>
               </div>
             </div>
-        </div>
     </nav>
+
     <!-- Мобильная навигация -->
-    <div id="sidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="close_sidenav()">&times;</a>
-      <a href="#">Магазины</a>
-      <a href="#">Еда</a>
-      <a href="#">Развлечения</a>
-      <a href="#">Услуги</a>
+    <div id="sidemenu" class="sidemenu">
+      <a href="javascript:void(0)" class="closebtn" onclick="close_sidemenu()">&times;</a>
+      <div class="first_sidemenu_box">
+        <a class="sidemenu_text" id="sidemenuButton-1">Магазины</a>
+        <a class="sidemenu_text" id="sidemenuButton-2">Еда</a>
+        <a class="sidemenu_text" id="sidemenuButton-3">Развлечения</a>
+        <a class="sidemenu_text" id="sidemenuButton-4">Детям</a>
+      </div>
+      <hr class="menuButton_separator">
+      <div class="second_sidemenu_box">
+        <a class="sidemenu_text" id="sidemenuButton-5">Контакты</a>
+        <a class="sidemenu_text" id="sidemenuButton-6">Обратная связь</a>
+        <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕИ</a>
+        <a class="sidemenu_text" id="sidemenuButton-8">Правила ГАЛЕРЕИ</a>
+      </div>
     </div>
 
     <!-- Главные начальные кнопки -->
@@ -313,14 +342,14 @@
       <div class="container">
         <footer class="py-5">
           <div class="row">
-              <div class="col-6 col-md-3 mb-3 footer-address d-flex align-items-center">
+              <div class="col-6 col-md-3 mb-3 address_text d-flex align-items-center">
                 <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
                 <div class="ps-3">
                   г. Нальчик, <br>
                   ул. Кирова, 1Д
                 </div>
               </div>
-            <div class="col-6 col-md-3 mb-3 footer-phone-number d-flex align-items-center">
+            <div class="col-6 col-md-3 mb-3 phone-number_text d-flex align-items-center">
               <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
               <div class="ps-3">+7 (8662) 40-46-84</div>
             </div>

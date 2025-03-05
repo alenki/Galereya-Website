@@ -15,6 +15,21 @@
 }
 /* --------------- End of Fonts ---------------- */
 
+/* --------------- Items ---------------- */
+.address_text {
+    font-size: 14.41px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    font-weight: 300;
+}
+.phone-number_text {
+    font-size: 13.71px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    font-weight: 300;
+}
+/* --------------- End of Items ---------------- */
+
 /* --------------- End of Loading screen / Экран загрузки ---------------- */
 .loadingScreen {
     position: absolute;
@@ -68,6 +83,16 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 1.2rem;
+}
+.menu_column {
+    flex-direction: column;
+}
+.menu_text {
+    text-decoration: none;
+    font-size: 17.77px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    font-weight: 500;
 }
 /* Navbar Brand (Галерея) */
 
@@ -162,16 +187,6 @@
 .custom-footer {
     box-shadow: 0px -15px 39px -30px rgba(34, 60, 80, 0.2);
 }
-.footer-address {
-    font-size: 14.41px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-}
-.footer-phone-number {
-    font-size: 13.71px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-}
 .footer-outlinedBoxes {
     border: 2px solid #848CA3;
     border-radius: 7px;
@@ -180,54 +195,66 @@
 }
 /* --------------- End of Footer ---------------- */
 
-/* --------------- Mobile Navigation ---------------- */
+/* --------------- Mobile Navigation / Sidenav ---------------- */
 /* The side navigation menu */
-.sidenav {
+.sidemenu {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1000; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: #EDE5D5; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidemenu */
 }
-
 /* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
+.sidemenu a {
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
 }
-
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidemenu a:hover {
     color: #f1f1f1;
 }
-
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.sidemenu .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
 }
-
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 /* #main {
     transition: margin-left .5s;
     padding: 20px;
 } */
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* On smaller screens, where height is less than 450px, change the style of the sidemenu (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidemenu {padding-top: 15px;}
+    .sidemenu a {font-size: 18px;}
+}
+.menuButton_separator {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin: 0.5rem 1.5rem;
+    border: 0;
+    border-top: 1px solid #606575;
+}
+.sidemenu_text {
+    padding: 8px 8px 8px 20px;
+    line-height: 20px;
+    font-family: Navigo Light;
+    font-size: 17.41px;
+    font-weight: 500;
+    color: #517E5D;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+.closebtn {
+    font-weight: 200;
 }
 /* --------------- End of Mobile Navigation ---------------- */
