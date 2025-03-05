@@ -49,26 +49,33 @@
     <!-- Navbar -->
     <nav class="navbar navbar-lg-expand bg-nav-bg fixed-top custom-nav py-0">     
         <div class="container">
-          <div class="collapse navbar-collapse d-flex justify-content-between">
-            <!-- Основа нава -->
-              <!-- Кнопка меню для больших экранов -->
-              <div class="menu-btn d-md-flex d-none justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <div class=""><div class="menu-btn__burger"></div></div>
-                <span class="pe-3 menu-btn-title text-primary">Меню</span>
-              </div>
-              <!-- Кнопка меню для маленьких экранов-->
-              <div class="menu-btn d-md-none justify-content-between" type="button">
-                <div class=""><div class="menu-btn__burger"></div></div>
-                <span class="pe-3 menu-btn-title text-primary" onclick="open_sidemenu()">Меню</span>
+          <!-- Навбар больших экранов -->
+          <div class="collapse navbar-collapse d-sm-flex d-none justify-content-between">
+              <!-- Кнопка меню -->
+              <div style="width: 92.5px;" class="menu-btn d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <div class="menu-btn__burger"></div>
+                <span class="menu-btn-title ps-2 text-primary">Меню</span>
               </div>
               <!-- Логотип -->
-              <a href="index.html" class="text-primary auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+              <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
               <!-- Кнопка -->
-              <div><button class="btn lang-button d-none d-md-block">
+              <button class="btn lang-button">
                 <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
                 <span class="pt-1">English</span>
-              </button></div>
+              </button>
           </div>
+          <!-- Навбар маленьких экранов -->
+          <div class="collapse navbar-collapse d-sm-none d-flex justify-content-between">
+              <!-- Кнопка меню -->
+              <div style="width: 23px;" class="menu-btn justify-content-between" type="button" onclick="open_sidemenu()">
+                <div class="menu-btn__burger"></div>
+              </div>
+              <!-- Логотип -->
+              <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+              <!-- Кнопка -->
+              <div style="width: 23px;"></div>
+          </div>
+          
             <!-- Раскрытый меню -->
             <div class="collapse navbar-collapse custom-collapsed-nav" id="navmenu">
               <div style="height: 270px;" class="row d-flex align-items-start">
