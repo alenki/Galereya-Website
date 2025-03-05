@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('mousemove', (event) => {
         tgX = event.clientX;
-        tgY = event.clientY - 50;
+        tgY = event.clientY + 100;
     });
 
     move();

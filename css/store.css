@@ -1,3 +1,5 @@
+
+
 /* --------------- Fonts ---------------- */
 @font-face {
     font-family: Navigo Regular;
@@ -27,22 +29,34 @@
 
 /* --------------- Фильтры (меню слева) ---------------- */
 .customFiltersSection {
-    padding-top: 12vh;
-    width: 10rem; 
+    position: sticky;
+    align-self: flex-start;
+    top: 5rem;
+    padding-top: 3rem;
+    width: 20rem;
+    margin-right: 1rem;
+    /* background-color: rgb(193, 186, 186); */
 }
+
+/* кнопки фильтров */
 .customFilterCatalogButton {
     width: 100%;
-    height: 50px;
+    height: 60px;
     text-align: left;
-    background-color: #80c295a9;
-    /* border-color: #5f8a6d00; */
+    backdrop-filter: blur(1rem);
     border-width: 0;
+    border-radius: 16px;
     transition: background-color 0.5s;
+    
+    background: rgba(202, 232, 197, 0.428);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(11px);
+
 }
 
 .customFilterCatalogButton:hover {
     width: 100%;
-    height: 50px;
+    height: 60px;
     text-align: left;
     background-color: #bcddc7b6;
     /* border-color: #5f8a6d00; */
@@ -55,19 +69,21 @@
     font-weight: 400;
     font-size: 1.07rem;
     line-height: 2.2rem;
+    margin-left: 1rem;
 }
 /* --------------- End of Фильтры (меню слева) ---------------- */
 
 /* --------------- Каталог ---------------- */
 
 .catalog-section{
-    justify-content: center;
-    /* padding-top: 5%; */
+    width: calc(100vw - 1.2rem);
 }
 
+/* блок в котором находится весь католог */
 .catalog-box{
-    width: 90%;
-    padding-top: 20vh;
+    /* position: absolute; */
+    /* width: 80%; */
+    padding-top: 6rem;
 }
 
 .catalog-inner {
@@ -82,62 +98,89 @@
 .customCategoryHeadingTitle{
     font-family: Navigo Regular;
     font-weight: 400;
-    font-size: 1.97rem;
-    line-height: 2.2rem;
-}
-.stores-center {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    overflow: auto;
-    height: 50vh;
-    width: 70vw;
-}
-    
-.store_block {
-    display: flex;
-    width: 200px;
-    height: 150px;
-    background-color: #589c6f;
-    border-radius: 1rem;
-    /* padding: 20px 20px 12px; */
-    overflow: hidden;
-    flex-flow: column;
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-}
-.store_block:hover {
-    transform: scale(1.037); 
+    font-size: 2rem;
 }
 
-.store-button-box{
-    padding-top: 1vh;
+/* ------------- Карты магазинов ----------- */
+
+.stores-center {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 1.1rem;
+    position: relative;
+    /* height: 20rem; */
+    width: 100%;
+}
+
+@media (max-width: 1199px) {
+    .stores-center {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-gap: 1.8rem;
+    }
+}
+
+.store_block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.2rem;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: var(--neutral0);
+    box-shadow: 0 .5rem 4rem rgba(0, 0, 0, .15);
+    transition: transform .3s ease-in-out;
+
+    /* display: flex;
+    width: 100%;
+    height: 11.8rem;
+    background-color: #589c6f;
+    border-radius: 1rem; */
+    /* padding: 20px 20px 12px; */
+    /* overflow: hidden;
+    flex-flow: column;
+    transition: all .2s ease-in-out;
+    cursor: pointer; */
+}
+
+.img-container{
+    position: relative;
+    flex: 0 0 auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.storeButton {
-    font-size: 1.8vw;
-    font-weight: 100;
-    color: #EDE5D5;
-}
-
-.img-container {
-    position: relative;
-    overflow: hidden;
-}
-.img-container:hover .bag-btn {
-    transform: translateX(0);
-}
-
-.store-img {
-    display: block;
     width: 100%;
-    min-height: 10%;
-    transition: var(--mainTransition);
+    border-radius: 1.2rem 1.2rem 0 0;
 }
-.img-container:hover .store-img {
-    opacity: 0.5;
+
+.store-img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2.4rem;
+    width: 100%;
+    text-align: center;
+    background-color: var(--neutral0);
 }
+
+
+.store-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 2rem 2rem;
+    height: 11.8rem;
+    border-radius: 0 0 1.2rem 1.2rem;
+    background-color: var(--neutral0);
+}
+
+
+
+
+/* ----------- end of Карты магазинов -------------- */
 /* --------------- End of Каталог ---------------- */

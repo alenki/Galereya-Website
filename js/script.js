@@ -55,3 +55,17 @@ function backToTop() {
     document.documentElement.scrollTop = 0;
 }
 //End of Back to top button
+
+
+
+// Плавная анимация навбара
+const header = document.querySelector('.custom-nav');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    header.classList.add('hide');
+  } else {
+    header.classList.remove('hide');
+  }
+});
+

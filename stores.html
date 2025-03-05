@@ -78,7 +78,6 @@
                 </ul>
               </div>
             </div>
-
     </nav>
 
     <!-- Основная часть -->
@@ -96,28 +95,7 @@
             </defs>
           </svg>
 
-          <div class="catalog-box container d-flex">
-             <!-- Часть фильтров -->
-             <div class="customFiltersSection catalog-inner">
-                <div class="">
-                  <button type="button" class="btn btn-primary text-secondary customFilterCatalogButton" id="categoryButton-1"><span class="ps-3 customFilterCatalogTitle">Магазины</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-2"><span class="ps-3 customFilterCatalogTitle">Еда</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-3"><span class="ps-3 customFilterCatalogTitle">Развлечения</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-4"><span class="ps-3 customFilterCatalogTitle">Детям</span></button>
-                  <button type="button" class="btn btn-primary text-secondary mt-2 customFilterCatalogButton" id="categoryButton-5"><span class="ps-3 customFilterCatalogTitle">Услуги</span></button>
-                </div>
-              </div>
-            <!-- Часть элементов (магазинов) -->
-            <div class="ps-5 card-place catalog-inner">
-                <div class="">
-                    <h2 class="customCategoryHeadingTitle text-primary" id="categoryHeading">Магазины</h2>
-                    <!-- место размещения карточек магазинов -->
-                    <div class="stores-center">
-
-                    </div>
-                </div>
-            </div>
-          </div>
+          <!-- плавающие круглешки -->
           <div class="gradients-container">
             <div class="g1"></div>
             <div class="g2"></div>
@@ -127,7 +105,46 @@
             <div class="interactive"></div>
           </div>
         </div>
+      
+        <div class="catalog-box container d-flex">
+          <!-- Часть фильтров -->
+          <div class="customFiltersSection catalog-inner">
+               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-1"><span class="ps-3 customFilterCatalogTitle">Магазины</span></button>
+               <button type="button" class="btn mt-2 customFilterCatalogButton" id="categoryButton-2"><span class="ps-3 customFilterCatalogTitle">Еда</span></button>
+               <button type="button" class="btn mt-2 customFilterCatalogButton" id="categoryButton-3"><span class="ps-3 customFilterCatalogTitle">Развлечения</span></button>
+               <button type="button" class="btn mt-2 customFilterCatalogButton" id="categoryButton-4"><span class="ps-3 customFilterCatalogTitle">Детям</span></button>
+               <button type="button" class="btn mt-2 customFilterCatalogButton" id="categoryButton-5"><span class="ps-3 customFilterCatalogTitle">Услуги</span></button>
+           </div>
+         <!-- Часть элементов (магазинов) -->
+         <div class="card-place catalog-inner">
+                 <h2 class="customCategoryHeadingTitle text-primary" id="categoryHeading">Магазины</h2>
+                 <!-- место размещения карточек магазинов -->
+                 <div class="stores-center">
 
+                    <article class="store_block storeButton" id="1">
+                      <div class="img-container storeButton" id="1">
+                          
+                              <img
+                                  src=Media/Stores/IMG_1475.JPG
+                                  alt="store" 
+                                  class="store-img storeButton"
+                                  id="1"
+                                />
+                          
+                      </div>
+                      <div class="store-info">
+                        <div class="store-name">
+                          <h3 class="storeButton" id="1">DIOMI</h3>
+                        </div>
+                        <div class="store-caption"></div>
+                          
+                      </div>
+                    </article>
+
+                 </div>
+         </div>
+       </div>
+       
     </section>
 
   <!-- Store Modal -->
