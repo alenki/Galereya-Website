@@ -162,13 +162,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2.4rem;
+    padding: 2rem 1.4rem;
     width: 100%;
     text-align: center;
     /* background-color: var(--neutral0); */
 }
 
 .img-box{
+    display: flex;
+    align-items: center;
     height: 7.8rem;
     overflow: hidden;
 }
