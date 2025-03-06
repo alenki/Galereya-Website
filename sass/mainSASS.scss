@@ -13,6 +13,12 @@ $container-max-widths: (
     xl: 1096px,
     xxl: 1096px
 );
+$grid-breakpoints: (
+    xs: 0,
+    sm: 430px,
+    md: 768px,
+    lg: 1024px
+);
 
 // import the functions and the variables
 @import "../node_modules/bootstrap/scss/_functions";
