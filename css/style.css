@@ -63,7 +63,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    width: calc(100vw - 1.2rem);
+    width: calc(100vw - 1.1rem);
     max-width: 100%;
     box-shadow: 0 1rem 1.2rem rgba(35, 37, 45, .05);
     transform: translateY(0);
