@@ -70,6 +70,7 @@
     font-size: 1.07rem;
     line-height: 2.2rem;
     margin-left: 1rem;
+    color: #212222b6;
 }
 /* --------------- End of Фильтры (меню слева) ---------------- */
 
@@ -99,6 +100,7 @@
     font-family: Navigo Regular;
     font-weight: 400;
     font-size: 2rem;
+    color: #212222b6;
 }
 
 /* ------------- Карты магазинов ----------- */
@@ -116,7 +118,8 @@
     .stores-center {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-gap: 1.4rem;
+        grid-gap: 2rem;
+
     }
 }
 

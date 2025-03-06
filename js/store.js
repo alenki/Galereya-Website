@@ -100,13 +100,13 @@ class UI {
                         </div>
                       </div>
                       <!-- <hr style="margin: 0 1.2rem 0 1.2rem; filter: blur(0.5px); opacity: 1px"> -->
-                      <div class="store-info">
-                        <div class="store-name-box">
-                          <h3 class="store-name" id="1">${stores.title}</h3>
-                          <p class="store-caption">${stores.description}</p>
+                      <div class="store-info storeButton id="${stores.id}"">
+                        <div class="store-name-box storeButton" id="${stores.id}">
+                          <h3 class="store-name storeButton" id="${stores.id}">${stores.title}</h3>
+                          <p class="store-caption storeButton" id="${stores.id}">${stores.description}</p>
                         </div>
-                        <div class="">
-                          <span class="store-floor">3 этаж</span>
+                        <div class="storeButton" id="${stores.id}">
+                          <span class="store-floor storeButton" id="${stores.id}">3 этаж</span>
                         </div>
                           
                       </div>
