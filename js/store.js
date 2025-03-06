@@ -79,37 +79,44 @@ class Stores{
 }
 
 //display stores
-// const storesDOM = document.querySelector('.stores-center');
-// class UI {
-//     displayStores(stores){
-//         let result = '';
-//         var category = localStorage.getItem("category");
-//         stores.forEach(stores => {
-//             if(stores.category == category){
-//                 result += `                            
-//         <!-- single stores -->
-//         <article class="store_block storeButton" id="${stores.id}">
-//             <div class="img-container storeButton" id="${stores.id}">
-//                 <div class="">
-//                     <img 
-//                         src=${stores.image}
-//                         alt="store" 
-//                         class="store-img storeButton"
-//                         id="${stores.id}"
-                    
-//                     />
-//                 </div>
-//             </div>
-//             <div class="store-info">
-//                 <h3 class="storeButton" id="${stores.id}">${stores.title}</h3>
-//             </div>
-//         </article>
-//         <!-- end single stores -->
-//                 `;
-//             }});
-//         storesDOM.innerHTML = result;
-//     }
-// }
+const storesDOM = document.querySelector('.stores-center');
+class UI {
+    displayStores(stores){
+        let result = '';
+        var category = localStorage.getItem("category");
+        stores.forEach(stores => {
+            if(stores.category == category){
+                result += `                            
+        <!-- single stores -->
+                    <article class="store-block storeButton" id="${stores.id}">
+                      <div class="img-container storeButton" id="${stores.id}">
+                        <div class="img-box">
+                              <img
+                                  src=${stores.image}
+                                  alt="store" 
+                                  class="store-img storeButton"
+                                  id="${stores.id}"
+                                />
+                        </div>
+                      </div>
+                      <!-- <hr style="margin: 0 1.2rem 0 1.2rem; filter: blur(0.5px); opacity: 1px"> -->
+                      <div class="store-info">
+                        <div class="store-name-box">
+                          <h3 class="store-name" id="1">${stores.title}</h3>
+                          <p class="store-caption">${stores.description}</p>
+                        </div>
+                        <div class="">
+                          <span class="store-floor">3 этаж</span>
+                        </div>
+                          
+                      </div>
+                    </article>
+        <!-- end single stores -->
+                `;
+            }});
+        storesDOM.innerHTML = result;
+    }
+}
 
 
 // Detailed store info

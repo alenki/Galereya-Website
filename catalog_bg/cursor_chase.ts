@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let tgY = 0;
 
     function move() {
-        curX += (tgX - curX) / 30;
+        curX += (tgX - curX) / 20;
         curY += (tgY - curY) / 20;
         interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
         requestAnimationFrame(() => {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('mousemove', (event) => {
         tgX = event.clientX;
-        tgY = event.clientY + 100;
+        tgY = event.clientY + 170;
     });
 
     move();
