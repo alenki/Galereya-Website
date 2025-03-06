@@ -221,18 +221,6 @@
     cursor: pointer;
     z-index: 400;
 }
-@media screen and (max-width: 850px){
-    .service-box {
-        width: 155px;
-        height: 115px;
-    }
-}
-@media screen and (max-width: 760px){
-    .service-box {
-        width: 130px;
-        height: 105px;
-    }
-}
 .service-box:hover {
     transform: scale(1.037); 
 }
@@ -253,20 +241,94 @@
 .service-slider_button {
     z-index: 500;
 }
+@media screen and (max-width: 850px){
+    .service-box {
+        width: 155px;
+        height: 115px;
+    }
+    .service-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .service-name {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width: 760px){
+    .service-box {
+        width: 130px;
+        height: 105px;
+    }
+}
 /* --------------- End of кнопки услуг ---------------- */
 
 /* --------------- кнопки акций ---------------- */
+.promotion-wrapper {
+    width: 100%;
+    position: relative;
+}
+.promotion-wrapper i {
+    height: 50px;
+    width: 50px;
+    background: #517E5D;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25 rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+
+}
+.promotion-wrapper i:first-child {
+    left: -22px;
+}
+.promotion-wrapper i:last-child {
+    right: -22px;
+}
+.promotion-wrapper .promotion {
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc((100% / 5) - 12px); */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
 .promotion {
     background-color: #EDE5D7;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% / 5) - 12px);
+    /* grid-auto-columns: calc((100% / 5) - 12px); */
     gap: 16px;
+}
+.promotion::-webkit-scrollbar {
+    display: none;
+}
+.promotion :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.promotion.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.promotion.no-transition {
+    scroll-behavior: auto;
+}
+.promotion.dragging .card {
+    cursor: grab;
+    user-select: none;
 }
 .promotion-box {
     display: flex;
-    width: 100%;
-    height: 353px;
+    width: 177px;
+    height: 300px;
     background-color: #5F8A6D;
     border-radius: 1rem;
     padding: 20px 20px 12px;
@@ -278,8 +340,8 @@
     transform: scale(1.037); 
 }
 .promotion-icon {
-    width: 126px;
-    height: 126px;
+    width: 125px;
+    height: 125px;
     background-color: #4F545F;
 }
 .promotion-name {
@@ -308,6 +370,37 @@
     opacity: 0.7;
     flex-direction: column; 
     justify-content: flex-end;
+}
+.promotion-slider_button {
+    z-index: 500;
+}
+@media screen and (max-width: 850px){
+    .promotion-box {
+        width: 155px;
+        height: 250px;
+    }
+    .promotion-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .promotion-name {
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .promotion-details {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .promotion-date {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width: 760px){
+    .promotion-box {
+        width: 130px;
+        height: 210px;
+    }
 }
 /* --------------- End of кнопки акций ---------------- */
 
