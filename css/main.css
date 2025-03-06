@@ -114,10 +114,16 @@
 /* --------------- Верхние кнопки страницы ---------------- */
 .custom-top-buttons {
     width: 170px;
-    height: 48px;
+    height: 3rem;
     font-size: 14.65px;
     line-height: 22px;
     font-family: Navigo Regular;
+
+}
+@media screen and (max-width: 296px) {
+    .custom-top-buttons {
+        height: auto;
+    }
 }
 /* --------------- End of Верхние кнопки страницы ---------------- */
 
@@ -128,6 +134,14 @@
     font-size: 14.65px;
     line-height: 22px;
     font-family: Navigo Regular;
+}
+@media screen and (max-width: 430px) {
+    .custom-main-bottom-buttons {
+        width: 90%;
+    }
+    .main-bottom-buttons_block {
+        width: 100%;
+    }
 }
 /* --------------- End of 6 кнопок под карусели ---------------- */
 
