@@ -69,7 +69,8 @@ class Stores{
                 const {title, description, category} = item.fields;
                 const {id} = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return {title, description, category, id, image}
+                const logo = item.fields.logo.fields.file.url;
+                return {title, description, category, id, image, logo}
             })
             return stores
         } catch(error) {
@@ -92,7 +93,7 @@ class UI {
                       <div class="img-container storeButton" id="${stores.id}">
                         <div class="img-box">
                               <img
-                                  src=${stores.image}
+                                  src=${stores.logo}
                                   alt="store" 
                                   class="store-img storeButton"
                                   id="${stores.id}"
