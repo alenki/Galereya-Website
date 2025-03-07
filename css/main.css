@@ -146,47 +146,27 @@
 /* --------------- End of 6 кнопок под карусели ---------------- */
 
 /* --------------- кнопки услуг ---------------- */
-.service-wrapper {
-    width: 100%;
-    position: relative;
-}
-.service-wrapper i {
-    height: 50px;
-    width: 50px;
-    background: #517E5D;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    font-size: 1.25 rem;
-    transform: translateY(-50%);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-
-}
-.service-wrapper i:first-child {
-    left: -22px;
-}
-.service-wrapper i:last-child {
-    right: -22px;
-}
-.service-wrapper .service {
-    display: grid;
-    grid-auto-flow: column;
-    /* grid-auto-columns: calc((100% / 5) - 12px); */
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: 0;
+.service-slider_button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    gap: 1rem;
 }
 .service {
-    background-color: #EDE5D7;
-    display: grid;
-    grid-auto-flow: column;
-    /* grid-auto-columns: calc((100% / 5) - 12px); */
-    gap: 16px;
+    height: 20%;
+    width: 100%;
+    border-left: dashed 2px var(--color-surface50);
+    border-right: dashed 2px var(--color-surface50);
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition-property: transform;
+    box-sizing: content-box;
+    transform: translate3d(-1500.73px, 0px, 0px); transition-duration: 0ms;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 .service::-webkit-scrollbar {
     display: none;
@@ -203,13 +183,28 @@
 .service.no-transition {
     scroll-behavior: auto;
 }
-.service.dragging .card {
+.service.dragging {
     cursor: grab;
     user-select: none;
 }
 .service-box {
     display: flex;
-    width: 177px;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    flex-shrink: 0;
+    color: var(--color-just-black);
+    font-size: 21px;
+    cursor: pointer;
+}
+.service-card {
+    display: flex;
+    /* width: 177px; */
+    width: 87%;
     height: 133px;
     background-color: #5F8A6D;
     border-radius: 1rem;
@@ -218,11 +213,19 @@
     align-items: center;
     flex-flow: column;
     transition: all .2s ease-in-out;
+    scroll-snap-align: start;
     cursor: pointer;
     z-index: 400;
 }
-.service-box:hover {
+.service-card:hover {
     transform: scale(1.037); 
+}
+.overflown {
+    opacity: .5;
+    filter: blur(0.4rem);
+    pointer-events: none;
+    cursor: default;
+    transition: filter .5s, opacity .5s !important;
 }
 .service-icon {
     width: 48px;
@@ -242,9 +245,9 @@
     z-index: 500;
 }
 @media screen and (max-width: 850px){
-    .service-box {
-        width: 155px;
-        height: 115px;
+    .service-card {
+        /* width: 155px; */
+        /* height: 115px; */
     }
     .service-icon {
         width: 36px;
@@ -305,6 +308,7 @@
     grid-auto-flow: column;
     /* grid-auto-columns: calc((100% / 5) - 12px); */
     gap: 16px;
+    scroll-snap-type: x mandatory;
 }
 .promotion::-webkit-scrollbar {
     display: none;
@@ -334,6 +338,7 @@
     padding: 20px 20px 12px;
     flex-flow: column;
     transition: all .2s ease-in-out;
+    scroll-snap-align: start;
     cursor: pointer;
 }
 .promotion-box:hover {
