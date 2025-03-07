@@ -200,6 +200,7 @@
     color: var(--color-just-black);
     font-size: 21px;
     cursor: pointer;
+    transition: filter .5s, opacity .5s !important;
 }
 .service-card {
     display: flex;
