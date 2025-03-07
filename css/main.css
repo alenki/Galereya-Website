@@ -145,7 +145,12 @@
 }
 /* --------------- End of 6 кнопок под карусели ---------------- */
 
-/* --------------- кнопки услуг ---------------- */
+/* --------------- Блок услуг для больших экранов ---------------- */
+@media only screen and (max-width: 1100px) {
+    .service-container {
+        display: none;
+    }
+}
 .service-slider_button_container {
     display: flex;
     justify-content: center;
@@ -265,7 +270,121 @@
         height: 105px;
     }
 }
-/* --------------- End of кнопки услуг ---------------- */
+/* --------------- End of Блок услуг для больших экранов ---------------- */
+
+/* --------------- Блок услуг для маленьких экранов ---------------- */
+@media only screen and (min-width: 1100px) {
+    .service-container_Mobile {
+        display: none;
+    }
+}
+.service-wrapper_Mobile {
+    width: 100%;
+    position: relative;
+    scroll-snap-type: x mandatory;
+}
+.service-wrapper_Mobile i:first-child {
+    left: -22px;
+}
+.service-wrapper_Mobile i:last-child {
+    right: -22px;
+}
+.service-wrapper_Mobile .service_Mobile {
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc((100% / 5) - 12px); */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+.service_Mobile {
+    background-color: #EDE5D7;
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc((100% / 5) - 12px); */
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+}
+.service_Mobile::-webkit-scrollbar {
+    display: none;
+}
+.service_Mobile :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.service_Mobile.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.service_Mobile.no-transition {
+    scroll-behavior: auto;
+}
+.service_Mobile.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+.service-box_Mobile {
+    display: flex;
+    width: 177px;
+    height: 133px;
+    background-color: #5F8A6D;
+    border-radius: 1rem;
+    padding: 20px 20px 12px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    z-index: 400;
+    scroll-snap-align: start;
+}
+.service-box_Mobile:hover {
+    transform: scale(1.037); 
+}
+.service-icon_Mobile {
+    width: 48px;
+    height: 48px;
+    background-color: #4F545F;
+}
+.service-name_Mobile {
+    display: flex;
+    font-size: 14.41px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    color:#EDE5D7;
+    align-items: center;
+    padding: 10px 0 0 0
+}
+@media screen and (max-width: 850px){
+    .service-box_Mobile {
+        width: 155px;
+        height: 115px;
+    }
+    .service-icon_Mobile {
+        width: 36px;
+        height: 36px;
+    }
+    .service-name_Mobile {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width: 760px){
+    .service-box_Mobile {
+        width: 130px;
+        height: 105px;
+    }
+}
+.img-block {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+/* --------------- End of Блок услуг для маленьких экранов ---------------- */
 
 /* --------------- кнопки акций ---------------- */
 .promotion-wrapper {
