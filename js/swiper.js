@@ -64,22 +64,8 @@ function blur_overflown_elements_right_swiper() {
   });
 }
 
-// Autoplay
-// Start autoplaying automatically
-var autoplayInterval = setInterval(function() {
-  swipe_right();
-}, 5000);
-function autoplay() {
-  autoplayInterval = setInterval(function() {
-    swipe_right();
-  }, 5000);
-}
-function stopAutoplay() {
-  clearInterval(autoplayInterval);
-}
-
 // Pagination
-var pagination_id = 2;
+var pagination_id = 2; // активный элемент карусели начиная с 1
 swiper_pagination_1.addEventListener("click", () => {
   if(pagination_id==2){
     swipe_left();
@@ -129,6 +115,35 @@ const swiper_loop = horizontalLoop_swiper(swiper_boxes, {
         swiper_activeElement = element;
     }
 });
+
+// Autoplay
+// Start autoplaying automatically
+var autoplayInterval = 0;
+function autoplay() {
+  autoplayInterval = setInterval(function() {
+    if(pagination_id==1){
+      pagination_id=2;
+      swiper_pagination_1.classList.remove("swiper-pagination-ball-active");
+      swiper_pagination_2.classList.add("swiper-pagination-ball-active");
+    }
+    else if(pagination_id==2){
+      pagination_id=3;
+      swiper_pagination_2.classList.remove("swiper-pagination-ball-active");
+      swiper_pagination_3.classList.add("swiper-pagination-ball-active");
+    }
+    else if(pagination_id==3){
+      pagination_id=1;
+      swiper_pagination_3.classList.remove("swiper-pagination-ball-active");
+      swiper_pagination_1.classList.add("swiper-pagination-ball-active");
+    }
+    swipe_right();
+  }, 5000);
+}
+//start up autoplaying instantly
+autoplay();
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+}
 
 // Swipe buttons
 let isCooldown_swiper = false;
