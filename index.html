@@ -220,67 +220,105 @@
         </div>
       </section>
 
-      <!-- Карусель --> 
-      <section class="swiper-section">
-          <div class="swiper">
-            <div class="swiper-box" style="--sliderBackground: url(/Media/Carousel/test-photo.webp)">
-              <div class="swiper-main-window">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide swiper-slide-prev">
-                    <div class="swiper-post">
-                      <a href="" class="slide-img">
-                        <picture>
-                          <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
-                          <img class="img-block" src="/Media/Carousel/test-photo.webp">
-                        </picture>
-                      </a>
-                    </div>
-                  </div>
 
-                  <!-- имитация постов -->
-                  <div class="swiper-slide swiper-slide-active">
-                    <div class="swiper-post">
-                      <a href="" class="slide-img">
-                        <picture>
-                          <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
-                          <img class="img-block" src="/Media/Carousel/test-photo.webp">
-                        </picture>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="swiper-slide swiper-slide-next">
-                    <div class="swiper-post">
-                      <a href="" class="slide-img">
-                        <picture>
-                          <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
-                          <img class="img-block" src="/Media/Carousel/test-photo.webp">
-                        </picture>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-post-info ">
-                  <h2 class="swiper-post-name">LIME</h2>
-                  <a href="" class="about-post-button" style="--buttonGradientColorFrom: rgba(184, 132, 100, 0.6);
-                  --buttonGradientColorTo: #b88464;">
-                  <span class="about-text">Подробнее</span>
-                  </a>
-                  <div class="progress-panel"></div>
-                </div>
-
-                
-              </div>
-
-              <div class="swiper-pagination">
-                <span class="swiper-pagination-ball swiper-pagination-ball-active"></span>
-                <span class="swiper-pagination-ball"></span>
-                <span class="swiper-pagination-ball"></span>
-              </div>
-              
+<!-- Карусель для больших экранов-->
+<div class="container pt-5">
+  <div class="swiper-header d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <h5 class="section-names">Услуги</h5>
+      <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все услуги и сервисы</a>
+    </div>
+    <div class="swiper-slider_button_container align-items-center">
+      <button id="swiper-left" class="prev">prev</button>
+      <button id="swiper-right" class="next">next</button>
+    </div>
+  </div>
+</div>
+<div class="swiper-section">
+  <div class="swiper">
+    <div class="swiper-box" style="--sliderBackground: url(/Media/Carousel/test-photo.webp)">
+      <div class="swiper-main-window">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper-post">
+              <a href="" class="slide-img">
+                <picture>
+                  <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                  <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                </picture>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-post">
+              <a href="" class="slide-img">
+                <picture>
+                  <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                  <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                </picture>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-post">
+              <a href="" class="slide-img">
+                <picture>
+                  <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                  <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                </picture>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-post">
+              <a href="" class="slide-img">
+                <picture>
+                  <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                  <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                </picture>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-post">
+              <a href="" class="slide-img">
+                <picture>
+                  <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                  <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                </picture>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+
+        <div class="swiper-post-info ">
+          <h2 class="swiper-post-name">LIME</h2>
+          <a href="" class="about-post-button" style="--buttonGradientColorFrom: rgba(184, 132, 100, 0.6);
+          --buttonGradientColorTo: #b88464;">
+          <span class="about-text">Подробнее</span>
+          </a>
+          <div class="progress-panel"></div>
+        </div>
+
+        
+      </div>
+
+      <div class="swiper-pagination">
+        <span class="swiper-pagination-ball swiper-pagination-ball-active"></span>
+        <span class="swiper-pagination-ball"></span>
+        <span class="swiper-pagination-ball"></span>
+      </div>
+      
+  </div>
+  
+  
+</div>
+
+
+
+
+
+
 
       <!-- 6 buttons after carousel -->
       <section class="bg-nav-bg pb-3 pb-md-5 ">
@@ -983,9 +1021,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script> doesnt work without paid inertia plugin-->
     <!-- Custom JavaScript -->
-    <script src="js\swiper.js"></script>
     <script src="js\script.js"></script>
     <script src="js\main.js"></script>
+    <script src="js\swiper.js"></script>
     <script src="js\service_slider.js"></script>
     <script src="js\promotion_slider.js"></script>
     <script src="js\feedback.js"></script>

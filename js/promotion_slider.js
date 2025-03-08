@@ -13,10 +13,10 @@ function blur_overflown_elements_promotion() {
         var startX = element.getBoundingClientRect()['x'];
         var endX = startX + main_width;
         if(startX < promotion_container_startX-15 || endX > promotion_container_endX+15) {
-            element.classList.add('overflown');
+            element.classList.add('promotion-overflown');
         }
         else {
-            element.classList.remove('overflown');
+            element.classList.remove('promotion-overflown');
         }
     });
 }
@@ -37,10 +37,10 @@ function blur_overflown_elements_left_promotion() {
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
       if(startX < promotion_container_startX - main_width-15 || endX > promotion_container_endX - main_width+15) {
-          element.classList.add('overflown');
+          element.classList.add('promotion-overflown');
       }
       else {
-          element.classList.remove('overflown');
+          element.classList.remove('promotion-overflown');
       }
   });
 }
@@ -53,10 +53,10 @@ function blur_overflown_elements_right_promotion() {
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
       if(startX < promotion_container_startX + main_width-15 || endX > promotion_container_endX + main_width+15) {
-          element.classList.add('overflown');
+          element.classList.add('promotion-overflown');
       }
       else {
-          element.classList.remove('overflown');
+          element.classList.remove('promotion-overflown');
       }
   });
 }

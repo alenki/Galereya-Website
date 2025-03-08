@@ -106,25 +106,27 @@ h2 {
     position: relative;
     width: 100%;
 }
-
 .swiper {
-    overflow: hidden;
+    /* overflow: hidden; */
     padding-top: 4rem;
     padding-bottom: 8rem;
     width: 100%;
     color: #eceef3;
     background-color: #EDE5D7;
 }
-
+.swiper-overflown {
+    opacity: .8;
+    filter: blur(1rem);
+    transition: opacity 0.5s, filter 0.5s !important;
+    pointer-events: none;
+    cursor: default;
+}
 .swiper-box {
     position: relative;
     width: 80rem;
     max-width: calc(100% - 3.2rem);
     margin-right: auto;
     margin-left: auto;
-}
-@media  and {
-    
 }
 .swiper-box::before {
     content: "";
@@ -140,7 +142,6 @@ h2 {
     transform: translateX(-50%);
     filter: blur(2.2rem);
 }
-
 .swiper-main-window {
     position: relative;
     width: 82rem;
@@ -152,7 +153,6 @@ h2 {
     padding: 0;
     z-index: 1;
 }
-
 .swiper-wrapper {
     transform: translate3d(-1228px, 0px, 0px);
     position: relative;
@@ -163,28 +163,24 @@ h2 {
     transition-property: transform;
     box-sizing: content-box;
 }
-
 .swiper-slide {
     height: 100%;
     /* width для этого блока нужно настраивать через js */
     width: 100%;
 
-    opacity: .8;
     cursor: default;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
     pointer-events: none;
-    transform: scale(0.91304);
-    filter: blur(1rem);
-    transition: opacity .3s, transform .3s, filter .3s !important;
     backface-visibility: hidden;
     flex-shrink: 0;
 
     position: relative;
     transition-property: transform;
-}
 
+    transition: opacity 0.5s, filter 0.5s !important;
+}
 .swiper-slide-active {
     opacity: 1;
     cursor: auto;
@@ -193,14 +189,12 @@ h2 {
     transform: none;
     filter: none;
 }
-
 .swiper-post {
     border-radius: 1.2rem;
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
-
 .slide-img {
     display: block;
     height: 100%;
@@ -221,7 +215,6 @@ h2 {
     -o-object-fit: cover;
     object-fit: cover;
 }
-/* --------------- End of Блок услуг для больших экранов ---------------- */
 
 /* блок с кнопкой подробнее */
 .swiper-post-info {
@@ -509,7 +502,7 @@ h2 {
 .service-card:hover {
     transform: scale(1.037); 
 }
-.overflown {
+.service-overflown {
     opacity: .5;
     filter: blur(0.4rem);
     pointer-events: none;
@@ -739,7 +732,7 @@ h2 {
 .promotion-card:hover {
     transform: scale(1.037); 
 }
-.overflown {
+.promotion-overflown {
     opacity: .5;
     filter: blur(0.4rem);
     pointer-events: none;

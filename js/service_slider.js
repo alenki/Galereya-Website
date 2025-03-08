@@ -14,10 +14,10 @@ function blur_overflown_elements_service() {
         var startX = element.getBoundingClientRect()['x'];
         var endX = startX + main_width;
         if(startX < service_container_startX-15 || endX > service_container_endX+15) {
-            element.classList.add('overflown');
+            element.classList.add('service-overflown');
         }
         else {
-            element.classList.remove('overflown');
+            element.classList.remove('service-overflown');
         }
     });
 }
@@ -38,10 +38,10 @@ function blur_overflown_elements_left_service() {
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
       if(startX < service_container_startX - main_width-15 || endX > service_container_endX - main_width+15) {
-          element.classList.add('overflown');
+          element.classList.add('service-overflown');
       }
       else {
-          element.classList.remove('overflown');
+          element.classList.remove('service-overflown');
       }
   });
 }
@@ -54,10 +54,10 @@ function blur_overflown_elements_right_service() {
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
       if(startX < service_container_startX + main_width-15 || endX > service_container_endX + main_width+15) {
-          element.classList.add('overflown');
+          element.classList.add('service-overflown');
       }
       else {
-          element.classList.remove('overflown');
+          element.classList.remove('service-overflown');
       }
   });
 }
@@ -75,15 +75,15 @@ const service_loop = horizontalLoop_service(service_boxes, {
 });
 
 
-let isCooldown = false;
+let isCooldown_service = false;
 document.getElementById("service-right").addEventListener("click", () => {
   // cooldown to prevent spamming button
-  if (isCooldown) {
+  if (isCooldown_service) {
     return;
   }
-  isCooldown = true;
+  isCooldown_service = true;
   setTimeout(() => {
-    isCooldown = false;
+    isCooldown_service = false;
   }, 350);
 
     blur_overflown_elements_right_service();
@@ -94,12 +94,12 @@ document.getElementById("service-right").addEventListener("click", () => {
 });
 document.getElementById("service-left").addEventListener("click", () => {
   // cooldown to prevent spamming button
-  if (isCooldown) {
+  if (isCooldown_service) {
     return;
   }
-  isCooldown = true;
+  isCooldown_service = true;
   setTimeout(() => {
-    isCooldown = false;
+    isCooldown_service = false;
   }, 350);
   
     blur_overflown_elements_left_service();
