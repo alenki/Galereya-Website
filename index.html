@@ -238,11 +238,12 @@
   <div class="swiper">
     <div class="swiper-box" style="--sliderBackground: url(/Media/Carousel/test-photo.webp)">
       <div class="swiper-main-window">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper"> 
+          <!-- слайдов должно быть больше чем 3, они должны цикловаться, иначе баг появляется -->
           <div class="swiper-slide">
             <div class="swiper-post">
               <a href="" class="slide-img">
-                <picture class="">
+                <picture>
                   <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
                   <img class="swiper-img-block" src="/Media/Carousel/test-photo.webp">
                 </picture>
@@ -275,6 +276,16 @@
                 <picture>
                   <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
                   <img class="swiper-img-block" src="/Media/Carousel/test-photo.webp">
+                </picture>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-post">
+              <a href="" class="slide-img">
+                <picture>
+                  <source type="image/webp" srcset="/Media/Carousel/image-1.jpg">
+                  <img class="swiper-img-block" src="/Media/Carousel/image-1.jpg">
                 </picture>
               </a>
             </div>

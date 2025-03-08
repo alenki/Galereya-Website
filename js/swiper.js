@@ -8,12 +8,12 @@ const swiper_pagination_1 = document.getElementById("swiper-pagination-ball-1");
 const swiper_pagination_2 = document.getElementById("swiper-pagination-ball-2");
 const swiper_pagination_3 = document.getElementById("swiper-pagination-ball-3");
 
+const swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
+const swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
+
 // Set class to overflown elements
 function blur_overflown_elements_swiper() {
-    console.log("no");
     swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
-        var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
-        var swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
         var main_width = element.getBoundingClientRect()['width'];
         var startX = element.getBoundingClientRect()['x'];
         var endX = startX + main_width;
@@ -29,17 +29,16 @@ function blur_overflown_elements_swiper() {
 blur_overflown_elements_swiper();
 // check on changing viewport size
 window.addEventListener("resize", function() { 
-  blur_overflown_elements_swiper();
+  setTimeout(() => {
+    blur_overflown_elements_swiper();
+  }, "100");
 })
 function blur_overflown_elements_left_swiper() {
-  // console.log("no");
   swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
-      var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
-      var swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
       var main_width = element.getBoundingClientRect()['width'];
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
-      if(startX < swiper_container_startX - main_width-15 || endX > swiper_container_endX - main_width+15) {
+      if(startX < swiper_container_startX - main_width-50 || endX > swiper_container_endX - main_width+50) {
           element.classList.add('swiper-overflown');
       }
       else {
@@ -48,14 +47,12 @@ function blur_overflown_elements_left_swiper() {
   });
 }
 function blur_overflown_elements_right_swiper() {
-  // console.log("no");
   swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
-      var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
-      var swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
       var main_width = element.getBoundingClientRect()['width'];
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
-      if(startX < swiper_container_startX + main_width-15 || endX > swiper_container_endX + main_width+15) {
+      console.log(element.innerHTML, startX, endX, swiper_container_startX, swiper_container_endX)
+      if(startX < swiper_container_startX + main_width-50 || endX > swiper_container_endX + main_width+50) {
           element.classList.add('swiper-overflown');
       }
       else {
@@ -155,7 +152,7 @@ function swipe_left() {
   isCooldown_swiper = true;
   setTimeout(() => {
     isCooldown_swiper = false;
-  }, 350);
+  }, 500);
   
     blur_overflown_elements_left_swiper();
     swiper_loop.previous({duration: 0.4, ease: "power1.inOut"})
@@ -175,7 +172,7 @@ function swipe_right() {
   isCooldown_swiper = true;
   setTimeout(() => {
     isCooldown_swiper = false;
-  }, 350);
+  }, 500);
 
     blur_overflown_elements_right_swiper();
     swiper_loop.next({duration: 0.4, ease: "power1.inOut"});
@@ -195,7 +192,7 @@ function swipe_left_twice() {
   isCooldown_swiper = true;
   setTimeout(() => {
     isCooldown_swiper = false;
-  }, 350);
+  }, 500);
   
   blur_overflown_elements_left_swiper();
     swiper_loop.previous({duration: 0.07, ease: "power1.inOut"});
@@ -216,7 +213,8 @@ function swipe_right_twice() {
   isCooldown_swiper = true;
   setTimeout(() => {
     isCooldown_swiper = false;
-  }, 350);
+  }, 500);
+
 
     blur_overflown_elements_right_swiper();
     swiper_loop.next({duration: 0.07, ease: "power1.inOut"});

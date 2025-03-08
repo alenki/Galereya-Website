@@ -114,13 +114,6 @@ h2 {
     color: #eceef3;
     background-color: #EDE5D7;
 }
-.swiper-overflown {
-    opacity: .8;
-    filter: blur(1rem);
-    transition: opacity 0.5s, filter 0.5s !important;
-    pointer-events: none;
-    cursor: default;
-}
 .swiper-box {
     position: relative;
     width: 80rem;
@@ -144,8 +137,9 @@ h2 {
 }
 .swiper-main-window {
     position: relative;
-    width: 82rem;
-    max-width: calc(100% - 3.2rem);
+    /* width: 82rem; */
+    width: 1228.78px;
+    /* max-width: calc(100% - 3.2rem); */
     margin-left: auto;
     margin-right: auto;
     /* overflow: hidden; */
@@ -154,7 +148,8 @@ h2 {
     z-index: 1;
 }
 .swiper-wrapper {
-    transform: translate3d(-1228px, 0px, 0px);
+    transform: translate3d(-1228.77px, 0px, 0px);
+    /* transform: translate3d(-2456px, 0px, 0px); */
     position: relative;
     width: 100%;
     height: 100%;
@@ -178,8 +173,14 @@ h2 {
 
     position: relative;
     transition-property: transform;
-
     transition: opacity 0.5s, filter 0.5s !important;
+}
+.swiper-overflown {
+    opacity: .8;
+    filter: blur(1rem);
+    transition: opacity 0.5s, filter 0.5s !important;
+    pointer-events: none;
+    cursor: default;
 }
 .swiper-slide-active {
     opacity: 1;
