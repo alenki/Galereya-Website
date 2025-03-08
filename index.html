@@ -47,604 +47,632 @@
     <button type="button" class="btn btn-primary btn-floating btn-lg rounded-5" id="btn-back-to-top">
       <svg width="35" height="45" class="back-to-top-svg"><use xlink:href="#arrow-up"/>
     </button>
+    
+    <div class="layout">
+      <!-- Navbar -->
+      <nav class="navbar navbar-lg-expand bg-nav-bg fixed-top custom-nav py-0">     
+          <div class="container">
+            <!-- Навбар больших экранов -->
+            <div class="collapse navbar-collapse d-sm-flex d-none justify-content-between">
+                <!-- Кнопка меню -->
+                <div style="width: 92.5px;" class="menu-btn d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                  <div class="menu-btn__burger"></div>
+                  <span class="menu-btn-title ps-2 text-primary">Меню</span>
+                </div>
+                <!-- Логотип -->
+                <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+                <!-- Кнопка -->
+                <button class="btn lang-button">
+                  <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
+                  <span class="pt-1">English</span>
+                </button>
+            </div>
+            <!-- Навбар маленьких экранов -->
+            <div class="collapse navbar-collapse d-sm-none d-flex justify-content-between">
+                <!-- Кнопка меню -->
+                <div style="width: 23px;" class="menu-btn justify-content-between" type="button" onclick="open_sidemenu()">
+                  <div class="menu-btn__burger"></div>
+                </div>
+                <!-- Логотип -->
+                <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+                <!-- Кнопка -->
+                <div style="width: 23px;"></div>
+            </div>
+            
+              <!-- Раскрытый меню -->
+              <div class="collapse navbar-collapse custom-collapsed-nav" id="navmenu">
+                <div style="height: 270px;" class="row d-flex align-items-start">
+                  <!-- 1 -->
+                  <div class="col-1"></div>
+                  <!-- 2 -->
+                  <div class="menu_column col-4 pt-4 d-flex justify-content-center">
+                    <div class="pb-4"><a class="menu_text" id="menuButton-1">Магазины</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-2">Развлечения</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-3">Еда</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-4">Детям</a></div>
+                  </div>
+                  <!-- 3 -->
+                  <div class="menu_column col-4 pt-4 d-flex justify-content-center">
+                    <div class="pb-4"><a class="menu_text" id="menuButton-5">Контакты</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-6">Обратная связь</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-7">О ГАЛЕРЕИ</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-8">Правила ГАЛЕРЕИ</a></div>
+                  </div>
+                  <!-- 4 -->
+                  <div class="menu_column col-3 pt-4 d-flex justify-content-center">
+                    <!-- адрес -->
+                    <div class="address_text pt-3 d-flex align-items-center">
+                      <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
+                      <span class="ps-3">
+                        г. Нальчик, <br>
+                        ул. Кирова, 1Д
+                      </span>
+                    </div>
+                    <!-- Номер телефона -->
+                    <div class="phone-number_text pt-4 d-flex align-items-center">
+                      <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
+                      <span class="ps-3">+7 (8662) 40-46-84</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </nav>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-lg-expand bg-nav-bg fixed-top custom-nav py-0">     
-        <div class="container">
-          <!-- Навбар больших экранов -->
-          <div class="collapse navbar-collapse d-sm-flex d-none justify-content-between">
-              <!-- Кнопка меню -->
-              <div style="width: 92.5px;" class="menu-btn d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <div class="menu-btn__burger"></div>
-                <span class="menu-btn-title ps-2 text-primary">Меню</span>
-              </div>
-              <!-- Логотип -->
-              <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
-              <!-- Кнопка -->
-              <button class="btn lang-button">
-                <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
-                <span class="pt-1">English</span>
-              </button>
-          </div>
-          <!-- Навбар маленьких экранов -->
-          <div class="collapse navbar-collapse d-sm-none d-flex justify-content-between">
-              <!-- Кнопка меню -->
-              <div style="width: 23px;" class="menu-btn justify-content-between" type="button" onclick="open_sidemenu()">
-                <div class="menu-btn__burger"></div>
-              </div>
-              <!-- Логотип -->
-              <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
-              <!-- Кнопка -->
-              <div style="width: 23px;"></div>
+      <!-- Мобильная навигация -->
+      <div id="sidemenu" class="sidemenu">
+        <a href="javascript:void(0)" class="closebtn" onclick="close_sidemenu()">&times;</a>
+        <div class="first_sidemenu_box">
+          <a class="sidemenu_text" id="sidemenuButton-1">Магазины</a>
+          <a class="sidemenu_text" id="sidemenuButton-2">Развлечения</a>
+          <a class="sidemenu_text" id="sidemenuButton-3">Еда</a>
+          <a class="sidemenu_text" id="sidemenuButton-4">Детям</a>
+        </div>
+        <hr class="menuButton_separator">
+        <div class="second_sidemenu_box">
+          <a class="sidemenu_text" id="sidemenuButton-5">Контакты</a>
+          <a class="sidemenu_text" id="sidemenuButton-6">Обратная связь</a>
+          <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕИ</a>
+          <a class="sidemenu_text" id="sidemenuButton-8">Правила ГАЛЕРЕИ</a>
+        </div>
+      </div>
+
+      <!-- Главные начальные кнопки -->
+      <section class="pt-4 pb-2 bg-secondary">
+        <div class="container pt-5">
+          <div class="d-flex justify-content-center justify-content-sm-between">
+              <button type="button" id="worktimesUnlock" class="btn btn-primary custom-top-buttons text-secondary">Режим работы</button>
+              <button type="button" id="locationUnlock" class="btn btn-primary custom-top-buttons text-secondary ms-3 ms-sm-0">Как добраться</button>
           </div>
           
-            <!-- Раскрытый меню -->
-            <div class="collapse navbar-collapse custom-collapsed-nav" id="navmenu">
-              <div style="height: 270px;" class="row d-flex align-items-start">
-                <!-- 1 -->
-                <div class="col-1"></div>
-                <!-- 2 -->
-                <div class="menu_column col-4 pt-4 d-flex justify-content-center">
-                  <div class="pb-4"><a class="menu_text" id="menuButton-1">Магазины</a></div>
-                  <div class="pb-4"><a class="menu_text" id="menuButton-2">Развлечения</a></div>
-                  <div class="pb-4"><a class="menu_text" id="menuButton-3">Еда</a></div>
-                  <div class="pb-4"><a class="menu_text" id="menuButton-4">Детям</a></div>
+          <!-- Раскрытый меню режим работы -->
+          <div class="worktimesUnlocked mt-2" id="worktimesHidden">
+            <div class="p-4 py-3" id="worktimesHidden">
+              <h6 id="worktimesHidden">Время работы</h6>
+              <div class="row" id="worktimesHidden">
+                <div class="col" id="worktimesHidden">
+                  <span class="worktime-day" id="worktimesHidden">Пн</span>
+                  <span class="worktime-time" id="worktimesHidden">10:00</span>
+                  <span class="worktime-time" id="worktimesHidden">23:00</span>
                 </div>
-                <!-- 3 -->
-                <div class="menu_column col-4 pt-4 d-flex justify-content-center">
-                  <div class="pb-4"><a class="menu_text" id="menuButton-5">Контакты</a></div>
-                  <div class="pb-4"><a class="menu_text" id="menuButton-6">Обратная связь</a></div>
-                  <div class="pb-4"><a class="menu_text" id="menuButton-7">О ГАЛЕРЕИ</a></div>
-                  <div class="pb-4"><a class="menu_text" id="menuButton-8">Правила ГАЛЕРЕИ</a></div>
+                <div class="col" id="worktimesHidden">
+                  <span class="worktime-day" id="worktimesHidden">Вт</span>
+                  <span class="worktime-time" id="worktimesHidden">10:00</span>
+                  <span class="worktime-time" id="worktimesHidden">23:00</span>
                 </div>
-                <!-- 4 -->
-                <div class="menu_column col-3 pt-4 d-flex justify-content-center">
-                  <!-- адрес -->
-                  <div class="address_text pt-3 d-flex align-items-center">
-                    <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
-                    <span class="ps-3">
-                      г. Нальчик, <br>
-                      ул. Кирова, 1Д
-                    </span>
-                  </div>
-                  <!-- Номер телефона -->
-                  <div class="phone-number_text pt-4 d-flex align-items-center">
-                    <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
-                    <span class="ps-3">+7 (8662) 40-46-84</span>
-                  </div>
+                <div class="col" id="worktimesHidden">
+                  <span class="worktime-day" id="worktimesHidden">Ср</span>
+                  <span class="worktime-time" id="worktimesHidden">10:00</span>
+                  <span class="worktime-time" id="worktimesHidden">23:00</span>
+                </div>
+                <div class="col" id="worktimesHidden">
+                  <span class="worktime-day" id="worktimesHidden">Чт</span>
+                  <span class="worktime-time" id="worktimesHidden">10:00</span>
+                  <span class="worktime-time" id="worktimesHidden">23:00</span>
+                </div>
+                <div class="col" id="worktimesHidden">
+                  <span class="worktime-day" id="worktimesHidden">Пт</span>
+                  <span class="worktime-time" id="worktimesHidden">10:00</span>
+                  <span class="worktime-time" id="worktimesHidden">23:00</span>
+                </div>
+                <div class="col" id="worktimesHidden">
+                  <span class="worktime-day" id="worktimesHidden">Сб</span>
+                  <span class="worktime-time" id="worktimesHidden">10:00</span>
+                  <span class="worktime-time" id="worktimesHidden">23:00</span>
+                </div>
+                <div class="col" id="worktimesHidden">
+                  <span class="worktime-day" id="worktimesHidden">Вс</span>
+                  <span class="worktime-time" id="worktimesHidden">10:00</span>
+                  <span class="worktime-time" id="worktimesHidden">23:00</span>
                 </div>
               </div>
             </div>
-    </nav>
-
-    <!-- Мобильная навигация -->
-    <div id="sidemenu" class="sidemenu">
-      <a href="javascript:void(0)" class="closebtn" onclick="close_sidemenu()">&times;</a>
-      <div class="first_sidemenu_box">
-        <a class="sidemenu_text" id="sidemenuButton-1">Магазины</a>
-        <a class="sidemenu_text" id="sidemenuButton-2">Развлечения</a>
-        <a class="sidemenu_text" id="sidemenuButton-3">Еда</a>
-        <a class="sidemenu_text" id="sidemenuButton-4">Детям</a>
-      </div>
-      <hr class="menuButton_separator">
-      <div class="second_sidemenu_box">
-        <a class="sidemenu_text" id="sidemenuButton-5">Контакты</a>
-        <a class="sidemenu_text" id="sidemenuButton-6">Обратная связь</a>
-        <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕИ</a>
-        <a class="sidemenu_text" id="sidemenuButton-8">Правила ГАЛЕРЕИ</a>
-      </div>
-    </div>
-
-    <!-- Главные начальные кнопки -->
-    <section class="pt-4 pb-2 bg-secondary">
-      <div class="container pt-5">
-        <div class="d-flex justify-content-center justify-content-sm-between">
-            <button type="button" id="worktimesUnlock" class="btn btn-primary custom-top-buttons text-secondary">Режим работы</button>
-            <button type="button" id="locationUnlock" class="btn btn-primary custom-top-buttons text-secondary ms-3 ms-sm-0">Как добраться</button>
-        </div>
-        
-        <!-- Раскрытый меню режим работы -->
-        <div class="worktimesUnlocked mt-2" id="worktimesHidden">
-          <div class="p-4 py-3" id="worktimesHidden">
-            <h6 id="worktimesHidden">Время работы</h6>
-            <div class="row" id="worktimesHidden">
-              <div class="col" id="worktimesHidden">
-                <span class="worktime-day" id="worktimesHidden">Пн</span>
-                <span class="worktime-time" id="worktimesHidden">10:00</span>
-                <span class="worktime-time" id="worktimesHidden">23:00</span>
-              </div>
-              <div class="col" id="worktimesHidden">
-                <span class="worktime-day" id="worktimesHidden">Вт</span>
-                <span class="worktime-time" id="worktimesHidden">10:00</span>
-                <span class="worktime-time" id="worktimesHidden">23:00</span>
-              </div>
-              <div class="col" id="worktimesHidden">
-                <span class="worktime-day" id="worktimesHidden">Ср</span>
-                <span class="worktime-time" id="worktimesHidden">10:00</span>
-                <span class="worktime-time" id="worktimesHidden">23:00</span>
-              </div>
-              <div class="col" id="worktimesHidden">
-                <span class="worktime-day" id="worktimesHidden">Чт</span>
-                <span class="worktime-time" id="worktimesHidden">10:00</span>
-                <span class="worktime-time" id="worktimesHidden">23:00</span>
-              </div>
-              <div class="col" id="worktimesHidden">
-                <span class="worktime-day" id="worktimesHidden">Пт</span>
-                <span class="worktime-time" id="worktimesHidden">10:00</span>
-                <span class="worktime-time" id="worktimesHidden">23:00</span>
-              </div>
-              <div class="col" id="worktimesHidden">
-                <span class="worktime-day" id="worktimesHidden">Сб</span>
-                <span class="worktime-time" id="worktimesHidden">10:00</span>
-                <span class="worktime-time" id="worktimesHidden">23:00</span>
-              </div>
-              <div class="col" id="worktimesHidden">
-                <span class="worktime-day" id="worktimesHidden">Вс</span>
-                <span class="worktime-time" id="worktimesHidden">10:00</span>
-                <span class="worktime-time" id="worktimesHidden">23:00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Раскрытый меню Как добраться -->
-        <div class="d-flex flex-row-reverse">
-          <div class="locationUnlocked mt-2" id="locationHidden">
-            <!-- Адрес -->
-            <div class="ps-4 pt-4 footer-address d-flex align-items-center">
-              <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
-              <div class="ps-3">
-                г. Нальчик, <br>
-                ул. Кирова, 1Д
-              </div>
-            </div>
-
-            <!-- Яндекс карта -->
-            <div class="ps-4 pt-2">
-              <a href="https://yandex.ru/maps/30/nalchik/?azimuth=0.03992659559746224&ll=43.573782%2C43.475360&mode=routes&rtext=~43.476351%2C43.573495&rtt=comparison&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1077655466&tilt=0.1598391881703235&z=16.37" 
-              class="btn yandexMapButton" target="_blank">
-                <img src="Media\Logos\Yandex_Maps_Logo.svg" class="d-block locationMapButtonIMG" alt="Yandex Logo">
-              </a>
-            </div>
-            <!-- Гугл карта -->
-            <div class="ps-4 pt-2">
-              <a href="https://www.google.com/maps/dir//Галерея,+улица+Кирова,+Нальчик/@43.476242,43.5326028,13z/data=!3m1!5s0x405a06a799ebc2eb:0xd90eb4de88dded4!4m9!4m8!1m0!1m5!1m1!1s0x405a041d7767e057:0x5fbcc72ce3653594!2m2!1d43.573888!2d43.4762494!3e0!5m1!1e1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
-              class="btn googleMapButton" target="_blank">
-                <img src="Media\Logos\Google_Maps_Logo.svg" class="d-block locationMapButtonIMG" alt="Yandex Logo">
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Карусель --> 
-    <section class="py-2 bg-secondary customCarouselSection ">
-        <div class="d-flex justify-content-center">
-          <div class="customCarouselSize">
-            <div id="hero-carousel" class="carousel slide">
-              <!-- Индикаторы -->
-              <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <!-- Основа -->
-              <div class="carousel-inner custom-carousel-div">
-                  <div class="carousel-item active custom-carousel-item">
-                      <img src="Media\Carousel\image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
-                  </div>
-                  <div class="carousel-item custom-carousel-item">
-                      <img src="Media\Carousel\image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
-                  </div>
-                  <div class="carousel-item custom-carousel-item">
-                      <img src="Media\Carousel\image-1.jpg" class="d-block w-100 custom-carousel-img" alt="...">
-                  </div>
-              </div>
-              <!-- Кнопки перехода к следующему/предыдущему -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-              </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6 buttons after carousel -->
-    <section class="bg-nav-bg pb-3 pb-md-5 ">
-      <div class="container">
-        <div class="d-flex d-sm-block justify-content-center ">
-          <div class="main-bottom-buttons_block d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3">
-            <button type="button" class="btn btn-primary custom-main-bottom-buttons text-secondary" id="storeButton-1">Магазины</button>
-            <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-2">Еда</button>
-            <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-3">Развлечения</button>
-          </div>
-          <div class="main-bottom-buttons_block d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3">
-            <button type="button" class="btn btn-primary custom-main-bottom-buttons text-secondary" id="storeButton-4">Детям</button>
-            <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-5">Услуги</button>
-            <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-6">Режим работы</button>
-          </div>
-        </div>
-        
-      </div>
-    </section>
-
-
-  <!-- блок с услугами -->
-  <section class="py-2">
-    <div class="container">
-      <div class="d-flex">
-        <h5 class="section-names">Услуги</h5>
-        <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все услуги и сервисы</a>
-      </div>
-      <div class="service-wrapper">
-        <i id="service-left" class="service-slider_button fa-solid fas fa-angle-left"></i>
-        <div class="service py-3">
-          <div class="service-box" id="serviceButton-1">
-            <div class="service-icon"></div>
-            <span class="service-name">Боулинг</span>
-          </div>
-          <div class="service-box" id="serviceButton-2">
-            <div class="service-icon"></div>
-            <span class="service-name">Ателье</span>
-          </div>
-          <div class="service-box" id="serviceButton-3">
-            <div class="service-icon"></div>
-            <span class="service-name">Банкоматы</span>
-          </div>
-          <div class="service-box" id="serviceButton-4">
-            <div class="service-icon"></div>
-            <span class="service-name">Супермакеты</span>
-          </div>
-          <div class="service-box" id="serviceButton-5">
-            <div class="service-icon"></div>
-            <span class="service-name">Парковка</span>
           </div>
 
-
-          <div class="service-box" id="serviceButton-1">
-            <div class="service-icon"></div>
-            <span class="service-name">Боулинг</span>
-          </div>
-          <div class="service-box" id="serviceButton-2">
-            <div class="service-icon"></div>
-            <span class="service-name">Ателье</span>
-          </div>
-          <div class="service-box" id="serviceButton-3">
-            <div class="service-icon"></div>
-            <span class="service-name">Банкоматы</span>
-          </div>
-          <div class="service-box" id="serviceButton-4">
-            <div class="service-icon"></div>
-            <span class="service-name">Супермакеты</span>
-          </div>
-          <div class="service-box" id="serviceButton-5">
-            <div class="service-icon"></div>
-            <span class="service-name">Парковка</span>
-          </div>    
-      </div>
-      <i id="service-right" class="service-slider_button fa-solid fas fa-angle-right"></i>
-    </div>
-  </section>
-  <!-- блок с акциями -->
-  <section class="py-4">
-    <div class="container">
-      <div class="d-flex">
-        <h5 class="section-names">Что нового</h5>
-        <a href="#" class="ps-3 section-links" style="text-decoration: none;">Все акции и предложения</a>
-      </div>
-      <div class="promotion-wrapper">
-        <i id="promotion-left" class="promotion-slider_button fa-solid fas fa-angle-left"></i>
-        <div class="promotion py-3">
-          <div class="promotion-box" id="promotionButton-1">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Боулинг</span>
-            <span class="promotion-details">Боулинг</span>
-            <span class="promotion-date mt-auto pb-2">Боулинг</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-2">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Ателье</span>
-            <span class="promotion-details">Ателье</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-3">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Банкоматы</span>
-            <span class="promotion-details">Банкоматы</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-4">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Супермакеты</span>
-            <span class="promotion-details">Супермакеты</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-5">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Парковка</span>
-            <span class="promotion-details">Парковка</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-
-          <div class="promotion-box" id="promotionButton-6">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Боулинг</span>
-            <span class="promotion-details">Боулинг</span>
-            <span class="promotion-date mt-auto pb-2">Боулинг</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-7">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Ателье</span>
-            <span class="promotion-details">Ателье</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-8">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Банкоматы</span>
-            <span class="promotion-details">Банкоматы</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-9">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Супермакеты</span>
-            <span class="promotion-details">Супермакеты</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-          <div class="promotion-box" id="promotionButton-10">
-            <div class="promotion-icon"></div>
-            <span class="promotion-name">Парковка</span>
-            <span class="promotion-details">Парковка</span>
-            <span class="promotion-date mt-auto pb-2">Ателье</span>
-          </div>
-        </div>
-        <i id="promotion-right" class="promotion-slider_button fa-solid fas fa-angle-right"></i>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- Footer -->
-    <section class="bg-nav-bg custom-footer">
-      <div class="container">
-        <footer class="py-5">
-          <div class="row">
-              <div class="col-6 col-md-3 mb-3 address_text d-flex align-items-center">
+          <!-- Раскрытый меню Как добраться -->
+          <div class="d-flex flex-row-reverse">
+            <div class="locationUnlocked mt-2" id="locationHidden">
+              <!-- Адрес -->
+              <div class="ps-4 pt-4 footer-address d-flex align-items-center">
                 <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
                 <div class="ps-3">
                   г. Нальчик, <br>
                   ул. Кирова, 1Д
                 </div>
               </div>
-            <div class="col-6 col-md-3 mb-3 phone-number_text d-flex align-items-center">
-              <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
-              <div class="ps-3">+7 (8662) 40-46-84</div>
-            </div>
-            <div class="col-md-5 offset-md-1 list-unstyled d-flex flex-row-reverse mb-3 ">
-                <div class="align-content-center">
-                  <li class="ms-3"><a class="link-body-emphasis " href="#"><svg width="24" height="24"><use xlink:href="#vkontakte"/></svg></a></li>
-                </div>
-                <div class="align-content-center">
-                  <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi bi-telegram" width="24" height="24"><use xlink:href="#telegram"/></svg></a></li>
-                </div>
+
+              <!-- Яндекс карта -->
+              <div class="ps-4 pt-2">
+                <a href="https://yandex.ru/maps/30/nalchik/?azimuth=0.03992659559746224&ll=43.573782%2C43.475360&mode=routes&rtext=~43.476351%2C43.573495&rtt=comparison&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1077655466&tilt=0.1598391881703235&z=16.37" 
+                class="btn yandexMapButton" target="_blank">
+                  <img src="Media\Logos\Yandex_Maps_Logo.svg" class="d-block locationMapButtonIMG" alt="Yandex Logo">
+                </a>
+              </div>
+              <!-- Гугл карта -->
+              <div class="ps-4 pt-2">
+                <a href="https://www.google.com/maps/dir//Галерея,+улица+Кирова,+Нальчик/@43.476242,43.5326028,13z/data=!3m1!5s0x405a06a799ebc2eb:0xd90eb4de88dded4!4m9!4m8!1m0!1m5!1m1!1s0x405a041d7767e057:0x5fbcc72ce3653594!2m2!1d43.573888!2d43.4762494!3e0!5m1!1e1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
+                class="btn googleMapButton" target="_blank">
+                  <img src="Media\Logos\Google_Maps_Logo.svg" class="d-block locationMapButtonIMG" alt="Yandex Logo">
+                </a>
+              </div>
+
             </div>
           </div>
-      
-          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>&copy; 2024 KARAF Company, Inc. All rights reserved.</p>
-            <ul class="nav col-md-6 justify-content-end">
-              <li class="nav-item">
-                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#contactsModal">Контакты</button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#feedbackModal">Обратная связь</button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#aboutModal">О ГАЛЕРЕИ</button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#rulesModal">Правила ГАЛЕРЕИ</button>
-              </li>
-            </ul>
+        </div>
+      </section>
+
+      <!-- Карусель --> 
+      <section class="swiper-section">
+          <div class="swiper">
+            <div class="swiper-box" style="--sliderBackground: url(/Media/Carousel/test-photo.webp)">
+              <div class="swiper-main-window">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide swiper-slide-prev">
+                    <div class="swiper-post">
+                      <a href="" class="slide-img">
+                        <picture>
+                          <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                          <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                        </picture>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- имитация постов -->
+                  <div class="swiper-slide swiper-slide-active">
+                    <div class="swiper-post">
+                      <a href="" class="slide-img">
+                        <picture>
+                          <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                          <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                        </picture>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-slide-next">
+                    <div class="swiper-post">
+                      <a href="" class="slide-img">
+                        <picture>
+                          <source type="image/webp" srcset="/Media/Carousel/test-photo.webp">
+                          <img class="img-block" src="/Media/Carousel/test-photo.webp">
+                        </picture>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-post-info ">
+                  <h2 class="swiper-post-name">LIME</h2>
+                  <a href="" class="about-post-button" style="--buttonGradientColorFrom: rgba(184, 132, 100, 0.6);
+                  --buttonGradientColorTo: #b88464;">
+                  <span class="about-text">Подробнее</span>
+                  </a>
+                  <div class="progress-panel"></div>
+                </div>
+
+                
+              </div>
+
+              <div class="swiper-pagination">
+                <span class="swiper-pagination-ball swiper-pagination-ball-active"></span>
+                <span class="swiper-pagination-ball"></span>
+                <span class="swiper-pagination-ball"></span>
+              </div>
+              
           </div>
-        </footer>
+        </div>
+      </section>
+
+      <!-- 6 buttons after carousel -->
+      <section class="bg-nav-bg pb-3 pb-md-5 ">
+        <div class="container">
+          <div class="d-flex d-sm-block justify-content-center ">
+            <div class="main-bottom-buttons_block d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3">
+              <button type="button" class="btn btn-primary custom-main-bottom-buttons text-secondary" id="storeButton-1">Магазины</button>
+              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-2">Еда</button>
+              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-3">Развлечения</button>
+            </div>
+            <div class="main-bottom-buttons_block d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3">
+              <button type="button" class="btn btn-primary custom-main-bottom-buttons text-secondary" id="storeButton-4">Детям</button>
+              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-5">Услуги</button>
+              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-6">Режим работы</button>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+
+    <!-- блок с услугами -->
+    <section class="py-2">
+      <div class="container">
+        <div class="d-flex">
+          <h5 class="section-names">Услуги</h5>
+          <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все услуги и сервисы</a>
+        </div>
+        <div class="service-wrapper">
+          <i id="service-left" class="service-slider_button fa-solid fas fa-angle-left"></i>
+          <div class="service py-3">
+            <div class="service-box" id="serviceButton-1">
+              <div class="service-icon"></div>
+              <span class="service-name">Боулинг</span>
+            </div>
+            <div class="service-box" id="serviceButton-2">
+              <div class="service-icon"></div>
+              <span class="service-name">Ателье</span>
+            </div>
+            <div class="service-box" id="serviceButton-3">
+              <div class="service-icon"></div>
+              <span class="service-name">Банкоматы</span>
+            </div>
+            <div class="service-box" id="serviceButton-4">
+              <div class="service-icon"></div>
+              <span class="service-name">Супермакеты</span>
+            </div>
+            <div class="service-box" id="serviceButton-5">
+              <div class="service-icon"></div>
+              <span class="service-name">Парковка</span>
+            </div>
+
+
+            <div class="service-box" id="serviceButton-1">
+              <div class="service-icon"></div>
+              <span class="service-name">Боулинг</span>
+            </div>
+            <div class="service-box" id="serviceButton-2">
+              <div class="service-icon"></div>
+              <span class="service-name">Ателье</span>
+            </div>
+            <div class="service-box" id="serviceButton-3">
+              <div class="service-icon"></div>
+              <span class="service-name">Банкоматы</span>
+            </div>
+            <div class="service-box" id="serviceButton-4">
+              <div class="service-icon"></div>
+              <span class="service-name">Супермакеты</span>
+            </div>
+            <div class="service-box" id="serviceButton-5">
+              <div class="service-icon"></div>
+              <span class="service-name">Парковка</span>
+            </div>    
+        </div>
+        <i id="service-right" class="service-slider_button fa-solid fas fa-angle-right"></i>
       </div>
     </section>
+    <!-- блок с акциями -->
+    <section class="py-4">
+      <div class="container">
+        <div class="d-flex">
+          <h5 class="section-names">Что нового</h5>
+          <a href="#" class="ps-3 section-links" style="text-decoration: none;">Все акции и предложения</a>
+        </div>
+        <div class="promotion-wrapper">
+          <i id="promotion-left" class="promotion-slider_button fa-solid fas fa-angle-left"></i>
+          <div class="promotion py-3">
+            <div class="promotion-box" id="promotionButton-1">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Боулинг</span>
+              <span class="promotion-details">Боулинг</span>
+              <span class="promotion-date mt-auto pb-2">Боулинг</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-2">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Ателье</span>
+              <span class="promotion-details">Ателье</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-3">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Банкоматы</span>
+              <span class="promotion-details">Банкоматы</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-4">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Супермакеты</span>
+              <span class="promotion-details">Супермакеты</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-5">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Парковка</span>
+              <span class="promotion-details">Парковка</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
 
-<!-- Contacts Modal (что отображает кнопка "Контакты" внизу) -->
-<div class="modal fade" id="contactsModal" tabindex="-1">
-  <div class="modal-dialog">
+            <div class="promotion-box" id="promotionButton-6">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Боулинг</span>
+              <span class="promotion-details">Боулинг</span>
+              <span class="promotion-date mt-auto pb-2">Боулинг</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-7">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Ателье</span>
+              <span class="promotion-details">Ателье</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-8">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Банкоматы</span>
+              <span class="promotion-details">Банкоматы</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-9">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Супермакеты</span>
+              <span class="promotion-details">Супермакеты</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
+            <div class="promotion-box" id="promotionButton-10">
+              <div class="promotion-icon"></div>
+              <span class="promotion-name">Парковка</span>
+              <span class="promotion-details">Парковка</span>
+              <span class="promotion-date mt-auto pb-2">Ателье</span>
+            </div>
+          </div>
+          <i id="promotion-right" class="promotion-slider_button fa-solid fas fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+      <!-- Footer -->
+      <section class="bg-nav-bg custom-footer">
+        <div class="container">
+          <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3 address_text d-flex align-items-center">
+                  <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
+                  <div class="ps-3">
+                    г. Нальчик, <br>
+                    ул. Кирова, 1Д
+                  </div>
+                </div>
+              <div class="col-6 col-md-3 mb-3 phone-number_text d-flex align-items-center">
+                <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="24" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
+                <div class="ps-3">+7 (8662) 40-46-84</div>
+              </div>
+              <div class="col-md-5 offset-md-1 list-unstyled d-flex flex-row-reverse mb-3 ">
+                  <div class="align-content-center">
+                    <li class="ms-3"><a class="link-body-emphasis " href="#"><svg width="24" height="24"><use xlink:href="#vkontakte"/></svg></a></li>
+                  </div>
+                  <div class="align-content-center">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi bi-telegram" width="24" height="24"><use xlink:href="#telegram"/></svg></a></li>
+                  </div>
+              </div>
+            </div>
+        
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+              <p>&copy; 2024 KARAF Company, Inc. All rights reserved.</p>
+              <ul class="nav col-md-6 justify-content-end">
+                <li class="nav-item">
+                  <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#contactsModal">Контакты</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#feedbackModal">Обратная связь</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#aboutModal">О ГАЛЕРЕИ</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#rulesModal">Правила ГАЛЕРЕИ</button>
+                </li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+      </section>
+
+  <!-- Contacts Modal (что отображает кнопка "Контакты" внизу) -->
+  <div class="modal fade" id="contactsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="enrollLabel">Контакты</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            +7 (8662) 40-46-84
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Feedback Modal (что отображает кнопка "Обратная связь" внизу) -->
+  <div class="modal fade bd-example-modal-lg" id="feedbackModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- Надпись "Обратная связь" -->
+        <div class="modal-header">
+            <h1 class="modal-title fs-5 ps-3" id="enrollLabel">Обратная связь</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Форма -->
+        <div class="container">
+          <div class="row align-items-stretch justify-content-center no-gutters">
+              <div class="form h-100 contact-wrap p-5">
+                <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                  <!-- ФИО и почта -->
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                      <label for="" class="col-form-label">ФИО</label>
+                      <input type="text" class="form-control feedback-form-control" name="name" id="name" placeholder="Введите ФИО">
+                    </div>
+                    <div class="col-md-6 form-group mb-3">
+                      <label for="" class="col-form-label">Почта</label>
+                      <input type="email" class="form-control feedback-form-control" name="email" id="email"  placeholder="Введите почту">
+                    </div>
+                  </div>
+                  <!-- Тема -->
+                  <div class="row">
+                    <div class="col-md-12 form-group mb-3">
+                      <label for="budget" class="col-form-label">Тема</label>
+                      <input type="text" class="form-control feedback-form-control" name="subject" id="subject" placeholder="Выберите тему">
+                    </div>
+                  </div>
+                  <!-- Сообщение -->
+                  <div class="row mb-5">
+                    <div class="col-md-12 form-group mb-3">
+                      <label for="message" class="col-form-label">Сообщение</label>
+                      <textarea class="form-control feedback-form-control" name="message" id="message" cols="30" rows="4"  placeholder="Введите ваше сообщение"></textarea>
+                    </div>
+                  </div>
+                  <!-- Отправить сообщение -->
+                  <div class="row justify-content-center">
+                    <div class="col-md-5 form-group text-center">
+                      <input type="submit" value="Отправить сообщение" class="btn btn-block btn-primary rounded-2 py-2 px-4 text-secondary">
+                      <span class="submitting"></span>
+                    </div>
+                  </div>
+                </form>
+                <!-- Сообщение отправлено -->
+                <div id="form-message-warning">
+                  Что-то пошло не так. Пожалуйста, попробуйте еще раз.
+                </div> 
+                <div id="form-message-success">
+                  Ваше сообщение отправлено, спасибо!
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Modal (что отображает кнопка "О ГАЛЕРЕИ" внизу) -->
+  <div class="modal fade bd-example-modal-lg" id="aboutModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Контакты</h1>
+            <h1 class="modal-title fs-5" id="enrollLabel">О ТОРГОВОМ ЦЕНТРЕ</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          +7 (8662) 40-46-84
-        </div>
-      </div>
-  </div>
-</div>
-
-<!-- Feedback Modal (что отображает кнопка "Обратная связь" внизу) -->
-<div class="modal fade bd-example-modal-lg" id="feedbackModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <!-- Надпись "Обратная связь" -->
-      <div class="modal-header">
-          <h1 class="modal-title fs-5 ps-3" id="enrollLabel">Обратная связь</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <!-- Форма -->
-      <div class="container">
-        <div class="row align-items-stretch justify-content-center no-gutters">
-            <div class="form h-100 contact-wrap p-5">
-              <form class="mb-5" method="post" id="contactForm" name="contactForm">
-                <!-- ФИО и почта -->
-                <div class="row">
-                  <div class="col-md-6 form-group mb-3">
-                    <label for="" class="col-form-label">ФИО</label>
-                    <input type="text" class="form-control feedback-form-control" name="name" id="name" placeholder="Введите ФИО">
-                  </div>
-                  <div class="col-md-6 form-group mb-3">
-                    <label for="" class="col-form-label">Почта</label>
-                    <input type="email" class="form-control feedback-form-control" name="email" id="email"  placeholder="Введите почту">
-                  </div>
-                </div>
-                <!-- Тема -->
-                <div class="row">
-                  <div class="col-md-12 form-group mb-3">
-                    <label for="budget" class="col-form-label">Тема</label>
-                    <input type="text" class="form-control feedback-form-control" name="subject" id="subject" placeholder="Выберите тему">
-                  </div>
-                </div>
-                <!-- Сообщение -->
-                <div class="row mb-5">
-                  <div class="col-md-12 form-group mb-3">
-                    <label for="message" class="col-form-label">Сообщение</label>
-                    <textarea class="form-control feedback-form-control" name="message" id="message" cols="30" rows="4"  placeholder="Введите ваше сообщение"></textarea>
-                  </div>
-                </div>
-                <!-- Отправить сообщение -->
-                <div class="row justify-content-center">
-                  <div class="col-md-5 form-group text-center">
-                    <input type="submit" value="Отправить сообщение" class="btn btn-block btn-primary rounded-2 py-2 px-4 text-secondary">
-                    <span class="submitting"></span>
-                  </div>
-                </div>
-              </form>
-              <!-- Сообщение отправлено -->
-              <div id="form-message-warning">
-                Что-то пошло не так. Пожалуйста, попробуйте еще раз.
-              </div> 
-              <div id="form-message-success">
-                Ваше сообщение отправлено, спасибо!
-              </div>
-            </div>
+  ТРК «ГАЛЕРЕЯ» - региональный торгово-развлекательный
+  комплекс, представляющий собой современный объект
+  торговли и досуга для населения со средним и выше среднего
+  уровнем дохода.
+  • Концепция комплекса «ГАЛЕРЕЯ» предусматривает единую
+  стилистику оформления всего внутреннего пространства и
+  индивидуальное воплощение каждого торгового отдела,
+  предоставление покупателям возможности совершать покупки,
+  выбирая из известных марок ведущих производителей одежды,
+  обуви и аксессуаров. Комфортная атмосфера, наличие
+  ресторанов и кафе, кинотеатра,, боулинга,
+  детской игровой площадки, просторной
+  парковочной зоны, качественной системы вентиляции и
+  кондиционирования, лифтов и эскалаторов способствуют
+  приятному проведению времени в «ГАЛЕРЕЕ».
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- About Modal (что отображает кнопка "О ГАЛЕРЕИ" внизу) -->
-<div class="modal fade bd-example-modal-lg" id="aboutModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">О ТОРГОВОМ ЦЕНТРЕ</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-ТРК «ГАЛЕРЕЯ» - региональный торгово-развлекательный
-комплекс, представляющий собой современный объект
-торговли и досуга для населения со средним и выше среднего
-уровнем дохода.
-• Концепция комплекса «ГАЛЕРЕЯ» предусматривает единую
-стилистику оформления всего внутреннего пространства и
-индивидуальное воплощение каждого торгового отдела,
-предоставление покупателям возможности совершать покупки,
-выбирая из известных марок ведущих производителей одежды,
-обуви и аксессуаров. Комфортная атмосфера, наличие
-ресторанов и кафе, кинотеатра,, боулинга,
-детской игровой площадки, просторной
-парковочной зоны, качественной системы вентиляции и
-кондиционирования, лифтов и эскалаторов способствуют
-приятному проведению времени в «ГАЛЕРЕЕ».
+  <!-- Rules Modal (что отображает кнопка "Правила ГАЛЕРЕИ" внизу) -->
+  <div class="modal fade bd-example-modal-lg" id="rulesModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="enrollLabel">Правила ГАЛЕРЕИ</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          информация о правилах галереи
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Rules Modal (что отображает кнопка "Правила ГАЛЕРЕИ" внизу) -->
-<div class="modal fade bd-example-modal-lg" id="rulesModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">Правила ГАЛЕРЕИ</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        информация о правилах галереи
+  <!-- Promotion Modal One (что отображает первая кнопка раздела "Что нового") -->
+  <div class="modal fade bd-example-modal-lg" id="promotionModal-1" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="enrollLabel">Информация 1</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Информация
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Promotion Modal One (что отображает первая кнопка раздела "Что нового") -->
-<div class="modal fade bd-example-modal-lg" id="promotionModal-1" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">Информация 1</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Информация
+  <!-- Promotion Modal Two (что отображает вторая кнопка раздела "Что нового") -->
+  <div class="modal fade bd-example-modal-lg" id="promotionModal-2" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="enrollLabel">Информация 2</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Информация
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Promotion Modal Two (что отображает вторая кнопка раздела "Что нового") -->
-<div class="modal fade bd-example-modal-lg" id="promotionModal-2" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">Информация 2</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Информация
+  <!-- Promotion Modal Three (что отображает третьяя кнопка раздела "Что нового") -->
+  <div class="modal fade bd-example-modal-lg" id="promotionModal-3" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="enrollLabel">Информация 3</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Информация
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Promotion Modal Three (что отображает третьяя кнопка раздела "Что нового") -->
-<div class="modal fade bd-example-modal-lg" id="promotionModal-3" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">Информация 3</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Информация
+  <!-- Promotion Modal Four (что отображает четвертая кнопка раздела "Что нового") -->
+  <div class="modal fade bd-example-modal-lg" id="promotionModal-4" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="enrollLabel">Информация 4</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Информация
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Promotion Modal Four (что отображает четвертая кнопка раздела "Что нового") -->
-<div class="modal fade bd-example-modal-lg" id="promotionModal-4" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">Информация 4</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Информация
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Promotion Modal Five (что отображает пятая кнопка раздела "Что нового") -->
-<div class="modal fade bd-example-modal-lg" id="promotionModal-5" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">Информация 5</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Информация
+  <!-- Promotion Modal Five (что отображает пятая кнопка раздела "Что нового") -->
+  <div class="modal fade bd-example-modal-lg" id="promotionModal-5" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="enrollLabel">Информация 5</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Информация
+        </div>
       </div>
     </div>
   </div>
@@ -657,6 +685,7 @@
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Custom JavaScript -->
+    <script src="js\swiper.js"></script>
     <script src="js\script.js"></script>
     <script src="js\main.js"></script>
     <script src="js\sliders.js"></script>

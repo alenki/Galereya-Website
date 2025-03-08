@@ -1,3 +1,8 @@
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
 /* --------------- Fonts ---------------- */
 @font-face {
     font-family: Navigo Regular;
@@ -26,6 +31,12 @@
     line-height: 22px;
     font-family: Navigo Regular;
     align-content: center;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 /* --------------- End of Body - Тело ---------------- */
 
@@ -91,24 +102,289 @@
 /* --------------- End of 2 Главные кнопка наверху ---------------- */
 
 /* --------------- Карусель ---------------- */
-.customCarouselSection {
+.swiper-section {
+    position: relative;
+    width: 100%;
+}
+
+.swiper {
+    overflow: hidden;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    width: 100%;
+    color: #eceef3;
+    background-color: #EDE5D7;
+}
+
+.swiper-box {
+    position: relative;
+    width: 80rem;
+    max-width: calc(100% - 3.2rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+@media  and {
+    
+}
+.swiper-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 60rem;
+    max-width: 100%;
+    height: 29rem;
+    border-radius: 1.6rem;
+    opacity: .6;
+    background: var(--sliderBackground);
+    transform: translateX(-50%);
+    filter: blur(2.2rem);
+}
+
+.swiper-main-window {
+    position: relative;
+    width: 82rem;
+    max-width: calc(100% - 3.2rem);
+    margin-left: auto;
+    margin-right: auto;
+    /* overflow: hidden; */
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-wrapper {
+    transform: translate3d(-1228px, 0px, 0px);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.swiper-slide {
+    height: 100%;
+    /* width для этого блока нужно настраивать через js */
+    width: 100%;
+
+    opacity: .8;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0.91304);
+    filter: blur(1rem);
+    transition: opacity .3s, transform .3s, filter .3s !important;
+    backface-visibility: hidden;
+    flex-shrink: 0;
+
+    position: relative;
+    transition-property: transform;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+    cursor: auto;
+    
+    pointer-events: auto;
+    transform: none;
+    filter: none;
+}
+
+.swiper-post {
+    border-radius: 1.2rem;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.slide-img {
+    display: block;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: var(--bgImage);
+}
+
+@media screen and (max-width: 1128px) {
+    .swiper-post-info {
+        left: 0;
+    }
+}
+
+/* блок с кнопкой подробнее */
+.swiper-post-info {
+    position: absolute;
+    bottom: -3rem;
+    left: calc((100% - 70.6rem) / 2);
+    z-index: 1;
+    width: 22.8rem;
+
+    overflow: hidden;
+    padding: 1.8rem 1.8rem;
+    border-radius: 1.2rem;
+    color: #3f403f;
+    /* background: var(--white-42); */
+    box-shadow: 0 1rem 5rem rgba(23, 26, 36, .2);
+    -webkit-backdrop-filter: blur(2.5rem);
+    backdrop-filter: blur(2.5rem);
+    transition: all .4s;
+}
+
+.swiper-post-name {
+    font-family: Navigo Regular;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    font-size: 2rem;
+    line-height: 1.29;
+    font-weight: 400;
+
+    margin-bottom: 1rem;
+    transition: all .2s;
+}
+
+.about-post-button {
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 2.6rem;
+    gap: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    height: 4rem;
+    background: rgba(184, 132, 100, 0.6);
+    position: relative;
+    transition: all .4s ease-in-out;
+    box-shadow: inset 0 0 .4rem rgba(4, 55, 114, .12);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem 3.2rem;
+    border: 0;
+    border-radius: .7rem;
+
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #EDE5D7;
+}
+
+.about-post-button:hover {
+    background: rgba(201, 159, 132, 0.6);
+}
+
+.about-post-button:before,.about-post-button:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: .7rem;
+    transition: all .2s
+}
+
+.about-post-button:before {
+    background: linear-gradient(272.52deg, transparent 0%, var(--buttonGradientColorTo) 98.85%)
+}
+
+.about-post-button:after {
+    opacity: 0;
+    background: linear-gradient(272.52deg, var(--buttonGradientColorTo) 0%, var(--buttonGradientColorFrom) 98.85%)
+}
+
+.about-post-button,.about-post-button:hover,.about-post-button:active {
+    background: var(--buttonGradientColorFrom)
+}
+
+.about-post-button:hover:after,.about-post-button:active:after {
+    opacity: 1;
+    background: linear-gradient(272.52deg, var(--buttonGradientColorTo) 0, var(--buttonGradientColorFrom) 0)
+}
+
+.about-text {
     position: relative;
     z-index: 1;
 }
-.customCarouselSize {
-    width: 61.8%;
+/* end of блок с кнопкой подробнее */
+
+/* панел отсчета времени до след. слайда */
+.progress-panel {
+    width: 100%;
+    height: .3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
-.custom-carousel-div { 
-    border-radius: 30px;
+
+@keyframes progress-bar {
+    0% {
+        transform: translateX(-100%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
 }
-.custom-carousel-item {
-    height: 32rem;
-}
-.custom-carousel-img {
+
+.progress-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
+    background: #eee0c7;
+    box-shadow: inset 0 0 .4rem rgba(4, 55, 114, .52);
+    animation: progress-bar 5s linear;
 }
+/* end of панел отсчета */
+
+/* круглешки под каруселю  */
+.swiper-pagination {
+    position: absolute;
+    bottom: -3.6rem;
+    left: 50%;
+    z-index: 1;
+    width: auto;
+    line-height: 1;
+    transform: translateX(-50%);
+}
+
+.swiper-pagination-ball {
+    vertical-align: middle;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    width: .5rem;
+    height: .5rem;
+    opacity: 1;
+    background: #a2a3a2;
+    box-shadow: inset 0 .05rem .05rem rgba(0, 0, 0, .25);
+    transition: background .3s ease-in-out, box-shadow .3s ease-in-out;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.swiper-pagination-ball-active {
+    width: .8rem;
+    height: .8rem;
+    background: #517E5D;
+    box-shadow: 0 .2rem .6rem rgba(0, 0, 0, .25), inset 0 0 .4rem rgba(4, 55, 114, .12);
+}
+/* end of круглешки под каруселю */
+
 /* --------------- End of Карусель ---------------- */
 
 /* --------------- Верхние кнопки страницы ---------------- */
@@ -260,6 +536,13 @@
         width: 130px;
         height: 105px;
     }
+}
+
+.img-block {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 /* --------------- End of кнопки услуг ---------------- */
 
