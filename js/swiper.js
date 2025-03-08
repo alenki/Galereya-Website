@@ -54,7 +54,6 @@ function blur_overflown_elements_right_swiper() {
       var main_width = element.getBoundingClientRect()['width'];
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
-      console.log(element.innerHTML, startX, endX, swiper_container_startX, swiper_container_endX, main_width)
       if(startX < swiper_container_startX + main_width-50 || endX > swiper_container_endX + main_width+50) {
           element.classList.add('swiper-overflown');
       }
@@ -137,12 +136,21 @@ function autoplay() {
       swiper_pagination_1.classList.add("swiper-pagination-ball-active");
     }
     swipe_right();
-  }, 500000);
+  }, 5000);
 }
 //start up autoplaying instantly
 autoplay();
 function stopAutoplay() {
   clearInterval(autoplayInterval);
+}
+
+//Update info panel
+const progress_bar = document.querySelector(".progress-panel");
+function update_info_panel() {
+  // progress_bar.style.animation="progress-bar 5s linear";
+  progress_bar.classList.remove("progress-panel-animation")
+  progress_bar.offsetWidth
+  progress_bar.classList.add("progress-panel-animation")
 }
 
 // Swipe buttons
@@ -166,6 +174,9 @@ function swipe_left() {
     // Reset autoplay
     stopAutoplay();
     autoplay();
+
+    // Update info panel
+    update_info_panel();
 }
 function swipe_right() {
   // cooldown to prevent spamming button
@@ -186,6 +197,9 @@ function swipe_right() {
     // Reset autoplay
     stopAutoplay();
     autoplay();
+
+    // Update info panel
+    update_info_panel();
 }
 function swipe_left_twice() {
   // cooldown to prevent spamming button
@@ -207,6 +221,9 @@ function swipe_left_twice() {
     // Reset autoplay
     stopAutoplay();
     autoplay();
+
+    // Update info panel
+    update_info_panel();
 }
 function swipe_right_twice() {
   // cooldown to prevent spamming button
@@ -229,6 +246,9 @@ function swipe_right_twice() {
     // Reset autoplay
     stopAutoplay();
     autoplay();
+
+    // Update info panel
+    update_info_panel();
 }
 document.getElementById("swiper-left").addEventListener("click", () => {swipe_left()});
 document.getElementById("swiper-right").addEventListener("click", () => {swipe_right()});
