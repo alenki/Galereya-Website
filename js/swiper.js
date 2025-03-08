@@ -8,6 +8,35 @@ const swiper_pagination_1 = document.getElementById("swiper-pagination-ball-1");
 const swiper_pagination_2 = document.getElementById("swiper-pagination-ball-2");
 const swiper_pagination_3 = document.getElementById("swiper-pagination-ball-3");
 
+// Get carousel elements
+class Slides{
+  async getSlides(){
+    try{
+        // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+        // let contentful = await client.getEntries({
+        //     content_type: "alenkiStoreContent"
+        // });
+
+        let result = await fetch('../json/carousel.json');
+        let data = await result.json();
+        let slides = data.items;
+        // let slides = contentful.items;
+        slides = slides.map(item =>{
+            const {title, description, category} = item.fields;
+            const {id} = item.sys;
+            const image = item.fields.image.fields.file.url;
+            const logo = item.fields.logo.fields.file.url;
+            return {title, description, category, id, image, logo}
+        })
+        return slides
+    } catch(error) {
+        console.log(error);
+    }
+  }
+}
+// get all stores
+const slides = new Slides();
+
 // Set class to overflown elements
 function blur_overflown_elements_swiper() {
     swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
@@ -146,11 +175,21 @@ function stopAutoplay() {
 
 //Update info panel
 const progress_bar = document.querySelector(".progress-panel");
+const panel_title = document.querySelector(".swiper-post-name");
 function update_info_panel() {
-  // progress_bar.style.animation="progress-bar 5s linear";
+  // update progress animation
   progress_bar.classList.remove("progress-panel-animation")
   progress_bar.offsetWidth
   progress_bar.classList.add("progress-panel-animation")
+  // get all slides
+  slides.getSlides().then(slides => {
+    slides.forEach(slides => {
+        if(slides.id == pagination_id) {
+            // update panel title
+            panel_title.innerHTML = slides.title;
+        }
+    });
+  })
 }
 
 // Swipe buttons
@@ -250,8 +289,8 @@ function swipe_right_twice() {
     // Update info panel
     update_info_panel();
 }
-document.getElementById("swiper-left").addEventListener("click", () => {swipe_left()});
-document.getElementById("swiper-right").addEventListener("click", () => {swipe_right()});
+// document.getElementById("swiper-left").addEventListener("click", () => {swipe_left()});
+// document.getElementById("swiper-right").addEventListener("click", () => {swipe_right()});
 
 
 
