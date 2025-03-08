@@ -21,7 +21,14 @@ function blur_overflown_elements() {
         }
     });
 }
+// check on window load
 blur_overflown_elements();
+// check on changing viewport size
+window.addEventListener("resize", function() { 
+  blur_overflown_elements();
+})
+
+
 function blur_overflown_elements_left() {
   // console.log("no");
   wrapper.querySelectorAll('.service-box').forEach(function(element){
@@ -78,7 +85,7 @@ document.getElementById("service-right").addEventListener("click", () => {
   isCooldown = true;
   setTimeout(() => {
     isCooldown = false;
-  }, 500);
+  }, 350);
 
     blur_overflown_elements_right();
     loop.next({duration: 0.4, ease: "power1.inOut"});
@@ -94,7 +101,7 @@ document.getElementById("service-left").addEventListener("click", () => {
   isCooldown = true;
   setTimeout(() => {
     isCooldown = false;
-  }, 500);
+  }, 350);
   
     blur_overflown_elements_left();
     loop.previous({duration: 0.4, ease: "power1.inOut"})
