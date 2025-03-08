@@ -2,6 +2,7 @@
 // Service slider
 const swiper_wrapper = document.querySelector(".swiper-wrapper");
 const swiper_boxes = gsap.utils.toArray(".swiper-slide");
+const swiper_post = gsap.utils.toArray(".swiper-post");
 const swiper_container = document.querySelector(".swiper-main-window");
 
 const swiper_pagination_1 = document.getElementById("swiper-pagination-ball-1");
@@ -46,10 +47,12 @@ function blur_overflown_elements_swiper() {
         var startX = element.getBoundingClientRect()['x'];
         var endX = startX + main_width;
         if(startX < swiper_container_startX-15 || endX > swiper_container_endX+15) {
-            element.classList.add('swiper-overflown');
+            element.children.item(0).classList.add('swiper-overflown');
+            element.classList.remove('swiper-visible');
         }
         else {
-            element.classList.remove('swiper-overflown');
+            element.children.item(0).classList.remove('swiper-overflown');
+            element.classList.add('swiper-visible');
         }
     });
 }
@@ -69,10 +72,12 @@ function blur_overflown_elements_left_swiper() {
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
       if(startX < swiper_container_startX - main_width-50 || endX > swiper_container_endX - main_width+50) {
-          element.classList.add('swiper-overflown');
+          element.children.item(0).classList.add('swiper-overflown');
+          element.classList.remove('swiper-visible');
       }
       else {
-          element.classList.remove('swiper-overflown');
+          element.children.item(0).classList.remove('swiper-overflown');
+          element.classList.add('swiper-visible');
       }
   });
 }
@@ -84,10 +89,12 @@ function blur_overflown_elements_right_swiper() {
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
       if(startX < swiper_container_startX + main_width-50 || endX > swiper_container_endX + main_width+50) {
-          element.classList.add('swiper-overflown');
+          element.children.item(0).classList.add('swiper-overflown');
+          element.classList.remove('swiper-visible');
       }
       else {
-          element.classList.remove('swiper-overflown');
+          element.children.item(0).classList.remove('swiper-overflown');
+          element.classList.add('swiper-visible');
       }
   });
 }

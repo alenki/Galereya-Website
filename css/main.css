@@ -198,15 +198,19 @@ h2 {
     flex-shrink: 0;
 
     position: relative;
+    /* transform: scale(0.91304); */
+    /* filter: blur(1rem); */
     transition-property: transform;
     transition: opacity 0.5s, filter 0.5s !important;
 }
-.swiper-overflown {
-    opacity: .8;
-    filter: blur(1rem);
+.swiper-slide.swiper-visible {
+    border-radius: 1.6rem;
+    opacity: 1;
+    cursor: auto;
+    pointer-events: auto;
+    transform: none;
+    filter: none;
     transition: opacity 0.5s, filter 0.5s !important;
-    pointer-events: none;
-    cursor: default;
 }
 .swiper-slide-active {
     opacity: 1;
@@ -221,6 +225,13 @@ h2 {
     background-size: cover;
     background-position: center;
     overflow: hidden;
+}
+.swiper-post.swiper-overflown {
+    opacity: .8;
+    transform: scale(0.91304);
+    filter: blur(1rem);
+    transition-property: transform;
+    transition: opacity 0.5s, transform 0.5s, filter 0.5s !important;
 }
 .slide-img {
     display: block;
