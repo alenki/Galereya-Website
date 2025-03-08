@@ -64,6 +64,20 @@ function blur_overflown_elements_right_swiper() {
   });
 }
 
+// Autoplay
+// Start autoplaying automatically
+var autoplayInterval = setInterval(function() {
+  swipe_right();
+}, 5000);
+function autoplay() {
+  autoplayInterval = setInterval(function() {
+    swipe_right();
+  }, 5000);
+}
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+}
+
 // Pagination
 var pagination_id = 2;
 swiper_pagination_1.addEventListener("click", () => {
@@ -133,6 +147,10 @@ function swipe_left() {
     // setTimeout(() => {
     //     blur_overflown_elements();
     //   }, "410");
+
+    // Reset autoplay
+    stopAutoplay();
+    autoplay();
 }
 function swipe_right() {
   // cooldown to prevent spamming button
@@ -149,6 +167,10 @@ function swipe_right() {
     // setTimeout(() => {
     //     blur_overflown_elements();
     //   }, "410");
+
+    // Reset autoplay
+    stopAutoplay();
+    autoplay();
 }
 function swipe_left_twice() {
   // cooldown to prevent spamming button
@@ -166,6 +188,10 @@ function swipe_left_twice() {
         blur_overflown_elements_left_swiper();
         swiper_loop.previous({duration: 0.07, ease: "power1.inOut"});
       }, "070");
+
+    // Reset autoplay
+    stopAutoplay();
+    autoplay();
 }
 function swipe_right_twice() {
   // cooldown to prevent spamming button
@@ -183,6 +209,10 @@ function swipe_right_twice() {
         blur_overflown_elements_right_swiper();
         swiper_loop.next({duration: 0.07, ease: "power1.inOut"});
       }, "070");
+
+    // Reset autoplay
+    stopAutoplay();
+    autoplay();
 }
 document.getElementById("swiper-left").addEventListener("click", () => {swipe_left()});
 document.getElementById("swiper-right").addEventListener("click", () => {swipe_right()});
