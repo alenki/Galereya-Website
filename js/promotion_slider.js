@@ -1,19 +1,18 @@
-
-// Service slider
-const service_wrapper = document.querySelector(".service");
-const service_boxes = gsap.utils.toArray(".service-box");
-const service_container = document.querySelector(".service-container");
+// Promotion slider
+const promotion_wrapper = document.querySelector(".promotion");
+const promotion_boxes = gsap.utils.toArray(".promotion-box");
+const promotion_container = document.querySelector(".promotion-container");
 
 // Set class to overflown elements
-function blur_overflown_elements_service() {
+function blur_overflown_elements_promotion() {
     // console.log("no");
-    service_wrapper.querySelectorAll('.service-box').forEach(function(element){
-        var service_container_startX = service_container.getBoundingClientRect()['x'];
-        var service_container_endX = service_container_startX + service_container.getBoundingClientRect()['width'];
+    promotion_wrapper.querySelectorAll('.promotion-box').forEach(function(element){
+        var promotion_container_startX = promotion_container.getBoundingClientRect()['x'];
+        var promotion_container_endX = promotion_container_startX + promotion_container.getBoundingClientRect()['width'];
         var main_width = element.getBoundingClientRect()['width'];
         var startX = element.getBoundingClientRect()['x'];
         var endX = startX + main_width;
-        if(startX < service_container_startX-15 || endX > service_container_endX+15) {
+        if(startX < promotion_container_startX-15 || endX > promotion_container_endX+15) {
             element.classList.add('overflown');
         }
         else {
@@ -22,22 +21,22 @@ function blur_overflown_elements_service() {
     });
 }
 // check on window load
-blur_overflown_elements_service();
+blur_overflown_elements_promotion();
 // check on changing viewport size
 window.addEventListener("resize", function() { 
-  blur_overflown_elements_service();
+  blur_overflown_elements_promotion();
 })
 
 
-function blur_overflown_elements_left_service() {
+function blur_overflown_elements_left_promotion() {
   // console.log("no");
-  service_wrapper.querySelectorAll('.service-box').forEach(function(element){
-      var service_container_startX = service_container.getBoundingClientRect()['x'];
-      var service_container_endX = service_container_startX + service_container.getBoundingClientRect()['width'];
+  promotion_wrapper.querySelectorAll('.promotion-box').forEach(function(element){
+      var promotion_container_startX = promotion_container.getBoundingClientRect()['x'];
+      var promotion_container_endX = promotion_container_startX + promotion_container.getBoundingClientRect()['width'];
       var main_width = element.getBoundingClientRect()['width'];
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
-      if(startX < service_container_startX - main_width-15 || endX > service_container_endX - main_width+15) {
+      if(startX < promotion_container_startX - main_width-15 || endX > promotion_container_endX - main_width+15) {
           element.classList.add('overflown');
       }
       else {
@@ -45,15 +44,15 @@ function blur_overflown_elements_left_service() {
       }
   });
 }
-function blur_overflown_elements_right_service() {
+function blur_overflown_elements_right_promotion() {
   // console.log("no");
-  service_wrapper.querySelectorAll('.service-box').forEach(function(element){
-      var service_container_startX = service_container.getBoundingClientRect()['x'];
-      var service_container_endX = service_container_startX + service_container.getBoundingClientRect()['width'];
+  promotion_wrapper.querySelectorAll('.promotion-box').forEach(function(element){
+      var promotion_container_startX = promotion_container.getBoundingClientRect()['x'];
+      var promotion_container_endX = promotion_container_startX + promotion_container.getBoundingClientRect()['width'];
       var main_width = element.getBoundingClientRect()['width'];
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
-      if(startX < service_container_startX + main_width-15 || endX > service_container_endX + main_width+15) {
+      if(startX < promotion_container_startX + main_width-15 || endX > promotion_container_endX + main_width+15) {
           element.classList.add('overflown');
       }
       else {
@@ -62,48 +61,48 @@ function blur_overflown_elements_right_service() {
   });
 }
 
-let service_activeElement;
-const service_loop = horizontalLoop_service(service_boxes, {
+let promotion_activeElement;
+const promotion_loop = horizontalLoop_promotion(promotion_boxes, {
     paused: true, 
     draggable: true, // make it draggable
     center: true, // active element is the one in the center of the container rather than th left edge
     onChange: (element, index) => { // when the active element changes, this function gets called.
-        service_activeElement && service_activeElement.classList.remove("active");
+        promotion_activeElement && promotion_activeElement.classList.remove("active");
         element.classList.add("active");
-        service_activeElement = element;
+        promotion_activeElement = element;
     }
 });
 
 
-let isCooldown = false;
-document.getElementById("service-right").addEventListener("click", () => {
+let promotion_isCooldown = false;
+document.getElementById("promotion-right").addEventListener("click", () => {
   // cooldown to prevent spamming button
-  if (isCooldown) {
+  if (promotion_isCooldown) {
     return;
   }
-  isCooldown = true;
+  promotion_isCooldown = true;
   setTimeout(() => {
-    isCooldown = false;
+    promotion_isCooldown = false;
   }, 350);
 
-    blur_overflown_elements_right_service();
-    service_loop.next({duration: 0.4, ease: "power1.inOut"});
+    blur_overflown_elements_right_promotion();
+    promotion_loop.next({duration: 0.4, ease: "power1.inOut"});
     // setTimeout(() => {
     //     blur_overflown_elements();
     //   }, "410");
 });
-document.getElementById("service-left").addEventListener("click", () => {
+document.getElementById("promotion-left").addEventListener("click", () => {
   // cooldown to prevent spamming button
-  if (isCooldown) {
+  if (promotion_isCooldown) {
     return;
   }
-  isCooldown = true;
+  promotion_isCooldown = true;
   setTimeout(() => {
-    isCooldown = false;
+    promotion_isCooldown = false;
   }, 350);
   
-    blur_overflown_elements_left_service();
-    service_loop.previous({duration: 0.4, ease: "power1.inOut"})
+    blur_overflown_elements_left_promotion();
+    promotion_loop.previous({duration: 0.4, ease: "power1.inOut"})
     // setTimeout(() => {
     //     blur_overflown_elements();
     //   }, "410");
@@ -111,11 +110,11 @@ document.getElementById("service-left").addEventListener("click", () => {
 
 
 /*
-This helper function makes a group of elements animate along the x-axis in a seamless, responsive service_loop.
+This helper function makes a group of elements animate along the x-axis in a seamless, responsive promotion_loop.
 
 Features:
  - Uses xPercent so that even if the widths change (like if the window gets resized), it should still work in most cases.
- - When each item animates to the left or right enough, it will service_loop back to the other side
+ - When each item animates to the left or right enough, it will promotion_loop back to the other side
  - Optionally pass in a config object with values like draggable: true, center: true, speed (default: 1, which travels at roughly 100 pixels per second), paused (boolean), repeat, reversed, and paddingRight.
  - The returned timeline will have the following methods added to it:
    - next() - animates to the next element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
@@ -124,7 +123,7 @@ Features:
    - current() - returns the current index (if an animation is in-progress, it reflects the final index)
    - times - an Array of the times on the timeline where each element hits the "starting" spot.
  */
-function horizontalLoop_service(items, config) {
+function horizontalLoop_promotion(items, config) {
   let timeline;
   items = gsap.utils.toArray(items);
   config = config || {};

@@ -480,7 +480,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
     width: 20%;
     margin: 0;
     padding: 0;
@@ -554,9 +553,6 @@ h2 {
         height: 105px;
     }
 }
-
-
-
 /* --------------- Блок услуг для маленьких экранов ---------------- */
 @media only screen and (min-width: 1100px) {
     .service-container_Mobile {
@@ -567,12 +563,6 @@ h2 {
     width: 100%;
     position: relative;
     scroll-snap-type: x mandatory;
-}
-.service-wrapper_Mobile i:first-child {
-    left: -22px;
-}
-.service-wrapper_Mobile i:last-child {
-    right: -22px;
 }
 .service-wrapper_Mobile .service_Mobile {
     display: grid;
@@ -671,49 +661,33 @@ h2 {
 }
 /* --------------- End of Блок услуг для маленьких экранов ---------------- */
 
-/* --------------- кнопки акций ---------------- */
-.promotion-wrapper {
-    width: 100%;
-    position: relative;
+/* --------------- Блок акций для больших экранов ---------------- */
+@media only screen and (max-width: 1100px) {
+    .promotion-container {
+        display: none;
+    }
 }
-.promotion-wrapper i {
-    height: 50px;
-    width: 50px;
-    background: #517E5D;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    font-size: 1.25 rem;
-    transform: translateY(-50%);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-
-}
-.promotion-wrapper i:first-child {
-    left: -22px;
-}
-.promotion-wrapper i:last-child {
-    right: -22px;
-}
-.promotion-wrapper .promotion {
-    display: grid;
-    grid-auto-flow: column;
-    /* grid-auto-columns: calc((100% / 5) - 12px); */
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: 0;
+.promotion-slider_button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    gap: 1rem;
 }
 .promotion {
-    background-color: #EDE5D7;
-    display: grid;
-    grid-auto-flow: column;
-    /* grid-auto-columns: calc((100% / 5) - 12px); */
-    gap: 16px;
+    height: 20%;
+    width: 100%;
+    border-left: dashed 2px var(--color-surface50);
+    border-right: dashed 2px var(--color-surface50);
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition-property: transform;
+    box-sizing: content-box;
+    transform: translate3d(-1500.73px, 0px, 0px); transition-duration: 0ms;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 .promotion::-webkit-scrollbar {
     display: none;
@@ -730,13 +704,28 @@ h2 {
 .promotion.no-transition {
     scroll-behavior: auto;
 }
-.promotion.dragging .card {
+.promotion.dragging {
     cursor: grab;
     user-select: none;
 }
 .promotion-box {
     display: flex;
-    width: 177px;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    flex-shrink: 0;
+    color: var(--color-just-black);
+    font-size: 21px;
+    cursor: pointer;
+    transition: filter .5s, opacity .5s !important;
+}
+.promotion-card {
+    display: flex;
+    /* width: 177px; */
+    width: 87%;
     height: 300px;
     background-color: #5F8A6D;
     border-radius: 1rem;
@@ -745,9 +734,17 @@ h2 {
     transition: all .2s ease-in-out;
     scroll-snap-align: start;
     cursor: pointer;
+    z-index: 400;
 }
-.promotion-box:hover {
+.promotion-card:hover {
     transform: scale(1.037); 
+}
+.overflown {
+    opacity: .5;
+    filter: blur(0.4rem);
+    pointer-events: none;
+    cursor: default;
+    transition: filter .5s, opacity .5s !important;
 }
 .promotion-icon {
     width: 125px;
@@ -781,27 +778,16 @@ h2 {
     flex-direction: column; 
     justify-content: flex-end;
 }
-.promotion-slider_button {
-    z-index: 500;
-}
 @media screen and (max-width: 850px){
-    .promotion-box {
-        width: 155px;
-        height: 250px;
+    .promotion-card {
+        /* width: 155px; */
+        /* height: 115px; */
     }
     .promotion-icon {
-        width: 80px;
-        height: 80px;
+        width: 36px;
+        height: 36px;
     }
     .promotion-name {
-        font-size: 15px;
-        line-height: 22px;
-    }
-    .promotion-details {
-        font-size: 12px;
-        line-height: 16px;
-    }
-    .promotion-date {
         font-size: 12px;
         line-height: 16px;
     }
@@ -809,10 +795,134 @@ h2 {
 @media screen and (max-width: 760px){
     .promotion-box {
         width: 130px;
+        height: 105px;
+    }
+}
+/* --------------- End of Блок акций для больших экранов ---------------- */
+
+/* --------------- Блок акций для маленьких экранов ---------------- */
+@media only screen and (min-width: 1100px) {
+    .promotion-container_Mobile {
+        display: none;
+    }
+}
+.promotion-wrapper_Mobile {
+    width: 100%;
+    position: relative;
+}
+.promotion-wrapper_Mobile .promotion_Mobile {
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc((100% / 5) - 12px); */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+.promotion_Mobile {
+    background-color: #EDE5D7;
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc((100% / 5) - 12px); */
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+}
+.promotion_Mobile::-webkit-scrollbar {
+    display: none;
+}
+.promotion_Mobile :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.promotion_Mobile.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.promotion_Mobile.no-transition {
+    scroll-behavior: auto;
+}
+.promotion_Mobile.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+.promotion-box_Mobile {
+    display: flex;
+    width: 177px;
+    height: 300px;
+    background-color: #5F8A6D;
+    border-radius: 1rem;
+    padding: 20px 20px 12px;
+    flex-flow: column;
+    transition: all .2s ease-in-out;
+    scroll-snap-align: start;
+    cursor: pointer;
+}
+.promotion-box_Mobile:hover {
+    transform: scale(1.037); 
+}
+.promotion-icon_Mobile {
+    width: 125px;
+    height: 125px;
+    background-color: #4F545F;
+}
+.promotion-name_Mobile {
+    display: flex;
+    font-size: 21px;
+    line-height: 29px;
+    font-family: Navigo Regular;
+    color:#EDE5D7;
+    padding: 10px 0 0 0
+}
+.promotion-details_Mobile {
+    display: flex;
+    font-size: 14.77px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    color: #4F545F;
+    padding: 10px 0 0 0
+}
+.promotion-date_Mobile {
+    display: flex;
+    font-size: 11.25px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    font-family: Navigo Light;
+    color: #EDE5D7;
+    opacity: 0.7;
+    flex-direction: column; 
+    justify-content: flex-end;
+}
+@media screen and (max-width: 850px){
+    .promotion-box_Mobile {
+        width: 155px;
+        height: 250px;
+    }
+    .promotion-icon_Mobile {
+        width: 80px;
+        height: 80px;
+    }
+    .promotion-name_Mobile {
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .promotion-details_Mobile {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .promotion-date_Mobile {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width: 760px){
+    .promotion-box_Mobile {
+        width: 130px;
         height: 210px;
     }
 }
-/* --------------- End of кнопки акций ---------------- */
+/* --------------- End of Блок акций для маленьких экранов ---------------- */
 
 /* --------------- Feedback form ---------------- */
 .feedback-form-control {
