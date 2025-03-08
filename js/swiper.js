@@ -8,12 +8,11 @@ const swiper_pagination_1 = document.getElementById("swiper-pagination-ball-1");
 const swiper_pagination_2 = document.getElementById("swiper-pagination-ball-2");
 const swiper_pagination_3 = document.getElementById("swiper-pagination-ball-3");
 
-const swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
-const swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
-
 // Set class to overflown elements
 function blur_overflown_elements_swiper() {
     swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
+        var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
+        var swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
         var main_width = element.getBoundingClientRect()['width'];
         var startX = element.getBoundingClientRect()['x'];
         var endX = startX + main_width;
@@ -35,6 +34,8 @@ window.addEventListener("resize", function() {
 })
 function blur_overflown_elements_left_swiper() {
   swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
+      var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
+      var swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
       var main_width = element.getBoundingClientRect()['width'];
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
@@ -48,10 +49,12 @@ function blur_overflown_elements_left_swiper() {
 }
 function blur_overflown_elements_right_swiper() {
   swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
+      var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
+      var swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
       var main_width = element.getBoundingClientRect()['width'];
       var startX = element.getBoundingClientRect()['x'];
       var endX = startX + main_width;
-      console.log(element.innerHTML, startX, endX, swiper_container_startX, swiper_container_endX)
+      console.log(element.innerHTML, startX, endX, swiper_container_startX, swiper_container_endX, main_width)
       if(startX < swiper_container_startX + main_width-50 || endX > swiper_container_endX + main_width+50) {
           element.classList.add('swiper-overflown');
       }
@@ -134,7 +137,7 @@ function autoplay() {
       swiper_pagination_1.classList.add("swiper-pagination-ball-active");
     }
     swipe_right();
-  }, 5000);
+  }, 500000);
 }
 //start up autoplaying instantly
 autoplay();

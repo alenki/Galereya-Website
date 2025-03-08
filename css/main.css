@@ -113,13 +113,18 @@ h2 {
     width: 100%;
     color: #eceef3;
     background-color: #EDE5D7;
+    display: flex;
+    justify-content: center;
 }
 .swiper-box {
     position: relative;
     width: 80rem;
     max-width: calc(100% - 3.2rem);
-    margin-right: auto;
-    margin-left: auto;
+}
+@media screen and (max-width: 1200px) {
+    .swiper-box{
+        width: 100%;
+    }
 }
 .swiper-box::before {
     content: "";
@@ -137,8 +142,9 @@ h2 {
 }
 .swiper-main-window {
     position: relative;
+    width: 93%;
     /* width: 82rem; */
-    width: 1228.78px;
+    /* width: 1228.78px; */
     /* max-width: calc(100% - 3.2rem); */
     margin-left: auto;
     margin-right: auto;
@@ -147,9 +153,26 @@ h2 {
     padding: 0;
     z-index: 1;
 }
+@media screen and (max-width: 1290px) {
+    .swiper-main-window {
+        width: 97%;
+    }
+}
+@media screen and (max-width: 1170px) {
+    .swiper-main-window {
+        width: 99%;
+    }
+}
+@media screen and (max-width: 1111px) {
+    .swiper-main-window {
+        width: 100%;
+    }
+}
 .swiper-wrapper {
-    transform: translate3d(-1228.77px, 0px, 0px);
+    /* transform: translate3d(-1228.77px, 0px, 0px); */
+    /* transform: translate3d(-76.798rem, 0rem, 0rem); */
     /* transform: translate3d(-2456px, 0px, 0px); */
+    transform: translate3d(-200%, 0rem, 0rem);
     position: relative;
     width: 100%;
     height: 100%;
@@ -162,6 +185,9 @@ h2 {
     height: 100%;
     /* width для этого блока нужно настраивать через js */
     width: 100%;
+
+    display: flex;
+    justify-content: center;
 
     cursor: default;
     -webkit-user-select: none;
@@ -190,6 +216,7 @@ h2 {
     filter: none;
 }
 .swiper-post {
+    width: 100%;
     border-radius: 1.2rem;
     background-size: cover;
     background-position: center;
