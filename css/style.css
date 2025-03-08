@@ -15,6 +15,14 @@
 }
 /* --------------- End of Fonts ---------------- */
 
+/* --------------- Body ---------------- */
+html, body {
+    /* removes horizontal scroll */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* --------------- End of Body ---------------- */
+
 /* --------------- Items ---------------- */
 .address_text {
     font-size: 14.41px;
