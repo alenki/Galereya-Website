@@ -4,6 +4,10 @@ const swiper_wrapper = document.querySelector(".swiper-wrapper");
 const swiper_boxes = gsap.utils.toArray(".swiper-slide");
 const swiper_container = document.querySelector(".swiper-main-window");
 
+const swiper_pagination_1 = document.getElementById("swiper-pagination-ball-1");
+const swiper_pagination_2 = document.getElementById("swiper-pagination-ball-2");
+const swiper_pagination_3 = document.getElementById("swiper-pagination-ball-3");
+
 // Set class to overflown elements
 function blur_overflown_elements_swiper() {
     console.log("no");
@@ -27,8 +31,6 @@ blur_overflown_elements_swiper();
 window.addEventListener("resize", function() { 
   blur_overflown_elements_swiper();
 })
-
-
 function blur_overflown_elements_left_swiper() {
   // console.log("no");
   swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
@@ -62,6 +64,46 @@ function blur_overflown_elements_right_swiper() {
   });
 }
 
+// Pagination
+var pagination_id = 2;
+swiper_pagination_1.addEventListener("click", () => {
+  if(pagination_id==2){
+    swipe_left();
+    swiper_pagination_2.classList.remove("swiper-pagination-ball-active");
+  }
+  else if(pagination_id==3){
+    swipe_left_twice();
+    swiper_pagination_3.classList.remove("swiper-pagination-ball-active");
+  }
+  swiper_pagination_1.classList.add("swiper-pagination-ball-active");
+  pagination_id=1;
+});
+swiper_pagination_2.addEventListener("click", () => {
+  if(pagination_id==1){
+    swipe_right();
+    swiper_pagination_1.classList.remove("swiper-pagination-ball-active");
+  }
+  else if(pagination_id==3){
+    swipe_left();
+    swiper_pagination_3.classList.remove("swiper-pagination-ball-active");
+  }
+  swiper_pagination_2.classList.add("swiper-pagination-ball-active");
+  pagination_id=2;
+});
+swiper_pagination_3.addEventListener("click", () => {
+  if(pagination_id==1){
+    swipe_right_twice();
+    swiper_pagination_1.classList.remove("swiper-pagination-ball-active");
+  }
+  else if(pagination_id==2){
+    swipe_right();
+    swiper_pagination_2.classList.remove("swiper-pagination-ball-active");
+  }
+  swiper_pagination_3.classList.add("swiper-pagination-ball-active");
+  pagination_id=3;
+});
+
+
 let swiper_activeElement;
 const swiper_loop = horizontalLoop_swiper(swiper_boxes, {
     paused: true, 
@@ -74,25 +116,9 @@ const swiper_loop = horizontalLoop_swiper(swiper_boxes, {
     }
 });
 
-
+// Swipe buttons
 let isCooldown_swiper = false;
-document.getElementById("swiper-right").addEventListener("click", () => {
-  // cooldown to prevent spamming button
-  if (isCooldown_swiper) {
-    return;
-  }
-  isCooldown_swiper = true;
-  setTimeout(() => {
-    isCooldown_swiper = false;
-  }, 350);
-
-    blur_overflown_elements_right_swiper();
-    swiper_loop.next({duration: 0.4, ease: "power1.inOut"});
-    // setTimeout(() => {
-    //     blur_overflown_elements();
-    //   }, "410");
-});
-document.getElementById("swiper-left").addEventListener("click", () => {
+function swipe_left() {
   // cooldown to prevent spamming button
   if (isCooldown_swiper) {
     return;
@@ -107,7 +133,60 @@ document.getElementById("swiper-left").addEventListener("click", () => {
     // setTimeout(() => {
     //     blur_overflown_elements();
     //   }, "410");
-});
+}
+function swipe_right() {
+  // cooldown to prevent spamming button
+  if (isCooldown_swiper) {
+    return;
+  }
+  isCooldown_swiper = true;
+  setTimeout(() => {
+    isCooldown_swiper = false;
+  }, 350);
+
+    blur_overflown_elements_right_swiper();
+    swiper_loop.next({duration: 0.4, ease: "power1.inOut"});
+    // setTimeout(() => {
+    //     blur_overflown_elements();
+    //   }, "410");
+}
+function swipe_left_twice() {
+  // cooldown to prevent spamming button
+  if (isCooldown_swiper) {
+    return;
+  }
+  isCooldown_swiper = true;
+  setTimeout(() => {
+    isCooldown_swiper = false;
+  }, 350);
+  
+  blur_overflown_elements_left_swiper();
+    swiper_loop.previous({duration: 0.07, ease: "power1.inOut"});
+    setTimeout(() => {
+        blur_overflown_elements_left_swiper();
+        swiper_loop.previous({duration: 0.07, ease: "power1.inOut"});
+      }, "070");
+}
+function swipe_right_twice() {
+  // cooldown to prevent spamming button
+  if (isCooldown_swiper) {
+    return;
+  }
+  isCooldown_swiper = true;
+  setTimeout(() => {
+    isCooldown_swiper = false;
+  }, 350);
+
+    blur_overflown_elements_right_swiper();
+    swiper_loop.next({duration: 0.07, ease: "power1.inOut"});
+    setTimeout(() => {
+        blur_overflown_elements_right_swiper();
+        swiper_loop.next({duration: 0.07, ease: "power1.inOut"});
+      }, "070");
+}
+document.getElementById("swiper-left").addEventListener("click", () => {swipe_left()});
+document.getElementById("swiper-right").addEventListener("click", () => {swipe_right()});
+
 
 
 /*
