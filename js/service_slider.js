@@ -74,7 +74,6 @@ const loop = horizontalLoop(boxes, {
     }
 });
 
-boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 0.8, ease: "power1.inOut"})));
 
 let isCooldown = false;
 document.getElementById("service-right").addEventListener("click", () => {
