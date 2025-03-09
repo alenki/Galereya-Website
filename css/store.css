@@ -78,6 +78,7 @@
 
 .catalog-section{
     width: calc(100vw - 1.2rem);
+    position: absolute;
 }
 
 /* блок в котором находится весь католог */

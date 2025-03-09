@@ -91,7 +91,7 @@ class UI {
         <!-- single stores -->
                     <article class="store-block storeButton" id="${stores.id}">
                       <div class="img-container storeButton" id="${stores.id}">
-                        <div class="img-box">
+                        <div class="img-box" id="${stores.id}">
                               <img
                                   src=${stores.logo}
                                   alt="store" 
@@ -101,7 +101,7 @@ class UI {
                         </div>
                       </div>
                       <!-- <hr style="margin: 0 1.2rem 0 1.2rem; filter: blur(0.5px); opacity: 1px"> -->
-                      <div class="store-info storeButton id="${stores.id}"">
+                      <div class="store-info storeButton" id="${stores.id}"">
                         <div class="store-name-box storeButton" id="${stores.id}">
                           <h3 class="store-name storeButton" id="${stores.id}">${stores.title}</h3>
                           <p class="store-caption storeButton" id="${stores.id}">${stores.description}</p>
@@ -121,21 +121,28 @@ class UI {
 
 
 // Detailed store info
-document.onclick = function(e) {
+// get all stores
+const stores = new Stores();
+document.onclick = async function(e) {
     if(e.target.classList.contains("storeButton")){
-        const storeModalLabel = document.getElementById("storeModalLabel");
-        const storeModalInfo = document.getElementById("storeModalInfo");
+        var storeModalLabel = document.getElementById("storeModalLabel");
+        var storeModalInfo = document.getElementById("storeModalInfo");
 
-        var storeModal = new bootstrap.Modal(document.getElementById('storeModal')); 
-        storeModal.show(); 
+        var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
+        await show_Modal();
+        async function show_Modal() {
+            storeModal.show();
+        }
 
-        // get all stores
-        const stores = new Stores();
+        
         stores.getStores().then(stores => {
+            console.log(e.target.id);
             stores.forEach(stores => {
+                console.log(stores.id);
                 if(stores.id == e.target.id) {
                     storeModalLabel.innerHTML = stores.title;
                     storeModalInfo.innerHTML = stores.description;
+                    
                 }
             });
         })
