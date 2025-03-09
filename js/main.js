@@ -36,6 +36,12 @@ location_btn.onclick = function() {
 };
 // End of 2 main buttons on top
 
+// carousel
+document.querySelector(".about-post-button").addEventListener("click", () => {
+    localStorage.setItem("pagination", pagination_id);
+    window.location.href = "stores.html"; 
+})
+
 // 6 Buttons below carousel
 // Магазины
 document.getElementById("storeButton-1").onclick = function () { 

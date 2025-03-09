@@ -15,10 +15,30 @@ function Load() {
     const stores = new Stores();
     // get all stores
     stores.getStores().then(stores => {
+        // Display stores
         ui.displayStores(stores);
-    })//.then(()=>{});
-}
 
+        // open up store if there is need for it
+        var pagination_id = localStorage.getItem("pagination");
+        if(pagination_id != 0){
+            var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
+            var storeModalLabel = document.getElementById("storeModalLabel");
+            var storeModalInfo = document.getElementById("storeModalInfo");
+            storeModal.show();
+            slides.getSlides().then(slides => {
+                slides.forEach(slides => {
+                    console.log(slides.id);
+                    if(slides.id == pagination_id) {
+                        storeModalLabel.innerHTML = slides.title;
+                        storeModalInfo.innerHTML = slides.description;
+                    }
+                });
+            }).then(()=>{
+                localStorage.setItem("pagination", "0");
+            });
+        }
+    })
+}
 // Магазины
 document.getElementById("categoryButton-1").onclick = function () { 
     localStorage.setItem("category", "Магазины");
@@ -78,6 +98,33 @@ class Stores{
         }
     }
 }
+// Get carousel elements
+class Slides{
+    async getSlides(){
+      try{
+          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+          // let contentful = await client.getEntries({
+          //     content_type: "alenkiStoreContent"
+          // });
+          let carousel_result = await fetch('../json/carousel.json');
+          let data = await carousel_result.json();
+          let slides = data.items;
+          // let slides = contentful.items;
+          slides = slides.map(item =>{
+              const {title, description, category} = item.fields;
+              const {id} = item.sys;
+              const image = item.fields.image.fields.file.url;
+              const logo = item.fields.logo.fields.file.url;
+              return {title, description, category, id, image, logo}
+          })
+          return slides
+      } catch(error) {
+          console.log(error);
+      }
+    }
+  }
+  // get all stores
+  const slides = new Slides();
 
 //display stores
 const storesDOM = document.querySelector('.stores-center');
@@ -131,7 +178,6 @@ document.onclick = function(e) {
         var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
         storeModal.show();
 
-        
         stores.getStores().then(stores => {
             stores.forEach(stores => {
                 console.log(stores.id);
