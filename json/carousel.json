@@ -6,7 +6,7 @@
           "title": "DIOMI",
           "description": "Мультибрендовый бутик женской одежды DIOMI\n\nСобственное производство.\nПовседневная, casual, вечерняя, коктейльная одежда для девушек и женщин.\n\nТРЦ Галерея 1 этаж\n10:00-20:00",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "http://localhost:5173/Media/Carousel/test-photo.webp" } } },
+          "image": { "fields": { "file": { "url": "http://localhost:5173/Media/Stores/IMG_1475.JPG" } } },
           "logo": { "fields": { "file": { "url": "http://localhost:5173/Media/Store_Logos/IMG_1908-Photoroom.png" } } }
         }
       },
@@ -36,7 +36,7 @@
           "title": "DIOMI",
           "description": "Мультибрендовый бутик женской одежды DIOMI\n\nСобственное производство.\nПовседневная, casual, вечерняя, коктейльная одежда для девушек и женщин.\n\nТРЦ Галерея 1 этаж\n10:00-20:00",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "http://localhost:5173/Media/Carousel/test-photo.webp" } } },
+          "image": { "fields": { "file": { "url": "http://localhost:5173/Media/Stores/IMG_1475.JPG" } } },
           "logo": { "fields": { "file": { "url": "http://localhost:5173/Media/Store_Logos/IMG_1908-Photoroom.png" } } }
         }
       },

@@ -17,6 +17,7 @@ window.addEventListener("load", () => carousel_window_load(), false);
 async function carousel_window_load() {
   // Update elements
   await update_carousel();
+  update_info_panel();
   // Loop
   let swiper_activeElement;
   swiper_loop = horizontalLoop_swiper(swiper_boxes, {
