@@ -155,24 +155,27 @@ const swiper_loop = horizontalLoop_swiper(swiper_boxes, {
 // Start autoplaying automatically
 var autoplayInterval = 0;
 function autoplay() {
-  autoplayInterval = setInterval(function() {
-    if(pagination_id==1){
-      pagination_id=2;
-      swiper_pagination_1.classList.remove("swiper-pagination-ball-active");
-      swiper_pagination_2.classList.add("swiper-pagination-ball-active");
-    }
-    else if(pagination_id==2){
-      pagination_id=3;
-      swiper_pagination_2.classList.remove("swiper-pagination-ball-active");
-      swiper_pagination_3.classList.add("swiper-pagination-ball-active");
-    }
-    else if(pagination_id==3){
-      pagination_id=1;
-      swiper_pagination_3.classList.remove("swiper-pagination-ball-active");
-      swiper_pagination_1.classList.add("swiper-pagination-ball-active");
-    }
-    swipe_right();
-  }, 5000);
+  window.requestAnimationFrame(function() { autoplayInterval = setTimeout(function() {
+      if(pagination_id==1){
+        pagination_id=2;
+        swiper_pagination_1.classList.remove("swiper-pagination-ball-active");
+        swiper_pagination_2.classList.add("swiper-pagination-ball-active");
+      }
+      else if(pagination_id==2){
+        pagination_id=3;
+        swiper_pagination_2.classList.remove("swiper-pagination-ball-active");
+        swiper_pagination_3.classList.add("swiper-pagination-ball-active");
+      }
+      else if(pagination_id==3){
+        pagination_id=1;
+        swiper_pagination_3.classList.remove("swiper-pagination-ball-active");
+        swiper_pagination_1.classList.add("swiper-pagination-ball-active");
+      }
+      swipe_right();
+    }, 5000); });
+
+  // autoplayInterval = setInterval(function() {
+  // }, 5000);
 }
 //start up autoplaying instantly
 autoplay();
