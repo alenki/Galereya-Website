@@ -123,16 +123,13 @@ class UI {
 // Detailed store info
 // get all stores
 const stores = new Stores();
-document.onclick = async function(e) {
+document.onclick = function(e) {
     if(e.target.classList.contains("storeButton")){
         var storeModalLabel = document.getElementById("storeModalLabel");
         var storeModalInfo = document.getElementById("storeModalInfo");
 
         var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
-        await show_Modal();
-        async function show_Modal() {
-            storeModal.show();
-        }
+        storeModal.show();
 
         
         stores.getStores().then(stores => {
