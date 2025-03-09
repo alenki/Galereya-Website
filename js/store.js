@@ -7,8 +7,6 @@ window.onload = function() {
 
 // Загрузить все в зависимости от фильтра
 function Load() {
-    var category = localStorage.getItem("category")
-    categoryHeading.innerHTML = category;
 
     // Загрузить все магазины
     const ui = new UI();
@@ -31,12 +29,17 @@ function Load() {
                     if(slides.id == pagination_id) {
                         storeModalLabel.innerHTML = slides.title;
                         storeModalInfo.innerHTML = slides.description;
+                        localStorage.setItem("category", slides.category);
                     }
                 });
             }).then(()=>{
                 localStorage.setItem("pagination", "0");
             });
         }
+
+        // update category
+        var category = localStorage.getItem("category")
+        categoryHeading.innerHTML = category;
     })
 }
 // Магазины
