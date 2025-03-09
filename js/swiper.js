@@ -173,7 +173,7 @@ function blur_overflown_elements_right_swiper() {
 }
 
 // Pagination
-var pagination_id = 2; // активный элемент карусели начиная с 1
+var pagination_id = 1; // активный элемент карусели начиная с 1
 swiper_pagination_1.addEventListener("click", () => {
   if(pagination_id==2){
     swipe_left();
