@@ -114,13 +114,16 @@
     /* height: 20rem; */
     width: 100%;
 }
-
 @media (max-width: 1199px) {
     .stores-center {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-gap: 2rem;
-
+    }
+}
+@media (max-width: 950px) {
+    .stores-center {
+        grid-gap: 1rem;
     }
 }
 

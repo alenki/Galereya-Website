@@ -133,7 +133,6 @@ document.onclick = function(e) {
 
         
         stores.getStores().then(stores => {
-            console.log(e.target.id);
             stores.forEach(stores => {
                 console.log(stores.id);
                 if(stores.id == e.target.id) {
