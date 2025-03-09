@@ -1,3 +1,8 @@
+IMPORTANT
+In carousel.json all elements .image url link is written with domain in the beginning, you'll have to change the domain in it if you change the domain of the site.
+IMPORTANT
+
+
 
 When deploying the website, make sure to use SSH keys into github and publish the files there in a repository and monitor there all changes you do to the website so you can change back to anything at any time and you don't lose the website.
 But also make copies of the website.

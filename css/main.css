@@ -126,6 +126,9 @@ h2 {
         width: 100%;
     }
 }
+html {
+    --carousel_bg: url(http://localhost:5173/Media/Carousel/test-photo.webp);
+}
 .swiper-box::before {
     content: "";
     position: absolute;
@@ -133,12 +136,12 @@ h2 {
     left: 50%;
     width: 60rem;
     max-width: 100%;
-    height: 29rem;
+    height: 29.5rem;
     border-radius: 1.6rem;
     opacity: .6;
-    background: var(--sliderBackground);
+    background: var(--carousel_bg);;
     transform: translateX(-50%);
-    filter: blur(2.2rem);
+    filter: blur(1.5rem);
 }
 .swiper-main-window {
     position: relative;
@@ -172,7 +175,7 @@ h2 {
     /* transform: translate3d(-1228.77px, 0px, 0px); */
     /* transform: translate3d(-76.798rem, 0rem, 0rem); */
     /* transform: translate3d(-2456px, 0px, 0px); */
-    transform: translate3d(-200%, 0rem, 0rem);
+    transform: translate3d(-100%, 0rem, 0rem);
     position: relative;
     width: 100%;
     height: 100%;
@@ -183,7 +186,6 @@ h2 {
 }
 .swiper-slide {
     height: 100%;
-    /* width для этого блока нужно настраивать через js */
     width: 100%;
 
     display: flex;
@@ -198,26 +200,7 @@ h2 {
     flex-shrink: 0;
 
     position: relative;
-    /* transform: scale(0.91304); */
-    /* filter: blur(1rem); */
     transition-property: transform;
-    transition: opacity 0.5s, filter 0.5s !important;
-}
-.swiper-slide.swiper-visible {
-    border-radius: 1.6rem;
-    opacity: 1;
-    cursor: auto;
-    pointer-events: auto;
-    transform: none;
-    filter: none;
-    transition: opacity 0.5s, filter 0.5s !important;
-}
-.swiper-slide-active {
-    opacity: 1;
-    cursor: auto;
-    pointer-events: auto;
-    transform: none;
-    filter: none;
 }
 .swiper-post {
     width: 100%;
@@ -225,6 +208,7 @@ h2 {
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    transition: opacity 0.5s, transform 0.5s, filter 0.5s !important;
 }
 .swiper-post.swiper-overflown {
     opacity: .8;

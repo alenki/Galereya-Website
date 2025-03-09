@@ -1,13 +1,41 @@
 
 // Service slider
 const swiper_wrapper = document.querySelector(".swiper-wrapper");
-const swiper_boxes = gsap.utils.toArray(".swiper-slide");
-const swiper_post = gsap.utils.toArray(".swiper-post");
 const swiper_container = document.querySelector(".swiper-main-window");
+
+//These are empty for now, they get updated later
+var swiper_boxes = gsap.utils.toArray(".swiper-slide");
+var swiper_post = gsap.utils.toArray(".swiper-post");
 
 const swiper_pagination_1 = document.getElementById("swiper-pagination-ball-1");
 const swiper_pagination_2 = document.getElementById("swiper-pagination-ball-2");
 const swiper_pagination_3 = document.getElementById("swiper-pagination-ball-3");
+
+// Window load
+var swiper_loop;
+window.addEventListener("load", () => carousel_window_load(), false);
+async function carousel_window_load() {
+  // Update elements
+  await update_carousel();
+  // Loop
+  let swiper_activeElement;
+  swiper_loop = horizontalLoop_swiper(swiper_boxes, {
+    paused: true, 
+    draggable: true, // make it draggable
+    center: true, // active element is the one in the center of the container rather than th left edge
+    onChange: (element, index) => { // when the active element changes, this function gets called.
+        swiper_activeElement && swiper_activeElement.classList.remove("active");
+        element.classList.add("active");
+        swiper_activeElement = element;
+    }
+  });
+  // Blur
+  setTimeout(() => {
+    blur_overflown_elements_swiper();
+  }, "100");
+  // Autoplay
+  autoplay();
+}
 
 // Get carousel elements
 class Slides{
@@ -17,9 +45,8 @@ class Slides{
         // let contentful = await client.getEntries({
         //     content_type: "alenkiStoreContent"
         // });
-
-        let result = await fetch('../json/carousel.json');
-        let data = await result.json();
+        let carousel_result = await fetch('../json/carousel.json');
+        let data = await carousel_result.json();
         let slides = data.items;
         // let slides = contentful.items;
         slides = slides.map(item =>{
@@ -38,8 +65,56 @@ class Slides{
 // get all stores
 const slides = new Slides();
 
+//Update carousel
+const progress_bar = document.querySelector(".progress-panel");
+const panel_title = document.querySelector(".swiper-post-name");
+function update_info_panel() {
+  // update progress animation
+  progress_bar.classList.remove("progress-panel-animation")
+  progress_bar.offsetWidth
+  progress_bar.classList.add("progress-panel-animation")
+  // get all slides
+  slides.getSlides().then(slides => {
+    slides.forEach(slides => {
+        if(slides.id == pagination_id) {
+            // update info panel title
+            panel_title.innerHTML = slides.title;
+            // update swiper background (::before)
+            document.documentElement.style.setProperty("--carousel_bg", `url(${slides.image})`);
+        }
+    });
+  })
+}
+async function update_carousel() {
+    await slides.getSlides().then(async slides => {
+      let carousel_result = '';
+      await slides.forEach(slides => {
+        // Add sliders
+        carousel_result+=`
+        <div class="swiper-slide">
+        <div class="swiper-post swiper-overflown">
+        <a href="" class="slide-img">
+          <picture>
+            <source type="image/webp" srcset="${slides.image}">
+            <img class="swiper-img-block" src="${slides.image}">
+          </picture>
+        </a>
+        </div>
+        </div>
+        `
+      });
+      async function update_swiper_wrapper(){
+        swiper_wrapper.innerHTML = carousel_result
+      }
+      await update_swiper_wrapper();
+        // Put sliders in variables
+        swiper_boxes = gsap.utils.toArray(".swiper-slide");
+        swiper_post = gsap.utils.toArray(".swiper-post");
+    })
+}
+
 // Set class to overflown elements
-function blur_overflown_elements_swiper() {
+async function blur_overflown_elements_swiper() {
     swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
         var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
         var swiper_container_endX = swiper_container_startX + swiper_container.getBoundingClientRect()['width'];
@@ -56,14 +131,12 @@ function blur_overflown_elements_swiper() {
         }
     });
 }
-// check on window load
-blur_overflown_elements_swiper();
 // check on changing viewport size
-window.addEventListener("resize", function() { 
-  setTimeout(() => {
-    blur_overflown_elements_swiper();
-  }, "100");
-})
+// window.addEventListener("resize", function() { 
+//   setTimeout(() => {
+//     blur_overflown_elements_swiper();
+//   }, "100");
+// })
 function blur_overflown_elements_left_swiper() {
   swiper_wrapper.querySelectorAll('.swiper-slide').forEach(function(element){
       var swiper_container_startX = swiper_container.getBoundingClientRect()['x'];
@@ -139,18 +212,6 @@ swiper_pagination_3.addEventListener("click", () => {
 });
 
 
-let swiper_activeElement;
-const swiper_loop = horizontalLoop_swiper(swiper_boxes, {
-    paused: true, 
-    draggable: true, // make it draggable
-    center: true, // active element is the one in the center of the container rather than th left edge
-    onChange: (element, index) => { // when the active element changes, this function gets called.
-        swiper_activeElement && swiper_activeElement.classList.remove("active");
-        element.classList.add("active");
-        swiper_activeElement = element;
-    }
-});
-
 // Autoplay
 // Start autoplaying automatically
 var autoplayInterval = 0;
@@ -177,29 +238,8 @@ function autoplay() {
   // autoplayInterval = setInterval(function() {
   // }, 5000);
 }
-//start up autoplaying instantly
-autoplay();
 function stopAutoplay() {
   clearInterval(autoplayInterval);
-}
-
-//Update info panel
-const progress_bar = document.querySelector(".progress-panel");
-const panel_title = document.querySelector(".swiper-post-name");
-function update_info_panel() {
-  // update progress animation
-  progress_bar.classList.remove("progress-panel-animation")
-  progress_bar.offsetWidth
-  progress_bar.classList.add("progress-panel-animation")
-  // get all slides
-  slides.getSlides().then(slides => {
-    slides.forEach(slides => {
-        if(slides.id == pagination_id) {
-            // update panel title
-            panel_title.innerHTML = slides.title;
-        }
-    });
-  })
 }
 
 // Swipe buttons
@@ -227,7 +267,7 @@ function swipe_left() {
     // Update info panel
     update_info_panel();
 }
-function swipe_right() {
+async function swipe_right() {
   // cooldown to prevent spamming button
   if (isCooldown_swiper) {
     return;
@@ -239,6 +279,7 @@ function swipe_right() {
 
     blur_overflown_elements_right_swiper();
     swiper_loop.next({duration: 0.4, ease: "power1.inOut"});
+    
     // setTimeout(() => {
     //     blur_overflown_elements();
     //   }, "410");
