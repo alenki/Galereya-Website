@@ -5,6 +5,39 @@ window.addEventListener('load', function() {
 })
 // End of Loading screen / Экран загрузки
 
+// smooth scroll
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
+gsap.registerPlugin(ScrollTrigger) 
+
+// // Initialize Lenis
+// const lenis = new Lenis({
+//     autoRaf: true,
+//   });
+  
+//   // Listen for the scroll event and log the event data
+//   lenis.on('scroll', (e) => {
+//     console.log(e);
+//   });
+// Initialize Lenis
+
+// Initialize a new Lenis instance for smooth scrolling
+const lenis = new Lenis();
+
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
+
+// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+});
+
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+gsap.ticker.lagSmoothing(0);
+
+// end of smooth scroll
+
 // Navbar Menu Button
 const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
