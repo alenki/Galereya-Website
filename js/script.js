@@ -1,4 +1,6 @@
 // Imports
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger) 
@@ -186,14 +188,24 @@ function backToTop() {
 
 
 // Плавная анимация навбара
+
+let lastScroll = 0;
+const defaultOffset = 100;
 const header = document.querySelector('.custom-nav');
 
+const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+const containHide = () => header.classList.contains('hide');
+
 window.addEventListener('scroll', () => {
-    console.log(1)
-  if (window.scrollY > 20) {
-    header.classList.add('hide');
-  } else {
-    header.classList.remove('hide');
-  }
-});
+    if(scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
+        //scroll down
+        header.classList.add('hide');
+    }
+    else if(scrollPosition() < lastScroll && containHide()){
+        //scroll up
+        header.classList.remove('hide');
+    }
+
+    lastScroll = scrollPosition();
+})
 
