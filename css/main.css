@@ -49,6 +49,7 @@ h2 {
     z-index: 2;
     border-radius: 17px;
     display: none;
+    box-shadow: 0 1rem 5rem rgba(0, 0, 0, .25), inset 0 0 .4rem rgba(4, 55, 114, .12);
 }
 .worktime-day {
     font-size: 11.65px;
@@ -68,6 +69,7 @@ h2 {
     z-index: 2;
     border-radius: 17px;
     display: none;
+    box-shadow: 0 1rem 5rem rgba(0, 0, 0, .25), inset 0 0 .4rem rgba(4, 55, 114, .12);
 }
 .yandexMapButton {
     border: 2px solid #848CA3;
@@ -108,7 +110,7 @@ h2 {
 }
 .swiper {
     /* overflow: hidden; */
-    padding-top: 4rem;
+    padding-top: 1.5rem;
     padding-bottom: 8rem;
     width: 100%;
     color: #eceef3;
