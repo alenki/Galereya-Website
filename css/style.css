@@ -1,4 +1,4 @@
-/* Fonts */
+/* --------------- Fonts ---------------- */
 @font-face {
     font-family: Navigo Regular;
     src: url(./Fonts/Navigo-Regular.woff2);
@@ -13,9 +13,32 @@
     font-style: normal;
     font-display: swap;
 }
-/* End of Fonts */
+/* --------------- End of Fonts ---------------- */
 
-/* Loading screen / Экран загрузки */
+/* --------------- Body ---------------- */
+html, body {
+    /* removes horizontal scroll */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* --------------- End of Body ---------------- */
+
+/* --------------- Items ---------------- */
+.address_text {
+    font-size: 14.41px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    font-weight: 300;
+}
+.phone-number_text {
+    font-size: 13.71px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    font-weight: 300;
+}
+/* --------------- End of Items ---------------- */
+
+/* --------------- End of Loading screen / Экран загрузки ---------------- */
 .loadingScreen {
     position: absolute;
     z-index: 5;
@@ -26,24 +49,11 @@
     align-items: center;
     justify-content: center;
 }
-/* End of Loading screen / Экран загрузки */
+/* --------------- End of Loading screen / Экран загрузки ---------------- */
 
-/* Body - Тело */
-.section-names {
-    font-size: 25.19px;
-    line-height: 34px;
-    font-family: Navigo Regular;
-}
-.section-links {
-    font-size: 14.41px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-    align-content: center;
-}
-/* End of Body - Тело */
-
-/* Back to top button */
+/* --------------- Back to top button ---------------- */
 #btn-back-to-top {
+    z-index: 500;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -53,20 +63,49 @@
 .back-to-top-svg {
     fill: #EDE5D5;
 }
-/* End of Back to top button */
+/* --------------- End of Back to top button ---------------- */
 
-/* Navbar */
+/* --------------- Navbar ---------------- */
+
 .custom-nav {
-    z-index: 4;
-    box-shadow: 0px -15px 50px 0px rgba(34, 60, 80, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: calc(100vw - 1.1rem);
+    max-width: 100%;
+    box-shadow: 0 1rem 5.5rem rgba(0, 0, 0, .25);
+    transform: translateY(0);
+    transition: transform .3s;
+
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 2.2rem;
 }
+@media (max-width: 769px) {
+    .custom-nav {
+        width: 100%;
+    }
+}
+
+.custom-nav.hide{
+    transform: translateY(-100%);
+}
+
 .custom-collapsed-nav {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 1.2rem;
+}
+.menu_column {
+    flex-direction: column;
+}
+.menu_text {
+    text-decoration: none;
+    font-size: 17.77px;
+    line-height: 22px;
+    font-family: Navigo Regular;
+    font-weight: 500;
 }
 /* Navbar Brand (Галерея) */
 
@@ -96,14 +135,12 @@
 }
 /* End of Language button */
 
-
 /* Navbar Menu Button */
 .menu-btn {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:92.47px;
     height: 50px;
     cursor: pointer;
     transition: all .5s ease-in-out;
@@ -114,12 +151,13 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 16px;
+    padding: 0.2rem 0 0 0.2rem;
 }
 .menu-btn__burger {
     width: 23px;
     height: 2.7px;
     background: #517E5D;
-    border-radius: 5px;
+    border-radius: 3px;
     /* box-shadow: 0 1px 1px #5E916F; */
     transition: all .5s ease-in-out;
 }
@@ -128,7 +166,7 @@
     content: '';
     position: absolute;
     width: 23px;
-    height: 2.7px;
+    height: 2.6px;
     background: #517E5D;
     border-radius: 5px;
     /* box-shadow: 0 1px 1px #5E916F; */
@@ -142,229 +180,105 @@
 }
 /* ANIMATION */
 .menu-btn.open .menu-btn__burger {
-    transform: translateX(-50px);
+    transition: 0.5s;
     background: transparent;
     box-shadow: none;
 }
 .menu-btn.open .menu-btn__burger::before {
-    transform: rotate(45deg) translate(35px, -35px);
+    animation-name: open-before;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(1, 0, 0, 0.5);
 }
+
 .menu-btn.open .menu-btn__burger::after {
-    transform: rotate(-45deg) translate(35px, 35px);
+    animation-name: open-after;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(1, 0, 0, 0.5);
+}
+
+.menu-btn.closed .menu-btn__burger::before {
+    animation-name: close-before;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    /* animation-fill-mode: forwards; */
+    animation-timing-function: cubic-bezier(1, 0, 0, 0.5);
+}
+
+.menu-btn.closed .menu-btn__burger::after {
+    animation-name: close-after;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    /* animation-fill-mode: forwards; */
+    animation-timing-function: cubic-bezier(1, 0, 0, 0.5);
+}
+
+@keyframes open-before {
+    0% {
+        transform: translateY(7px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes open-after {
+    0% {
+        transform: translateY(-7px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes close-before {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(7px);
+    }
+}
+
+@keyframes close-after {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-7px);
+    }
 }
 
 /* End of Navbar Menu Button */
-/* End of Navbar */
 
-/* 2 Главные кнопки наверху */
-.worktimesUnlocked {
-    width: 370px;
-    height: 143px;
-    background-color: #EDE5D5;
-    position: absolute;
-    z-index: 2;
-    border-radius: 17px;
-    display: none;
-}
-.worktime-day {
-    font-size: 11.65px;
-    font-family: Navigo Light;
-    color: #848CA3;
-}
-.worktime-time {
-    font-size: 9.65px;
-    font-family: Navigo Light;
-    color: black;
-}
-.locationUnlocked {
-    width: 239px;
-    height: 191px;
-    background-color: #EDE5D5;
-    position: absolute;
-    z-index: 2;
-    border-radius: 17px;
-    display: none;
-}
-.yandexMapButton {
-    border: 2px solid #848CA3;
-    border-radius: 7px;
-	align-items: center;
-    font-size: 11.81px;
-    line-height: 16px;
-    font-family: Navigo Regular;
-	cursor: pointer;
-	touch-action: manipulation; 
-    height: 2.55rem;
-}
-.googleMapButton {
-    border: 2px solid #848CA3;
-    border-radius: 7px;
-	align-items: center;
-    font-size: 11.81px;
-    line-height: 16px;
-    font-family: Navigo Regular;
-	cursor: pointer;
-	touch-action: manipulation; 
-    height: 2.75rem;
-}
-.yandexMapButton:hover, .yandexMapButton:active, .googleMapButton:hover, .googleMapButton:active {
-    border: 2px solid #848CA3;
-    background-color: #848CA326;
-}
-.locationMapButtonIMG {
-    height: 100%;
-    object-fit: cover;
-}
-/* End of 2 Главные кнопка наверху */
+/* --------------- End of Navbar ---------------- */
 
-/* Карусель */
-.customCarouselSection {
-    position: relative;
-    z-index: 1;
-}
-.customCarouselSize {
-    width: 61.8%;
-}
-.custom-carousel-div { 
-    border-radius: 30px;
-}
-.custom-carousel-item {
-    height: 32rem;
-}
-.custom-carousel-img {
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-
-/* End of Карусель*/
-
-
-/* Верхние кнопки страницы */
-.custom-top-buttons {
-    width: 170px;
-    height: 48px;
-    font-size: 14.65px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-}
-/* End of Верхние кнопки страницы*/
-
-/* 6 кнопок под карусели */
-.custom-main-bottom-buttons {
-    width: 30%;
-    height: 55px;
-    font-size: 14.65px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-}
-/* End of 6 кнопок под карусели */
-
-/* Кнопки услуг */
-.service {
-    display: flex;
-    justify-content: space-between;
-    background-color: #EDE5D7;
-}
-.service-box {
-    display: flex;
-    width: 198px;
-    height: 130px;
-    background-color: #5F8A6D;
-    border-radius: 1rem;
-    padding: 20px 20px 12px;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-}
-.service-box:hover {
-    transform: scale(1.037); 
-}
-.service-icon {
-    width: 48px;
-    height: 48px;
-    background-color: #4F545F;
-}
-.service-name {
-    display: flex;
-    font-size: 14.41px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-    color:#EDE5D7;
-    align-items: center;
-    padding: 10px 0 0 0
-}
-/* End of кнопки услуг */
-
-/* Кнопки акций */
-.promotion {
-    display: flex;
-    justify-content: space-between;
-    background-color: #EDE5D7;
-}
-.promotion-box {
-    display: flex;
-    width: 200px;
-    height: 353px;
-    background-color: #5F8A6D;
-    border-radius: 1rem;
-    padding: 20px 20px 12px;
-    flex-flow: column;
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-}
-.promotion-box:hover {
-    transform: scale(1.037); 
-}
-.promotion-icon {
-    width: 126px;
-    height: 126px;
-    background-color: #4F545F;
-}
-.promotion-name {
-    display: flex;
-    font-size: 21px;
-    line-height: 29px;
-    font-family: Navigo Regular;
-    color:#EDE5D7;
-    padding: 10px 0 0 0
-}
-.promotion-details {
-    display: flex;
-    font-size: 14.77px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-    color: #4F545F;
-    padding: 10px 0 0 0
-}
-.promotion-date {
-    display: flex;
-    font-size: 11.25px;
-    line-height: 16px;
-    letter-spacing: 0.5px;
-    font-family: Navigo Light;
-    color: #EDE5D7;
-    opacity: 0.7;
-    flex-direction: column; 
-    justify-content: flex-end;
-}
-/* End of кнопки акций */
-
-/* Footer */
+/* --------------- Footer ---------------- */
 .custom-footer {
     box-shadow: 0px -15px 39px -30px rgba(34, 60, 80, 0.2);
-}
-.footer-address {
-    font-size: 14.41px;
-    line-height: 22px;
-    font-family: Navigo Regular;
-}
-.footer-phone-number {
-    font-size: 13.71px;
-    line-height: 22px;
-    font-family: Navigo Regular;
 }
 .footer-outlinedBoxes {
     border: 2px solid #848CA3;
@@ -372,45 +286,68 @@
     width: 36px;
     height: 36px;
 }
-/* End of Footer */
+/* --------------- End of Footer ---------------- */
 
-/* Feedback form */
-.feedback-form-control {
-    border: none;
-    border-bottom: 1px solid #ccc;
-    padding-left: 0;
-    padding-right: 0;
-    border-radius: 0;
-    background: none; 
+/* --------------- Mobile Navigation / Sidenav ---------------- */
+/* The side navigation menu */
+.sidemenu {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #EDE5D5; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidemenu */
 }
-.form-control:active, .form-control:focus {
-    outline: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-color: #000; 
+/* The navigation menu links */
+.sidemenu a {
+    text-decoration: none;
 }
-#form-message-warning, #form-message-success {
-    display: none; 
+/* When you mouse over the navigation links, change their color */
+.sidemenu a:hover {
+    color: #f1f1f1;
 }
-#form-message-warning {
-    color: #B90B0B; 
+/* Position and style the close button (top right corner) */
+.sidemenu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
-#form-message-success {
-    color: #55A44E;
-    font-size: 18px;
-    font-weight: bold; 
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/* #main {
+    transition: margin-left .5s;
+    padding: 20px;
+} */
+/* On smaller screens, where height is less than 450px, change the style of the sidemenu (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidemenu {padding-top: 15px;}
+    .sidemenu a {font-size: 18px;}
 }
-.submitting {
-    float: left;
-    width: 100%;
-    padding: 10px 0;
-    display: none;
-    font-weight: bold;
-    font-size: 12px;
-    color: #000; 
+.menuButton_separator {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin: 0.5rem 1.5rem;
+    border: 0;
+    border-top: 1px solid #606575;
 }
-label.error {
-    font-size: 12px;
-    color: red; 
+.sidemenu_text {
+    padding: 8px 8px 8px 20px;
+    line-height: 20px;
+    font-family: Navigo Light;
+    font-size: 17.41px;
+    font-weight: 500;
+    color: #517E5D;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
 }
-/* End of Feedback form */
+.closebtn {
+    font-weight: 200;
+}
+/* --------------- End of Mobile Navigation ---------------- */

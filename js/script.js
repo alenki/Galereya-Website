@@ -1,3 +1,10 @@
+// Imports
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
+gsap.registerPlugin(ScrollTrigger) 
+
 // Loading screen / Экран загрузки
 var loadingScreen = document.querySelector(".loadingScreen");
 window.addEventListener('load', function() {
@@ -5,19 +12,154 @@ window.addEventListener('load', function() {
 })
 // End of Loading screen / Экран загрузки
 
+// smooth scroll
+// Initialize a new Lenis instance for smooth scrolling
+const lenis = new Lenis();
+
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
+
+// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+});
+
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+gsap.ticker.lagSmoothing(0);
+
+// end of smooth scroll
+
 // Navbar Menu Button
 const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
 menuBtn.addEventListener('click', () => {
     if(!menuOpen) {
+        menuBtn.classList.remove('closed');
         menuBtn.classList.add('open');
         menuOpen = true;
     } else {
         menuBtn.classList.remove('open');
+        menuBtn.classList.add('closed');
         menuOpen = false;
     }
 });
 // End of Navbar Menu Button
+
+
+// Navbar Buttons
+// Магазины
+// document.getElementById("menuButton-1").onclick = function () { 
+//     localStorage.setItem("category", "Магазины");
+//     window.location.href = "stores.html"; 
+// };
+// Еда
+// document.getElementById("menuButton-2").onclick = function () { 
+//     localStorage.setItem("category", "Еда");
+//     window.location.href = "stores.html"; 
+// };
+// // Развлечения
+// document.getElementById("menuButton-3").onclick = function () { 
+//     localStorage.setItem("category", "Развлечения");
+//     window.location.href = "stores.html"; 
+// };
+// // Детям
+// document.getElementById("menuButton-4").onclick = function () { 
+//     localStorage.setItem("category", "Детям");
+//     window.location.href = "stores.html"; 
+// };
+// // Контакты
+// document.getElementById("menuButton-5").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+// // Обратная связь
+// document.getElementById("menuButton-6").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+// О ГАЛЕРЕИ
+// document.getElementById("menuButton-7").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+// // Правила ГАЛЕРЕИ
+// document.getElementById("menuButton-8").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('rulesModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+// End of Navbar buttons
+
+
+// Mobile Nav
+/* Set the width of the side navigation to 250px */
+function open_sidemenu() {
+    document.getElementById("sidemenu").style.width = "250px";
+}
+/* Set the width of the side navigation to 0 */
+function close_sidemenu() {
+    document.getElementById("sidemenu").style.width = "0";
+}
+
+// Mobile Nav Buttons
+// Магазины
+// document.getElementById("sidemenuButton-1").onclick = function () { 
+//     localStorage.setItem("category", "Магазины");
+//     window.location.href = "stores.html"; 
+// };
+// // Еда
+// document.getElementById("sidemenuButton-2").onclick = function () { 
+//     localStorage.setItem("category", "Еда");
+//     window.location.href = "stores.html"; 
+// };
+// // Развлечения
+// document.getElementById("sidemenuButton-3").onclick = function () { 
+//     localStorage.setItem("category", "Развлечения");
+//     window.location.href = "stores.html"; 
+// };
+// // Детям
+// document.getElementById("sidemenuButton-4").onclick = function () { 
+//     localStorage.setItem("category", "Детям");
+//     window.location.href = "stores.html"; 
+// };
+// // Контакты
+// document.getElementById("sidemenuButton-5").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+// // Обратная связь
+// document.getElementById("sidemenuButton-6").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+// // О ГАЛЕРЕИ
+// document.getElementById("sidemenuButton-7").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+// // Правила ГАЛЕРЕИ
+// document.getElementById("sidemenuButton-8").onclick = function () { 
+//     var modal = new bootstrap.Modal(document.getElementById('rulesModal'), {
+//         keyboard: false
+//     })
+//     modal.toggle()
+// };
+
+// End of Mobile Nav
 
 // Back to top button
 //Get the button
@@ -45,126 +187,27 @@ function backToTop() {
 }
 //End of Back to top button
 
-// 2 main buttons on top
-var worktimes_btn = document.getElementById("worktimesUnlock");
-var worktimes_modal = document.getElementById("worktimesHidden");
-var worktimes_isopen = false;
-var location_btn = document.getElementById("locationUnlock");
-var location_modal = document.getElementById("locationHidden");
-var location_isopen = false;
 
-document.onclick = function(e) {
-    if ((worktimes_isopen) && (e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
-        worktimes_modal.style.display = "none";
-        worktimes_isopen = false;
+
+// Плавная анимация навбара
+
+let lastScroll = 0;
+const defaultOffset = 100;
+const header = document.querySelector('.custom-nav');
+
+const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+const containHide = () => header.classList.contains('hide');
+
+window.addEventListener('scroll', () => {
+    if(scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
+        //scroll down
+        header.classList.add('hide');
     }
-    if ((location_isopen) && (e.target.id !== 'locationHidden') && (e.target.id !== 'locationUnlock')) {
-        location_modal.style.display = "none";
-        location_isopen = false;
+    else if(scrollPosition() < lastScroll && containHide()){
+        //scroll up
+        header.classList.remove('hide');
     }
-};
-worktimes_btn.onclick = function() {
-    if (worktimes_isopen === false) {
-        worktimes_modal.style.display = "block";
-        worktimes_isopen = true;
-    } else {
-        worktimes_modal.style.display = "none";
-        worktimes_isopen = false;
-    }
-};
-location_btn.onclick = function() {
-    if (location_isopen === false) {
-        location_modal.style.display = "block";
-        location_isopen = true;
-    } else {
-        location_modal.style.display = "none";
-        location_isopen = false;
-    }
-};
-// End of 2 main buttons on top
 
-// 6 Buttons below carousel
-// Магазины
-document.getElementById("storeButton-1").onclick = function () { 
-    localStorage.setItem("category", "Магазины");
-    window.location.href = "stores.html"; 
-};
-// Еда
-document.getElementById("storeButton-2").onclick = function () { 
-    localStorage.setItem("category", "Еда");
-    window.location.href = "stores.html"; 
-};
-// Развлечения
-document.getElementById("storeButton-3").onclick = function () { 
-    localStorage.setItem("category", "Развлечения");
-    window.location.href = "stores.html"; 
-};
-// Детям
-document.getElementById("storeButton-4").onclick = function () { 
-    localStorage.setItem("category", "Детям");
-    window.location.href = "stores.html"; 
-};
-// Услуги
-document.getElementById("storeButton-5").onclick = function () { 
-    localStorage.setItem("category", "Услуги");
-    window.location.href = "stores.html"; 
-};
-// End of 6 Buttons below carousel
+    lastScroll = scrollPosition();
+})
 
-
-// Service buttons
-// Магазины
-document.getElementById("serviceButton-1").addEventListener("click", function() { 
-    localStorage.setItem("category", "Магазины");
-    window.location.href = "stores.html"; 
-});
-// Еда
-document.getElementById("serviceButton-2").addEventListener("click", function() { 
-    localStorage.setItem("category", "Еда");
-    window.location.href = "stores.html"; 
-});
-// Развлечения
-document.getElementById("serviceButton-3").addEventListener("click", function() { 
-    localStorage.setItem("category", "Развлечения");
-    window.location.href = "stores.html"; 
-});
-// Детям
-document.getElementById("serviceButton-4").addEventListener("click", function() { 
-    localStorage.setItem("category", "Детям");
-    window.location.href = "stores.html"; 
-});
-// Услуги
-document.getElementById("serviceButton-5").addEventListener("click", function() { 
-    localStorage.setItem("category", "Услуги");
-    window.location.href = "stores.html"; 
-});
-// End of Service buttons
-
-
-// Promotion buttons
-// Магазины
-document.getElementById("promotionButton-1").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-1')); 
-    promotionModal.show(); 
-});
-// Еда
-document.getElementById("promotionButton-2").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-2')); 
-    promotionModal.show(); 
-});
-// Развлечения
-document.getElementById("promotionButton-3").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-3')); 
-    promotionModal.show(); 
-});
-// Детям
-document.getElementById("promotionButton-4").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-4')); 
-    promotionModal.show(); 
-});
-// Услуги
-document.getElementById("promotionButton-5").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-5')); 
-    promotionModal.show(); 
-});
-// End of Promotion buttons

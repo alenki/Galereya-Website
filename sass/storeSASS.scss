@@ -2,11 +2,16 @@
 $primary: #5E916F;
 $secondary: #EDE5D7;
 $container-max-widths: (
-    sm: 500px,
-    md: 540px,
-    lg: 720px,
-    xl: 960px,
-    xxl: 1377px
+    // sm: 500px,
+    // md: 540px,
+    // lg: 720px,
+    // xl: 960px,
+    // xxl: 1096px
+    sm: 1200px,
+    md: 1200px,
+    lg: 1200px,
+    xl: 1200px,
+    xxl: 1200px
 );
 
 // import the functions and the variables

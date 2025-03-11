@@ -1,4 +1,6 @@
-/* Fonts */
+
+
+/* --------------- Fonts ---------------- */
 @font-face {
     font-family: Navigo Regular;
     src: url(./Fonts/Navigo-Regular.woff2);
@@ -13,30 +15,221 @@
     font-style: normal;
     font-display: swap;
 }
-/* End of Fonts */
+/* --------------- End of Fonts ---------------- */
 
-/* Фильтры (меню слева) */
-.customFiltersSection {
-    width: 284px; 
+
+/* --------------------- Navbar --------------------------- */
+
+.catalog-navbar {
+    background-color: #ede5d7be;;
 }
+
+/* --------------------- End of navbar -------------------- */
+
+
+/* --------------- Фильтры (меню слева) ---------------- */
+.customFiltersSection {
+    position: sticky;
+    align-self: flex-start;
+    top: 5rem;
+    padding-top: 3rem;
+    width: 20rem;
+    margin-right: 1rem;
+    /* background-color: rgb(193, 186, 186); */
+}
+
+/* кнопки фильтров */
 .customFilterCatalogButton {
     width: 100%;
-    height: 50px;
+    height: 60px;
     text-align: left;
+    /* -webkit-backdrop-filter: blur(11px); */
+    /* backdrop-filter: blur(11px); */
+    background: #ede5d7;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+
+    border-width: 0;
+    border-radius: 16px;
+    transition: background-color 0.5s;
+
 }
+
+.customFilterCatalogButton:hover {
+    width: 100%;
+    height: 60px;
+    text-align: left;
+    background-color: #bcddc7b6;
+    /* border-color: #5f8a6d00; */
+    border-width: 0;
+    
+}
+
 .customFilterCatalogTitle {
     font-family: Navigo Regular;
     font-weight: 400;
     font-size: 1.07rem;
     line-height: 2.2rem;
+    margin-left: 1rem;
+    color: #212222b6;
 }
-/* End of Фильтры (меню слева) */
+/* --------------- End of Фильтры (меню слева) ---------------- */
 
-/* Каталог */
+/* --------------- Каталог ---------------- */
+
+.catalog-section{
+    width: calc(100vw - 1.2rem);
+    position: absolute;
+}
+
+/* блок в котором находится весь католог */
+.catalog-box{
+    /* position: absolute; */
+    /* width: 80%; */
+    padding-top: 6rem;
+}
+
+.catalog-inner {
+    z-index: 100;
+}
+
+.card-place {
+    width: 100%;
+}
+
+
 .customCategoryHeadingTitle{
     font-family: Navigo Regular;
     font-weight: 400;
-    font-size: 1.97rem;
-    line-height: 2.2rem;
+    font-size: 2rem;
+    color: #212222b6;
 }
-/* End of Каталог */
+
+/* ------------- Карты магазинов ----------- */
+
+.stores-center {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 1.1rem;
+    position: relative;
+    /* height: 20rem; */
+    width: 100%;
+}
+@media (max-width: 1199px) {
+    .stores-center {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-gap: 2rem;
+    }
+}
+@media (max-width: 950px) {
+    .stores-center {
+        grid-gap: 1rem;
+    }
+}
+
+.store-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.2rem;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    /* backdrop-filter: blur(5rem); */
+    /* background: #130f0f; */
+    background-color: #ede5d7;
+    box-shadow: 0 .5rem 4rem rgba(0, 0, 0, .15);
+    transition: transform .3s ease-out;
+
+}
+
+.store-block:hover {
+    transform: scale(1.037);
+    cursor: pointer;
+}
+
+.img-container{
+    position: relative;
+    flex: 0 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.store-img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.4rem;
+    width: 100%;
+    text-align: center;
+    /* background-color: var(--neutral0); */
+}
+
+.img-box{
+    display: flex;
+    align-items: center;
+    height: 7.8rem;
+    overflow: hidden;
+}
+
+.store-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1.5rem 2rem 1.5rem;
+    height: 11.8rem;
+    border-radius: 0 0 1.2rem 1.2rem;
+    /* background-color: var(--neutral0); */
+}
+
+.store-name-box {
+    margin-top: 1rem;
+}
+
+.store-name {
+    font-family: Navigo Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 2.2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #212222b6;
+}
+
+.store-caption {
+    font-family: Navigo Regular;
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #464847b6;
+}
+
+.store-floor {
+    font-family: Navigo Regular;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #212222b6;
+}
+
+/* ----------- end of Карты магазинов -------------- */
+/* --------------- End of Каталог ---------------- */

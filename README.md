@@ -1,3 +1,11 @@
+IMPORTANT
+In carousel.json all elements .image url link is written with domain in the beginning, you'll have to change the domain in it if you change the domain of the site.
+Слайдов именно в JSON файле не должно 3, они должны цикловаться, иначе баг появляется
+Чтобы слайды цикловались, нужно добавить 3 слайда в json с айдишниками 1, 2, 3, потом скопировать их и еще раз добавить с айдишниками 4, 5, 6. Так, они добавятся на странице в таком виде: "1 2 3 1 2 3" (записаны как (1 2 3 4 5 6), но первые 3 и последние 3 одинаковые)
+Основной слайд начинается с первой тройки: (. . O . . .), его айдишник в json: 3, айдишники второго и третьего слайдов: 1, 2
+IMPORTANT
+
+
 
 When deploying the website, make sure to use SSH keys into github and publish the files there in a repository and monitor there all changes you do to the website so you can change back to anything at any time and you don't lose the website.
 But also make copies of the website.

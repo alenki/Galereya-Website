@@ -1,80 +1,206 @@
-// Loading screen / Экран загрузки
-var loadingScreen = document.querySelector(".loadingScreen");
-window.addEventListener('load', function() {
-    loadingScreen.style.display = 'none';
-})
-// End of Loading screen / Экран загрузки
-
-// Navbar Menu Button
-const menuBtn = document.querySelector('.menu-btn');
-let menuOpen = false;
-menuBtn.addEventListener('click', () => {
-    if(!menuOpen) {
-        menuBtn.classList.add('open');
-        menuOpen = true;
-    } else {
-        menuBtn.classList.remove('open');
-        menuOpen = false;
-    }
-});
-// End of Navbar Menu Button
-
-// Back to top button
-//Get the button
-let toTop_button = document.getElementById("btn-back-to-top");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-    scrollFunction();
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        toTop_button.style.display = "block";
-    } 
-    else {
-        toTop_button.style.display = "none";
-    }
-}
-// When the user clicks on the button, scroll to the top of the document
-toTop_button.addEventListener("click", backToTop);
-
-function backToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-//End of Back to top button
-
 // Categories
 const categoryHeading = document.getElementById("categoryHeading");
-var category = localStorage.getItem("category")
 
 window.onload = function() {
-    categoryHeading.innerHTML = category;
+    Load();
 };
 
+// Загрузить все в зависимости от фильтра
+function Load() {
+
+    // Загрузить все магазины
+    const ui = new UI();
+    const stores = new Stores();
+    // get all stores
+    stores.getStores().then(stores => {
+        // Display stores
+        ui.displayStores(stores);
+
+        // open up store if there is need for it
+        var pagination_id = localStorage.getItem("pagination");
+        if(pagination_id != 0){
+            var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
+            var storeModalLabel = document.getElementById("storeModalLabel");
+            var storeModalInfo = document.getElementById("storeModalInfo");
+            storeModal.show();
+            slides.getSlides().then(slides => {
+                slides.forEach(slides => {
+                    console.log(slides.id);
+                    if(slides.id == pagination_id) {
+                        storeModalLabel.innerHTML = slides.title;
+                        storeModalInfo.innerHTML = slides.description;
+                        localStorage.setItem("category", slides.category);
+                    }
+                });
+            }).then(()=>{
+                localStorage.setItem("pagination", "0");
+            });
+        }
+
+        // update category
+        var category = localStorage.getItem("category")
+        categoryHeading.innerHTML = category;
+    })
+}
 // Магазины
 document.getElementById("categoryButton-1").onclick = function () { 
-    categoryHeading.innerHTML = 'Магазины';
+    localStorage.setItem("category", "Магазины");
+    Load();
 };
 
-// Магазины
+// Еда
 document.getElementById("categoryButton-2").onclick = function () { 
-    categoryHeading.innerHTML = 'Еда';
+    localStorage.setItem("category", "Еда");
+    Load();
 };
 
-// Магазины
+// Развлечения
 document.getElementById("categoryButton-3").onclick = function () { 
-    categoryHeading.innerHTML = 'Развлечения';
+    localStorage.setItem("category", "Развлечения");
+    Load();
 };
 
-// Магазины
+// Детям
 document.getElementById("categoryButton-4").onclick = function () { 
-    categoryHeading.innerHTML = 'Детям';
+    localStorage.setItem("category", "Детям");
+    Load();
 };
 
-// Магазины
+// Услуги
 document.getElementById("categoryButton-5").onclick = function () { 
-    categoryHeading.innerHTML = 'Услуги';
+    localStorage.setItem("category", "Услуги");
+    Load();
 };
 // End of Categories
+
+
+// getting the stores
+class Stores{
+    async getStores(){
+        try{
+
+            // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+            // let contentful = await client.getEntries({
+            //     content_type: "alenkiStoreContent"
+            // });
+
+            let result = await fetch('../json/stores.json');
+            let data = await result.json();
+            let stores = data.items;
+            // let stores = contentful.items;
+            stores = stores.map(item =>{
+                const {title, description, category} = item.fields;
+                const {id} = item.sys;
+                const image = item.fields.image.fields.file.url;
+                const logo = item.fields.logo.fields.file.url;
+                return {title, description, category, id, image, logo}
+            })
+            return stores
+        } catch(error) {
+            console.log(error);
+        }
+    }
+}
+// Get carousel elements
+class Slides{
+    async getSlides(){
+      try{
+          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+          // let contentful = await client.getEntries({
+          //     content_type: "alenkiStoreContent"
+          // });
+          let carousel_result = await fetch('../json/carousel.json');
+          let data = await carousel_result.json();
+          let slides = data.items;
+          // let slides = contentful.items;
+          slides = slides.map(item =>{
+              const {title, description, category} = item.fields;
+              const {id} = item.sys;
+              const image = item.fields.image.fields.file.url;
+              const logo = item.fields.logo.fields.file.url;
+              return {title, description, category, id, image, logo}
+          })
+          return slides
+      } catch(error) {
+          console.log(error);
+      }
+    }
+  }
+  // get all stores
+  const slides = new Slides();
+
+//display stores
+const storesDOM = document.querySelector('.stores-center');
+class UI {
+    displayStores(stores){
+        let result = '';
+        var category = localStorage.getItem("category");
+        stores.forEach(stores => {
+            if(stores.category == category){
+                result += `                            
+        <!-- single stores -->
+                    <article class="store-block storeButton" id="${stores.id}">
+                      <div class="img-container storeButton" id="${stores.id}">
+                        <div class="img-box" id="${stores.id}">
+                              <img
+                                  src=${stores.logo}
+                                  alt="store" 
+                                  class="store-img storeButton"
+                                  id="${stores.id}"
+                                />
+                        </div>
+                      </div>
+                      <!-- <hr style="margin: 0 1.2rem 0 1.2rem; filter: blur(0.5px); opacity: 1px"> -->
+                      <div class="store-info storeButton" id="${stores.id}"">
+                        <div class="store-name-box storeButton" id="${stores.id}">
+                          <h3 class="store-name storeButton" id="${stores.id}">${stores.title}</h3>
+                          <p class="store-caption storeButton" id="${stores.id}">${stores.description}</p>
+                        </div>
+                        <div class="storeButton" id="${stores.id}">
+                          <span class="store-floor storeButton" id="${stores.id}">3 этаж</span>
+                        </div>
+                          
+                      </div>
+                    </article>
+        <!-- end single stores -->
+                `;
+            }});
+        storesDOM.innerHTML = result;
+    }
+}
+
+
+// Detailed store info
+// get all stores
+const stores = new Stores();
+document.onclick = function(e) {
+    if(e.target.classList.contains("storeButton")){
+        var storeModalLabel = document.getElementById("storeModalLabel");
+        var storeModalInfo = document.getElementById("storeModalInfo");
+
+        var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
+        storeModal.show();
+
+        stores.getStores().then(stores => {
+            stores.forEach(stores => {
+                console.log(stores.id);
+                if(stores.id == e.target.id) {
+                    storeModalLabel.innerHTML = stores.title;
+                    storeModalInfo.innerHTML = stores.description;
+                    
+                }
+            });
+        })
+    }
+};
+
+
+// Loading stores
+// document.addEventListener("DOMContentLoaded", ()=>{
+//     const ui = new UI();
+//     const stores = new Stores();
+//     // get all stores
+//     stores.getStores().then(stores => {
+//         ui.displayStores(stores);
+//     })//.then(()=>{});
+// });
