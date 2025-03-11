@@ -586,6 +586,9 @@ html {
 }
 .service-card:hover {
     transform: scale(1.037); 
+    .service-icon {
+        transform: scale(1.1); 
+    }
 }
 .service-overflown {
     opacity: .5;
@@ -598,6 +601,7 @@ html {
     width: 48px;
     height: 48px;
     /* background-color: #4F545F; */
+    transition: transform .25s ease-in-out;
 }
 
 .service-icon svg{
@@ -852,6 +856,9 @@ html {
 }
 .promotion-card:hover {
     transform: scale(1.037); 
+    .promotion-icon {
+        transform: scale(1.1); 
+    }
 }
 .promotion-overflown {
     opacity: .5;
@@ -864,6 +871,7 @@ html {
     width: 125px;
     height: 125px;
     object-fit: cover;
+    transition: transform .25s ease-in-out;
 }
 
 .promotion-icon img {
