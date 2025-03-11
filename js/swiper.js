@@ -105,7 +105,7 @@ async function update_carousel() {
         `
       });
       async function update_swiper_wrapper(){
-        swiper_wrapper.innerHTML = carousel_result
+        swiper_wrapper.innerHTML = carousel_result + carousel_result
       }
       await update_swiper_wrapper();
         // Put sliders in variables
