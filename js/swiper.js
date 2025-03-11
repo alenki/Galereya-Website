@@ -105,7 +105,7 @@ async function update_carousel() {
         `
       });
       async function update_swiper_wrapper(){
-        swiper_wrapper.innerHTML = carousel_result
+        swiper_wrapper.innerHTML = carousel_result + carousel_result
       }
       await update_swiper_wrapper();
         // Put sliders in variables
@@ -175,7 +175,19 @@ function blur_overflown_elements_right_swiper() {
 
 // Pagination
 var pagination_id = 1; // активный элемент карусели начиная с 1
+let pagination_cooldown = false;
 swiper_pagination_1.addEventListener("click", () => {
+
+  // cooldown to prevent spamming pagination
+  if (pagination_cooldown) {
+    return;
+  }
+  pagination_cooldown = true;
+  setTimeout(() => {
+    pagination_cooldown = false;
+  }, 500);
+
+
   if(pagination_id==2){
     swipe_left();
     swiper_pagination_2.classList.remove("swiper-pagination-ball-active");
@@ -188,6 +200,17 @@ swiper_pagination_1.addEventListener("click", () => {
   pagination_id=1;
 });
 swiper_pagination_2.addEventListener("click", () => {
+
+  // cooldown to prevent spamming pagination
+  if (pagination_cooldown) {
+    return;
+  }
+  pagination_cooldown = true;
+  setTimeout(() => {
+    pagination_cooldown = false;
+  }, 500);
+
+
   if(pagination_id==1){
     swipe_right();
     swiper_pagination_1.classList.remove("swiper-pagination-ball-active");
@@ -200,6 +223,17 @@ swiper_pagination_2.addEventListener("click", () => {
   pagination_id=2;
 });
 swiper_pagination_3.addEventListener("click", () => {
+
+  // cooldown to prevent spamming pagination
+  if (pagination_cooldown) {
+    return;
+  }
+  pagination_cooldown = true;
+  setTimeout(() => {
+    pagination_cooldown = false;
+  }, 500);
+
+
   if(pagination_id==1){
     swipe_right_twice();
     swiper_pagination_1.classList.remove("swiper-pagination-ball-active");

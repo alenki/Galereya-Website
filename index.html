@@ -87,7 +87,7 @@
             <!-- Навбар маленьких экранов -->
             <div class="collapse navbar-collapse d-sm-none d-flex justify-content-between">
                 <!-- Кнопка меню -->
-                <div style="width: 23px;" class="menu-btn justify-content-between" type="button" onclick="open_sidemenu()">
+                <div style="width: 23px;" class="menu-btn justify-content-between" type="button" id="menu-button_Mobile">
                   <div class="menu-btn__burger"></div>
                 </div>
                 <!-- Логотип -->
@@ -137,7 +137,7 @@
 
       <!-- Мобильная навигация -->
       <div id="sidemenu" class="sidemenu">
-        <a href="javascript:void(0)" class="closebtn" onclick="close_sidemenu()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" id="menu-closebutton_Mobile">&times;</a>
         <div class="first_sidemenu_box">
           <a class="sidemenu_text" id="sidemenuButton-1">Магазины</a>
           <a class="sidemenu_text" id="sidemenuButton-2">Развлечения</a>

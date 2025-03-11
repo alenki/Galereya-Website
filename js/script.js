@@ -101,13 +101,13 @@ menuBtn.addEventListener('click', () => {
 
 // Mobile Nav
 /* Set the width of the side navigation to 250px */
-function open_sidemenu() {
+document.getElementById("menu-button_Mobile").addEventListener('click', () => {
     document.getElementById("sidemenu").style.width = "250px";
-}
+})
 /* Set the width of the side navigation to 0 */
-function close_sidemenu() {
-    document.getElementById("sidemenu").style.width = "0";
-}
+document.getElementById("menu-closebutton_Mobile").addEventListener('click', () => {
+    document.getElementById("sidemenu").style.width = "0px";
+})
 
 // Mobile Nav Buttons
 // Магазины
