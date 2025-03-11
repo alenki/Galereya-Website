@@ -112,7 +112,7 @@ h2 {
 .swiper {
     /* overflow: hidden; */
     padding-top: 1.5rem;
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
     width: 100%;
     color: #eceef3;
     background-color: #EDE5D7;
@@ -172,6 +172,11 @@ html {
 @media screen and (max-width: 1111px) {
     .swiper-main-window {
         width: 100%;
+    }
+}
+@media screen and (max-width: 477px) {
+    .swiper-main-window{
+        height: 333px;
     }
 }
 .swiper-wrapper {
