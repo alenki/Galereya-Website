@@ -1,7 +1,7 @@
 // Imports
-import { gsap } from '../node_modulse/gsap';
-import { ScrollTrigger } from "../node_modulse/gsap/ScrollTrigger";
-import Lenis from '../node_modulse/lenis'
+import { gsap } from '../node_modules/gsap';
+import { ScrollTrigger } from "../node_modules/gsap/ScrollTrigger";
+import Lenis from '../node_modules/lenis'
 import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger) 
 
