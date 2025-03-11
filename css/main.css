@@ -130,7 +130,7 @@ h2 {
     }
 }
 html {
-    --carousel_bg: url(http://localhost:5173/Media/Carousel/test-photo.webp);
+    --carousel_bg: url(/Media/Carousel/test-photo.webp);
 }
 .swiper-box::before {
     content: "";
