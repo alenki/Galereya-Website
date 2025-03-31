@@ -84,7 +84,7 @@ class Stores{
             //     content_type: "alenkiStoreContent"
             // });
 
-            let result = await fetch('../json/stores.json');
+            let result = await fetch('/json/stores.json');
             let data = await result.json();
             let stores = data.items;
             // let stores = contentful.items;

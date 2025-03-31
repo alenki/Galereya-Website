@@ -1,8 +1,8 @@
 // Imports
-import { gsap } from '../node_modules/gsap';
-import { ScrollTrigger } from "../node_modules/gsap/ScrollTrigger.js";
-import Lenis from '../node_modules/lenis'
-import '../node_modules/lenis/dist/lenis.css'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger) 
 
 // Loading screen / Экран загрузки

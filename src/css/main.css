@@ -119,6 +119,20 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 500px) {
+    .swiper {
+        /* overflow: hidden; */
+        padding-top: 30px;
+        padding-bottom: 80px;
+        width: 100%;
+        color: #eceef3;
+        background-color: #EDE5D7;
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .swiper-box {
     position: relative;
     width: 80rem;
@@ -132,6 +146,7 @@ h2 {
 html {
     --carousel_bg: url(/Media/Carousel/colins.png);
 }
+
 .swiper-box::before {
     content: "";
     position: absolute;
@@ -146,9 +161,27 @@ html {
     transform: translateX(-50%);
     filter: blur(1.5rem);
 }
+
+@media (max-width: 500px){
+    .swiper-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 60rem;
+        max-width: 100%;
+        height: 15rem;
+        border-radius: 1.6rem;
+        opacity: .6;
+        background: var(--carousel_bg);;
+        transform: translateX(-50%);
+        filter: blur(1.5rem);
+    }
+}
+
 .swiper-main-window {
     position: relative;
-    width: 93%;
+    width: 100%;
     /* width: 82rem; */
     /* width: 1228.78px; */
     /* max-width: calc(100% - 3.2rem); */
@@ -174,9 +207,9 @@ html {
         width: 100%;
     }
 }
-@media screen and (max-width: 477px) {
+@media screen and (max-width: 500px) {
     .swiper-main-window{
-        height: 333px;
+        height: 200px;
     }
 }
 .swiper-wrapper {
@@ -233,6 +266,18 @@ html {
     background-image: var(--bgImage);
     height: 431px;
 }
+
+@media (max-width: 500px){
+    .slide-img {
+        display: block;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-image: var(--bgImage);
+        height: 200px;
+    }
+}
+
 
 @media screen and (max-width: 1128px) {
     .swiper-post-info {
@@ -1097,3 +1142,15 @@ label.error {
     color: red; 
 }
 /* --------------- End of Feedback form ---------------- */
+
+
+/* FOOTER */
+
+@media (max-width: 600px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* End of FOOTER */

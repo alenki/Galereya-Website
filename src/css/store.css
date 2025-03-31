@@ -47,6 +47,8 @@
     /* backdrop-filter: blur(11px); */
     background: #ede5d7;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+    padding-left: 2rem;
 
     border-width: 0;
     border-radius: 16px;
@@ -55,9 +57,6 @@
 }
 
 .customFilterCatalogButton:hover {
-    width: 100%;
-    height: 60px;
-    text-align: left;
     background-color: #bcddc7b6;
     /* border-color: #5f8a6d00; */
     border-width: 0;
@@ -72,6 +71,74 @@
     margin-left: 1rem;
     color: #212222b6;
 }
+
+/* адаптация под телефон */
+@media (max-width: 500px) {
+    .customFiltersSection {
+        z-index: 900;
+        display: flex;
+        overflow: scroll;
+        position: fixed;
+        align-self: flex-start;
+        width: 100%;
+        top: 0px;
+        left: 0rem;
+        padding: 4rem 10px 0 10px;
+        /* margin-right: 1rem; */
+        margin-bottom: 60px;
+        -webkit-box-shadow: none;
+        box-shadow: 0px -10px 200px rgba(0, 0, 0, 0.1);
+        scrollbar-width: none;
+        backdrop-filter: blur(2rem);
+    }
+
+    /* настройка скролла фильтров */
+    .customFiltersSection::-webkit-scrollbar-corner {
+        background: rgba(0,0,0,0);
+    }
+
+    .customFiltersSection::-webkit-scrollbar {
+        box-shadow: inset;
+    }
+    
+    /* кнопки фильтров */
+    .customFilterCatalogButton {
+        flex-shrink: 0;
+        width: 46.5vw;
+        height: 60px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        /* -webkit-backdrop-filter: blur(11px); */
+        /* backdrop-filter: blur(11px); */
+        background: #ede5d7;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        padding: 0 0 0 0;
+        margin: 0 15px 10px 0;
+
+        border-width: 0;
+        border-radius: 16px;
+        transition: background-color 0.5s;
+    
+    }
+    
+    .customFilterCatalogButton:hover {
+        background-color: #bcddc7b6;
+        /* border-color: #5f8a6d00; */
+        border-width: 0;
+        
+    }
+    
+    .customFilterCatalogTitle {
+        font-family: Navigo Regular;
+        font-weight: 400;
+        font-size: 1.07rem;
+        line-height: 2.2rem;
+        margin-left: 0rem;
+        color: #212222b6;
+    }
+    
+}
 /* --------------- End of Фильтры (меню слева) ---------------- */
 
 /* --------------- Каталог ---------------- */
@@ -81,11 +148,29 @@
     position: absolute;
 }
 
+@media (max-width: 500px) {
+    .catalog-section{
+        width: 100%;
+        /* position: absolute; */
+    }
+    
+}
+
 /* блок в котором находится весь католог */
 .catalog-box{
     /* position: absolute; */
-    /* width: 80%; */
+    width: 100%;
     padding-top: 6rem;
+    display: flex;
+}
+
+@media (max-width: 500px) {
+    .catalog-box {
+        flex-direction: column;
+        padding-top:150px;
+
+    }
+    
 }
 
 .catalog-inner {
@@ -104,13 +189,20 @@
     color: #212222b6;
 }
 
+@media (max-width: 500px) {
+    .customCategoryHeadingTitle{
+        
+    }
+    
+}
+
 /* ------------- Карты магазинов ----------- */
 
 .stores-center {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-gap: 1.1rem;
-    position: relative;
+    /* position: relative; */
     /* height: 20rem; */
     width: 100%;
 }
@@ -127,11 +219,26 @@
     }
 }
 
+/* адаптация под телефон */
+@media (max-width: 500px) {
+    .stores-center {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 1rem;
+        /* height: 76vh; */
+        /* margin-top: 50px; */
+        padding: 10px 0 50px 0;
+        overflow: scroll;
+        box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
+        scrollbar-width: none;
+    }
+}
+
 .store-block {
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 1.2rem;
+    border-radius: 20px;
     -webkit-text-decoration: none;
     text-decoration: none;
     -webkit-user-select: none;
@@ -214,6 +321,7 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     color: #464847b6;
 }
@@ -229,6 +337,93 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     color: #212222b6;
+}
+
+/* адаптация под телефон */
+@media (max-width: 500px) {
+
+    .img-container{
+        position: relative;
+        flex: 0 0 auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-radius: 1.2rem 1.2rem 0 0;
+    }
+    
+    .store-img{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 1.4rem 1rem 1.4rem;
+        width: 100%;
+        text-align: center;
+        /* background-color: var(--neutral0); */
+    }
+    
+    .img-box{
+        display: flex;
+        align-items: center;
+        height: 7rem;
+        overflow: hidden;
+    }
+    
+    .store-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 1.5rem 2rem 1.5rem;
+        height: 10rem;
+        border-radius: 0 0 1.2rem 1.2rem;
+        /* background-color: var(--neutral0); */
+    }
+    
+    .store-name-box {
+        margin-top: 0rem;
+    }
+    
+    .store-name {
+        font-family: Navigo Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 2.2rem;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #212222b6;
+    }
+    
+    .store-caption {
+        font-family: Navigo Regular;
+        font-weight: 300;
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color: #464847b6;
+    }
+    
+    .store-floor {
+        font-family: Navigo Regular;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color: #212222b6;
+    }
 }
 
 /* ----------- end of Карты магазинов -------------- */

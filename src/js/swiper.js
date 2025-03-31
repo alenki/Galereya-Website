@@ -46,7 +46,7 @@ class Slides{
         // let contentful = await client.getEntries({
         //     content_type: "alenkiStoreContent"
         // });
-        let carousel_result = await fetch('../json/carousel.json');
+        let carousel_result = await fetch('/json/carousel.json');
         let data = await carousel_result.json();
         let slides = data.items;
         // let slides = contentful.items;

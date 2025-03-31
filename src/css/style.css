@@ -117,7 +117,7 @@ html, body {
 }
 
 /* Language button */
-.lang-button {
+#lang-button  {
     transition: all .5s ease;
     color: #517E5D;
     border: 1.3px solid #848CA3;
@@ -128,7 +128,7 @@ html, body {
 	cursor: pointer;
 	touch-action: manipulation; 
 }
-.lang-button:hover, .lang-button:active {
+#lang-button:hover, .lang-button:active {
     color: #517E5D;
     border: 1.3px solid #848CA3;
     background-color: #848CA326;
@@ -294,7 +294,7 @@ html, body {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1000; /* Stay on top */
+    z-index: 2000; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #EDE5D5; /* Black*/

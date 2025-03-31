@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Import SASS Bootstrap -->
-        <link href="/css/mainSASS.css" rel="stylesheet">       
+        <link rel="stylesheet" href="/src/css/mainSASS.css">       
         <!-- Import custom css -->
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/src/css/style.css">
+        <link rel="stylesheet" href="/src/css/main.css">
         <!-- Font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <title>Galereya</title>
@@ -62,7 +62,7 @@
                 <!-- Логотип -->
                 <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
                 <!-- Кнопка -->
-                <button class="btn lang-button">
+                <button class="btn" id="lang-button">
                   <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
                   <span class="pt-1">English</span>
                 </button>
@@ -95,7 +95,7 @@
                   <div class="menu_column col-4 pt-4 d-flex justify-content-center">
                     <div class="pb-4"><a class="menu_text" id="menuButton-5">Контакты</a></div>
                     <div class="pb-4"><a class="menu_text" id="menuButton-6">Обратная связь</a></div>
-                    <div class="pb-4"><a class="menu_text" id="menuButton-7">О ГАЛЕРЕИ</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-7">О ГАЛЕРЕЕ</a></div>
                     <div class="pb-4"><a class="menu_text" id="menuButton-8">Правила ГАЛЕРЕИ</a></div>
                   </div>
                   <!-- 4 -->
@@ -131,7 +131,7 @@
         <div class="second_sidemenu_box">
           <a class="sidemenu_text" id="sidemenuButton-5">Контакты</a>
           <a class="sidemenu_text" id="sidemenuButton-6">Обратная связь</a>
-          <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕИ</a>
+          <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕЕ</a>
           <a class="sidemenu_text" id="sidemenuButton-8">Правила ГАЛЕРЕИ</a>
         </div>
       </div>
@@ -272,7 +272,7 @@
   <div class="service-header d-flex justify-content-between">
     <div class="d-flex align-items-center">
       <h5 class="section-names">Услуги</h5>
-      <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все услуги и сервисы</a>
+      <!-- <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все услуги и сервисы</a> -->
     </div>
     <div class="service-slider_button_container align-items-center">
       <button id="service-left" class="prev slider-btn">
@@ -444,7 +444,7 @@
   <div class="container">
     <div class="d-flex">
       <h5 class="section-names">Услуги</h5>
-      <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все услуги и сервисы</a>
+      <!-- <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все услуги и сервисы</a> -->
     </div>
     <div class="service-wrapper_Mobile">
       <div class="service_Mobile py-3">
@@ -500,7 +500,7 @@
   <div class="promotion-header d-flex justify-content-between">
     <div class="d-flex align-items-center">
       <h5 class="section-names">Что нового</h5>
-      <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все акции и предложения</a>
+      <!-- <a href="#" class="ps-3 align-content-center section-links" style="text-decoration: none;">Все акции и предложения</a> -->
     </div>
     <div class="promotion-slider_button_container align-items-center">
       <button id="promotion-left" class="prev slider-btn">
@@ -711,7 +711,7 @@
     <div class="container">
       <div class="d-flex">
         <h5 class="section-names">Что нового</h5>
-        <a href="#" class="ps-3 section-links" style="text-decoration: none;">Все акции и предложения</a>
+        <!-- <a href="#" class="ps-3 section-links" style="text-decoration: none;">Все акции и предложения</a> -->
       </div>
       <div class="promotion-wrapper_Mobile">
           <div class="promotion_Mobile"> 
@@ -818,7 +818,7 @@
                 <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#feedbackModal">Обратная связь</button>
               </li>
               <li class="nav-item">
-                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#aboutModal">О ГАЛЕРЕИ</button>
+                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#aboutModal">О ГАЛЕРЕЕ</button>
               </li>
               <li class="nav-item">
               </li>
@@ -904,7 +904,7 @@
     </div>
   </div>
 
-  <!-- About Modal (что отображает кнопка "О ГАЛЕРЕИ" внизу) -->
+  <!-- About Modal (что отображает кнопка "О ГАЛЕРЕЕ" внизу) -->
   <div class="modal fade bd-example-modal-lg" id="aboutModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -923,7 +923,7 @@
   предоставление покупателям возможности совершать покупки,
   выбирая из известных марок ведущих производителей одежды,
   обуви и аксессуаров. Комфортная атмосфера, наличие
-  ресторанов и кафе, кинотеатра,, боулинга,
+  ресторанов и кафе, кинотеатра, боулинга,
   детской игровой площадки, просторной
   парковочной зоны, качественной системы вентиляции и
   кондиционирования, лифтов и эскалаторов способствуют
@@ -1033,12 +1033,12 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script> doesnt work without paid inertia plugin-->
     <!-- Custom JavaScript -->
-    <script type="module" src="js\script.js"></script>
-    <script type="module" src="js\main.js"></script>
-    <script type="module" src="js\swiper.js"></script>
-    <script type="module" src="js\service_slider.js"></script>
-    <script type="module" src="js\promotion_slider.js"></script>
-    <script type="module" src="js\feedback.js"></script>
+    <script type="module" src="/src/js/script.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/swiper.js"></script>
+    <script type="module" src="/src/js/service_slider.js"></script>
+    <script type="module" src="/src/js/promotion_slider.js"></script>
+    <!-- <script type="module" src="/src/js/feedback.js"></script> -->
     <!-- for menu btn animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Yandex.Metrika counter -->

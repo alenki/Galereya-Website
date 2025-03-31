@@ -21,8 +21,8 @@ $grid-breakpoints: (
 );
 
 // import the functions and the variables
-@import "../node_modules/bootstrap/scss/_functions";
-@import "../node_modules/bootstrap/scss/_variables";
+@import "../../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap/scss/_variables";
 
 // A map of new color values you want to add
 $custom-theme-colors: (
@@ -34,5 +34,5 @@ $custom-theme-colors: (
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 //import bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
