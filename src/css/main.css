@@ -988,6 +988,7 @@ html {
     width: 100%;
     position: relative;
     scroll-snap-type: x mandatory;
+    overflow-y: hidden;
 }
 .promotion-wrapper_Mobile .promotion_Mobile {
     display: grid;
