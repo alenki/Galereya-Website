@@ -337,11 +337,11 @@ function swipe_left_twice() {
   }, 500);
   
   blur_overflown_elements_left_swiper();
-    swiper_loop.previous({duration: 0.07, ease: "power1.inOut"});
+    swiper_loop.previous({duration: 0.09, ease: "power1.inOut"});
     setTimeout(() => {
         blur_overflown_elements_left_swiper();
-        swiper_loop.previous({duration: 0.07, ease: "power1.inOut"});
-      }, "070");
+        swiper_loop.previous({duration: 0.09, ease: "power1.inOut"});
+      }, "100");
 
     // Reset autoplay
     stopAutoplay();
@@ -362,11 +362,11 @@ function swipe_right_twice() {
 
 
     blur_overflown_elements_right_swiper();
-    swiper_loop.next({duration: 0.07, ease: "power1.inOut"});
+    swiper_loop.next({duration: 0.09, ease: "power1.inOut"});
     setTimeout(() => {
         blur_overflown_elements_right_swiper();
-        swiper_loop.next({duration: 0.07, ease: "power1.inOut"});
-      }, "070");
+        swiper_loop.next({duration: 0.09, ease: "power1.inOut"});
+      }, "100");
 
     // Reset autoplay
     stopAutoplay();

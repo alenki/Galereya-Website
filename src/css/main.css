@@ -161,7 +161,8 @@ html {
     transform: translateX(-50%);
     filter: blur(1.5rem);
     -webkit-filter: blur(1.5rem);
-    /* will-change: filter; */
+    
+    will-change: filter;
 }
 
 @media (max-width: 500px){
@@ -237,7 +238,6 @@ html {
     filter: blur(1rem);
     -webkit-filter: blur(1rem);
     transition: filter 0.5s !important;
-    /* will-change: filter; */
 }
 .swiper-slide.swiper-visible{
     filter: blur(0rem);
