@@ -161,7 +161,7 @@ html {
     transform: translateX(-50%);
     filter: blur(1.5rem);
     -webkit-filter: blur(1.5rem);
-    will-change: filter;
+    /* will-change: filter; */
 }
 
 @media (max-width: 500px){
@@ -233,6 +233,15 @@ html {
 
     position: relative;
     transition-property: transform;
+
+    filter: blur(1rem);
+    -webkit-filter: blur(1rem);
+    transition: filter 0.5s !important;
+    /* will-change: filter; */
+}
+.swiper-slide.swiper-visible{
+    filter: blur(0rem);
+    transition: filter 0.5s !important;
 }
 .swiper-post {
     width: 100%;
@@ -245,10 +254,9 @@ html {
 .swiper-post.swiper-overflown {
     opacity: .8;
     transform: scale(0.91304);
-    filter: blur(1rem);
+    /* filter: blur(1rem); */
     transition-property: transform;
     transition: opacity 0.5s, transform 0.5s, filter 0.5s !important;
-    will-change: filter;
 }
 .slide-img {
     display: block;
