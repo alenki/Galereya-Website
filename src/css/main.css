@@ -987,6 +987,7 @@ html {
 .promotion-wrapper_Mobile {
     width: 100%;
     position: relative;
+    scroll-snap-type: x mandatory;
 }
 .promotion-wrapper_Mobile .promotion_Mobile {
     display: grid;
@@ -1036,14 +1037,19 @@ html {
     transition: all .2s ease-in-out;
     scroll-snap-align: start;
     cursor: pointer;
+    z-index: 400;
 }
 .promotion-box_Mobile:hover {
     transform: scale(1.037); 
+    .promotion-icon_Mobile {
+        transform: scale(1.043); 
+    }
 }
 .promotion-icon_Mobile {
     width: 125px;
     height: 125px;
     background-color: #4F545F;
+    transition: transform .25s ease-in-out;
 }
 .promotion-name_Mobile {
     display: flex;
