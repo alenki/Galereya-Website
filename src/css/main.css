@@ -920,15 +920,13 @@ html {
 .promotion-icon {
     width: 125px;
     height: 125px;
-    object-fit: cover;
     transition: transform .25s ease-in-out;
 }
-
 .promotion-icon img {
-    width: 125px;
-    height: 125px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
-
 .promotion-name {
     display: flex;
     font-size: 21px;
@@ -957,10 +955,6 @@ html {
     justify-content: flex-end;
 }
 @media screen and (max-width: 850px){
-    .promotion-card {
-        /* width: 155px; */
-        /* height: 115px; */
-    }
     .promotion-icon {
         width: 36px;
         height: 36px;
@@ -974,6 +968,34 @@ html {
     .promotion-box {
         width: 130px;
         height: 105px;
+    }
+}
+@media screen and (max-width: 850px){
+    .promotion-box {
+        width: 155px;
+        height: 250px;
+    }
+    .promotion-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .promotion-name {
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .promotion-details {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .promotion-date {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width: 760px){
+    .promotion-box {
+        width: 130px;
+        height: 210px;
     }
 }
 /* --------------- End of Блок акций для больших экранов ---------------- */
@@ -1078,34 +1100,6 @@ html {
     opacity: 0.7;
     flex-direction: column; 
     justify-content: flex-end;
-}
-@media screen and (max-width: 850px){
-    .promotion-box_Mobile {
-        width: 155px;
-        height: 250px;
-    }
-    .promotion-icon_Mobile {
-        width: 80px;
-        height: 80px;
-    }
-    .promotion-name_Mobile {
-        font-size: 15px;
-        line-height: 22px;
-    }
-    .promotion-details_Mobile {
-        font-size: 12px;
-        line-height: 16px;
-    }
-    .promotion-date_Mobile {
-        font-size: 12px;
-        line-height: 16px;
-    }
-}
-@media screen and (max-width: 760px){
-    .promotion-box_Mobile {
-        width: 130px;
-        height: 210px;
-    }
 }
 /* --------------- End of Блок акций для маленьких экранов ---------------- */
 
