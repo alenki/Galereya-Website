@@ -195,12 +195,28 @@ document.onclick = function(e) {
 };
 
 
-// Loading stores
-// document.addEventListener("DOMContentLoaded", ()=>{
-//     const ui = new UI();
-//     const stores = new Stores();
-//     // get all stores
-//     stores.getStores().then(stores => {
-//         ui.displayStores(stores);
-//     })//.then(()=>{});
-// });
+// Плавная анимация навбара
+
+let lastScroll = 0;
+const defaultOffset = 100;
+const header = document.querySelector('.customFiltersSection');
+
+const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+const containHide = () => header.classList.contains('hide');
+
+window.addEventListener('scroll', () => {
+    if (document.documentElement.clientWidth < 501) {
+
+
+        if(scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
+            //scroll down
+            header.classList.add('hide');
+        }
+        else if(scrollPosition() < lastScroll && containHide()){
+            //scroll up
+            header.classList.remove('hide');
+        }
+
+        lastScroll = scrollPosition();
+    }
+})
