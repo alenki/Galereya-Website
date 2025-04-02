@@ -667,7 +667,8 @@ html {
     font-family: Navigo Regular;
     color:#EDE5D7;
     align-items: center;
-    padding: 10px 0 0 0
+    padding: 10px 0 0 0;
+    text-align: center;
 }
 .service-slider_button {
     z-index: 500;
