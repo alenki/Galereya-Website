@@ -1,8 +1,83 @@
 
+
 // Service slider
 const service_wrapper = document.querySelector(".service");
-const service_boxes = gsap.utils.toArray(".service-box");
+var service_boxes = gsap.utils.toArray(".service-box");
 const service_container = document.querySelector(".service-container");
+
+// Window load
+var service_loop;
+window.addEventListener("load", () => service_window_load(), false);
+async function service_window_load() {
+  // Update elements
+  await update_service();
+  await blur_overflown_elements_service();
+  // Initialize slider 
+  let service_activeElement;
+  service_loop = horizontalLoop_service(service_boxes, {
+      paused: true, 
+      draggable: true, // make it draggable
+      center: true, // active element is the one in the center of the container rather than th left edge
+      onChange: (element, index) => { // when the active element changes, this function gets called.
+          service_activeElement && service_activeElement.classList.remove("active");
+          element.classList.add("active");
+          service_activeElement = element;
+      }
+  });
+}
+
+// Get service elements
+class ServiceSlides{
+  async getServiceSlides(){
+    try{
+        // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+        // let contentful = await client.getEntries({
+        //     content_type: "alenkiStoreContent"
+        // });
+        let service_result = await fetch('/json/service.json');
+        let data = await service_result.json();
+        let service_slides = data.items;
+        // let service_slides = contentful.items;
+        service_slides = service_slides.map(item =>{
+            const {title, description, category} = item.fields;
+            const {id} = item.sys;
+            const image = item.fields.image.fields.file.url;
+            const logo = item.fields.logo.fields.file.url;
+            return {title, description, category, id, image, logo}
+        })
+        return service_slides
+    } catch(error) {
+        console.log(error);
+    }
+  }
+}
+// get all stores
+const service_slides = new ServiceSlides();
+async function update_service() {
+  await service_slides.getServiceSlides().then(async service_slides => {
+    let service_result = '';
+    await service_slides.forEach(service_slides => {
+      // Add sliders
+      service_result+=`
+      <div class="service-box">
+      <div class="service-card" id="serviceButton-${service_slides.id}">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.4 13.8C8.4 13.8 9.75 15.6 12 15.6C14.25 15.6 15.6 13.8 15.6 13.8M14.7 9.3H14.709M9.3 9.3H9.309M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM15.15 9.3C15.15 9.54853 14.9485 9.75 14.7 9.75C14.4515 9.75 14.25 9.54853 14.25 9.3C14.25 9.05147 14.4515 8.85 14.7 8.85C14.9485 8.85 15.15 9.05147 15.15 9.3ZM9.75 9.3C9.75 9.54853 9.54853 9.75 9.3 9.75C9.05147 9.75 8.85 9.54853 8.85 9.3C8.85 9.05147 9.05147 8.85 9.3 8.85C9.54853 8.85 9.75 9.05147 9.75 9.3Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </div>
+        <span class="service-name">${service_slides.title}</span>
+      </div>
+    </div>
+      `
+    });
+    async function update_service_swiper_wrapper(){
+      service_wrapper.innerHTML = service_result
+    }
+    await update_service_swiper_wrapper();
+    // Put sliders in variables
+    service_boxes = gsap.utils.toArray(".service-box");
+  })
+}
+
 
 // Set class to overflown elements
 function blur_overflown_elements_service() {
@@ -21,8 +96,6 @@ function blur_overflown_elements_service() {
         }
     });
 }
-// check on window load
-blur_overflown_elements_service();
 // check on changing viewport size
 window.addEventListener("resize", function() { 
   blur_overflown_elements_service();
@@ -61,18 +134,6 @@ function blur_overflown_elements_right_service() {
       }
   });
 }
-
-let service_activeElement;
-const service_loop = horizontalLoop_service(service_boxes, {
-    paused: true, 
-    draggable: true, // make it draggable
-    center: true, // active element is the one in the center of the container rather than th left edge
-    onChange: (element, index) => { // when the active element changes, this function gets called.
-        service_activeElement && service_activeElement.classList.remove("active");
-        element.classList.add("active");
-        service_activeElement = element;
-    }
-});
 
 
 let isCooldown_service = false;
