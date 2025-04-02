@@ -1,5 +1,3 @@
-
-
 // Service slider
 const service_wrapper = document.querySelector(".service");
 const service_wrapper_Mobile = document.querySelector(".service_Mobile");
@@ -28,9 +26,6 @@ async function service_window_load() {
 }
 // Window resize
 window.addEventListener("resize", async function() { 
-  // await update_service();
-  // Put sliders in variables
-  // service_boxes = gsap.utils.toArray(".service-box");
   blur_overflown_elements_service();
 })
 
@@ -72,7 +67,7 @@ async function update_service() {
         // Add sliders
         service1_result+=`
         <div class="service-box_Mobile" id="serviceButton-${service_slides.id}">
-          <div class="service-icon_Mobile">          
+          <div class="service-icon">          
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.5 16V8H13C14.3807 8 15.5 9.11929 15.5 10.5C15.5 11.8807 14.3807 13 13 13H9.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
           </div>
           <span class="service-name_Mobile">${service_slides.title}</span>

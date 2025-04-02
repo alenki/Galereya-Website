@@ -1,11 +1,104 @@
 // Promotion slider
 const promotion_wrapper = document.querySelector(".promotion");
-const promotion_boxes = gsap.utils.toArray(".promotion-box");
+const promotion_wrapper_Mobile = document.querySelector(".promotion_Mobile");
+var promotion_boxes = gsap.utils.toArray(".promotion-box");
 const promotion_container = document.querySelector(".promotion-container");
+
+// Window load
+var promotion_loop;
+window.addEventListener("load", () => promotion_window_load(), false);
+async function promotion_window_load() {
+  // Update elements
+  await update_promotion();
+  await blur_overflown_elements_promotion();
+  // Initialize slider 
+  let promotion_activeElement;
+  promotion_loop = horizontalLoop_promotion(promotion_boxes, {
+      paused: true, 
+      draggable: true, // make it draggable
+      center: true, // active element is the one in the center of the container rather than th left edge
+      onChange: (element, index) => { // when the active element changes, this function gets called.
+          promotion_activeElement && promotion_activeElement.classList.remove("active");
+          element.classList.add("active");
+          promotion_activeElement = element;
+      }
+  });
+}
+// Window resize
+window.addEventListener("resize", function() { 
+  blur_overflown_elements_promotion();
+})
+
+
+// Get promotion elements
+class PromotionSlides{
+  async getPromotionSlides(){
+    try{
+        // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+        // let contentful = await client.getEntries({
+        //     content_type: "alenkiStoreContent"
+        // });
+        let promotion_result = await fetch('/json/promotion.json');
+        let data = await promotion_result.json();
+        let promotion_slides = data.items;
+        // let promotion_slides = contentful.items;
+        promotion_slides = promotion_slides.map(item =>{
+            const {title, description, category} = item.fields;
+            const {id} = item.sys;
+            const image = item.fields.image.fields.file.url;
+            const logo = item.fields.logo.fields.file.url;
+            return {title, description, category, id, image, logo}
+        })
+        return promotion_slides
+    } catch(error) {
+        console.log(error);
+    }
+  }
+}
+// get all stores
+const promotion_slides = new PromotionSlides();
+async function update_promotion() {
+  await promotion_slides.getPromotionSlides().then(async promotion_slides => {
+    let promotion1_result = '';
+    let promotion2_result = '';
+    
+      await promotion_slides.forEach(promotion_slides => {
+        // Add sliders
+        promotion1_result+=`
+        <div class="promotion-box_Mobile" id="promotionButton-${promotion_slides.id}">
+          <div class="promotion-icon">          
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.5 16V8H13C14.3807 8 15.5 9.11929 15.5 10.5C15.5 11.8807 14.3807 13 13 13H9.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          </div>
+          <span class="promotion-name_Mobile">${promotion_slides.title}</span>
+        </div>
+        `
+      });
+    
+
+      await promotion_slides.forEach(promotion_slides => {
+        // Add sliders
+        promotion2_result+=`
+        <div class="promotion-box">
+        <div class="promotion-card" id="promotionButton-${promotion_slides.id}">
+          <div class="promotion-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.4 13.8C8.4 13.8 9.75 15.6 12 15.6C14.25 15.6 15.6 13.8 15.6 13.8M14.7 9.3H14.709M9.3 9.3H9.309M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM15.15 9.3C15.15 9.54853 14.9485 9.75 14.7 9.75C14.4515 9.75 14.25 9.54853 14.25 9.3C14.25 9.05147 14.4515 8.85 14.7 8.85C14.9485 8.85 15.15 9.05147 15.15 9.3ZM9.75 9.3C9.75 9.54853 9.54853 9.75 9.3 9.75C9.05147 9.75 8.85 9.54853 8.85 9.3C8.85 9.05147 9.05147 8.85 9.3 8.85C9.54853 8.85 9.75 9.05147 9.75 9.3Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          </div>
+          <span class="promotion-name">${promotion_slides.title}</span>
+        </div>
+      </div>
+        `
+      });
+
+    promotion_wrapper_Mobile.innerHTML = promotion1_result;
+    promotion_wrapper.innerHTML = promotion2_result;
+    // Put sliders in variables
+    promotion_boxes = gsap.utils.toArray(".promotion-box");
+  })
+}
+
 
 // Set class to overflown elements
 function blur_overflown_elements_promotion() {
-    // console.log("no");
     promotion_wrapper.querySelectorAll('.promotion-box').forEach(function(element){
         var promotion_container_startX = promotion_container.getBoundingClientRect()['x'];
         var promotion_container_endX = promotion_container_startX + promotion_container.getBoundingClientRect()['width'];
@@ -20,12 +113,6 @@ function blur_overflown_elements_promotion() {
         }
     });
 }
-// check on window load
-blur_overflown_elements_promotion();
-// check on changing viewport size
-window.addEventListener("resize", function() { 
-  blur_overflown_elements_promotion();
-})
 
 
 function blur_overflown_elements_left_promotion() {
@@ -60,18 +147,6 @@ function blur_overflown_elements_right_promotion() {
       }
   });
 }
-
-let promotion_activeElement;
-const promotion_loop = horizontalLoop_promotion(promotion_boxes, {
-    paused: true, 
-    draggable: true, // make it draggable
-    center: true, // active element is the one in the center of the container rather than th left edge
-    onChange: (element, index) => { // when the active element changes, this function gets called.
-        promotion_activeElement && promotion_activeElement.classList.remove("active");
-        element.classList.add("active");
-        promotion_activeElement = element;
-    }
-});
 
 
 let promotion_isCooldown = false;
