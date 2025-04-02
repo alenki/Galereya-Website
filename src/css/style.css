@@ -346,6 +346,8 @@ html, body {
     text-decoration: none;
     display: block;
     transition: 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .closebtn {
     font-weight: 200;
