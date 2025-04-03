@@ -1,3 +1,11 @@
+// Contentful
+import * as contentful from 'contentful'
+const client = contentful.createClient({
+    space: 'ruy22jhhank3',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: '0GUZEP5q3E4HSXJ1UXX2W6TRuyRdHPFzaIOECAXA1YA'
+})
+
 // Categories
 const categoryHeading = document.getElementById("categoryHeading");
 
@@ -62,7 +70,7 @@ document.getElementById("categoryButton-3").onclick = function () {
 
 // Детям
 document.getElementById("categoryButton-4").onclick = function () { 
-    localStorage.setItem("category", "Детям");
+    localStorage.setItem("category", "Одежда");
     Load();
 };
 
@@ -78,21 +86,24 @@ document.getElementById("categoryButton-5").onclick = function () {
 class Stores{
     async getStores(){
         try{
-
             // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-            // let contentful = await client.getEntries({
-            //     content_type: "alenkiStoreContent"
-            // });
-
-            let result = await fetch('/json/stores.json');
-            let data = await result.json();
-            let stores = data.items;
-            // let stores = contentful.items;
+            let store_data = await client.getEntries({
+                content_type: "galereyaStores"
+            });
+            // let result = await fetch('/json/stores.json');
+            // let data = await result.json();
+            let stores = store_data.items;
             stores = stores.map(item =>{
-                const {title, description, category} = item.fields;
-                const {id} = item.sys;
-                const image = item.fields.image.fields.file.url;
-                const logo = item.fields.logo.fields.file.url;
+                // const id = item.id;
+                // const title = item.title;
+                // const description = item.description;
+                // const category = item.category;
+                // const image = item.image;
+                // const logo = item.logo;
+                const {title, description, category, id, image, logo} = item.fields;
+                // const {id} = item.sys;
+                // const image = item.fields.image.fields.file.url;
+                // const logo = item.fields.logo.fields.file.url;
                 return {title, description, category, id, image, logo}
             })
             return stores

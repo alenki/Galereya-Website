@@ -4,6 +4,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger) 
+import * as contentful from 'contentful'
+const client = contentful.createClient({
+    space: 'ruy22jhhank3',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: '0GUZEP5q3E4HSXJ1UXX2W6TRuyRdHPFzaIOECAXA1YA'
+})
 
 // Loading screen / Экран загрузки
 var loadingScreen = document.querySelector(".loadingScreen");
