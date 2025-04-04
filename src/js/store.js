@@ -94,7 +94,9 @@ class Stores{
             // let data = await result.json();
             let stores = store_data.items;
             stores = stores.map(item =>{
-                const {title, description, category, id, image, logo} = item.fields;
+                console.log(item.fields.title, item.fields.logo.fields.file.url)
+                const {title, description, category, id, image} = item.fields;
+                const logo = item.fields.logo.fields.file.url;
                 return {title, description, category, id, image, logo}
             })
             return stores
@@ -110,6 +112,7 @@ class UI {
     displayStores(stores){
         let result = '';
         var category = localStorage.getItem("category");
+        console.log(stores)
         stores.forEach(stores => {
             if(stores.category == category){
                 result += `                            

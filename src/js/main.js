@@ -58,9 +58,9 @@ document.getElementById("storeButton-3").onclick = function () {
     localStorage.setItem("category", "Развлечения");
     window.location.href = "stores.html"; 
 };
-// Детям
+// Одежда
 document.getElementById("storeButton-4").onclick = function () { 
-    localStorage.setItem("category", "Детям");
+    localStorage.setItem("category", "Одежда");
     window.location.href = "stores.html"; 
 };
 // Услуги
@@ -87,9 +87,9 @@ document.getElementById("storeButton-5").onclick = function () {
 //     localStorage.setItem("category", "Развлечения");
 //     window.location.href = "stores.html"; 
 // });
-// // Детям
+// // Одежда
 // document.getElementById("serviceButton-4").addEventListener("click", function() { 
-//     localStorage.setItem("category", "Детям");
+//     localStorage.setItem("category", "Одежда");
 //     window.location.href = "stores.html"; 
 // });
 // // Услуги
@@ -116,7 +116,7 @@ document.getElementById("storeButton-5").onclick = function () {
 //     var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-3')); 
 //     promotionModal.show(); 
 // });
-// // Детям
+// // Одежда
 // document.getElementById("promotionButton-4").addEventListener("click", function() { 
 //     var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-4')); 
 //     promotionModal.show(); 

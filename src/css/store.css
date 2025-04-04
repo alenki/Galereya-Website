@@ -111,8 +111,8 @@
         text-align: center;
         align-items: center;
         justify-content: center;
-        /* -webkit-backdrop-filter: blur(11px); */
-        /* backdrop-filter: blur(11px); */
+        -webkit-backdrop-filter: blur(11px);
+        backdrop-filter: blur(11px);
         background: #ede5d7;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         padding: 0 0 0 0;
