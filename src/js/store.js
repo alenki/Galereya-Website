@@ -68,7 +68,7 @@ document.getElementById("categoryButton-3").onclick = function () {
     Load();
 };
 
-// Детям
+// Одежда
 document.getElementById("categoryButton-4").onclick = function () { 
     localStorage.setItem("category", "Одежда");
     Load();
@@ -94,16 +94,7 @@ class Stores{
             // let data = await result.json();
             let stores = store_data.items;
             stores = stores.map(item =>{
-                // const id = item.id;
-                // const title = item.title;
-                // const description = item.description;
-                // const category = item.category;
-                // const image = item.image;
-                // const logo = item.logo;
                 const {title, description, category, id, image, logo} = item.fields;
-                // const {id} = item.sys;
-                // const image = item.fields.image.fields.file.url;
-                // const logo = item.fields.logo.fields.file.url;
                 return {title, description, category, id, image, logo}
             })
             return stores
@@ -112,33 +103,6 @@ class Stores{
         }
     }
 }
-// Get carousel elements
-class Slides{
-    async getSlides(){
-      try{
-          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-          // let contentful = await client.getEntries({
-          //     content_type: "alenkiStoreContent"
-          // });
-          let carousel_result = await fetch('../json/carousel.json');
-          let data = await carousel_result.json();
-          let slides = data.items;
-          // let slides = contentful.items;
-          slides = slides.map(item =>{
-              const {title, description, category} = item.fields;
-              const {id} = item.sys;
-              const image = item.fields.image.fields.file.url;
-              const logo = item.fields.logo.fields.file.url;
-              return {title, description, category, id, image, logo}
-          })
-          return slides
-      } catch(error) {
-          console.log(error);
-      }
-    }
-  }
-  // get all stores
-  const slides = new Slides();
 
 //display stores
 const storesDOM = document.querySelector('.stores-center');
@@ -194,7 +158,6 @@ document.onclick = function(e) {
 
         stores.getStores().then(stores => {
             stores.forEach(stores => {
-                console.log(stores.id);
                 if(stores.id == e.target.id) {
                     storeModalLabel.innerHTML = stores.title;
                     storeModalInfo.innerHTML = stores.description;
@@ -217,8 +180,6 @@ const containHide = () => header.classList.contains('hide');
 
 window.addEventListener('scroll', () => {
     if (document.documentElement.clientWidth < 501) {
-
-
         if(scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
             //scroll down
             header.classList.add('hide');
