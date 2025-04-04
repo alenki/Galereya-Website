@@ -45,34 +45,34 @@ document.getElementById("menuButton-4").onclick = function () {
     localStorage.setItem("category", "Одежда");
     window.location.href = "stores.html"; 
 };
-// // Контакты
-// document.getElementById("menuButton-5").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
-// // Обратная связь
-// document.getElementById("menuButton-6").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
-// // О ГАЛЕРЕИ
-// document.getElementById("menuButton-7").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
-// // Правила ГАЛЕРЕИ
-// document.getElementById("menuButton-8").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('rulesModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
+// Контакты
+document.getElementById("menuButton-5").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
+// Обратная связь
+document.getElementById("menuButton-6").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
+// О ГАЛЕРЕИ
+document.getElementById("menuButton-7").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
+// Правила ГАЛЕРЕИ
+document.getElementById("menuButton-8").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('rentModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+};
 // End of Navbar buttons
 
 
@@ -107,34 +107,38 @@ document.getElementById("sidemenuButton-4").onclick = function () {
     localStorage.setItem("category", "Одежда");
     window.location.href = "stores.html"; 
 };
-// // Контакты
-// document.getElementById("sidemenuButton-5").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
-// // Обратная связь
-// document.getElementById("sidemenuButton-6").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
-// // О ГАЛЕРЕИ
-// document.getElementById("sidemenuButton-7").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
-// // Правила ГАЛЕРЕИ
-// document.getElementById("sidemenuButton-8").onclick = function () { 
-//     var modal = new bootstrap.Modal(document.getElementById('rulesModal'), {
-//         keyboard: false
-//     })
-//     modal.toggle()
-// };
+// Контакты
+document.getElementById("sidemenuButton-5").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+    document.getElementById("sidemenu").style.width = "0px";
+};
+// Обратная связь
+document.getElementById("sidemenuButton-6").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+    document.getElementById("sidemenu").style.width = "0px";
+};
+// О ГАЛЕРЕИ
+document.getElementById("sidemenuButton-7").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('aboutModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+    document.getElementById("sidemenu").style.width = "0px";
+};
+// Правила ГАЛЕРЕИ
+document.getElementById("sidemenuButton-8").onclick = function () { 
+    var modal = new bootstrap.Modal(document.getElementById('rentModal'), {
+        keyboard: false
+    })
+    modal.toggle()
+    document.getElementById("sidemenu").style.width = "0px";
+};
 
 // End of Mobile Nav
 

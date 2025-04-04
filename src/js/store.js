@@ -94,7 +94,6 @@ class Stores{
             // let data = await result.json();
             let stores = store_data.items;
             stores = stores.map(item =>{
-                console.log(item.fields.title, item.fields.logo.fields.file.url)
                 const {title, description, category, id, image} = item.fields;
                 const logo = item.fields.logo.fields.file.url;
                 return {title, description, category, id, image, logo}
