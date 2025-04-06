@@ -94,9 +94,9 @@ class Stores{
             // let data = await result.json();
             let stores = store_data.items;
             stores = stores.map(item =>{
-                const {title, description, category, id, image} = item.fields;
+                const {title, description, category, id, floor, image} = item.fields;
                 const logo = item.fields.logo.fields.file.url;
-                return {title, description, category, id, image, logo}
+                return {title, description, category, id, floor, image, logo}
             })
             return stores
         } catch(error) {
@@ -134,7 +134,7 @@ class UI {
                           <p class="store-caption storeButton" id="${stores.id}">${stores.description}</p>
                         </div>
                         <div class="storeButton" id="${stores.id}">
-                          <span class="store-floor storeButton" id="${stores.id}">3 этаж</span>
+                          <span class="store-floor storeButton" id="${stores.id}">${stores.floor} этаж</span>
                         </div>
                           
                       </div>
