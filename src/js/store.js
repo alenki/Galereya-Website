@@ -150,23 +150,23 @@ class UI {
 // Detailed store info
 // get all stores
 const stores = new Stores();
-document.onclick = function(e) {
+document.onclick = async function(e) {
     if(e.target.classList.contains("storeButton")){
         var storeModalLabel = document.getElementById("storeModalLabel");
         var storeModalInfo = document.getElementById("storeModalInfo");
 
         var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
-        storeModal.show();
 
-        stores.getStores().then(stores => {
+        await stores.getStores().then(stores => {
             stores.forEach(stores => {
                 if(stores.id == e.target.id) {
                     storeModalLabel.innerHTML = stores.title;
                     storeModalInfo.innerHTML = stores.description;
-                    
                 }
             });
         })
+
+        storeModal.show();
     }
 };
 
