@@ -26,6 +26,7 @@ function Load() {
 
         // open up store if there is need for it
         var pagination_id = localStorage.getItem("pagination");
+        pagination_id = 0;
         if(pagination_id != 0){
             var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
             var storeModalLabel = document.getElementById("storeModalLabel");
@@ -111,7 +112,6 @@ class UI {
     displayStores(stores){
         let result = '';
         var category = localStorage.getItem("category");
-        console.log(stores)
         stores.forEach(stores => {
             if(stores.category == category){
                 result += `                            
@@ -154,7 +154,6 @@ document.onclick = async function(e) {
     if(e.target.classList.contains("storeButton")){
         var storeModalLabel = document.getElementById("storeModalLabel");
         var storeModalInfo = document.getElementById("storeModalInfo");
-
         var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
 
         await stores.getStores().then(stores => {

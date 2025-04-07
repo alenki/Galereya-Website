@@ -1,3 +1,7 @@
+// on load
+window.addEventListener('load', function() {
+    localStorage.setItem("pagination", "0");
+})
 
 // Loading screen / Экран загрузки
 var loadingScreen = document.querySelector(".loadingScreen");
