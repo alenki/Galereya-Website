@@ -100,30 +100,73 @@ document.getElementById("storeButton-5").onclick = function () {
 // // End of Service buttons
 
 
-// // Promotion buttons
-// // Магазины
-// document.getElementById("promotionButton-1").addEventListener("click", function() { 
-//     var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-1')); 
-//     promotionModal.show(); 
-// });
-// // Еда
-// document.getElementById("promotionButton-2").addEventListener("click", function() { 
-//     var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-2')); 
-//     promotionModal.show(); 
-// });
-// // Развлечения
-// document.getElementById("promotionButton-3").addEventListener("click", function() { 
-//     var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-3')); 
-//     promotionModal.show(); 
-// });
-// // Одежда
-// document.getElementById("promotionButton-4").addEventListener("click", function() { 
-//     var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-4')); 
-//     promotionModal.show(); 
-// });
-// // Услуги
-// document.getElementById("promotionButton-5").addEventListener("click", function() { 
-//     var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-5')); 
-//     promotionModal.show(); 
-// });
-// // End of Promotion buttons
+// Promotion buttons
+// Get promotion elements
+class PromotionSlides{
+    async getPromotionSlides(){
+      try{
+          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+          // let contentful = await client.getEntries({
+          //     content_type: "alenkiStoreContent"
+          // });
+          let promotion_result = await fetch('/json/promotion.json');
+          let data = await promotion_result.json();
+          let promotion_slides = data.items;
+          // let promotion_slides = contentful.items;
+          promotion_slides = promotion_slides.map(item =>{
+              const {title, description, category} = item.fields;
+              const {id} = item.sys;
+              const image = item.fields.image.fields.file.url;
+              const logo = item.fields.logo.fields.file.url;
+              return {title, description, category, id, image, logo}
+          })
+          return promotion_slides
+      } catch(error) {
+          console.log(error);
+      }
+    }
+  }
+  
+const promotion_slides = new PromotionSlides();
+const promotion_title = document.querySelector(".promotionModal-title");
+const promotion_description = document.querySelector(".promotionModal-description");
+document.onclick = function(e) {
+    if (e.target.classList.contains("promotion-onclick")) {
+        promotion_slides.getPromotionSlides().then(promotion_slides => {
+            promotion_slides.forEach(promotion_slides => {
+                if(e.target.id == promotion_slides.id){
+                    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal')); 
+                    promotionModal.show(); 
+                    promotion_title.innerHTML = promotion_slides.title;
+                    promotion_description.innerHTML = promotion_slides.description;
+                }
+            })
+        })
+    }
+};
+// Магазины
+document.getElementById("promotionButton-1").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-1')); 
+    promotionModal.show(); 
+});
+// Еда
+document.getElementById("promotionButton-2").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-2')); 
+    promotionModal.show(); 
+});
+// Развлечения
+document.getElementById("promotionButton-3").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-3')); 
+    promotionModal.show(); 
+});
+// Одежда
+document.getElementById("promotionButton-4").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-4')); 
+    promotionModal.show(); 
+});
+// Услуги
+document.getElementById("promotionButton-5").addEventListener("click", function() { 
+    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-5')); 
+    promotionModal.show(); 
+});
+// End of Promotion buttons
