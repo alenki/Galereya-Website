@@ -15,6 +15,7 @@ const swiper_pagination_3 = document.getElementById("swiper-pagination-ball-3");
 var swiper_loop;
 window.addEventListener("load", () => carousel_window_load(), false);
 async function carousel_window_load() {
+  localStorage.setItem("pagination", 0);
   // Update elements
   await update_carousel();
   update_info_panel();
@@ -246,6 +247,20 @@ swiper_pagination_3.addEventListener("click", () => {
   pagination_id=3;
 });
 
+// details
+document.querySelector(".about-post-button").addEventListener("click", () => {
+  slides.getSlides().then(slides => {
+    slides.forEach(slides => {
+        if(slides.id == pagination_id) {
+            localStorage.setItem("slide_title", slides.title);
+            localStorage.setItem("slide_description", slides.description);
+            localStorage.setItem("slide_category", slides.category);
+        }
+    });
+  })
+  localStorage.setItem("pagination", pagination_id);
+  window.location.href = "stores.html"; 
+})
 
 // Autoplay
 // Start autoplaying automatically

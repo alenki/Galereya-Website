@@ -36,12 +36,6 @@ location_btn.onclick = function() {
 };
 // End of 2 main buttons on top
 
-// carousel
-document.querySelector(".about-post-button").addEventListener("click", () => {
-    localStorage.setItem("pagination", pagination_id);
-    window.location.href = "stores.html"; 
-})
-
 // 6 Buttons below carousel
 // Магазины
 document.getElementById("storeButton-1").onclick = function () { 
@@ -144,29 +138,3 @@ document.onclick = function(e) {
         })
     }
 };
-// Магазины
-document.getElementById("promotionButton-1").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-1')); 
-    promotionModal.show(); 
-});
-// Еда
-document.getElementById("promotionButton-2").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-2')); 
-    promotionModal.show(); 
-});
-// Развлечения
-document.getElementById("promotionButton-3").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-3')); 
-    promotionModal.show(); 
-});
-// Одежда
-document.getElementById("promotionButton-4").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-4')); 
-    promotionModal.show(); 
-});
-// Услуги
-document.getElementById("promotionButton-5").addEventListener("click", function() { 
-    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal-5')); 
-    promotionModal.show(); 
-});
-// End of Promotion buttons
