@@ -3,18 +3,18 @@
       {
         "sys": { "id": "1" },
         "fields": {
-          "title": "COLINS",
-          "description": "Мы, в COLIN’S, говорим: Мы занимаемся не просто производством готовой одежды, но тем, чтобы люди чувствовали себя лучше благодаря нашим товарам и услугам. Именно поэтому в любом нашем магазине, в любой точке мира, мы предлагаем нашим покупателям инновации, стиль и качество. 10:00-20:00",
+          "title": "Colins",
+          "description": "Скидка 10% на первый заказ",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
       },
       {
         "sys": { "id": "2" },
         "fields": {
-          "title": "Л`этуаль",
-          "description": "Косметика и парфюмерия для любого настроения и случая. Так легко баловать себя! · Оплата частями. Идеи для подарков. Оригинальные бренды. Бонусы за покупки",
+          "title": "Zolla",
+          "description": "Межсезонная распродажа. Скидки до 50%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } }
@@ -23,8 +23,8 @@
       {
         "sys": { "id": "3" },
         "fields": {
-          "title": "O`STIN",
-          "description": "O′STIN – это комфортный интернет-шопинг и более 630 розничных магазинов. 21 год мы выпускаем одежду в стиле сasual для любых ситуаций, времени года и погоды, помогая покупателям создать свой собственный, неповторимый образ.",
+          "title": "Спортмастер",
+          "description": "Скидки на верхнюю одежду до 70%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } }
@@ -33,18 +33,18 @@
       {
         "sys": { "id": "4" },
         "fields": {
-          "title": "COLINS",
-          "description": "Мы, в COLIN’S, говорим: Мы занимаемся не просто производством готовой одежды, но тем, чтобы люди чувствовали себя лучше благодаря нашим товарам и услугам. Именно поэтому в любом нашем магазине, в любой точке мира, мы предлагаем нашим покупателям инновации, стиль и качество. 10:00-20:00",
+          "title": "Colins",
+          "description": "Скидка 10% на первый заказ",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
       },
       {
         "sys": { "id": "5" },
         "fields": {
-          "title": "Л`этуаль",
-          "description": "Косметика и парфюмерия для любого настроения и случая. Так легко баловать себя! · Оплата частями. Идеи для подарков. Оригинальные бренды. Бонусы за покупки",
+          "title": "Zolla",
+          "description": "Межсезонная распродажа. Скидки до 50%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } }
@@ -53,8 +53,8 @@
       {
         "sys": { "id": "6" },
         "fields": {
-          "title": "O`STIN",
-          "description": "O′STIN – это комфортный интернет-шопинг и более 630 розничных магазинов. 21 год мы выпускаем одежду в стиле сasual для любых ситуаций, времени года и погоды, помогая покупателям создать свой собственный, неповторимый образ.",
+          "title": "Спортмастер",
+          "description": "Скидки на верхнюю одежду до 70%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } }
@@ -63,18 +63,18 @@
       {
         "sys": { "id": "7" },
         "fields": {
-          "title": "COLINS",
-          "description": "Мы, в COLIN’S, говорим: Мы занимаемся не просто производством готовой одежды, но тем, чтобы люди чувствовали себя лучше благодаря нашим товарам и услугам. Именно поэтому в любом нашем магазине, в любой точке мира, мы предлагаем нашим покупателям инновации, стиль и качество. 10:00-20:00",
+          "title": "Colins",
+          "description": "Скидка 10% на первый заказ",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
       },
       {
         "sys": { "id": "8" },
         "fields": {
-          "title": "Л`этуаль",
-          "description": "Косметика и парфюмерия для любого настроения и случая. Так легко баловать себя! · Оплата частями. Идеи для подарков. Оригинальные бренды. Бонусы за покупки",
+          "title": "Zolla",
+          "description": "Межсезонная распродажа. Скидки до 50%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } }
@@ -83,8 +83,8 @@
       {
         "sys": { "id": "9" },
         "fields": {
-          "title": "O`STIN",
-          "description": "O′STIN – это комфортный интернет-шопинг и более 630 розничных магазинов. 21 год мы выпускаем одежду в стиле сasual для любых ситуаций, времени года и погоды, помогая покупателям создать свой собственный, неповторимый образ.",
+          "title": "Спортмастер",
+          "description": "Скидки на верхнюю одежду до 70%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } }
@@ -93,18 +93,18 @@
       {
         "sys": { "id": "10" },
         "fields": {
-          "title": "COLINS",
-          "description": "Мы, в COLIN’S, говорим: Мы занимаемся не просто производством готовой одежды, но тем, чтобы люди чувствовали себя лучше благодаря нашим товарам и услугам. Именно поэтому в любом нашем магазине, в любой точке мира, мы предлагаем нашим покупателям инновации, стиль и качество. 10:00-20:00",
+          "title": "Colins",
+          "description": "Скидка 10% на первый заказ",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
       },
       {
         "sys": { "id": "11" },
         "fields": {
-          "title": "Л`этуаль",
-          "description": "Косметика и парфюмерия для любого настроения и случая. Так легко баловать себя! · Оплата частями. Идеи для подарков. Оригинальные бренды. Бонусы за покупки",
+          "title": "Zolla",
+          "description": "Межсезонная распродажа. Скидки до 50%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } }
@@ -113,8 +113,8 @@
       {
         "sys": { "id": "12" },
         "fields": {
-          "title": "O`STIN",
-          "description": "O′STIN – это комфортный интернет-шопинг и более 630 розничных магазинов. 21 год мы выпускаем одежду в стиле сasual для любых ситуаций, времени года и погоды, помогая покупателям создать свой собственный, неповторимый образ.",
+          "title": "Спортмастер",
+          "description": "Скидки на верхнюю одежду до 70%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } }
@@ -123,18 +123,18 @@
       {
         "sys": { "id": "13" },
         "fields": {
-          "title": "COLINS",
-          "description": "Мы, в COLIN’S, говорим: Мы занимаемся не просто производством готовой одежды, но тем, чтобы люди чувствовали себя лучше благодаря нашим товарам и услугам. Именно поэтому в любом нашем магазине, в любой точке мира, мы предлагаем нашим покупателям инновации, стиль и качество. 10:00-20:00",
+          "title": "Colins",
+          "description": "Скидка 10% на первый заказ",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
       },
       {
         "sys": { "id": "14" },
         "fields": {
-          "title": "Л`этуаль",
-          "description": "Косметика и парфюмерия для любого настроения и случая. Так легко баловать себя! · Оплата частями. Идеи для подарков. Оригинальные бренды. Бонусы за покупки",
+          "title": "Zolla",
+          "description": "Межсезонная распродажа. Скидки до 50%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } }
@@ -143,8 +143,8 @@
       {
         "sys": { "id": "15" },
         "fields": {
-          "title": "O`STIN",
-          "description": "O′STIN – это комфортный интернет-шопинг и более 630 розничных магазинов. 21 год мы выпускаем одежду в стиле сasual для любых ситуаций, времени года и погоды, помогая покупателям создать свой собственный, неповторимый образ.",
+          "title": "Спортмастер",
+          "description": "Скидки на верхнюю одежду до 70%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } }
@@ -153,18 +153,18 @@
       {
         "sys": { "id": "16" },
         "fields": {
-          "title": "COLINS",
-          "description": "Мы, в COLIN’S, говорим: Мы занимаемся не просто производством готовой одежды, но тем, чтобы люди чувствовали себя лучше благодаря нашим товарам и услугам. Именно поэтому в любом нашем магазине, в любой точке мира, мы предлагаем нашим покупателям инновации, стиль и качество. 10:00-20:00",
+          "title": "Colins",
+          "description": "Скидка 10% на первый заказ",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
       },
       {
         "sys": { "id": "17" },
         "fields": {
-          "title": "Л`этуаль",
-          "description": "Косметика и парфюмерия для любого настроения и случая. Так легко баловать себя! · Оплата частями. Идеи для подарков. Оригинальные бренды. Бонусы за покупки",
+          "title": "Zolla",
+          "description": "Межсезонная распродажа. Скидки до 50%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } }
@@ -173,8 +173,8 @@
       {
         "sys": { "id": "18" },
         "fields": {
-          "title": "O`STIN",
-          "description": "O′STIN – это комфортный интернет-шопинг и более 630 розничных магазинов. 21 год мы выпускаем одежду в стиле сasual для любых ситуаций, времени года и погоды, помогая покупателям создать свой собственный, неповторимый образ.",
+          "title": "Спортмастер",
+          "description": "Скидки на верхнюю одежду до 70%",
           "category": "Магазины",
           "image": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } }
@@ -183,11 +183,11 @@
       {
         "sys": { "id": "19" },
         "fields": {
-          "title": "COLINS",
-          "description": "Мы, в COLIN’S, говорим: Мы занимаемся не просто производством готовой одежды, но тем, чтобы люди чувствовали себя лучше благодаря нашим товарам и услугам. Именно поэтому в любом нашем магазине, в любой точке мира, мы предлагаем нашим покупателям инновации, стиль и качество. 10:00-20:00",
+          "title": "Colins",
+          "description": "Скидка 10% на первый заказ",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
       }
     ]
