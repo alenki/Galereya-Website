@@ -75,7 +75,7 @@
 /* адаптация под телефон */
 @media (max-width: 677px) {
     .catalog-section{
-        width: 100%;
+        width: 100% !important;
         /* position: absolute; */
     }
 
@@ -175,15 +175,6 @@
     padding-top: 6rem;
     display: flex;
 }
-
-/* @media (max-width: 500px) {
-    .catalog-box {
-        flex-direction: column;
-        padding-top:150px;
-
-    }
-    
-} */
 
 .catalog-inner {
     z-index: 100;
