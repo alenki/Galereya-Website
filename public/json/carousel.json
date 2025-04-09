@@ -16,8 +16,8 @@
           "title": "Л`этуаль",
           "description": "Косметика и парфюмерия для любого настроения и случая. Так легко баловать себя! · Оплата частями. Идеи для подарков. Оригинальные бренды. Бонусы за покупки",
           "category": "Магазины",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/letual.jpg" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/letual1.jpg" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/letual1.jpg" } } }
         }
       },
       {
