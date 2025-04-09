@@ -106,6 +106,7 @@ html, body {
     line-height: 22px;
     font-family: Navigo Regular;
     font-weight: 500;
+    cursor: pointer;
 }
 /* Navbar Brand (Галерея) */
 
@@ -348,6 +349,7 @@ html, body {
     transition: 0.3s;
     overflow: hidden;
     white-space: nowrap;
+    cursor: pointer;
 }
 .closebtn {
     font-weight: 200;

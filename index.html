@@ -96,7 +96,7 @@
                     <div class="pb-4"><a class="menu_text" id="menuButton-5">Контакты</a></div>
                     <div class="pb-4"><a class="menu_text" id="menuButton-6">Обратная связь</a></div>
                     <div class="pb-4"><a class="menu_text" id="menuButton-7">О ГАЛЕРЕЕ</a></div>
-                    <div class="pb-4"><a class="menu_text" id="menuButton-8">Правила ГАЛЕРЕИ</a></div>
+                    <div class="pb-4"><a class="menu_text" id="menuButton-8">Арендаторам</a></div>
                   </div>
                   <!-- 4 -->
                   <div class="menu_column col-3 pt-4 d-flex justify-content-center">
@@ -132,7 +132,7 @@
           <a class="sidemenu_text" id="sidemenuButton-5">Контакты</a>
           <a class="sidemenu_text" id="sidemenuButton-6">Обратная связь</a>
           <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕЕ</a>
-          <a class="sidemenu_text" id="sidemenuButton-8">Правила ГАЛЕРЕИ</a>
+          <a class="sidemenu_text" id="sidemenuButton-8">Арендаторам</a>
         </div>
       </div>
 
@@ -251,16 +251,16 @@
       <!-- 6 buttons after carousel -->
       <section class="bg-nav-bg pb-3 pb-md-5 ">
         <div class="container">
-          <div class="d-flex d-sm-block justify-content-center ">
-            <div class="main-bottom-buttons_block d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3">
+          <div class="d-flex d-md-block justify-content-center ">
+            <div class="main-bottom-buttons_block d-flex flex-column flex-md-row justify-content-between align-items-center pt-3">
               <button type="button" class="btn btn-primary custom-main-bottom-buttons text-secondary" id="storeButton-1">Магазины</button>
-              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-2">Еда</button>
-              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-3">Развлечения</button>
+              <button type="button" class="btn btn-primary mt-2 mt-md-0 custom-main-bottom-buttons text-secondary" id="storeButton-2">Еда</button>
+              <button type="button" class="btn btn-primary mt-2 mt-md-0 custom-main-bottom-buttons text-secondary" id="storeButton-3">Развлечения</button>
             </div>
-            <div class="main-bottom-buttons_block d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3">
+            <div class="main-bottom-buttons_block d-flex flex-column flex-md-row justify-content-between align-items-center pt-3">
               <button type="button" class="btn btn-primary custom-main-bottom-buttons text-secondary" id="storeButton-4">Одежда</button>
-              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-5">Услуги</button>
-              <button type="button" class="btn btn-primary mt-2 mt-sm-0 custom-main-bottom-buttons text-secondary" id="storeButton-6">Режим работы</button>
+              <button type="button" class="btn btn-primary mt-2 mt-md-0 custom-main-bottom-buttons text-secondary" id="storeButton-5">Услуги</button>
+              <button type="button" class="btn btn-primary mt-2 mt-md-0 custom-main-bottom-buttons text-secondary" id="storeButton-6">Режим работы</button>
             </div>
           </div>
           
@@ -367,13 +367,16 @@
             <p class="d-md-flex d-none">&copy; 2025 KARAF Company, Inc. All rights reserved.</p>
             <ul class="nav pb-4 col-md-6 justify-content-md-end">
               <li class="nav-item">
+                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#aboutModal">О ГАЛЕРЕЕ</button>
+              </li>
+              <li class="nav-item">
                 <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#contactsModal">Контакты</button>
               </li>
               <li class="nav-item">
                 <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#feedbackModal">Обратная связь</button>
               </li>
               <li class="nav-item">
-                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#aboutModal">О ГАЛЕРЕЕ</button>
+                <button class="btn btn-link px-2 text-body-primary" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#rentModal">Арендаторам</button>
               </li>
               <li class="nav-item">
               </li>
@@ -499,96 +502,39 @@
     </div>
   </div>
 
-  <!-- Rules Modal (что отображает кнопка "Правила ГАЛЕРЕИ" внизу) -->
-  <div class="modal fade bd-example-modal-lg" id="rulesModal" tabindex="-1" role="dialog">
+  <!-- Rent Modal (что отображает кнопка "Арендаторам" внизу) -->
+  <div class="modal fade bd-example-modal-lg" id="rentModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Правила ГАЛЕРЕИ</h1>
+            <h1 class="modal-title fs-5" id="enrollLabel">Арендаторам</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          информация о правилах галереи
+          <b>Менеджер по аренде:<br></b>
+          Ацканова Зарема Мухамедовна: 8(928)075-54-59<br><br>
+          <b>Заместитель исполнительного директора по развитию:<br></b>
+          Халишхова Алина Казбековна: 8(906)707-77-00
         </div>
       </div>
     </div>
   </div>
 
   <!-- Promotion Modal One (что отображает первая кнопка раздела "Что нового") -->
-  <div class="modal fade bd-example-modal-lg" id="promotionModal-1" tabindex="-1" role="dialog">
+  <div class="modal fade bd-example-modal-lg" id="promotionModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Информация 1</h1>
+            <h1 class="modal-title fs-5" id="enrollLabel"><span class="promotionModal-title">Информация 1</span></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Информация
+          <span class="promotionModal-description">Информация</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Promotion Modal Two (что отображает вторая кнопка раздела "Что нового") -->
-  <div class="modal fade bd-example-modal-lg" id="promotionModal-2" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Информация 2</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Информация
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Promotion Modal Three (что отображает третьяя кнопка раздела "Что нового") -->
-  <div class="modal fade bd-example-modal-lg" id="promotionModal-3" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Информация 3</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Информация
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Promotion Modal Four (что отображает четвертая кнопка раздела "Что нового") -->
-  <div class="modal fade bd-example-modal-lg" id="promotionModal-4" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Информация 4</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Информация
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Promotion Modal Five (что отображает пятая кнопка раздела "Что нового") -->
-  <div class="modal fade bd-example-modal-lg" id="promotionModal-5" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Информация 5</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Информация
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
     <!-- JQuery Javascript -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->

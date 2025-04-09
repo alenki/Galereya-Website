@@ -547,7 +547,7 @@ html {
     line-height: 22px;
     font-family: Navigo Regular;
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 767px) {
     .custom-main-bottom-buttons {
         width: 90%;
     }

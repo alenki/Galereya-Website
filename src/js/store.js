@@ -15,7 +15,6 @@ window.onload = function() {
 
 // Загрузить все в зависимости от фильтра
 function Load() {
-
     // Загрузить все магазины
     const ui = new UI();
     const stores = new Stores();
@@ -30,21 +29,16 @@ function Load() {
             var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
             var storeModalLabel = document.getElementById("storeModalLabel");
             var storeModalInfo = document.getElementById("storeModalInfo");
+            var storeSlide_title = localStorage.getItem("slide_title");
+            var storeSlide_description = localStorage.getItem("slide_description");
+            var storeSlide_category = localStorage.getItem("slide_category");
             storeModal.show();
-            slides.getSlides().then(slides => {
-                slides.forEach(slides => {
-                    console.log(slides.id);
-                    if(slides.id == pagination_id) {
-                        storeModalLabel.innerHTML = slides.title;
-                        storeModalInfo.innerHTML = slides.description;
-                        localStorage.setItem("category", slides.category);
-                    }
-                });
-            }).then(()=>{
-                localStorage.setItem("pagination", "0");
-            });
+                stores.forEach(stores => {
+                    storeModalLabel.innerHTML = storeSlide_title;
+                    storeModalInfo.innerHTML = storeSlide_description;
+                    localStorage.setItem("category", storeSlide_category);
+                })
         }
-
         // update category
         var category = localStorage.getItem("category")
         categoryHeading.innerHTML = category;
@@ -81,6 +75,33 @@ document.getElementById("categoryButton-5").onclick = function () {
 };
 // End of Categories
 
+// Get carousel elements
+class Slides{
+    async getSlides(){
+      try{
+          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+          // let contentful = await client.getEntries({
+          //     content_type: "alenkiStoreContent"
+          // });
+          let carousel_result = await fetch('/json/carousel.json');
+          let data = await carousel_result.json();
+          let slides = data.items;
+          // let slides = contentful.items;
+          slides = slides.map(item =>{
+              const {title, description, category} = item.fields;
+              const {id} = item.sys;
+              const image = item.fields.image.fields.file.url;
+              const logo = item.fields.logo.fields.file.url;
+              return {title, description, category, id, image, logo}
+          })
+          return slides
+      } catch(error) {
+          console.log(error);
+      }
+    }
+  }
+  // get all stores
+  const slides = new Slides();
 
 // getting the stores
 class Stores{
@@ -94,8 +115,9 @@ class Stores{
             // let data = await result.json();
             let stores = store_data.items;
             stores = stores.map(item =>{
-                const {title, description, category, id, image, logo} = item.fields;
-                return {title, description, category, id, image, logo}
+                const {title, description, category, id, floor, image} = item.fields;
+                const logo = item.fields.logo.fields.file.url;
+                return {title, description, category, id, floor, image, logo}
             })
             return stores
         } catch(error) {
@@ -132,7 +154,7 @@ class UI {
                           <p class="store-caption storeButton" id="${stores.id}">${stores.description}</p>
                         </div>
                         <div class="storeButton" id="${stores.id}">
-                          <span class="store-floor storeButton" id="${stores.id}">3 этаж</span>
+                          <span class="store-floor storeButton" id="${stores.id}">${stores.floor} этаж</span>
                         </div>
                           
                       </div>
@@ -148,23 +170,22 @@ class UI {
 // Detailed store info
 // get all stores
 const stores = new Stores();
-document.onclick = function(e) {
+document.onclick = async function(e) {
     if(e.target.classList.contains("storeButton")){
         var storeModalLabel = document.getElementById("storeModalLabel");
         var storeModalInfo = document.getElementById("storeModalInfo");
-
         var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
-        storeModal.show();
 
-        stores.getStores().then(stores => {
+        await stores.getStores().then(stores => {
             stores.forEach(stores => {
                 if(stores.id == e.target.id) {
                     storeModalLabel.innerHTML = stores.title;
                     storeModalInfo.innerHTML = stores.description;
-                    
                 }
             });
         })
+
+        storeModal.show();
     }
 };
 

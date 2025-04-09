@@ -73,7 +73,17 @@
 }
 
 /* адаптация под телефон */
-@media (max-width: 500px) {
+@media (max-width: 677px) {
+    .catalog-section{
+        width: 100% !important;
+        /* position: absolute; */
+    }
+
+    .catalog-box {
+        flex-direction: column;
+        padding-top:150px !important;
+    }
+
     .customFiltersSection {
         z-index: 900;
         display: flex;
@@ -89,7 +99,7 @@
         -webkit-box-shadow: none;
         box-shadow: 0px -10px 200px rgba(0, 0, 0, 0.1);
         scrollbar-width: none;
-        /* backdrop-filter: blur(2rem); */
+        backdrop-filter: blur(2rem);
         transform: translateY(0);
         transition: transform .3s;
     }
@@ -111,8 +121,8 @@
         text-align: center;
         align-items: center;
         justify-content: center;
-        /* -webkit-backdrop-filter: blur(11px); */
-        /* backdrop-filter: blur(11px); */
+        -webkit-backdrop-filter: blur(11px);
+        backdrop-filter: blur(11px);
         background: #ede5d7;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         padding: 0 0 0 0;
@@ -139,6 +149,8 @@
         margin-left: 0rem;
         color: #212222b6;
     }
+
+    
     
 }
 
@@ -156,29 +168,12 @@
     position: absolute;
 }
 
-@media (max-width: 500px) {
-    .catalog-section{
-        width: 100%;
-        /* position: absolute; */
-    }
-    
-}
-
 /* блок в котором находится весь католог */
 .catalog-box{
     /* position: absolute; */
     width: 100%;
     padding-top: 6rem;
     display: flex;
-}
-
-@media (max-width: 500px) {
-    .catalog-box {
-        flex-direction: column;
-        padding-top:150px;
-
-    }
-    
 }
 
 .catalog-inner {
@@ -197,12 +192,6 @@
     color: #212222b6;
 }
 
-@media (max-width: 500px) {
-    .customCategoryHeadingTitle{
-        
-    }
-    
-}
 
 /* ------------- Карты магазинов ----------- */
 
