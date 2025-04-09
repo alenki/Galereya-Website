@@ -44,11 +44,11 @@ class ServiceSlides{
         let service_slides = data.items;
         // let service_slides = contentful.items;
         service_slides = service_slides.map(item =>{
-            const {title, description, category} = item.fields;
+            const {title, description, category, icon} = item.fields;
             const {id} = item.sys;
             const image = item.fields.image.fields.file.url;
             const logo = item.fields.logo.fields.file.url;
-            return {title, description, category, id, image, logo}
+            return {title, description, category, id, image, logo, icon}
         })
         return service_slides
     } catch(error) {
@@ -62,13 +62,16 @@ async function update_service() {
   await service_slides.getServiceSlides().then(async service_slides => {
     let service1_result = '';
     let service2_result = '';
+    var service_amount = 0;
     
       await service_slides.forEach(service_slides => {
+        //Amount of services
+        service_amount+=1;
         // Add sliders
         service1_result+=`
         <div class="service-box_Mobile" id="serviceButton-${service_slides.id}">
           <div class="service-icon">          
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.5 16V8H13C14.3807 8 15.5 9.11929 15.5 10.5C15.5 11.8807 14.3807 13 13 13H9.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            ${service_slides.icon}
           </div>
           <span class="service-name_Mobile">${service_slides.title}</span>
         </div>
@@ -82,7 +85,7 @@ async function update_service() {
         <div class="service-box">
         <div class="service-card" id="serviceButton-${service_slides.id}">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.4 13.8C8.4 13.8 9.75 15.6 12 15.6C14.25 15.6 15.6 13.8 15.6 13.8M14.7 9.3H14.709M9.3 9.3H9.309M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM15.15 9.3C15.15 9.54853 14.9485 9.75 14.7 9.75C14.4515 9.75 14.25 9.54853 14.25 9.3C14.25 9.05147 14.4515 8.85 14.7 8.85C14.9485 8.85 15.15 9.05147 15.15 9.3ZM9.75 9.3C9.75 9.54853 9.54853 9.75 9.3 9.75C9.05147 9.75 8.85 9.54853 8.85 9.3C8.85 9.05147 9.05147 8.85 9.3 8.85C9.54853 8.85 9.75 9.05147 9.75 9.3Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            ${service_slides.icon}
           </div>
           <span class="service-name">${service_slides.title}</span>
         </div>
@@ -99,6 +102,11 @@ async function update_service() {
     //     service_wrapper.innerHTML = service_result;
     //   }
     // }
+    while(service_amount <= 19) {
+      service_amount *= 2;
+      service1_result += service1_result;
+      service2_result += service2_result;
+    }
     service_wrapper_Mobile.innerHTML = service1_result;
     service_wrapper.innerHTML = service2_result;
     // await update_service_swiper_wrapper();
