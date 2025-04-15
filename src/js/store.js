@@ -39,6 +39,20 @@ function Load() {
                     localStorage.setItem("category", storeSlide_category);
                 })
         }
+        
+        // open up service if there is need for it
+        var service_open = localStorage.getItem("service");
+        if(service_open == "open"){
+                        var serviceModal = new bootstrap.Modal(document.getElementById('serviceModal')); 
+                        var serviceModalTitle = document.querySelector(".serviceModal_title");
+                        var serviceModalDescription = document.querySelector(".serviceModal_description");
+                        var serviceSlide_title = localStorage.getItem("service_slide_title");
+                        var serviceSlide_description = localStorage.getItem("service_slide_description");
+                        serviceModal.show(); 
+                        serviceModalTitle.innerHTML = serviceSlide_title;
+                        serviceModalDescription.innerHTML = serviceSlide_description;
+        }
+
         // update category
         var category = localStorage.getItem("category")
         categoryHeading.innerHTML = category;

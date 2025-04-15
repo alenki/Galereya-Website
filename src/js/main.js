@@ -66,6 +66,37 @@ document.getElementById("storeButton-5").onclick = function () {
 
 
 // // Service buttons
+// Get service elements
+class ServiceSlides{
+    async getServiceSlides(){
+      try{
+          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+          // let contentful = await client.getEntries({
+          //     content_type: "alenkiStoreContent"
+          // });
+          let service_result = await fetch('/json/service.json');
+          let data = await service_result.json();
+          let service_slides = data.items;
+          // let service_slides = contentful.items;
+          service_slides = service_slides.map(item =>{
+              const {title, description, category, icon} = item.fields;
+              const {id} = item.sys;
+              const image = item.fields.image.fields.file.url;
+              const logo = item.fields.logo.fields.file.url;
+              return {title, description, category, id, image, logo, icon}
+          })
+          return service_slides
+      } catch(error) {
+          console.log(error);
+      }
+    }
+  }
+
+
+document.onclick = function(e) {
+    
+    // localStorage.setItem("pagination", pagination_id);
+};
 // // Магазины
 // document.getElementById("serviceButton-1").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Магазины");
@@ -120,11 +151,17 @@ class PromotionSlides{
       }
     }
   }
-  
+
 const promotion_slides = new PromotionSlides();
 const promotion_title = document.querySelector(".promotionModal-title");
 const promotion_description = document.querySelector(".promotionModal-description");
-document.onclick = function(e) {
+
+const service_slides = new ServiceSlides();
+const service_title = document.querySelector(".serviceModal-title");
+const service_description = document.querySelector(".serviceModal-description");
+
+// promotion and service onclick
+document.onclick = async function(e) {
     if (e.target.classList.contains("promotion-onclick")) {
         promotion_slides.getPromotionSlides().then(promotion_slides => {
             promotion_slides.forEach(promotion_slides => {
@@ -136,5 +173,17 @@ document.onclick = function(e) {
                 }
             })
         })
+    } else if (e.target.classList.contains("service-onclick")) {
+        await service_slides.getServiceSlides().then(service_slides => {
+            service_slides.forEach(service_slides => {
+                if(service_slides.id == e.target.id) {
+                    localStorage.setItem("service_slide_title", service_slides.title);
+                    localStorage.setItem("service_slide_description", service_slides.description);
+                }
+            });
+        })
+        localStorage.setItem("category", "Услуги");
+        localStorage.setItem("service", "open");
+        window.location.href = "stores.html"; 
     }
-};
+}

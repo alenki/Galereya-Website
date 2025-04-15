@@ -69,11 +69,11 @@ async function update_service() {
         service_amount+=1;
         // Add sliders
         service1_result+=`
-        <div class="service-box_Mobile" id="serviceButton-${service_slides.id}">
-          <div class="service-icon">          
+        <div class="service-box_Mobile service-onclick" id="${service_slides.id}">
+          <div class="service-icon service-onclick" id="${service_slides.id}">          
             ${service_slides.icon}
           </div>
-          <span class="service-name_Mobile">${service_slides.title}</span>
+          <span class="service-name_Mobile service-onclick" id="${service_slides.id}">${service_slides.title}</span>
         </div>
         `
       });
@@ -82,12 +82,12 @@ async function update_service() {
       await service_slides.forEach(service_slides => {
         // Add sliders
         service2_result+=`
-        <div class="service-box">
-        <div class="service-card" id="serviceButton-${service_slides.id}">
-          <div class="service-icon">
+        <div class="service-box service-onclick" id="${service_slides.id}">
+        <div class="service-card service-onclick" id="${service_slides.id}">
+          <div class="service-icon service-onclick" id="${service_slides.id}">
             ${service_slides.icon}
           </div>
-          <span class="service-name">${service_slides.title}</span>
+          <span class="service-name service-onclick" id="${service_slides.id}">${service_slides.title}</span>
         </div>
       </div>
         `

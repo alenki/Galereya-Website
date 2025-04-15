@@ -21,6 +21,7 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+svg {pointer-events: none;}
 /* --------------- End of Body ---------------- */
 
 /* --------------- Items ---------------- */
