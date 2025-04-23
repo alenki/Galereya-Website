@@ -171,9 +171,10 @@
          <!-- Часть элементов (магазинов) -->
          <div class="card-place catalog-inner">
                  <h2 class="customCategoryHeadingTitle" id="categoryHeading">Магазины</h2>
-                 <!-- место размещения карточек магазинов -->
                  <div class="stores-center pb-5">
-
+                   <!-- место размещения карточек магазинов -->
+                
+                  <!-- место размещения карточек магазинов ^^^-->
                  </div>
          </div>
        </div>
@@ -181,15 +182,31 @@
     </section>
 
   <!-- Store Modal -->
-  <div class="modal fade bd-example-modal-lg" id="storeModal" tabindex="-1" role="dialog">
+  <div class="modal " id="storeModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="storeModalLabel">Информация 1</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-store-img-box">
+          <img class="modal-store-img" id="modal-img" src="/Media/Stores/IMG_1489.JPG" alt="">
         </div>
-        <div class="modal-body" id="storeModalInfo">
-          Информация
+        <button type="button" class="store-btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="button__icon-J9wTK"><path fill="currentColor" d="m12 10.807 5.172-5.172 1.194 1.193L13.193 12l5.172 5.172-1.193 1.194L12 13.193l-5.172 5.173-1.193-1.194L10.807 12 5.634 6.828l1.194-1.193L12 10.807Z"></path></svg>
+
+        </button>
+        <div class="modal-store-logo-box">
+          <img class="modal-store-logo" id="modal-logo" src="/Media/Store_Logos/2fffe919-b270-4240-9faa-fef572b865cd-Photoroom.png" alt="">
+        </div>
+        <div class="modal-store-content">
+          <div class="modal-store-head">
+            <div class="modal-store-name" id="modal-name"></div>
+            <div class="modal-store-floor" id="modal-floor"></div>
+          </div>
+            <div class="modal-store-about">
+                <p class="modal-store-about-text" id="modal-about-text">
+                  
+                </p>
+            </div>
+          <!-- <div class="content-gridbox-right">  -->
+          </div>
         </div>
       </div>
     </div>

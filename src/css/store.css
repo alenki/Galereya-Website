@@ -275,6 +275,7 @@
     align-items: center;
     height: 7.8rem;
     overflow: hidden;
+
 }
 
 .store-info{
@@ -419,3 +420,138 @@
 
 /* ----------- end of Карты магазинов -------------- */
 /* --------------- End of Каталог ---------------- */
+
+
+/* ------------------- Store Modal -------------------*/
+
+#storeModal {
+    border-radius: 15px;
+
+}
+
+.store-btn-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 12px;
+    background-color: #f1eee8;
+    border: none;
+    padding: 3px 4px 4px 4px;
+}
+
+.modal-store-img {
+    object-fit: cover;
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-store-img-box::before {
+    left: 0;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.modal-store-img-box::after {
+    right: 0;
+}
+
+.modal-store-img-box::before,.modal-store-img-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 35rem;
+    max-width: 35.79%;
+    height: 15rem;
+    opacity: .9;
+    background: linear-gradient(261deg, #000 3.58%, rgba(0, 0, 0, 0) 77.51%);
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-store-logo {
+    display: flex;
+    position: absolute;
+    top: 180px;
+    left: 70px;
+    border-radius: 10px;
+    max-width: 400px;
+    max-height: 110px;
+    /* padding: 10px 10px 10px 10px; */
+    background-color: #f1eee8;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    background-color: #f1eee8;
+}
+
+.modal-store-content {
+    /* display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1rem; */
+    margin: 60px 80px 40px 80px;
+}
+
+.modal-store-name {
+    font-family: Navigo Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #212222b6;
+
+}
+
+.modal-store-floor {
+    position: relative;
+    font-family: Navigo Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #212222b6;
+}
+
+.modal-store-head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.modal-store-about {
+    position: relative;
+    height: 180px;
+    overflow: scroll;
+
+}
+.modal-store-about::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f1eee8);
+
+}
+
+.modal-store-about-text {
+    cursor: default;
+    overflow-x: hidden;
+    overflow-y: scroll;   
+    padding-bottom: 4.5rem;
+    height: 100%;
+}
+
+.modal-store-about::-webkit-scrollbar {width:0px;}
+.modal-store-about-text::-webkit-scrollbar {width:0px;}
+
+/* ------------------- end of Store Modal -------------------*/

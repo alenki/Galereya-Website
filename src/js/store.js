@@ -185,16 +185,22 @@ class UI {
 // get all stores
 const stores = new Stores();
 document.onclick = async function(e) {
-    if(e.target.classList.contains("storeButton")){
-        var storeModalLabel = document.getElementById("storeModalLabel");
-        var storeModalInfo = document.getElementById("storeModalInfo");
+    if(e.target.classList.contains("storeButton")){ 
+        var storeImg = document.getElementById("modal-img");
+        var storeLogo = document.getElementById("modal-logo");
+        var storeName = document.getElementById("modal-name");
+        var storeFloor = document.getElementById("modal-floor");
+        var storeAbout = document.getElementById("modal-about-text");
         var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
 
         await stores.getStores().then(stores => {
             stores.forEach(stores => {
                 if(stores.id == e.target.id) {
-                    storeModalLabel.innerHTML = stores.title;
-                    storeModalInfo.innerHTML = stores.description;
+                    storeImg.src = stores.image;
+                    storeLogo.src = stores.logo;
+                    storeName.innerHTML = stores.title;
+                    storeFloor.innerHTML = stores.floor + ' ЭТАЖ';
+                    storeAbout.innerHTML = stores.description;
                 }
             });
         })

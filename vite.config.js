@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'), // Главная страница
         catalog: path.resolve(__dirname, 'stores.html'), // Страница каталога магазинов
+        external: ['contentful'], // Исключаем contentful из сборки
       },
     },
   },
