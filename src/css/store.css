@@ -524,7 +524,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 4rem;
-    line-height: 4rem;
+    line-height: 4.2rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -551,6 +551,7 @@
     width: 100%;
     justify-content: space-between;
     flex-wrap: nowrap;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 500px) {
@@ -575,8 +576,8 @@
 
 .modal-store-about {
     position: relative;
-    height: 197px;
-    overflow: scroll;
+    height: 179px;
+    overflow: hidden;
 
 }
 
@@ -584,7 +585,7 @@
 .modal-store-about::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 100%;
     height: 4.5rem;
@@ -614,6 +615,7 @@
 @media (max-width: 500px) {
     .modal-store-about {
         overflow: hidden;
+        height: 197px;
     }
 
     .modal-store-about::before {
