@@ -181,7 +181,7 @@ class UI {
 }
 
 
-// Detailed store info
+// Открытие модального окна
 // get all stores
 const stores = new Stores();
 document.onclick = async function(e) {
@@ -204,6 +204,8 @@ document.onclick = async function(e) {
                 }
             });
         })
+
+        var Body = document.body
 
         storeModal.show();
     }
