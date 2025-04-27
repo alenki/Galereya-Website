@@ -41,31 +41,31 @@ location_btn.onclick = function() {
 document.getElementById("storeButton-1").onclick = function () { 
     localStorage.setItem("category", "Магазины");
     localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Еда
 document.getElementById("storeButton-2").onclick = function () { 
     localStorage.setItem("category", "Еда");
     localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Развлечения
 document.getElementById("storeButton-3").onclick = function () { 
     localStorage.setItem("category", "Развлечения");
     localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Одежда
 document.getElementById("storeButton-4").onclick = function () { 
     localStorage.setItem("category", "Одежда");
     localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Услуги
 document.getElementById("storeButton-5").onclick = function () { 
     localStorage.setItem("category", "Услуги");
     localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // End of 6 Buttons below carousel
 
@@ -105,27 +105,27 @@ document.onclick = function(e) {
 // // Магазины
 // document.getElementById("serviceButton-1").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Магазины");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Еда
 // document.getElementById("serviceButton-2").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Еда");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Развлечения
 // document.getElementById("serviceButton-3").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Развлечения");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Одежда
 // document.getElementById("serviceButton-4").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Одежда");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Услуги
 // document.getElementById("serviceButton-5").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Услуги");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // End of Service buttons
 
@@ -189,6 +189,6 @@ document.onclick = async function(e) {
         })
         localStorage.setItem("category", "Услуги");
         localStorage.setItem("service", "open");
-        window.location.href = "stores.html"; 
+        window.location.href = "../stores/"; 
     }
 }
