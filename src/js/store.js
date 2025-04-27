@@ -205,6 +205,8 @@ document.onclick = async function(e) {
             });
         })
 
+        var Body = document.body
+
         storeModal.show();
     }
 };
