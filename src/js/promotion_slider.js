@@ -61,8 +61,13 @@ async function update_promotion() {
   await promotion_slides.getPromotionSlides().then(async promotion_slides => {
     let promotion1_result = '';
     let promotion2_result = '';
+    var promotion_amount = 0;
     
       await promotion_slides.forEach(promotion_slides => {
+
+        //Amount of promotions
+        promotion_amount+=1;
+
         // Add sliders
         promotion1_result+=`
         <div class="promotion-box_Mobile promotion-onclick" id="${promotion_slides.id}">
@@ -92,7 +97,12 @@ async function update_promotion() {
       </div>
         `
       });
-
+      
+      while(promotion_amount <= 19) {
+        promotion_amount *= 2;
+        promotion1_result += promotion1_result;
+        promotion2_result += promotion2_result;
+      }
     promotion_wrapper_Mobile.innerHTML = promotion1_result;
     promotion_wrapper.innerHTML = promotion2_result;
     // Put sliders in variables
