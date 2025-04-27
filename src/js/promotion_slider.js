@@ -1,3 +1,11 @@
+// Contentful
+import * as contentful from 'contentful'
+const client = contentful.createClient({
+    space: 'ruy22jhhank3',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: '0GUZEP5q3E4HSXJ1UXX2W6TRuyRdHPFzaIOECAXA1YA'
+})
+
 // Promotion slider
 const promotion_wrapper = document.querySelector(".promotion");
 const promotion_wrapper_Mobile = document.querySelector(".promotion_Mobile");
@@ -35,9 +43,9 @@ class PromotionSlides{
   async getPromotionSlides(){
     try{
         // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-        // let contentful = await client.getEntries({
-        //     content_type: "alenkiStoreContent"
-        // });
+        let promotion_data = await client.getEntries({
+            content_type: "alenkiStoreContent"
+        });
         let promotion_result = await fetch('/json/promotion.json');
         let data = await promotion_result.json();
         let promotion_slides = data.items;
