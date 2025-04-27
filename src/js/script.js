@@ -1,8 +1,3 @@
-// on load
-// window.addEventListener('load', function() {
-
-// })
-
 // Loading screen / Экран загрузки
 var loadingScreen = document.querySelector(".loadingScreen");
 window.addEventListener('load', function() {
