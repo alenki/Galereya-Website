@@ -532,8 +532,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #212222b6;
-    -webkit-text-fill-color: #212222b6;
+    color: #000000;
+    opacity: 0.6;
 }
 
 .modal-store-floor {
@@ -546,8 +546,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #212222b6;
-    -webkit-text-fill-color: #212222b6;
+    color: #000000;
+    opacity: 0.6;
     padding-right: 15px;
 }
 
