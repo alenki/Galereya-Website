@@ -5,13 +5,6 @@ import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger) 
 
-// Loading screen / Экран загрузки
-var loadingScreen = document.querySelector(".loadingScreen");
-window.addEventListener('load', function() {
-    loadingScreen.style.display = 'none';
-})
-// End of Loading screen / Экран загрузки
-
 // smooth scroll
 // Initialize a new Lenis instance for smooth scrolling
 const lenis = new Lenis();

@@ -259,7 +259,7 @@ document.querySelector(".about-post-button").addEventListener("click", () => {
     });
   })
   localStorage.setItem("pagination", pagination_id);
-  window.location.href = "stores.html"; 
+  window.location.href = "../stores/"; 
 })
 
 // Autoplay

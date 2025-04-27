@@ -11,13 +11,14 @@
         <!-- Font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <title>Galereya</title>
-        <link rel="icon" type="image/png" style="border-radius: 50px;" href="Media/Logos/logo.png">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="../Media/Logos/logo.png">
 </head>
 <body class="bg-nav-bg">
 
     <!-- Loading screen / Экран загрузки -->
     <div class="loadingScreen">
-      <h1>Galereya</h1>
+      <div class="loader"></div>
     </div>
 
       <!-- Icons --> 
@@ -61,7 +62,7 @@
                   <span class="menu-btn-title ps-2 text-primary">Меню</span>
                 </div>
                 <!-- Логотип -->
-                <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+                <a href="../" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
                 <!-- Кнопка -->
                 <button class="btn" id="lang-button">
                   <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
@@ -75,7 +76,7 @@
                   <div class="menu-btn__burger"></div>
                 </div>
                 <!-- Логотип -->
-                <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+                <a href="../" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
                 <!-- Кнопка -->
                 <div style="width: 23px;"></div>
             </div>
@@ -284,7 +285,7 @@
       </button>
     </div>
   </div>
-  <div class="service"> <!-- There should be exactly 19 boxes: 7 to the left, 5 main, 7 to the right --></div>
+  <div class="service"></div>
 </div>
 
 <!-- Блок услуг для маленьких экранов -->
@@ -317,7 +318,7 @@
       </button>
     </div>
   </div>
-  <div class="promotion"> <!-- There should be exactly 19 boxes: 7 to the left, 5 main, 7 to the right --></div>
+  <div class="promotion"></div>
 </div>
 
 
@@ -520,21 +521,6 @@
           Ацканова Зарема Мухамедовна: 8(928)075-54-59<br>
           <b>Заместитель исполнительного директора по развитию:<br></b>
           Халишхова Алина Казбековна: 8(906)707-77-00
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Promotion Modal One (что отображает первая кнопка раздела "Что нового") -->
-  <div class="modal fade bd-example-modal-lg" id="promotionModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel"><span class="promotionModal-title">Информация 1</span></h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <span class="promotionModal-description">Информация</span>
         </div>
       </div>
     </div>

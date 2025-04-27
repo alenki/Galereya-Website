@@ -9,13 +9,15 @@
         <link rel="stylesheet" href="/src/css/style.css">
         <link rel="stylesheet" href="/src/css/store.css">
     <title>Galereya</title>
-    <link rel="icon" type="image/png" style="border-radius: 50px;" href="Media/Logos/logo.png">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../Media/Logos/logo.png">
 </head>
 <body class="bg-nav-bg">
-    <!-- Loading screen / Экран загрузки -->
-    <div class="loadingScreen">
-        <h1>Galereya</h1>
-    </div>
+
+      <!-- Loading screen / Экран загрузки -->
+      <div class="loadingScreen">
+        <div class="loader"></div>
+      </div>
 
       <!-- Icons --> 
       <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -57,7 +59,7 @@
               <span class="menu-btn-title ps-2 text-primary">Меню</span>
             </div>
             <!-- Логотип -->
-            <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+            <a href="../" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
             <!-- Кнопка -->
             <button class="btn" id="lang-button">
               <span class="mt-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
@@ -71,7 +73,7 @@
               <div class="menu-btn__burger"></div>
             </div>
             <!-- Логотип -->
-            <a href="index.html" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
+            <a href="../" class="text-primary text-center auto-resize-navbar-brand" style="text-decoration:none">ГАЛЕРЕЯ</a>
             <!-- Кнопка -->
             <div style="width: 23px;"></div>
         </div>
@@ -182,9 +184,9 @@
     </section>
 
   <!-- Store Modal -->
-  <div class="modal " id="storeModal" tabindex="-1" role="dialog">
+  <div class="modal" id="storeModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+      <div class="modal-content store-modal-content">
         <div class="modal-store-img-box">
           <img class="modal-store-img" id="modal-img" src="/Media/Stores/IMG_1489.JPG" alt="">
         </div>
@@ -318,6 +320,21 @@
       </div>
     </div>
 
+    <!-- Promotion Modal -->
+    <div class="modal fade bd-example-modal-lg" id="promotionModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="enrollLabel"><span class="promotionModal_title">Информация 1</span></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <span class="promotionModal_description">Информация</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <!-- Rent Modal (что отображает кнопка "Арендаторам" внизу) -->
   <div class="modal fade bd-example-modal-lg" id="rentModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -344,6 +361,5 @@
     <script type="module" src="/src/js/store.js"></script>
     <script type="module" src="/src/js/feedback.js"></script>
     <script type="module" src="/src/js/cursor_chase.js"></script>
-    <!-- Отключение прокрутки когда открыт Modal -->
 </body>
 </html>

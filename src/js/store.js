@@ -14,12 +14,12 @@ window.onload = function() {
 };
 
 // Загрузить все в зависимости от фильтра
-function Load() {
+async function Load() {
     // Загрузить все магазины
     const ui = new UI();
     const stores = new Stores();
     // get all stores
-    stores.getStores().then(stores => {
+    await stores.getStores().then(stores => {
         // Display stores
         ui.displayStores(stores);
 
@@ -53,10 +53,24 @@ function Load() {
                         serviceModalDescription.innerHTML = serviceSlide_description;
         }
 
+        // open up promotion if there is need for it
+        var promotion_open = localStorage.getItem("promotion");
+        if(promotion_open == "open"){
+                        var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal')); 
+                        var promotionModalTitle = document.querySelector(".promotionModal_title");
+                        var promotionModalDescription = document.querySelector(".promotionModal_description");
+                        var promotionSlide_title = localStorage.getItem("promotion_slide_title");
+                        var promotionSlide_description = localStorage.getItem("promotion_slide_description");
+                        promotionModal.show(); 
+                        promotionModalTitle.innerHTML = promotionSlide_title;
+                        promotionModalDescription.innerHTML = promotionSlide_description;
+        }
         // update category
         var category = localStorage.getItem("category")
         categoryHeading.innerHTML = category;
     })
+    localStorage.setItem("promotion", "closed");
+    localStorage.setItem("service", "closed");
 }
 // Магазины
 document.getElementById("categoryButton-1").onclick = function () { 
@@ -88,34 +102,6 @@ document.getElementById("categoryButton-5").onclick = function () {
     Load();
 };
 // End of Categories
-
-// Get carousel elements
-class Slides{
-    async getSlides(){
-      try{
-          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-          // let contentful = await client.getEntries({
-          //     content_type: "alenkiStoreContent"
-          // });
-          let carousel_result = await fetch('/json/carousel.json');
-          let data = await carousel_result.json();
-          let slides = data.items;
-          // let slides = contentful.items;
-          slides = slides.map(item =>{
-              const {title, description, category} = item.fields;
-              const {id} = item.sys;
-              const image = item.fields.image.fields.file.url;
-              const logo = item.fields.logo.fields.file.url;
-              return {title, description, category, id, image, logo}
-          })
-          return slides
-      } catch(error) {
-          console.log(error);
-      }
-    }
-  }
-  // get all stores
-  const slides = new Slides();
 
 // getting the stores
 class Stores{
@@ -204,8 +190,6 @@ document.onclick = async function(e) {
                 }
             });
         })
-
-        var Body = document.body
 
         storeModal.show();
     }

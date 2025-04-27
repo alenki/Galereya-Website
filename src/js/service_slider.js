@@ -65,8 +65,10 @@ async function update_service() {
     var service_amount = 0;
     
       await service_slides.forEach(service_slides => {
+
         //Amount of services
         service_amount+=1;
+        
         // Add sliders
         service1_result+=`
         <div class="service-box_Mobile service-onclick" id="${service_slides.id}">

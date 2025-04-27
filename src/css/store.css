@@ -429,9 +429,13 @@
 
 @media (max-width: 500px) {
     #storeModal {
-        margin: 100px 0 0 0 ;
+        margin: 43px 0 0 0 ;
     }
     
+}
+
+.store-modal-content {
+    height: 600px;
 }
 
 .store-btn-close {
@@ -510,12 +514,12 @@
     /* display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 1rem; */
-    margin: 60px 80px 40px 80px;
+    margin: auto 80px 40px 80px;
 }
-
 @media (max-width: 500px) {
     .modal-store-content {
-        margin: 60px 20px 40px 20px;
+        margin: 300px 20px 40px 20px;
+        position: absolute;
     }
 }
 
@@ -528,8 +532,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #212222b6;
-
+    color: #000000;
+    opacity: 0.6;
 }
 
 .modal-store-floor {
@@ -542,7 +546,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #212222b6;
+    color: #000000;
+    opacity: 0.6;
     padding-right: 15px;
 }
 

@@ -1,3 +1,4 @@
+
 // 2 main buttons on top
 var worktimes_btn = document.getElementById("worktimesUnlock");
 var worktimes_modal = document.getElementById("worktimesHidden");
@@ -40,32 +41,27 @@ location_btn.onclick = function() {
 // Магазины
 document.getElementById("storeButton-1").onclick = function () { 
     localStorage.setItem("category", "Магазины");
-    localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Еда
 document.getElementById("storeButton-2").onclick = function () { 
     localStorage.setItem("category", "Еда");
-    localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Развлечения
 document.getElementById("storeButton-3").onclick = function () { 
     localStorage.setItem("category", "Развлечения");
-    localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Одежда
 document.getElementById("storeButton-4").onclick = function () { 
     localStorage.setItem("category", "Одежда");
-    localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // Услуги
 document.getElementById("storeButton-5").onclick = function () { 
     localStorage.setItem("category", "Услуги");
-    localStorage.setItem("service", "closed");
-    window.location.href = "stores.html"; 
+    window.location.href = "../stores/"; 
 };
 // End of 6 Buttons below carousel
 
@@ -105,27 +101,27 @@ document.onclick = function(e) {
 // // Магазины
 // document.getElementById("serviceButton-1").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Магазины");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Еда
 // document.getElementById("serviceButton-2").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Еда");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Развлечения
 // document.getElementById("serviceButton-3").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Развлечения");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Одежда
 // document.getElementById("serviceButton-4").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Одежда");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // Услуги
 // document.getElementById("serviceButton-5").addEventListener("click", function() { 
 //     localStorage.setItem("category", "Услуги");
-//     window.location.href = "stores.html"; 
+//     window.location.href = "../stores/"; 
 // });
 // // End of Service buttons
 
@@ -168,27 +164,38 @@ const service_description = document.querySelector(".serviceModal-description");
 // promotion and service onclick
 document.onclick = async function(e) {
     if (e.target.classList.contains("promotion-onclick")) {
-        promotion_slides.getPromotionSlides().then(promotion_slides => {
+        // promotion_slides.getPromotionSlides().then(promotion_slides => {
+        //     promotion_slides.forEach(promotion_slides => {
+        //         if(e.target.id == promotion_slides.id){
+        //             var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal')); 
+        //             promotionModal.show(); 
+        //             promotion_title.innerHTML = promotion_slides.title;
+        //             promotion_description.innerHTML = promotion_slides.description;
+        //         }
+        //     })
+        // })
+        await promotion_slides.getPromotionSlides().then(promotion_slides => {
             promotion_slides.forEach(promotion_slides => {
-                if(e.target.id == promotion_slides.id){
-                    var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal')); 
-                    promotionModal.show(); 
-                    promotion_title.innerHTML = promotion_slides.title;
-                    promotion_description.innerHTML = promotion_slides.description;
+                if(promotion_slides.id == e.target.id) {
+                    localStorage.setItem("promotion_slide_title", promotion_slides.title);
+                    localStorage.setItem("promotion_slide_description", promotion_slides.description);
+                    localStorage.setItem("category", promotion_slides.category);
+                    localStorage.setItem("promotion", "open");
                 }
-            })
+            });
         })
+        window.location.href = "../stores/"; 
     } else if (e.target.classList.contains("service-onclick")) {
         await service_slides.getServiceSlides().then(service_slides => {
             service_slides.forEach(service_slides => {
                 if(service_slides.id == e.target.id) {
                     localStorage.setItem("service_slide_title", service_slides.title);
                     localStorage.setItem("service_slide_description", service_slides.description);
+                    localStorage.setItem("category", "Услуги");
+                    localStorage.setItem("service", "open");
                 }
             });
         })
-        localStorage.setItem("category", "Услуги");
-        localStorage.setItem("service", "open");
-        window.location.href = "stores.html"; 
+        window.location.href = "../stores/"; 
     }
 }
