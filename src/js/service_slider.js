@@ -1,3 +1,11 @@
+// Contentful
+import * as contentful from 'contentful'
+const client = contentful.createClient({
+    space: 'ruy22jhhank3',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: '0GUZEP5q3E4HSXJ1UXX2W6TRuyRdHPFzaIOECAXA1YA'
+})
+
 // Service slider
 const service_wrapper = document.querySelector(".service");
 const service_wrapper_Mobile = document.querySelector(".service_Mobile");
@@ -36,21 +44,17 @@ class ServiceSlides{
   async getServiceSlides(){
     try{
         // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-        // let contentful = await client.getEntries({
-        //     content_type: "alenkiStoreContent"
-        // });
-        let service_result = await fetch('/json/service.json');
-        let data = await service_result.json();
-        let service_slides = data.items;
-        // let service_slides = contentful.items;
-        service_slides = service_slides.map(item =>{
-            const {title, description, category, icon} = item.fields;
-            const {id} = item.sys;
-            const image = item.fields.image.fields.file.url;
-            const logo = item.fields.logo.fields.file.url;
-            return {title, description, category, id, image, logo, icon}
+        let service_data = await client.getEntries({
+            content_type: "galereyaServices"
+        });
+        // let service_result = await fetch('/json/service.json');
+        // let data = await service_result.json();
+        let services = service_data.items;
+        services = services.map(item =>{
+            const {id, title, icon} = item.fields;
+            return {id, title, icon}
         })
-        return service_slides
+        return services
     } catch(error) {
         console.log(error);
     }
@@ -63,8 +67,7 @@ async function update_service() {
     let service1_result = '';
     let service2_result = '';
     var service_amount = 0;
-    
-      await service_slides.forEach(service_slides => {
+      service_slides.forEach(service_slides => {
 
         //Amount of services
         service_amount+=1;
@@ -81,7 +84,7 @@ async function update_service() {
       });
     
 
-      await service_slides.forEach(service_slides => {
+      service_slides.forEach(service_slides => {
         // Add sliders
         service2_result+=`
         <div class="service-box service-onclick" id="${service_slides.id}">

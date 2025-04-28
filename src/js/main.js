@@ -80,21 +80,17 @@ class ServiceSlides{
     async getServiceSlides(){
       try{
           // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-          // let contentful = await client.getEntries({
-          //     content_type: "alenkiStoreContent"
-          // });
-          let service_result = await fetch('/json/service.json');
-          let data = await service_result.json();
-          let service_slides = data.items;
-          // let service_slides = contentful.items;
-          service_slides = service_slides.map(item =>{
-              const {title, description, category, icon} = item.fields;
-              const {id} = item.sys;
-              const image = item.fields.image.fields.file.url;
-              const logo = item.fields.logo.fields.file.url;
-              return {title, description, category, id, image, logo, icon}
+          let service_data = await client.getEntries({
+              content_type: "galereyaServices"
+          });
+          // let service_result = await fetch('/json/service.json');
+          // let data = await service_result.json();
+          let services = service_data.items;
+          services = services.map(item =>{
+              const {id, title, icon} = item.fields;
+              return {id, title, icon}
           })
-          return service_slides
+          return services
       } catch(error) {
           console.log(error);
       }
@@ -192,8 +188,7 @@ document.onclick = async function(e) {
         await service_slides.getServiceSlides().then(service_slides => {
             service_slides.forEach(service_slides => {
                 if(service_slides.id == e.target.id) {
-                    localStorage.setItem("service_slide_title", service_slides.title);
-                    localStorage.setItem("service_slide_description", service_slides.description);
+                    localStorage.setItem("service_id", service_slides.id);
                     localStorage.setItem("category", "Услуги");
                     localStorage.setItem("service", "open");
                 }
