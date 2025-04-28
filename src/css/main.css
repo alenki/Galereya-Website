@@ -309,6 +309,7 @@ html {
     box-shadow: 0 1rem 5rem rgba(23, 26, 36, .2);
     -webkit-backdrop-filter: blur(2.5rem);
     backdrop-filter: blur(2.5rem);
+    background-color: #92949a46;
     transition: all .4s;
 }
 
