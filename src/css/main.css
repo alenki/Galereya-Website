@@ -881,6 +881,7 @@ html {
     align-items: center;
     justify-content: center;
     width: 20%;
+    height: 300px;
     margin: 0;
     padding: 0;
     position: relative;
@@ -889,7 +890,23 @@ html {
     font-size: 21px;
     cursor: pointer;
     transition: filter .5s, opacity .5s !important;
+
+
 }
+
+.promo-img {
+    width: 87%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0+px 10px 15px rgba(23, 26, 36, .2);
+    transition: .3s
+}
+
+.promo-img:hover {
+    transform: scale(1.037); 
+}
+
 .promotion-card {
     display: flex;
     /* width: 177px; */

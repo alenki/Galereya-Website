@@ -65,12 +65,7 @@ async function update_promotion() {
         // Add sliders
         promotion1_result+=`
         <div class="promotion-box_Mobile promotion-onclick" id="${promotion_slides.id}">
-          <div class="promotion-icon promotion-onclick" id="${promotion_slides.id}">          
-            <img class="promotion-onclick" id="${promotion_slides.id}" src="Media/promo-logo/sale.png" alt="скидка">
-          </div>
-          <span class="promotion-name_Mobile promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
-          <span class="promotion-details promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
-          <span class="promotion-date mt-auto pb-2 promotion-onclick" id="${promotion_slides.id}">${promotion_slides.category}</span>
+          <img src="Media/promo/letual.jpg" class="promo-img" alt="" id="${promotion_slides.id}">
         </div>
         `
       });
@@ -78,15 +73,8 @@ async function update_promotion() {
       promotion_slides.forEach(promotion_slides => {
         // Add sliders
         promotion2_result+=`
-        <div class="promotion-box promotion-onclick" id="${promotion_slides.id}">
-        <div class="promotion-card promotion-onclick" id="${promotion_slides.id}">
-          <div class="promotion-icon promotion-onclick" id="${promotion_slides.id}">
-            <img class="promotion-onclick" src="Media/promo-logo/sale.png" alt="скидка" id="${promotion_slides.id}">
-          </div>
-          <span class="promotion-name promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
-          <span class="promotion-details promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
-          <span class="promotion-date mt-auto pb-2 promotion-onclick" id="${promotion_slides.id}">${promotion_slides.category}</span>
-        </div>
+      <div class="promotion-box promotion-onclick" id="${promotion_slides.id}">
+            <img src="Media/promo/letual.jpg" class="promo-img" alt="" id="${promotion_slides.id}">
       </div>
         `
       });
