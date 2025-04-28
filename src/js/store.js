@@ -107,8 +107,11 @@ class Stores{
             // let data = await result.json();
             let stores = store_data.items;
             stores = stores.map(item =>{
-                const {title, description, category, id, floor, image} = item.fields;
+                const {title, description, category, id, floor} = item.fields;
                 const logo = item.fields.logo.fields.file.url;
+                var image;
+                try{image = item.fields.image.fields.file.url;}
+                catch(e){console.log("У", title, "нет фотки")}
                 return {title, description, category, id, floor, image, logo}
             })
             return stores
