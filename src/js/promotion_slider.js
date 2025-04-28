@@ -18,19 +18,8 @@ window.addEventListener("load", () => promotion_window_load(), false);
 async function promotion_window_load() {
   // Update elements
   await update_promotion();
-  await blur_overflown_elements_promotion();
-  // Initialize slider 
-  let promotion_activeElement;
-  promotion_loop = horizontalLoop_promotion(promotion_boxes, {
-      paused: true, 
-      draggable: true, // make it draggable
-      center: true, // active element is the one in the center of the container rather than th left edge
-      onChange: (element, index) => { // when the active element changes, this function gets called.
-          promotion_activeElement && promotion_activeElement.classList.remove("active");
-          element.classList.add("active");
-          promotion_activeElement = element;
-      }
-  });
+  blur_overflown_elements_promotion();
+  
 }
 // Window resize
 window.addEventListener("resize", function() { 
@@ -44,20 +33,17 @@ class PromotionSlides{
     try{
         // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
         let promotion_data = await client.getEntries({
-            content_type: "alenkiStoreContent"
+            content_type: "galereyaPromotions"
         });
-        let promotion_result = await fetch('/json/promotion.json');
-        let data = await promotion_result.json();
-        let promotion_slides = data.items;
-        // let promotion_slides = contentful.items;
-        promotion_slides = promotion_slides.map(item =>{
-            const {title, description, category} = item.fields;
-            const {id} = item.sys;
+        // let promotion_result = await fetch('/json/promotion.json');
+        // let data = await promotion_result.json();
+        let promotions = promotion_data.items;
+        promotions = promotions.map(item =>{
+            const {title, description, category, id} = item.fields;
             const image = item.fields.image.fields.file.url;
-            const logo = item.fields.logo.fields.file.url;
-            return {title, description, category, id, image, logo}
+            return {title, description, category, id, image}
         })
-        return promotion_slides
+        return promotions
     } catch(error) {
         console.log(error);
     }
@@ -66,12 +52,12 @@ class PromotionSlides{
 // get all stores
 const promotion_slides = new PromotionSlides();
 async function update_promotion() {
-  await promotion_slides.getPromotionSlides().then(async promotion_slides => {
+  await promotion_slides.getPromotionSlides().then(promotion_slides => {
     let promotion1_result = '';
     let promotion2_result = '';
     var promotion_amount = 0;
     
-      await promotion_slides.forEach(promotion_slides => {
+      promotion_slides.forEach(promotion_slides => {
 
         //Amount of promotions
         promotion_amount+=1;
@@ -84,13 +70,12 @@ async function update_promotion() {
           </div>
           <span class="promotion-name_Mobile promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
           <span class="promotion-details promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
-          <span class="promotion-date mt-auto pb-2 promotion-onclick" id="${promotion_slides.id}">скидки</span>
+          <span class="promotion-date mt-auto pb-2 promotion-onclick" id="${promotion_slides.id}">${promotion_slides.category}</span>
         </div>
         `
       });
     
-
-      await promotion_slides.forEach(promotion_slides => {
+      promotion_slides.forEach(promotion_slides => {
         // Add sliders
         promotion2_result+=`
         <div class="promotion-box promotion-onclick" id="${promotion_slides.id}">
@@ -100,7 +85,7 @@ async function update_promotion() {
           </div>
           <span class="promotion-name promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
           <span class="promotion-details promotion-onclick" id="${promotion_slides.id}">${promotion_slides.title}</span>
-          <span class="promotion-date mt-auto pb-2 promotion-onclick" id="${promotion_slides.id}">скидки</span>
+          <span class="promotion-date mt-auto pb-2 promotion-onclick" id="${promotion_slides.id}">${promotion_slides.category}</span>
         </div>
       </div>
         `
@@ -116,6 +101,19 @@ async function update_promotion() {
     // Put sliders in variables
     promotion_boxes = gsap.utils.toArray(".promotion-box");
   })
+
+  // Initialize slider 
+  let promotion_activeElement;
+  promotion_loop = horizontalLoop_promotion(promotion_boxes, {
+      paused: true, 
+      draggable: true, // make it draggable
+      center: true, // active element is the one in the center of the container rather than th left edge
+      onChange: (element, index) => { // when the active element changes, this function gets called.
+          promotion_activeElement && promotion_activeElement.classList.remove("active");
+          element.classList.add("active");
+          promotion_activeElement = element;
+      }
+  });
 }
 
 

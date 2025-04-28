@@ -22,7 +22,6 @@ async function Load() {
     await stores.getStores().then(stores => {
         // Display stores
         ui.displayStores(stores);
-
         // open up store if there is need for it
         var pagination_id = localStorage.getItem("pagination");
         if(pagination_id != 0){
@@ -56,14 +55,7 @@ async function Load() {
         // open up promotion if there is need for it
         var promotion_open = localStorage.getItem("promotion");
         if(promotion_open == "open"){
-                        var promotionModal = new bootstrap.Modal(document.getElementById('promotionModal')); 
-                        var promotionModalTitle = document.querySelector(".promotionModal_title");
-                        var promotionModalDescription = document.querySelector(".promotionModal_description");
-                        var promotionSlide_title = localStorage.getItem("promotion_slide_title");
-                        var promotionSlide_description = localStorage.getItem("promotion_slide_description");
-                        promotionModal.show(); 
-                        promotionModalTitle.innerHTML = promotionSlide_title;
-                        promotionModalDescription.innerHTML = promotionSlide_description;
+            openStore(localStorage.getItem("promotion_id"));
         }
         // update category
         var category = localStorage.getItem("category")
@@ -172,6 +164,10 @@ class UI {
 const stores = new Stores();
 document.onclick = async function(e) {
     if(e.target.classList.contains("storeButton")){ 
+        openStore(e.target.id);
+    }
+};
+async function openStore(storeID) {
         var storeImg = document.getElementById("modal-img");
         var storeLogo = document.getElementById("modal-logo");
         var storeName = document.getElementById("modal-name");
@@ -181,7 +177,7 @@ document.onclick = async function(e) {
 
         await stores.getStores().then(stores => {
             stores.forEach(stores => {
-                if(stores.id == e.target.id) {
+                if(stores.id == storeID) {
                     storeImg.src = stores.image;
                     storeLogo.src = stores.logo;
                     storeName.innerHTML = stores.title;
@@ -192,8 +188,7 @@ document.onclick = async function(e) {
         })
 
         storeModal.show();
-    }
-};
+}
 
 
 // Плавная анимация навбара

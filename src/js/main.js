@@ -1,3 +1,11 @@
+// Contentful
+import * as contentful from 'contentful'
+const client = contentful.createClient({
+    space: 'ruy22jhhank3',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: '0GUZEP5q3E4HSXJ1UXX2W6TRuyRdHPFzaIOECAXA1YA'
+})
+
 
 // 2 main buttons on top
 var worktimes_btn = document.getElementById("worktimesUnlock");
@@ -130,26 +138,22 @@ document.onclick = function(e) {
 // Get promotion elements
 class PromotionSlides{
     async getPromotionSlides(){
-      try{
-          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-          // let contentful = await client.getEntries({
-          //     content_type: "alenkiStoreContent"
-          // });
-          let promotion_result = await fetch('/json/promotion.json');
-          let data = await promotion_result.json();
-          let promotion_slides = data.items;
-          // let promotion_slides = contentful.items;
-          promotion_slides = promotion_slides.map(item =>{
-              const {title, description, category} = item.fields;
-              const {id} = item.sys;
-              const image = item.fields.image.fields.file.url;
-              const logo = item.fields.logo.fields.file.url;
-              return {title, description, category, id, image, logo}
-          })
-          return promotion_slides
-      } catch(error) {
-          console.log(error);
-      }
+        try{
+            // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
+            let promotion_data = await client.getEntries({
+                content_type: "galereyaPromotions"
+            });
+            // let promotion_result = await fetch('/json/promotion.json');
+            // let data = await promotion_result.json();
+            let promotions = promotion_data.items;
+            promotions = promotions.map(item =>{
+                const {title, description, category, id} = item.fields;
+                return {title, description, category, id}
+            })
+            return promotions
+        } catch(error) {
+            console.log(error);
+        }
     }
   }
 
@@ -177,6 +181,8 @@ document.onclick = async function(e) {
         await promotion_slides.getPromotionSlides().then(promotion_slides => {
             promotion_slides.forEach(promotion_slides => {
                 if(promotion_slides.id == e.target.id) {
+                    localStorage.setItem("promotion_id", promotion_slides.id);
+                    console.log(localStorage.getItem("promotion_id"))
                     localStorage.setItem("promotion_slide_title", promotion_slides.title);
                     localStorage.setItem("promotion_slide_description", promotion_slides.description);
                     localStorage.setItem("category", promotion_slides.category);

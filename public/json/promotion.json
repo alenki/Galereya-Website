@@ -5,7 +5,7 @@
         "fields": {
           "title": "Colins",
           "description": "Скидка 10% на первый заказ",
-          "category": "Магазины",
+          "category": "",
           "image": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } },
           "logo": { "fields": { "file": { "url": "/Media/Carousel/Colins.png" } } }
         }
