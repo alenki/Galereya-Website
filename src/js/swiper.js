@@ -52,11 +52,11 @@ class Slides{
         let slides = data.items;
         // let slides = contentful.items;
         slides = slides.map(item =>{
-            const {title, description, category} = item.fields;
+            const {pag_id, title, description, category} = item.fields;
             const {id} = item.sys;
             const image = item.fields.image.fields.file.url;
             const logo = item.fields.logo.fields.file.url;
-            return {title, description, category, id, image, logo}
+            return {pag_id, title, description, category, id, image, logo}
         })
         return slides
     } catch(error) {
@@ -78,7 +78,7 @@ function update_info_panel() {
   // get all slides
   slides.getSlides().then(slides => {
     slides.forEach(slides => {
-        if(slides.id == pagination_id) {
+        if(slides.pag_id == pagination_id) {
             // update info panel title
             panel_title.innerHTML = slides.title;
             // update swiper background (::before)
@@ -251,14 +251,14 @@ swiper_pagination_3.addEventListener("click", () => {
 document.querySelector(".about-post-button").addEventListener("click", () => {
   slides.getSlides().then(slides => {
     slides.forEach(slides => {
-        if(slides.id == pagination_id) {
-            localStorage.setItem("slide_title", slides.title);
-            localStorage.setItem("slide_description", slides.description);
-            localStorage.setItem("slide_category", slides.category);
+        if(slides.pag_id == pagination_id) {
+          localStorage.setItem("slide_id", slides.id);
+          localStorage.setItem("category", slides.category);
+          localStorage.setItem("slide", "open");
         }
     });
   })
-  localStorage.setItem("pagination", pagination_id);
+  // localStorage.setItem("pagination", pagination_id);
   window.location.href = "../stores/"; 
 })
 

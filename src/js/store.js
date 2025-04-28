@@ -22,22 +22,26 @@ async function Load() {
     await stores.getStores().then(stores => {
         // Display stores
         ui.displayStores(stores);
-        // open up store if there is need for it
-        var pagination_id = localStorage.getItem("pagination");
-        if(pagination_id != 0){
-            var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
-            var storeModalLabel = document.getElementById("storeModalLabel");
-            var storeModalInfo = document.getElementById("storeModalInfo");
-            var storeSlide_title = localStorage.getItem("slide_title");
-            var storeSlide_description = localStorage.getItem("slide_description");
-            var storeSlide_category = localStorage.getItem("slide_category");
-            storeModal.show();
-                stores.forEach(stores => {
-                    storeModalLabel.innerHTML = storeSlide_title;
-                    storeModalInfo.innerHTML = storeSlide_description;
-                    localStorage.setItem("category", storeSlide_category);
-                })
+        // open up slide if there is need for it
+        var slide_open = localStorage.getItem("slide");
+        if(slide_open == "open"){
+            openStore(localStorage.getItem("slide_id"));
         }
+        // var pagination_id = localStorage.getItem("pagination");
+        // if(pagination_id != 0){
+        //     var storeModal = new bootstrap.Modal(document.getElementById('storeModal'));
+        //     var storeModalLabel = document.getElementById("storeModalLabel");
+        //     var storeModalInfo = document.getElementById("storeModalInfo");
+        //     var storeSlide_title = localStorage.getItem("slide_title");
+        //     var storeSlide_description = localStorage.getItem("slide_description");
+        //     var storeSlide_category = localStorage.getItem("slide_category");
+        //     storeModal.show();
+        //         stores.forEach(stores => {
+        //             storeModalLabel.innerHTML = storeSlide_title;
+        //             storeModalInfo.innerHTML = storeSlide_description;
+        //             localStorage.setItem("category", storeSlide_category);
+        //         })
+        // }
         
         // open up service if there is need for it
         var service_open = localStorage.getItem("service");
@@ -62,6 +66,7 @@ async function Load() {
         var category = localStorage.getItem("category")
         categoryHeading.innerHTML = category;
     })
+    localStorage.setItem("slide", "closed");
     localStorage.setItem("promotion", "closed");
     localStorage.setItem("service", "closed");
 }
