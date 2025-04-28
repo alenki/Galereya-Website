@@ -147,8 +147,8 @@ class PromotionSlides{
             // let data = await promotion_result.json();
             let promotions = promotion_data.items;
             promotions = promotions.map(item =>{
-                const {title, description, category, id} = item.fields;
-                return {title, description, category, id}
+                const {category, id} = item.fields;
+                return {category, id}
             })
             return promotions
         } catch(error) {
@@ -182,9 +182,6 @@ document.onclick = async function(e) {
             promotion_slides.forEach(promotion_slides => {
                 if(promotion_slides.id == e.target.id) {
                     localStorage.setItem("promotion_id", promotion_slides.id);
-                    console.log(localStorage.getItem("promotion_id"))
-                    localStorage.setItem("promotion_slide_title", promotion_slides.title);
-                    localStorage.setItem("promotion_slide_description", promotion_slides.description);
                     localStorage.setItem("category", promotion_slides.category);
                     localStorage.setItem("promotion", "open");
                 }

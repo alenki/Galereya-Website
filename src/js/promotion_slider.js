@@ -39,9 +39,9 @@ class PromotionSlides{
         // let data = await promotion_result.json();
         let promotions = promotion_data.items;
         promotions = promotions.map(item =>{
-            const {title, description, category, id} = item.fields;
+            const {category, id} = item.fields;
             const image = item.fields.image.fields.file.url;
-            return {title, description, category, id, image}
+            return {category, id, image}
         })
         return promotions
     } catch(error) {
@@ -65,7 +65,7 @@ async function update_promotion() {
         // Add sliders
         promotion1_result+=`
         <div class="promotion-box_Mobile promotion-onclick" id="${promotion_slides.id}">
-          <img src="Media/promo/letual.jpg" class="promo-img" alt="" id="${promotion_slides.id}">
+          <img src="${promotion_slides.image}" class="promo-img promotion-onclick" alt="" id="${promotion_slides.id}">
         </div>
         `
       });
@@ -74,7 +74,7 @@ async function update_promotion() {
         // Add sliders
         promotion2_result+=`
       <div class="promotion-box promotion-onclick" id="${promotion_slides.id}">
-            <img src="Media/promo/letual.jpg" class="promo-img" alt="" id="${promotion_slides.id}">
+            <img src="${promotion_slides.image}" class="promo-img promotion-onclick" alt="" id="${promotion_slides.id}">
       </div>
         `
       });
