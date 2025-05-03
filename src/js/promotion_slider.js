@@ -39,9 +39,9 @@ class PromotionSlides{
         // let data = await promotion_result.json();
         let promotions = promotion_data.items;
         promotions = promotions.map(item =>{
-            const {category, id} = item.fields;
+            const {category, id, url} = item.fields;
             const image = item.fields.image.fields.file.url;
-            return {category, id, image}
+            return {category, id, url, image}
         })
         return promotions
     } catch(error) {
@@ -64,18 +64,18 @@ async function update_promotion() {
 
         // Add sliders
         promotion1_result+=`
-        <div class="promotion-box_Mobile promotion-onclick" id="${promotion_slides.id}">
-          <img src="${promotion_slides.image}" class="promo-img promotion-onclick" alt="" id="${promotion_slides.id}">
-        </div>
+        <a href="${promotion_slides.url}" target="_blank" class="promotion-box_Mobile" id="${promotion_slides.id}">
+          <img src="${promotion_slides.image}" class="promo-img" alt="" id="${promotion_slides.id}">
+        </a>
         `
       });
     
       promotion_slides.forEach(promotion_slides => {
         // Add sliders
         promotion2_result+=`
-      <div class="promotion-box promotion-onclick" id="${promotion_slides.id}">
-            <img src="${promotion_slides.image}" class="promo-img promotion-onclick" alt="" id="${promotion_slides.id}">
-      </div>
+      <a href="${promotion_slides.url}" target="_blank" class="promotion-box" id="${promotion_slides.id}">
+            <img src="${promotion_slides.image}" class="promo-img" alt="" id="${promotion_slides.id}">
+      </a>
         `
       });
       
