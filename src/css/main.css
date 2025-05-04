@@ -903,6 +903,11 @@ html {
     box-shadow: 0+px 10px 15px rgba(23, 26, 36, .2);
     transition: .3s
 }
+@media only screen and (max-width: 1101px) {
+    .promo-img {
+        width: 100%;
+    }
+}
 
 .promo-img:hover {
     transform: scale(1.037); 
@@ -1069,10 +1074,8 @@ html {
 }
 .promotion-box_Mobile {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 300px;
+    width: 177px;
+    height: 285px;
     border-radius: 1rem;
     flex-flow: column;
     transition: all .2s ease-in-out;
