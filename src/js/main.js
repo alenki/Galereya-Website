@@ -154,12 +154,7 @@ class PromotionSlides{
   }
 
 const promotion_slides = new PromotionSlides();
-const promotion_title = document.querySelector(".promotionModal-title");
-const promotion_description = document.querySelector(".promotionModal-description");
-
 const service_slides = new ServiceSlides();
-const service_title = document.querySelector(".serviceModal-title");
-const service_description = document.querySelector(".serviceModal-description");
 
 // promotion and service onclick
 document.onclick = async function(e) {

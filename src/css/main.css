@@ -1068,7 +1068,7 @@ html {
 .promotion_Mobile.no-transition {
     scroll-behavior: auto;
 }
-.promotion_Mobile.dragging .card {
+.promotion_Mobile.dragging .card { 
     cursor: grab;
     user-select: none;
 }
