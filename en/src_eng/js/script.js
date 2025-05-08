@@ -26,27 +26,27 @@ menuBtn.addEventListener('click', () => {
 // Navbar Buttons
 // Language button
 document.getElementById("lang-button").onclick = function () { 
-    window.location.href = "../en/"; 
+    window.location.href = "../../"; 
 };
 // Магазины
 document.getElementById("menuButton-1").onclick = function () { 
     localStorage.setItem("category", "Магазины");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Еда
 document.getElementById("menuButton-2").onclick = function () { 
     localStorage.setItem("category", "Развлечения");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Развлечения
 document.getElementById("menuButton-3").onclick = function () { 
     localStorage.setItem("category", "Еда");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Одежда
 document.getElementById("menuButton-4").onclick = function () { 
     localStorage.setItem("category", "Одежда");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Контакты
 document.getElementById("menuButton-5").onclick = function () { 
@@ -93,22 +93,22 @@ document.getElementById("menu-closebutton_Mobile").addEventListener('click', () 
 // Магазины
 document.getElementById("sidemenuButton-1").onclick = function () { 
     localStorage.setItem("category", "Магазины");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Еда
 document.getElementById("sidemenuButton-2").onclick = function () { 
     localStorage.setItem("category", "Развлечения");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Развлечения
 document.getElementById("sidemenuButton-3").onclick = function () { 
     localStorage.setItem("category", "Еда");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Одежда
 document.getElementById("sidemenuButton-4").onclick = function () { 
     localStorage.setItem("category", "Одежда");
-    window.location.href = "../stores/"; 
+    window.location.href = "../../en/stores/"; 
 };
 // Контакты
 document.getElementById("sidemenuButton-5").onclick = function () { 
@@ -145,7 +145,7 @@ document.getElementById("sidemenuButton-8").onclick = function () {
 
 // Language button
 document.getElementById("sidemenu_lang-button").onclick = function () { 
-    window.location.href = "../en/"; 
+    window.location.href = "../../"; 
 };
 
 // End of Mobile Nav
