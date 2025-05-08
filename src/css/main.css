@@ -549,21 +549,17 @@ html {
 .custom-main-bottom-buttons {
     font-family: Navigo Regular;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 39px;
     display: flex;
     justify-content: start;
-    align-items: center;
     width: 30%;
     height: 55px;
     padding-left: 20px;
-    padding-top: 10px;
 }
 @media screen and (max-width: 767px) {
     .custom-main-bottom-buttons {
         width: 90%;
         font-size: 14px;
-        padding-left: 15px;
-        padding-top: 10px;
     }
     .main-bottom-buttons_block {
         width: 100%;

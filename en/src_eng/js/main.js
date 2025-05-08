@@ -15,7 +15,7 @@ var location_btn = document.getElementById("locationUnlock");
 var location_modal = document.getElementById("locationHidden");
 var location_isopen = false;
 
-document.onclick = function(e) {
+window.onclick = function(e) {
     if ((worktimes_isopen) && (e.target.id !== 'worktimesHidden') && (e.target.id !== 'worktimesUnlock')) {
         worktimes_modal.style.display = "none";
         worktimes_isopen = false;
