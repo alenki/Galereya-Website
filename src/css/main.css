@@ -540,20 +540,41 @@ html {
 }
 /* --------------- End of Верхние кнопки страницы ---------------- */
 
-/* --------------- 6 кнопок под карусели ---------------- */
+/* --------------- 6 кнопок под каруселю ---------------- */
 .custom-main-bottom-buttons {
+    font-family: Navigo Regular;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
     width: 30%;
     height: 55px;
-    font-size: 14.65px;
-    line-height: 22px;
-    font-family: Navigo Regular;
+    padding-left: 35px;
+    padding-top: 10px;
 }
 @media screen and (max-width: 767px) {
     .custom-main-bottom-buttons {
         width: 90%;
+        font-size: 14px;
+        padding-left: 15px;
+        padding-top: 10px;
     }
     .main-bottom-buttons_block {
         width: 100%;
+    }
+}
+
+.button-icon {
+    height: 28px;
+    width: 24px;
+    margin-right: 5px;
+}
+
+@media (max-width: 500px) {
+    .button-icon {
+        height: 28px;
+        width: 22px;
     }
 }
 /* --------------- End of 6 кнопок под карусели ---------------- */
@@ -1122,6 +1143,74 @@ html {
     justify-content: flex-end;
 }
 /* --------------- End of Блок акций для маленьких экранов ---------------- */
+
+
+/* -------------------- МОДАЛЬНЫЕ ОКНА--------------------- */
+
+
+.modal-content {
+    background-color: #f1eee8;
+}
+@media (max-width: 500px) {
+    .modal-content {
+        margin: 50px 0px 0px 0px;
+        position: absolute;
+    }
+}
+
+.modal-header {
+    border-color: #f1eee8;
+}
+
+.modal-title {
+    font-family: Navigo Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #464847e7;
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    border-radius: 10px;
+    max-width: 400px;
+    max-height: 110px;
+    padding: 10px 15px 5px 15px;
+    background-color: #f1eee8;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    font-size: 10em;
+}
+@media (max-width: 500px) {
+    .modal-title {
+        font-size: 1.5rem !important;
+        left: 20px;
+        top: 25px
+    }
+}
+
+.modal-body {
+    top: 40px;
+    font-family: Navigo Regular;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #464847b6;
+    cursor: default;
+    margin-top: 10px;
+    padding: 0 20px 4.5rem 30px;
+    height: 100%;
+}
+
+/* ------------------- end of МОДАЛЬНЫЕ ОКНА ---------------*/
+
 
 /* --------------- Feedback form ---------------- */
 .feedback-form-control {
