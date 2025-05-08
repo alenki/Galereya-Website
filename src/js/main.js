@@ -46,29 +46,28 @@ location_btn.onclick = function() {
 // End of 2 main buttons on top
 
 // 6 Buttons below carousel
-// Магазины
 document.getElementById("storeButton-1").onclick = function () { 
     localStorage.setItem("category", "Магазины");
     window.location.href = "../stores/"; 
 };
-// Еда
 document.getElementById("storeButton-2").onclick = function () { 
     localStorage.setItem("category", "Еда");
     window.location.href = "../stores/"; 
 };
-// Развлечения
 document.getElementById("storeButton-3").onclick = function () { 
     localStorage.setItem("category", "Развлечения");
     window.location.href = "../stores/"; 
 };
-// Одежда
 document.getElementById("storeButton-4").onclick = function () { 
     localStorage.setItem("category", "Одежда");
     window.location.href = "../stores/"; 
 };
-// Услуги
 document.getElementById("storeButton-5").onclick = function () { 
     localStorage.setItem("category", "Услуги");
+    window.location.href = "../stores/"; 
+};
+document.getElementById("storeButton-6").onclick = function () { 
+    localStorage.setItem("category", "Электроника");
     window.location.href = "../stores/"; 
 };
 // End of 6 Buttons below carousel
@@ -96,39 +95,6 @@ class ServiceSlides{
       }
     }
   }
-
-
-document.onclick = function(e) {
-    
-    // localStorage.setItem("pagination", pagination_id);
-};
-// // Магазины
-// document.getElementById("serviceButton-1").addEventListener("click", function() { 
-//     localStorage.setItem("category", "Магазины");
-//     window.location.href = "../stores/"; 
-// });
-// // Еда
-// document.getElementById("serviceButton-2").addEventListener("click", function() { 
-//     localStorage.setItem("category", "Еда");
-//     window.location.href = "../stores/"; 
-// });
-// // Развлечения
-// document.getElementById("serviceButton-3").addEventListener("click", function() { 
-//     localStorage.setItem("category", "Развлечения");
-//     window.location.href = "../stores/"; 
-// });
-// // Одежда
-// document.getElementById("serviceButton-4").addEventListener("click", function() { 
-//     localStorage.setItem("category", "Одежда");
-//     window.location.href = "../stores/"; 
-// });
-// // Услуги
-// document.getElementById("serviceButton-5").addEventListener("click", function() { 
-//     localStorage.setItem("category", "Услуги");
-//     window.location.href = "../stores/"; 
-// });
-// // End of Service buttons
-
 
 // Promotion buttons
 // Get promotion elements

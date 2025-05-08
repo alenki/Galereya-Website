@@ -377,4 +377,121 @@ svg {pointer-events: none;}
 .closebtn {
     font-weight: 200;
 }
+.sidemenufix {
+    white-space: nowrap;
+}
 /* --------------- End of Mobile Navigation ---------------- */
+
+/* -------------------- МОДАЛЬНЫЕ ОКНА--------------------- */
+
+
+.modal-content {
+    background-color: #f1eee8;
+}
+@media (max-width: 500px) {
+    .modal-content {
+        margin: 50px 0px 0px 0px;
+        position: absolute;
+    }
+}
+
+.modal-header {
+    border-color: #f1eee8;
+}
+
+.modal-title {
+    font-family: Navigo Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #464847e7;
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    border-radius: 10px;
+    max-width: 400px;
+    max-height: 110px;
+    padding: 10px 15px 5px 15px;
+    background-color: #f1eee8;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    font-size: 10em;
+}
+@media (max-width: 500px) {
+    .modal-title {
+        font-size: 1.5rem !important;
+        left: 20px;
+        top: 25px
+    }
+}
+@media (max-width: 345px) {
+    .modal-title {
+        font-size: 1.3rem !important;
+        left: 7px;
+        top: 25px
+    }
+}
+
+.modal-body {
+    top: 40px;
+    font-family: Navigo Regular;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #464847b6;
+    cursor: default;
+    margin-top: 10px;
+    padding: 0 20px 4.5rem 30px;
+    height: 100%;
+}
+
+/* ------------------- end of МОДАЛЬНЫЕ ОКНА ---------------*/
+
+/* --------------- Feedback form ---------------- */
+.feedback-form-control {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    background: none; 
+}
+.form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; 
+}
+#form-message-warning, #form-message-success {
+    display: none; 
+}
+#form-message-warning {
+    color: #B90B0B; 
+}
+#form-message-success {
+    color: #55A44E;
+    font-size: 18px;
+    font-weight: bold; 
+}
+.submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000; 
+}
+label.error {
+    font-size: 12px;
+    color: red; 
+}
+/* --------------- End of Feedback form ---------------- */

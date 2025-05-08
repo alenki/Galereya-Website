@@ -76,26 +76,32 @@ document.getElementById("categoryButton-1").onclick = function () {
     Load();
 };
 
-// Еда
+// Одежда
 document.getElementById("categoryButton-2").onclick = function () { 
+    localStorage.setItem("category", "Одежда");
+    Load();
+};
+
+// Электроника
+document.getElementById("categoryButton-3").onclick = function () { 
+    localStorage.setItem("category", "Электроника");
+    Load();
+};
+
+// Еда
+document.getElementById("categoryButton-4").onclick = function () { 
     localStorage.setItem("category", "Еда");
     Load();
 };
 
 // Развлечения
-document.getElementById("categoryButton-3").onclick = function () { 
+document.getElementById("categoryButton-5").onclick = function () { 
     localStorage.setItem("category", "Развлечения");
     Load();
 };
 
-// Одежда
-document.getElementById("categoryButton-4").onclick = function () { 
-    localStorage.setItem("category", "Одежда");
-    Load();
-};
-
 // Услуги
-document.getElementById("categoryButton-5").onclick = function () { 
+document.getElementById("categoryButton-6").onclick = function () { 
     localStorage.setItem("category", "Услуги");
     Load();
 };

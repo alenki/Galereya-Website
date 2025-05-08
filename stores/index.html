@@ -133,6 +133,27 @@
       <a class="sidemenu_text" id="sidemenuButton-7">О ГАЛЕРЕЕ</a>
       <a class="sidemenu_text" id="sidemenuButton-8">Арендаторам</a>
     </div>
+    <hr class="menuButton_separator">
+        <div class="">
+          <div class="ps-3 pt-3 address_text d-flex align-items-center">
+            <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="36" height="24"><use xlink:href="#footer-address-icon-svg"/></svg></div>
+            <div class="ps-3">
+              <span class="sidemenufix">
+                г. Нальчик, <br>
+                ул. Кирова, 1Д
+              </span>
+            </div>
+          </div>
+          <div class="ps-3 pt-3 phone-number_text d-flex align-items-center">
+            <span></span>
+            <div class="footer-outlinedBoxes d-flex align-items-center justify-content-center text-primary"><svg width="36" height="24"><use xlink:href="#footer-phone-number-icon-svg"/></svg></div>
+            <div class="ps-3">
+              <span class="sidemenufix">
+                Администрация: <br> 
+                +7 (8662) 40-46-84
+              </span></div>
+          </div>
+        </div>
   </div>
     
     <!-- Основная часть -->
@@ -165,10 +186,11 @@
           <!-- Часть фильтров -->
           <div class="customFiltersSection ">
                <button type="button" class="btn customFilterCatalogButton" id="categoryButton-1"><span class="customFilterCatalogTitle">Магазины</span></button>
-               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-2"><span class="customFilterCatalogTitle">Еда</span></button>
-               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-3"><span class="customFilterCatalogTitle">Развлечения</span></button>
-               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-4"><span class="customFilterCatalogTitle">Одежда</span></button>
-               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-5"><span class="customFilterCatalogTitle">Услуги</span></button>
+               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-2"><span class="customFilterCatalogTitle">Одежда</span></button>
+               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-3"><span class="customFilterCatalogTitle">Электроника</span></button>
+               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-4"><span class="customFilterCatalogTitle">Еда</span></button>
+               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-5"><span class="customFilterCatalogTitle">Развлечения</span></button>
+               <button type="button" class="btn customFilterCatalogButton" id="categoryButton-6"><span class="customFilterCatalogTitle">Услуги</span></button>
            </div>
          <!-- Часть элементов (магазинов) -->
          <div class="card-place catalog-inner">
@@ -223,7 +245,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          +7 (8662) 40-46-84
+          <b>Связь с администрацией ТРЦ «Галерея»:</b><br>+7 (8662) 40-46-84
         </div>
       </div>
   </div>
@@ -290,16 +312,47 @@
   </div>
 </div>
 
-<!-- About Modal (что отображает кнопка "О ГАЛЕРЕИ" внизу) -->
+<!-- About Modal (что отображает кнопка "О ГАЛЕРЕЕ" внизу) -->
 <div class="modal fade bd-example-modal-lg" id="aboutModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-          <h1 class="modal-title fs-5" id="enrollLabel">О ГАЛЕРЕИ</h1>
+          <h1 class="modal-title fs-5" id="enrollLabel">О ТОРГОВОМ ЦЕНТРЕ</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        информация о галереи
+ТРК «ГАЛЕРЕЯ» - региональный торгово-развлекательный
+комплекс, представляющий собой современный объект
+торговли и досуга для населения со средним и выше среднего
+уровнем дохода.
+<br>• Концепция комплекса «ГАЛЕРЕЯ» предусматривает единую
+стилистику оформления всего внутреннего пространства и
+индивидуальное воплощение каждого торгового отдела,
+предоставление покупателям возможности совершать покупки,
+выбирая из известных марок ведущих производителей одежды,
+обуви и аксессуаров. Комфортная атмосфера, наличие
+ресторанов и кафе, кинотеатра, боулинга,
+детской игровой площадки, просторной
+парковочной зоны, качественной системы вентиляции и
+кондиционирования, лифтов и эскалаторов способствуют
+приятному проведению времени в «ГАЛЕРЕЕ».
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Rent Modal (что отображает кнопка "Арендаторам" внизу) -->
+<div class="modal fade bd-example-modal-lg" id="rentModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="modal-title fs-5" id="enrollLabel">Арендаторам</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <b><span style="font-size: 1.1rem;">По всем интересующим вопросам аренды обращаться по следующим номерам:</span></b><br><br>
+        <b>Менеджер по аренде:<br></b>
+        Ацканова Зарема Мухамедовна: 8(928)075-54-59<br>
       </div>
     </div>
   </div>
@@ -334,25 +387,6 @@
         </div>
       </div>
     </div>
-
-  <!-- Rent Modal (что отображает кнопка "Арендаторам" внизу) -->
-  <div class="modal fade bd-example-modal-lg" id="rentModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="enrollLabel">Арендаторам</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <b><span style="font-size: 1.1rem;">По всем интересующим вопросам аренды обращаться по следующим номерам:</span></b><br><br>
-          <b>Менеджер по аренде:<br></b>
-          Ацканова Зарема Мухамедовна: 8(928)075-54-59<br>
-          <b>Заместитель исполнительного директора по развитию:<br></b>
-          Халишхова Алина Казбековна: 8(906)707-77-00
-        </div>
-      </div>
-    </div>
-  </div>
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
