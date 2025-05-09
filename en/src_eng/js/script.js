@@ -28,34 +28,34 @@ menuBtn.addEventListener('click', () => {
 document.getElementById("lang-button").onclick = function () { 
     window.location.href = "../../"; 
 };
-// Магазины
+// Stores
 document.getElementById("menuButton-1").onclick = function () { 
-    localStorage.setItem("category", "Магазины");
+    localStorage.setItem("category", "Stores");
     window.location.href = "../../en/stores/"; 
 };
-// Еда
+// Entertainment
 document.getElementById("menuButton-2").onclick = function () { 
-    localStorage.setItem("category", "Развлечения");
+    localStorage.setItem("category", "Entertainment");
     window.location.href = "../../en/stores/"; 
 };
-// Развлечения
+// Food
 document.getElementById("menuButton-3").onclick = function () { 
-    localStorage.setItem("category", "Еда");
+    localStorage.setItem("category", "Food");
     window.location.href = "../../en/stores/"; 
 };
-// Одежда
+// Clothes
 document.getElementById("menuButton-4").onclick = function () { 
-    localStorage.setItem("category", "Одежда");
+    localStorage.setItem("category", "Clothes");
     window.location.href = "../../en/stores/"; 
 };
-// Контакты
+// Contacts
 document.getElementById("menuButton-5").onclick = function () { 
     var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
         keyboard: false
     })
     modal.toggle()
 };
-// Обратная связь
+// Feedback
 document.getElementById("menuButton-6").onclick = function () { 
     var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
         keyboard: false
@@ -90,27 +90,27 @@ document.getElementById("menu-closebutton_Mobile").addEventListener('click', () 
 })
 
 // Mobile Nav Buttons
-// Магазины
+// Stores
 document.getElementById("sidemenuButton-1").onclick = function () { 
-    localStorage.setItem("category", "Магазины");
+    localStorage.setItem("category", "Stores");
     window.location.href = "../../en/stores/"; 
 };
-// Еда
+// Entertainment
 document.getElementById("sidemenuButton-2").onclick = function () { 
-    localStorage.setItem("category", "Развлечения");
+    localStorage.setItem("category", "Entertainment");
     window.location.href = "../../en/stores/"; 
 };
-// Развлечения
+// Food
 document.getElementById("sidemenuButton-3").onclick = function () { 
-    localStorage.setItem("category", "Еда");
+    localStorage.setItem("category", "Food");
     window.location.href = "../../en/stores/"; 
 };
-// Одежда
+// Clothes
 document.getElementById("sidemenuButton-4").onclick = function () { 
-    localStorage.setItem("category", "Одежда");
+    localStorage.setItem("category", "Clothes");
     window.location.href = "../../en/stores/"; 
 };
-// Контакты
+// Contacts
 document.getElementById("sidemenuButton-5").onclick = function () { 
     var modal = new bootstrap.Modal(document.getElementById('contactsModal'), {
         keyboard: false
@@ -118,7 +118,7 @@ document.getElementById("sidemenuButton-5").onclick = function () {
     modal.toggle()
     document.getElementById("sidemenu").style.width = "0px";
 };
-// Обратная связь
+// Feedback
 document.getElementById("sidemenuButton-6").onclick = function () { 
     var modal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
         keyboard: false

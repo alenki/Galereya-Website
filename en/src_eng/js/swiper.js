@@ -52,11 +52,11 @@ class Slides{
         let slides = data.items;
         // let slides = contentful.items;
         slides = slides.map(item =>{
-            const {pag_id, title, description, category} = item.fields;
+            const {pag_id, englishTitle, englishDescription, englishCategory} = item.fields;
             const {id} = item.sys;
             const image = item.fields.image.fields.file.url;
             const logo = item.fields.logo.fields.file.url;
-            return {pag_id, title, description, category, id, image, logo}
+            return {pag_id, englishTitle, englishDescription, englishCategory, id, image, logo}
         })
         return slides
     } catch(error) {
@@ -69,7 +69,7 @@ const slides = new Slides();
 
 //Update carousel
 const progress_bar = document.querySelector(".progress-panel");
-const panel_title = document.querySelector(".swiper-post-name");
+const panel_englishTitle = document.querySelector(".swiper-post-name");
 function update_info_panel() {
   // update progress animation
   progress_bar.classList.remove("progress-panel-animation")
@@ -79,8 +79,8 @@ function update_info_panel() {
   slides.getSlides().then(slides => {
     slides.forEach(slides => {
         if(slides.pag_id == pagination_id) {
-            // update info panel title
-            panel_title.innerHTML = slides.title;
+            // update info panel englishTitle
+            panel_englishTitle.innerHTML = slides.englishTitle;
             // update swiper background (::before)
             document.documentElement.style.setProperty("--carousel_bg", `url(${slides.image})`);
         }
@@ -253,13 +253,13 @@ document.querySelector(".about-post-button").addEventListener("click", () => {
     slides.forEach(slides => {
         if(slides.pag_id == pagination_id) {
           localStorage.setItem("slide_id", slides.id);
-          localStorage.setItem("category", slides.category);
+          localStorage.setItem("category", slides.englishCategory);
           localStorage.setItem("slide", "open");
         }
     });
   })
   // localStorage.setItem("pagination", pagination_id);
-  window.location.href = "../stores/"; 
+  window.location.href = "../../en/stores/"; 
 })
 
 // Autoplay

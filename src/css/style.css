@@ -427,7 +427,7 @@ svg {pointer-events: none;}
     padding: 10px 15px 5px 15px !important;
     background-color: #f1eee8 !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
-    font-size: 10em !important;
+    font-size: 1.75rem !important;
 }
 @media (max-width: 500px) {
     .modal-title {
