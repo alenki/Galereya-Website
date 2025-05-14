@@ -144,7 +144,7 @@ h2 {
     }
 }
 html {
-    --carousel_bg: url(../assets/Carousel/colins.png);
+    --carousel_bg: url(/Media/Carousel/colins.png);
 }
 
 .swiper-box::before {
