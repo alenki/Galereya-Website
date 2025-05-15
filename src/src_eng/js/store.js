@@ -1,9 +1,9 @@
 // Contentful
 import * as contentful from 'contentful'
 const client = contentful.createClient({
-    space: 'ruy22jhhank3',
+    space: import.meta.env.VITE_CONTENTFUL_SPACE,
     environment: 'master', // defaults to 'master' if not set
-    accessToken: '0GUZEP5q3E4HSXJ1UXX2W6TRuyRdHPFzaIOECAXA1YA'
+    accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN
 })
 
 // Categories
