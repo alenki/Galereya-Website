@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import { qrcode } from 'vite-plugin-qrcode'
 
 export default defineConfig({
+  plugins: [qrcode()],
   server: {
     port: 777
   },
