@@ -2,7 +2,11 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+  server: {
+    port: 777
+  },
   build: {
+    outDir: "dist",
     rollupOptions: {
       // Указываем точки входа для каждой страницы
       input: {
