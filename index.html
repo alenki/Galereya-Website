@@ -51,6 +51,9 @@
     </button>
     
     <div class="layout">
+
+    <!-- Header -->
+    <header>
       <!-- Navbar -->
       <nav class="navbar navbar-lg-expand bg-nav-bg fixed-top custom-nav py-0">     
           <div class="container">
@@ -121,7 +124,7 @@
       </nav>
 
       <!-- Мобильная навигация -->
-      <div id="sidemenu" class="sidemenu">
+      <nav id="sidemenu" class="sidemenu">
         <a href="javascript:void(0)" class="closebtn" id="menu-closebutton_Mobile">&times;</a>
         <div class="first_sidemenu_box">
           <a class="sidemenu_text" id="sidemenuButton-1">Магазины</a>
@@ -158,13 +161,16 @@
           </div>
         </div>
         <hr class="menuButton_separator">
-      <!-- Язык -->
-      <button style="height: 43px; width: 140px;" class="btn lang-button ms-4 mt-3 d-flex justify-content-start align-items-center" id="sidemenu_lang-button">
-        <span class="ps-3 pe-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
-        <span style="font-size: 0.80rem;" class="pt-1">English</span>
-      </button>
-      </div>
+        <!-- Язык -->
+        <button style="height: 43px; width: 140px;" class="btn lang-button ms-4 mt-3 d-flex justify-content-start align-items-center" id="sidemenu_lang-button">
+          <span class="ps-3 pe-1"><svg width="24" height="24"><use xlink:href="#language-icon"/></span>
+          <span style="font-size: 0.80rem;" class="pt-1">English</span>
+        </button>
+      </nav>
+    </header>
 
+<!-- main -->
+<main>
       <!-- Главные начальные кнопки -->
       <section class="pt-4 pb-2 bg-secondary">
         <div class="container pt-5">
@@ -399,6 +405,9 @@
   </div>
 </section>
 
+</main>
+
+
     <!-- Footer -->
     <section class="bg-nav-bg custom-footer">
       <div class="container">
@@ -458,7 +467,7 @@
             <div class="align-content-center">
               <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi bi-telegram" width="24" height="24"><use xlink:href="#telegram"/></svg></a></li>
             </div>
-        </div>
+          </div>
         </footer>
       </div>
     </section>
