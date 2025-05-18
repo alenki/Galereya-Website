@@ -98,7 +98,7 @@ async function update_carousel() {
         <a href="" class="slide-img">
           <picture>
             <source type="image/webp" srcset="${slides.image}">
-            <img class="swiper-img-block" src="${slides.image}">
+            <img class="swiper-img-block" src="${slides.image} alt="${slides.title}"">
           </picture>
         </a>
         </div>
