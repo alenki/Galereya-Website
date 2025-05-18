@@ -144,7 +144,7 @@ h2 {
     }
 }
 html {
-    --carousel_bg: url(/Media/Carousel/colins.png);
+    --carousel_bg: white;
 }
 
 .swiper-box::before {
