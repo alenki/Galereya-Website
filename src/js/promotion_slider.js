@@ -39,9 +39,9 @@ class PromotionSlides{
         // let data = await promotion_result.json();
         let promotions = promotion_data.items;
         promotions = promotions.map(item =>{
-            const {category, id, url} = item.fields;
+            const {title, category, id, url} = item.fields;
             const image = item.fields.image.fields.file.url;
-            return {category, id, url, image}
+            return {title, category, id, url, image}
         })
         return promotions
     } catch(error) {
@@ -64,8 +64,8 @@ async function update_promotion() {
 
         // Add sliders
         promotion1_result+=`
-        <a href="${promotion_slides.url}" target="_blank" class="promotion-box_Mobile" id="${promotion_slides.id}">
-          <img src="${promotion_slides.image}" class="promo-img" alt="" id="${promotion_slides.id}">
+        <a href="${promotion_slides.url}" target="_blank" class="promotion-box_Mobile" id="${promotion_slides.id}" aria-label="${promotion_slides.title}">
+          <img src="${promotion_slides.image}" class="promo-img" alt="${promotion_slides.title}" id="${promotion_slides.id}">
         </a>
         `
       });
@@ -73,8 +73,8 @@ async function update_promotion() {
       promotion_slides.forEach(promotion_slides => {
         // Add sliders
         promotion2_result+=`
-      <a href="${promotion_slides.url}" target="_blank" class="promotion-box" id="${promotion_slides.id}">
-            <img src="${promotion_slides.image}" class="promo-img" alt="" id="${promotion_slides.id}">
+      <a href="${promotion_slides.url}" target="_blank" class="promotion-box" id="${promotion_slides.id}" aria-label="${promotion_slides.title}">
+            <img src="${promotion_slides.image}" class="promo-img" alt="${promotion_slides.title}" id="${promotion_slides.id}">
       </a>
         `
       });

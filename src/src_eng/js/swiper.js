@@ -95,10 +95,10 @@ async function update_carousel() {
         carousel_result+=`
         <div class="swiper-slide">
         <div class="swiper-post swiper-overflown">
-        <a href="" class="slide-img">
+        <a href="" class="slide-img" aria-label="${slides.englishTitle}">
           <picture>
             <source type="image/webp" srcset="${slides.image}">
-            <img class="swiper-img-block" src="${slides.image} alt="${slides.englishTitle}"">
+            <img class="swiper-img-block" src="${slides.image}" alt="${slides.englishTitle}">
           </picture>
         </a>
         </div>
