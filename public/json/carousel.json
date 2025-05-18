@@ -10,8 +10,8 @@
           "englishDescription": "At COLIN'S, we say: We are not just in the business of making ready-to-wear, but of making people feel better about themselves through our products and services. That's why, in any of our stores, anywhere in the world, we offer our customers innovation, style and quality. 10:00-20:00",
           "category": "Одежда",
           "englishCategory": "Clothes",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/colins.png" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/1.avif" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/1.avif" } } }
         }
       },
       {
@@ -24,8 +24,8 @@
           "englishDescription": "Cosmetics and perfumes for every mood and occasion. So easy to pamper yourself! - Payment in installments. Ideas for gifts. Original brands. Bonuses for purchases",
           "category": "Магазины",
           "englishCategory": "Stores",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/letual1.jpg" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/letual1.jpg" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/2.avif" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/2.avif" } } }
         }
       },
       {
@@ -38,8 +38,8 @@
           "englishDescription": "O′STIN is a comfortable online shopping experience and more than 630 retail stores. For 21 years we have been producing casual clothing for every situation, season and weather, helping customers to create their own, unique image.",
           "category": "Одежда",
           "englishCategory": "Clothes",
-          "image": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } },
-          "logo": { "fields": { "file": { "url": "/Media/Carousel/ostin.jpg" } } }
+          "image": { "fields": { "file": { "url": "/Media/Carousel/3.avif" } } },
+          "logo": { "fields": { "file": { "url": "/Media/Carousel/3.avif" } } }
         }
       }
     ]
