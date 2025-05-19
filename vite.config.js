@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import { qrcode } from 'vite-plugin-qrcode'
+import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 export default defineConfig({
-  plugins: [qrcode()],
+  plugins: [qrcode(), ViteMinifyPlugin({})],
   server: {
     port: 777
   },
