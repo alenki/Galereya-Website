@@ -1,10 +1,5 @@
-// Contentful
-import * as contentful from 'contentful'
-const client = contentful.createClient({
-    space: import.meta.env.VITE_CONTENTFUL_SPACE,
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN
-})
+// Imports
+import { stores } from "/src/js/contentful.js"
 
 // Categories
 const categoryHeading = document.getElementById("categoryHeading");
@@ -16,8 +11,7 @@ window.onload = function() {
 // Загрузить все в зависимости от фильтра
 async function Load() {
     // Загрузить все магазины
-    const ui = new UI();
-    const stores = new Stores();
+    const ui = new UI();    
     // get all stores
     await stores.getStores().then(stores => {
         // Display stores
@@ -107,31 +101,7 @@ document.getElementById("categoryButton-6").onclick = function () {
 };
 // End of Categories
 
-// getting the stores
-class Stores{
-    async getStores(){
-        try{
-            // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-            let store_data = await client.getEntries({
-                content_type: "galereyaStores"
-            });
-            // let result = await fetch('/json/stores.json');
-            // let data = await result.json();
-            let stores = store_data.items;
-            stores = stores.map(item =>{
-                const {title, description, category, id, floor} = item.fields;
-                const logo = item.fields.logo.fields.file.url;
-                var image;
-                try{image = item.fields.image.fields.file.url;}
-                catch(e){console.log("У", title, "нет фотки")}
-                return {title, description, category, id, floor, image, logo}
-            })
-            return stores
-        } catch(error) {
-            console.log(error);
-        }
-    }
-}
+
 
 //display stores
 const storesDOM = document.querySelector('.stores-center');
@@ -175,8 +145,6 @@ class UI {
 
 
 // Открытие модального окна
-// get all stores
-const stores = new Stores();
 document.onclick = async function(e) {
     if(e.target.classList.contains("storeButton")){ 
         openStore(e.target.id);

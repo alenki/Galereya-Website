@@ -1,10 +1,5 @@
-// Contentful
-import * as contentful from 'contentful'
-const client = contentful.createClient({
-    space: import.meta.env.VITE_CONTENTFUL_SPACE,
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN
-})
+// Imports
+import { service_slides } from "/src/js/contentful.js"
 
 // Service slider
 const service_wrapper = document.querySelector(".service");
@@ -37,31 +32,6 @@ window.addEventListener("resize", async function() {
   blur_overflown_elements_service();
 })
 
-
-
-// Get service elements
-class ServiceSlides{
-  async getServiceSlides(){
-    try{
-        // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-        let service_data = await client.getEntries({
-            content_type: "galereyaServices"
-        });
-        // let service_result = await fetch('/json/service.json');
-        // let data = await service_result.json();
-        let services = service_data.items;
-        services = services.map(item =>{
-            const {id, englishTitle, icon} = item.fields;
-            return {id, englishTitle, icon}
-        })
-        return services
-    } catch(error) {
-        console.log(error);
-    }
-  }
-}
-// get all stores
-const service_slides = new ServiceSlides();
 async function update_service() {
   await service_slides.getServiceSlides().then(async service_slides => {
     let service1_result = '';

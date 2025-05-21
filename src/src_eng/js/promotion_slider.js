@@ -1,10 +1,5 @@
-// Contentful
-import * as contentful from 'contentful'
-const client = contentful.createClient({
-    space: import.meta.env.VITE_CONTENTFUL_SPACE,
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN
-})
+// Imports
+import { promotion_slides } from "/src/js/contentful.js"
 
 // Promotion slider
 const promotion_wrapper = document.querySelector(".promotion");
@@ -26,31 +21,6 @@ window.addEventListener("resize", function() {
   blur_overflown_elements_promotion();
 })
 
-
-// Get promotion elements
-class PromotionSlides{
-  async getPromotionSlides(){
-    try{
-        // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-        let promotion_data = await client.getEntries({
-            content_type: "galereyaPromotions"
-        });
-        // let promotion_result = await fetch('/json/promotion.json');
-        // let data = await promotion_result.json();
-        let promotions = promotion_data.items;
-        promotions = promotions.map(item =>{
-            const {englishTitle, category, id, url} = item.fields;
-            const image = item.fields.image.fields.file.url;
-            return {englishTitle, category, id, url, image}
-        })
-        return promotions
-    } catch(error) {
-        console.log(error);
-    }
-  }
-}
-// get all stores
-const promotion_slides = new PromotionSlides();
 async function update_promotion() {
   await promotion_slides.getPromotionSlides().then(promotion_slides => {
     let promotion1_result = '';

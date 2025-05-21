@@ -1,11 +1,5 @@
-// Contentful
-import * as contentful from 'contentful'
-const client = contentful.createClient({
-    space: import.meta.env.VITE_CONTENTFUL_SPACE,
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN
-})
-
+// Imports
+import { promotion_slides, service_slides } from "/src/js/contentful.js"
 
 // 2 main buttons on top
 var worktimes_btn = document.getElementById("worktimesUnlock");
@@ -71,56 +65,6 @@ document.getElementById("storeButton-6").onclick = function () {
     window.location.href = "../../en/stores/"; 
 };
 // End of 6 Buttons below carousel
-
-
-// // Service buttons
-// Get service elements
-class ServiceSlides{
-    async getServiceSlides(){
-      try{
-          // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-          let service_data = await client.getEntries({
-              content_type: "galereyaServices"
-          });
-          // let service_result = await fetch('/json/service.json');
-          // let data = await service_result.json();
-          let services = service_data.items;
-          services = services.map(item =>{
-              const {id, title, icon} = item.fields;
-              return {id, title, icon}
-          })
-          return services
-      } catch(error) {
-          console.log(error);
-      }
-    }
-  }
-
-// Promotion buttons
-// Get promotion elements
-class PromotionSlides{
-    async getPromotionSlides(){
-        try{
-            // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-            let promotion_data = await client.getEntries({
-                content_type: "galereyaPromotions"
-            });
-            // let promotion_result = await fetch('/json/promotion.json');
-            // let data = await promotion_result.json();
-            let promotions = promotion_data.items;
-            promotions = promotions.map(item =>{
-                const {category, id} = item.fields;
-                return {category, id}
-            })
-            return promotions
-        } catch(error) {
-            console.log(error);
-        }
-    }
-  }
-
-const promotion_slides = new PromotionSlides();
-const service_slides = new ServiceSlides();
 
 // promotion and service onclick
 document.onclick = async function(e) {

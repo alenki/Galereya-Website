@@ -1,3 +1,5 @@
+// Imports
+import { slides } from "/src/js/contentful.js"
 
 // Service slider
 const swiper_wrapper = document.querySelector(".swiper-wrapper");
@@ -38,34 +40,6 @@ async function carousel_window_load() {
   // Autoplay
   autoplay();
 }
-
-// Get carousel elements
-class Slides{
-  async getSlides(){
-    try{
-        // get contentful content // Contentful documentation: https://contentful.github.io/contentful.js/contentful/7.5.0/
-        // let contentful = await client.getEntries({
-        //     content_type: "alenkiStoreContent"
-        // });
-        let carousel_result = await fetch('/json/carousel.json');
-        let data = await carousel_result.json();
-        let slides = data.items;
-        // let slides = contentful.items;
-        slides = slides.map(item =>{
-            const {pag_id, englishTitle, englishDescription, englishCategory} = item.fields;
-            const {id} = item.sys;
-            const image = item.fields.image.fields.file.url;
-            const logo = item.fields.logo.fields.file.url;
-            return {pag_id, englishTitle, englishDescription, englishCategory, id, image, logo}
-        })
-        return slides
-    } catch(error) {
-        console.log(error);
-    }
-  }
-}
-// get all stores
-const slides = new Slides();
 
 //Update carousel
 const progress_bar = document.querySelector(".progress-panel");
